@@ -33,7 +33,7 @@
               line: '#E7E7E7',
               'line-dark': '#D4D5DC',
               card: '#FFFFFF',
-              bg: '#F8F9FA',
+              bg: '#FFEDEE',
               gray: '#F0F2F5',
               dark: '#1C1D22',
               darker: '#141519',
@@ -107,21 +107,31 @@
       --color-hairline: #E7E7E7;
       --color-body: #555866;
       --color-muted: #7B7E8C;
+      --color-bg-page: #FFEDEE;
     }
 
     *, *::before, *::after {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+    @media (min-width: 768px) {
+      html {
+        scroll-padding-top: 96px;
+      }
+    }
+
     html, body {
-      background-color: #FFFFFF;
+      background-color: #FFEDEE;
       color: var(--color-ink);
       font-family: 'Lufga', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       margin: 0;
       padding: 0;
       width: 100%;
       overflow-x: hidden;
-      scroll-behavior: smooth;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -140,6 +150,9 @@
     }
 
     /* Accordion FAQ */
+    .faq-chevron {
+      color: #E92125;
+    }
     .faq-item.active .faq-chevron {
       transform: rotate(180deg);
     }
@@ -150,13 +163,53 @@
       display: none;
     }
 
-    /* Slides do Hero Carrossel */
+    /* Slides do Hero Carrossel (79vh com Cantos Inferiores Arredondados) */
+    .hero-carousel {
+      position: relative;
+      width: 100%;
+      height: 79vh;
+      height: 79dvh;
+      min-height: 450px;
+      overflow: hidden;
+      background-color: #141519;
+      border-radius: 0 0 28px 28px;
+      isolation: isolate;
+    }
+    @media (min-width: 640px) {
+      .hero-carousel {
+        border-radius: 0 0 36px 36px;
+      }
+    }
+    @media (min-width: 1024px) {
+      .hero-carousel {
+        border-radius: 0 0 44px 44px;
+      }
+    }
     .hero-slide {
-      display: none;
-      transition: opacity 0.5s ease-in-out;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: scale(1.03);
+      z-index: 1;
+      pointer-events: none;
     }
     .hero-slide.active {
-      display: grid;
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+      z-index: 2;
+      pointer-events: auto;
+    }
+    .hero-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: left center;
+      display: block;
     }
 
     /* Mobile Menu Drawer */
@@ -179,77 +232,125 @@
     }
   </style>
 </head>
-<body class="bg-white m-0 p-0 text-bf-ink selection:bg-brand-red selection:text-white overflow-x-hidden">
+<body class="bg-[#FFEDEE] m-0 p-0 text-bf-ink selection:bg-brand-red selection:text-white overflow-x-hidden">
 
   <!-- ==========================================================================
        HEADER & TOP BAR
        ========================================================================== -->
   <header class="w-full sticky top-0 z-50 bg-white">
     
-    <!-- BARRA 01: FAIXA SUPERIOR VERMELHA (+B RED) -->
-    <div class="bg-brand-red text-white py-1.5 border-b border-brand-red-hover">
+    <!-- BARRA 01: FAIXA SUPERIOR VERMELHA (+B RED) — COMPACTA -->
+    <div class="bg-brand-red text-white py-1 border-b border-brand-red-hover">
       <div class="bf-container flex items-center justify-between text-xs">
         
-        <!-- Social & Atendimento (Esquerda) -->
-        <div class="flex items-center gap-3">
-          <div class="flex items-center gap-1.5">
-            <a href="https://instagram.com" target="_blank" rel="noopener" class="w-6 h-6 rounded-full bg-white/20 hover:bg-white hover:text-brand-red flex items-center justify-center text-white transition-all" aria-label="Instagram">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-            </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener" class="w-6 h-6 rounded-full bg-white/20 hover:bg-white hover:text-brand-red flex items-center justify-center text-white transition-all" aria-label="Facebook">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-            </a>
-          </div>
-          <span class="text-white/90 text-[11px] font-medium truncate max-w-[200px] sm:max-w-none">Todos os dias cuidando de você</span>
+        <!-- Social Icons (Esquerda) -->
+        <div class="flex items-center gap-2.5 text-white">
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="hover:text-white/80 transition-transform duration-200 hover:scale-110" aria-label="Instagram">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+            </svg>
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noopener" class="hover:text-white/80 transition-transform duration-200 hover:scale-110" aria-label="Facebook">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+          <a href="https://youtube.com" target="_blank" rel="noopener" class="hover:text-white/80 transition-transform duration-200 hover:scale-110" aria-label="YouTube">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/>
+              <polygon points="10 15 15 12 10 9 10 15" fill="currentColor"/>
+            </svg>
+          </a>
         </div>
 
-        <!-- Links Institucionais (Hidden no mobile para evitar quebras) -->
-        <div class="hidden sm:flex items-center gap-4 font-medium text-white/90 text-[11px]">
-          <a href="#filiais" class="hover:text-white transition-colors">Nossas Filiais</a>
-          <a href="#sobre" class="hover:text-white transition-colors">Quem Somos</a>
-          <a href="#faq" class="hover:text-white transition-colors">Ajuda</a>
-          <a href="#clube" class="hover:bg-white hover:text-brand-red transition-all font-bold text-white bg-white/20 px-2 py-0.5 rounded-full">Clube +B</a>
+        <!-- Links Institucionais (Direita — 11px, Peso 400 Regular / Suave) -->
+        <div class="hidden md:flex items-center gap-5 lg:gap-7 font-normal text-white/85 text-[11px] tracking-normal">
+          <a href="#depoimentos" class="hover:text-white hover:underline transition-colors">Depoimentos</a>
+          <a href="https://wa.me/5591999999999?text=Ol%C3%A1%2C%20gostaria%20de%20entrar%20no%20Grupo%20de%20Ofertas%20da%20%2BB%20Farma" target="_blank" rel="noopener" class="hover:text-white hover:underline transition-colors">Grupo de Ofertas</a>
+          <a href="https://wa.me/5591999999999?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20vendas%20no%20atacado" target="_blank" rel="noopener" class="hover:text-white hover:underline transition-colors">Vendas no Atacado</a>
+          <a href="https://wa.me/5591999999999?text=Ol%C3%A1%2C%20gostaria%20de%20enviar%20meu%20curr%C3%ADculo%20para%20o%20Trabalhe%20Conosco" target="_blank" rel="noopener" class="hover:text-white hover:underline transition-colors">Trabalhe Conosco</a>
+        </div>
+
+        <!-- Mobile: Link direto Grupo de Ofertas -->
+        <div class="md:hidden flex items-center gap-2 text-[10px] font-bold text-white">
+          <a href="https://wa.me/5591999999999?text=Ol%C3%A1%2C%20gostaria%20de%20entrar%20no%20Grupo%20de%20Ofertas%20da%20%2BB%20Farma" target="_blank" rel="noopener" class="bg-white/20 hover:bg-white hover:text-brand-red px-2 py-0.5 rounded-full transition-colors flex items-center gap-1">
+            <span>Grupo de Ofertas</span>
+            <span>→</span>
+          </a>
         </div>
 
       </div>
     </div>
 
-    <!-- BARRA 02: NAVBAR PRINCIPAL -->
-    <div class="bg-white border-b border-bf-line py-2.5 sm:py-3 shadow-bf-subtle">
-      <div class="bf-container flex items-center justify-between gap-2">
+    <!-- BARRA 02: NAVBAR PRINCIPAL COM LOGO CENTRALIZADA — 67PX NO DESKTOP -->
+    <div class="bg-white border-b border-bf-line h-[56px] md:h-[67px] flex items-center shadow-bf-subtle">
+      <div class="bf-container w-full flex items-center justify-between">
         
-        <!-- Logo Principal -->
-        <a href="#home" class="flex-shrink-0 flex items-center focus:outline-none" aria-label="Home +B Farma">
-          <img src="assets/Logos/logo-maisb-farma.webp" alt="+B Farma" class="h-8 sm:h-10 md:h-12 w-auto max-w-[140px] sm:max-w-[180px] md:max-w-none object-contain">
-        </a>
-
-        <!-- Menu Desktop -->
-        <nav class="hidden lg:flex items-center gap-6 xl:gap-8 text-sm font-semibold text-bf-ink" aria-label="Navegação Principal">
-          <a href="#home" class="text-brand-red hover:text-brand-red-hover transition-colors">Início</a>
-          <a href="#sobre" class="text-bf-body hover:text-brand-red transition-colors">A Rede</a>
-          <a href="#beneficios" class="text-bf-body hover:text-brand-red transition-colors">Vantagens</a>
-          <a href="#ofertas" class="text-bf-body hover:text-brand-red transition-colors">Ofertas da Semana</a>
-          <a href="#filiais" class="text-bf-body hover:text-brand-red transition-colors">Nossas Lojas</a>
-          <a href="#faq" class="text-bf-body hover:text-brand-red transition-colors">Dúvidas</a>
-        </nav>
-
-        <!-- Ações & CTA -->
-        <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-          <!-- CTA WhatsApp Desktop -->
-          <a href="https://wa.me" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-brand-red hover:bg-brand-red-hover text-white text-xs md:text-sm font-semibold rounded-xl shadow-sm transition-all whitespace-nowrap">
-            <span>Pedir no WhatsApp</span>
-            <span>→</span>
+        <!-- Menu Desktop Esquerda (Alinhado à Esquerda) -->
+        <nav class="hidden lg:flex items-center gap-6 xl:gap-8 flex-1 justify-start" aria-label="Navegação Esquerda">
+          
+          <a href="#home" class="group flex items-center gap-1.5 font-bold text-xs lg:text-[13.5px] text-bf-ink hover:text-brand-red transition-colors">
+            <svg class="w-4 h-4 text-bf-ink group-hover:text-brand-red transition-colors flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+            <span>Início</span>
           </a>
 
-          <!-- CTA WhatsApp Mobile Compacto -->
-          <a href="https://wa.me" target="_blank" rel="noopener" class="sm:hidden inline-flex items-center gap-1 px-2.5 py-1.5 bg-brand-red hover:bg-brand-red-hover text-white text-xs font-bold rounded-lg shadow-sm transition-all whitespace-nowrap" aria-label="WhatsApp">
+          <a href="#sobre" class="group flex items-center gap-1.5 font-bold text-xs lg:text-[13.5px] text-bf-ink hover:text-brand-red transition-colors">
+            <svg class="w-4 h-4 text-bf-ink group-hover:text-brand-red transition-colors flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+            </svg>
+            <span>Sobre</span>
+          </a>
+
+          <a href="#filiais" class="group flex items-center gap-1.5 font-bold text-xs lg:text-[13.5px] text-bf-ink hover:text-brand-red transition-colors">
+            <svg class="w-4 h-4 text-bf-ink group-hover:text-brand-red transition-colors flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span>Nossas Lojas</span>
+          </a>
+
+        </nav>
+
+        <!-- Logo Centralizada (+B FARMA VERTICAL OTIMIZADA PARA 67PX) -->
+        <div class="flex items-center justify-center flex-shrink-0 px-2 sm:px-4">
+          <a href="#home" class="focus:outline-none transition-transform duration-200 hover:scale-105 block" aria-label="Home +B Farma">
+            <img src="assets/Logos/logo-maisb-farma-vertical.webp" alt="+B Farma" class="h-10 md:h-[48px] w-auto object-contain">
+          </a>
+        </div>
+
+        <!-- Menu Desktop Direita (Alinhado à Direita) -->
+        <nav class="hidden lg:flex items-center gap-6 xl:gap-8 flex-1 justify-end" aria-label="Navegação Direita">
+          
+          <a href="#ofertas" class="group flex items-center gap-1.5 font-bold text-xs lg:text-[13.5px] text-bf-ink hover:text-brand-red transition-colors">
+            <svg class="w-4 h-4 text-bf-ink group-hover:text-brand-red transition-colors flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/>
+              <path d="M7 7h.01"/>
+            </svg>
+            <span>Ofertas</span>
+          </a>
+
+          <a href="#clube" class="group flex items-center gap-1.5 font-bold text-xs lg:text-[13.5px] text-brand-red hover:text-brand-red-hover transition-colors">
+            <svg class="w-4 h-4 text-brand-red group-hover:text-brand-red-hover transition-colors flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
+            </svg>
+            <span>Clube +B</span>
+          </a>
+
+        </nav>
+
+        <!-- Ações Mobile (Hamburger + CTA WhatsApp) -->
+        <div class="lg:hidden flex items-center gap-2 flex-shrink-0">
+          <a href="https://wa.me/5591999999999" target="_blank" rel="noopener" class="inline-flex items-center gap-1 px-2.5 py-1 bg-brand-red hover:bg-brand-red-hover text-white text-xs font-bold rounded-lg shadow-sm transition-all" aria-label="Pedir no WhatsApp">
             <span>WhatsApp</span>
             <span>→</span>
           </a>
-
-          <!-- Botão Hamburger Mobile -->
-          <button onclick="toggleMobileMenu()" class="lg:hidden p-1.5 sm:p-2 text-bf-ink hover:text-brand-red hover:bg-slate-100 rounded-lg focus:outline-none transition-colors" aria-label="Abrir Menu">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <button onclick="toggleMobileMenu()" class="p-1 sm:p-1.5 text-bf-ink hover:text-brand-red hover:bg-slate-100 rounded-lg focus:outline-none transition-colors" aria-label="Abrir Menu">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
           </button>
         </div>
 
@@ -257,15 +358,56 @@
     </div>
 
     <!-- MOBILE MENU DRAWER -->
-    <div id="mobileMenu" class="hidden-drawer lg:hidden fixed top-[92px] sm:top-[102px] left-0 w-full bg-white border-b border-bf-line shadow-bf-floating py-4 px-6 z-40">
-      <nav class="flex flex-col gap-3 text-sm font-semibold text-bf-ink">
-        <a href="#home" onclick="toggleMobileMenu()" class="py-2 text-brand-red border-b border-slate-100">Início</a>
-        <a href="#sobre" onclick="toggleMobileMenu()" class="py-2 text-bf-body hover:text-brand-red border-b border-slate-100">A Rede</a>
-        <a href="#beneficios" onclick="toggleMobileMenu()" class="py-2 text-bf-body hover:text-brand-red border-b border-slate-100">Vantagens</a>
-        <a href="#ofertas" onclick="toggleMobileMenu()" class="py-2 text-bf-body hover:text-brand-red border-b border-slate-100">Ofertas da Semana</a>
-        <a href="#filiais" onclick="toggleMobileMenu()" class="py-2 text-bf-body hover:text-brand-red border-b border-slate-100">Nossas Lojas</a>
-        <a href="#faq" onclick="toggleMobileMenu()" class="py-2 text-bf-body hover:text-brand-red">Dúvidas Frequentes</a>
-      </nav>
+    <div id="mobileMenu" class="hidden-drawer lg:hidden fixed top-[84px] left-0 w-full bg-white border-b border-bf-line shadow-bf-floating py-4 px-6 z-40">
+      <div class="flex flex-col gap-4">
+        
+        <!-- Navegação Principal Mobile com Ícones Semânticos -->
+        <nav class="flex flex-col gap-2.5 text-sm font-bold text-bf-ink pb-4 border-b border-slate-100">
+          <a href="#home" onclick="toggleMobileMenu()" class="flex items-center gap-2.5 py-2 text-brand-red">
+            <svg class="w-4 h-4 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <span>Início</span>
+          </a>
+          <a href="#sobre" onclick="toggleMobileMenu()" class="flex items-center gap-2.5 py-2 hover:text-brand-red transition-colors">
+            <svg class="w-4 h-4 text-bf-ink flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            <span>Sobre</span>
+          </a>
+          <a href="#filiais" onclick="toggleMobileMenu()" class="flex items-center gap-2.5 py-2 hover:text-brand-red transition-colors">
+            <svg class="w-4 h-4 text-bf-ink flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Nossas Lojas</span>
+          </a>
+          <a href="#ofertas" onclick="toggleMobileMenu()" class="flex items-center gap-2.5 py-2 hover:text-brand-red transition-colors">
+            <svg class="w-4 h-4 text-bf-ink flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>
+            <span>Ofertas da Semana</span>
+          </a>
+          <a href="#clube" onclick="toggleMobileMenu()" class="flex items-center gap-2.5 py-2 hover:text-brand-red transition-colors">
+            <svg class="w-4 h-4 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+            <span>Clube +B</span>
+          </a>
+          <a href="#faq" onclick="toggleMobileMenu()" class="flex items-center gap-2.5 py-2 hover:text-brand-red transition-colors">
+            <svg class="w-4 h-4 text-bf-ink flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+            <span>Dúvidas Frequentes</span>
+          </a>
+        </nav>
+
+        <!-- Links Rápidos da Faixa Superior no Mobile -->
+        <div class="flex flex-col gap-2 text-xs font-semibold text-bf-muted pb-4 border-b border-slate-100">
+          <span class="text-[11px] uppercase tracking-wider font-bold text-brand-red">Institucional & Atendimento</span>
+          <a href="#depoimentos" onclick="toggleMobileMenu()" class="py-1 hover:text-brand-red flex items-center gap-2">
+            <svg class="w-3.5 h-3.5 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span>Depoimentos de Clientes</span>
+          </a>
+          <a href="https://wa.me/5591999999999?text=Ol%C3%A1%2C%20gostaria%20de%20entrar%20no%20Grupo%20de%20Ofertas%20da%20%2BB%20Farma" target="_blank" rel="noopener" class="py-1 hover:text-brand-red">Grupo de Ofertas no WhatsApp</a>
+          <a href="https://wa.me/5591999999999?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20vendas%20no%20atacado" target="_blank" rel="noopener" class="py-1 hover:text-brand-red">Vendas no Atacado</a>
+          <a href="https://wa.me/5591999999999?text=Ol%C3%A1%2C%20gostaria%20de%20enviar%20meu%20curr%C3%ADculo%20para%20o%20Trabalhe%20Conosco" target="_blank" rel="noopener" class="py-1 hover:text-brand-red">Trabalhe Conosco</a>
+        </div>
+
+        <!-- Botão CTA Mobile -->
+        <a href="https://wa.me/5591999999999" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 py-3 bg-brand-red hover:bg-brand-red-hover text-white text-sm font-bold rounded-xl shadow-sm transition-all">
+          <span>Pedir no WhatsApp</span>
+          <span>→</span>
+        </a>
+
+      </div>
     </div>
 
   </header>
@@ -274,171 +416,154 @@
   <main class="w-full">
 
     <!-- ==========================================================================
-         S1 — HERO SECTION / CARROSSEL COM FOTOS REAIS
+         S1 — HERO SECTION / CARROSSEL IMAGEM (79VH COM CANTOS ARREDONDADOS)
          ========================================================================== -->
-    <section id="home" class="relative bg-gradient-to-b from-slate-50 via-slate-100/60 to-slate-200/50 pt-8 sm:pt-10 pb-16 sm:pb-24 md:pb-28 rounded-b-[24px] sm:rounded-b-[32px] md:rounded-b-[40px] border-b border-bf-line overflow-hidden">
+    <section id="home" class="hero-carousel group scroll-mt-24 md:scroll-mt-28" aria-label="Carrossel Principal de Ofertas e Institucional">
       
-      <!-- Controles do Carrossel -->
-      <button onclick="prevSlide()" class="absolute left-2 sm:left-4 md:left-6 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-white/90 shadow-bf-card border border-bf-line flex items-center justify-center text-bf-ink hover:bg-white hover:scale-105 transition-all z-20" aria-label="Slide Anterior">
-        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
-      </button>
-      <button onclick="nextSlide()" class="absolute right-2 sm:right-4 md:right-6 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-white/90 shadow-bf-card border border-bf-line flex items-center justify-center text-bf-ink hover:bg-white hover:scale-105 transition-all z-20" aria-label="Próximo Slide">
-        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
-      </button>
+      <!-- Contêiner de Slides -->
+      <div class="relative w-full h-full">
 
-      <div class="bf-container">
-        
-        <!-- SLIDE 1: UNIDADE PLAZA -->
-        <div class="hero-slide active grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center min-h-[380px]">
-          
-          <!-- Textos Slide 1 -->
-          <div class="lg:col-span-6 w-full min-w-0 pr-0 lg:pr-6">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-bf-line shadow-xs text-[11px] sm:text-xs font-bold text-bf-muted mb-4">
-              <span class="w-2 h-2 rounded-full bg-brand-red flex-shrink-0"></span>
-              <span class="truncate">+B FARMA · REDE CREDENCIADA</span>
-            </div>
-
-            <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-bf-ink leading-[1.2] tracking-tight mb-3 sm:mb-4 break-words">
-              Aqui tem tudo para <br class="hidden sm:inline">
-              <span class="text-brand-red bg-brand-red/10 px-2 py-0.5 rounded-lg inline-block my-0.5">sua saúde e bem-estar</span> <br class="hidden sm:inline">
-              em um só lugar.
-            </h1>
-
-            <p class="text-sm sm:text-base text-bf-body leading-relaxed max-w-lg mb-6 sm:mb-8 break-words">
-              Atendimento farmacêutico de referência, preço baixo garantido, facilidade de compra online, entrega ágil ou retirada imediata na filial Plaza ou Tapanã.
-            </p>
-
-            <div class="flex flex-wrap items-center gap-3 sm:gap-4">
-              <a href="#ofertas" class="px-5 py-3 sm:px-6 sm:py-3.5 bg-brand-red hover:bg-brand-red-hover text-white font-semibold text-xs sm:text-sm rounded-xl shadow-sm transition-all flex items-center gap-2">
-                <span>Conferir Ofertas</span>
-                <span>→</span>
-              </a>
-              <a href="#filiais" class="px-5 py-3 sm:px-6 sm:py-3.5 bg-white border border-bf-line-dark text-bf-ink hover:bg-bf-gray font-semibold text-xs sm:text-sm rounded-xl transition-all">
-                Conhecer Lojas
-              </a>
-            </div>
-          </div>
-
-          <!-- Foto Slide 1 (Plaza) -->
-          <div class="lg:col-span-6 w-full min-w-0">
-            <div class="relative w-full aspect-[16/10] rounded-2xl overflow-hidden shadow-bf-floating border border-bf-line bg-slate-200">
-              <img src="assets/Fotografias/Und. Plaza/IAG_8400.webp" alt="Fachada e Interior da +B Farma Unidade Plaza" class="w-full h-full object-cover">
-              <div class="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl border border-bf-line shadow-sm">
-                <span class="text-[11px] sm:text-xs font-bold text-bf-ink block">Unidade Plaza — Belém</span>
-                <span class="text-[10px] sm:text-[11px] text-emerald-600 font-semibold">● Aberto com Farmacêutico de Plantão</span>
-              </div>
-            </div>
-          </div>
-
+        <!-- Slide 01 -->
+        <div class="hero-slide active" data-index="0">
+          <img src="assets/Pagina/S1%20TOPO%20HERO/0-banner-topo.png" alt="+B Farma — Aqui tem tudo para sua saúde e bem-estar em um só lugar" loading="eager" decoding="async">
         </div>
 
-        <!-- SLIDE 2: UNIDADE TAPANÃ -->
-        <div class="hero-slide grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center min-h-[380px]">
-          
-          <!-- Textos Slide 2 -->
-          <div class="lg:col-span-6 w-full min-w-0 pr-0 lg:pr-6">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-bf-line shadow-xs text-[11px] sm:text-xs font-bold text-bf-muted mb-4">
-              <span class="w-2 h-2 rounded-full bg-brand-red flex-shrink-0"></span>
-              <span class="truncate">FILIAL TAPANÃ · ESTRUTURA COMPLETA</span>
-            </div>
-
-            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-bf-ink leading-[1.2] tracking-tight mb-3 sm:mb-4 break-words">
-              Economia de verdade e <br class="hidden sm:inline">
-              <span class="text-brand-red bg-brand-red/10 px-2 py-0.5 rounded-lg inline-block my-0.5">atendimento acolhedor</span> <br class="hidden sm:inline">
-              pertinho de você.
-            </h2>
-
-            <p class="text-sm sm:text-base text-bf-body leading-relaxed max-w-lg mb-6 sm:mb-8 break-words">
-              Variedade em medicamentos de referência, genéricos com super descontos, perfumaria completa e conveniência para toda a sua família.
-            </p>
-
-            <div class="flex flex-wrap items-center gap-3 sm:gap-4">
-              <a href="#clube" class="px-5 py-3 sm:px-6 sm:py-3.5 bg-brand-red hover:bg-brand-red-hover text-white font-semibold text-xs sm:text-sm rounded-xl shadow-sm transition-all flex items-center gap-2">
-                <span>Entrar no Clube +B</span>
-                <span>→</span>
-              </a>
-              <a href="#sobre" class="px-5 py-3 sm:px-6 sm:py-3.5 bg-white border border-bf-line-dark text-bf-ink hover:bg-bf-gray font-semibold text-xs sm:text-sm rounded-xl transition-all">
-                Nossa História
-              </a>
-            </div>
-          </div>
-
-          <!-- Foto Slide 2 (Tapanã) -->
-          <div class="lg:col-span-6 w-full min-w-0">
-            <div class="relative w-full aspect-[16/10] rounded-2xl overflow-hidden shadow-bf-floating border border-bf-line bg-slate-200">
-              <img src="assets/Fotografias/Und. Tapanã/IMG_3700.webp" alt="Interior e Balcão da +B Farma Unidade Tapanã" class="w-full h-full object-cover">
-              <div class="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl border border-bf-line shadow-sm">
-                <span class="text-[11px] sm:text-xs font-bold text-bf-ink block">Unidade Tapanã — Belém</span>
-                <span class="text-[10px] sm:text-[11px] text-emerald-600 font-semibold">● Amplo Estacionamento & Conveniência</span>
-              </div>
-            </div>
-          </div>
-
+        <!-- Slide 02 -->
+        <div class="hero-slide" data-index="1">
+          <img src="assets/Pagina/S1%20TOPO%20HERO/banners%20(1).png" alt="+B Farma — Praticidade para o seu dia. Soluções que facilitam sua rotina" loading="lazy" decoding="async">
         </div>
 
-        <!-- Indicadores de Pontos (Dots) -->
-        <div class="flex justify-center items-center gap-2 mt-6 sm:mt-8">
-          <button onclick="setSlide(0)" class="slide-dot w-8 h-2.5 rounded-full bg-brand-red transition-all" aria-label="Slide 1"></button>
-          <button onclick="setSlide(1)" class="slide-dot w-2.5 h-2.5 rounded-full bg-slate-300 hover:bg-slate-400 transition-all" aria-label="Slide 2"></button>
+        <!-- Slide 03 -->
+        <div class="hero-slide" data-index="2">
+          <img src="assets/Pagina/S1%20TOPO%20HERO/banners%20(2).png" alt="+B Farma — Farmácia perto de você. Um ambiente acolhedor" loading="lazy" decoding="async">
+        </div>
+
+        <!-- Slide 04 -->
+        <div class="hero-slide" data-index="3">
+          <img src="assets/Pagina/S1%20TOPO%20HERO/banners%20(3).png" alt="+B Farma — Mais que farmácia, cuidado. A experiência começa no atendimento" loading="lazy" decoding="async">
+        </div>
+
+        <!-- Slide 05 -->
+        <div class="hero-slide" data-index="4">
+          <img src="assets/Pagina/S1%20TOPO%20HERO/banners%20(4).png" alt="+B Farma — Sua saúde com mais proximidade. Uma farmácia presente na sua rotina" loading="lazy" decoding="async">
+        </div>
+
+        <!-- Slide 06 -->
+        <div class="hero-slide" data-index="5">
+          <img src="assets/Pagina/S1%20TOPO%20HERO/banners%20(5).png" alt="+B Farma — O cuidado que faz parte da sua melhor versão" loading="lazy" decoding="async">
+        </div>
+
+        <!-- Slide 07 -->
+        <div class="hero-slide" data-index="6">
+          <img src="assets/Pagina/S1%20TOPO%20HERO/banners%20(6).png" alt="+B Farma — Praticidade, variedade e confiança para sua família" loading="lazy" decoding="async">
+        </div>
+
+        <!-- Slide 08 -->
+        <div class="hero-slide" data-index="7">
+          <img src="assets/Pagina/S1%20TOPO%20HERO/banners%20(7).png" alt="+B Farma — Toda quinta tem uma razão especial para vir à +B Farma" loading="lazy" decoding="async">
+        </div>
+
+        <!-- Slide 09 -->
+        <div class="hero-slide" data-index="8">
+          <img src="assets/Pagina/S1%20TOPO%20HERO/banners%20(8).png" alt="+B Farma — Saúde é equilíbrio. Conte com a gente nessa jornada" loading="lazy" decoding="async">
+        </div>
+
+        <!-- Slide 10 -->
+        <div class="hero-slide" data-index="9">
+          <img src="assets/Pagina/S1%20TOPO%20HERO/banners%20(9).png" alt="+B Farma — Sua rotina merece mais cuidado e bem-estar" loading="lazy" decoding="async">
         </div>
 
       </div>
+
+      <!-- Botões de Navegação Lateral (Prev / Next) -->
+      <button onclick="prevSlide(); resetAutoplay();" class="absolute left-3 sm:left-6 md:left-8 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-black/40 hover:bg-brand-red text-white backdrop-blur-md border border-white/20 shadow-bf-floating flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 z-20 focus:outline-none focus:ring-2 focus:ring-brand-red" aria-label="Banner Anterior">
+        <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
+      </button>
+
+      <button onclick="nextSlide(); resetAutoplay();" class="absolute right-3 sm:right-6 md:right-8 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-black/40 hover:bg-brand-red text-white backdrop-blur-md border border-white/20 shadow-bf-floating flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 z-20 focus:outline-none focus:ring-2 focus:ring-brand-red" aria-label="Próximo Banner">
+        <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
+      </button>
+
+      <!-- Indicadores de Pontos (Dots) com Glassmorphism posicionados harmoniosamente logo acima dos benefícios -->
+      <div class="absolute bottom-10 sm:bottom-13 md:bottom-16 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-black/45 backdrop-blur-md border border-white/20 shadow-lg">
+        <button onclick="setSlide(0); resetAutoplay();" class="slide-dot w-7 sm:w-9 h-2.5 rounded-full bg-brand-red transition-all duration-300" aria-label="Slide 1"></button>
+        <button onclick="setSlide(1); resetAutoplay();" class="slide-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300" aria-label="Slide 2"></button>
+        <button onclick="setSlide(2); resetAutoplay();" class="slide-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300" aria-label="Slide 3"></button>
+        <button onclick="setSlide(3); resetAutoplay();" class="slide-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300" aria-label="Slide 4"></button>
+        <button onclick="setSlide(4); resetAutoplay();" class="slide-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300" aria-label="Slide 5"></button>
+        <button onclick="setSlide(5); resetAutoplay();" class="slide-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300" aria-label="Slide 6"></button>
+        <button onclick="setSlide(6); resetAutoplay();" class="slide-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300" aria-label="Slide 7"></button>
+        <button onclick="setSlide(7); resetAutoplay();" class="slide-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300" aria-label="Slide 8"></button>
+        <button onclick="setSlide(8); resetAutoplay();" class="slide-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300" aria-label="Slide 9"></button>
+        <button onclick="setSlide(9); resetAutoplay();" class="slide-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300" aria-label="Slide 10"></button>
+      </div>
+
     </section>
 
 
     <!-- ==========================================================================
          S2 — BENEFÍCIOS RÁPIDOS (CARROSSEL DESLIZÁVEL NO MOBILE / 5 COLS NO DESKTOP)
          ========================================================================== -->
-    <section id="beneficios" class="relative z-30 -mt-8 sm:-mt-12 md:-mt-14 mb-12 sm:mb-16">
+    <section id="beneficios" class="relative z-30 -mt-8 sm:-mt-12 md:-mt-14 mb-12 sm:mb-16 scroll-mt-24 md:scroll-mt-28">
       <div class="bf-container">
-        <div class="bg-white rounded-2xl border border-bf-line shadow-bf-floating p-4 sm:p-6 md:p-8">
+        <div class="bg-white rounded-2xl md:rounded-3xl border border-bf-line shadow-bf-floating p-3.5 sm:p-5 md:py-5 md:px-4 lg:px-6">
           
-          <!-- DESKTOP / TABLET (>= md): GRID DE 5 COLUNAS (LUCIDE ICONS) -->
-          <div class="hidden md:grid md:grid-cols-5 gap-6 divide-x divide-bf-line">
+          <!-- DESKTOP / TABLET (>= md): GRID DE 5 COLUNAS HORIZONTAIS (LUCIDE ICONS) -->
+          <div class="hidden md:grid md:grid-cols-5 divide-x divide-bf-line items-center">
             
             <!-- Item 1 (Lucide: truck) -->
-            <div class="flex flex-col items-center text-center px-3">
-              <div class="w-12 h-12 rounded-full bg-brand-red-light border border-brand-red-soft flex items-center justify-center text-brand-red mb-3 shadow-xs">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18.5" r="2.5"/><circle cx="7" cy="18.5" r="2.5"/></svg>
+            <div class="flex items-center gap-2.5 lg:gap-3 xl:gap-3.5 px-2 lg:px-3 xl:px-4 py-1.5 first:pl-1">
+              <div class="w-10 h-10 xl:w-11 xl:h-11 rounded-full bg-brand-red flex-shrink-0 flex items-center justify-center text-white shadow-xs">
+                <svg class="w-5 h-5 xl:w-5.5 xl:h-5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18.5" r="2.5"/><circle cx="7" cy="18.5" r="2.5"/></svg>
               </div>
-              <h3 class="font-bold text-sm text-bf-ink mb-1">Entrega Expressa</h3>
-              <p class="text-xs text-bf-muted leading-tight">Receba seus medicamentos rapidamente no conforto de casa.</p>
+              <div class="min-w-0 flex-1">
+                <h3 class="font-bold text-xs lg:text-[13px] xl:text-sm text-bf-ink leading-tight mb-0.5">Frete Grátis</h3>
+                <p class="text-[11px] xl:text-xs text-bf-muted leading-tight">Nas compras acima de R$ 169,00</p>
+              </div>
             </div>
 
-            <!-- Item 2 (Lucide: shopping-bag) -->
-            <div class="flex flex-col items-center text-center px-3">
-              <div class="w-12 h-12 rounded-full bg-slate-100 border border-bf-line flex items-center justify-center text-bf-ink mb-3 shadow-xs">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <!-- Item 2 (Lucide: store) -->
+            <div class="flex items-center gap-2.5 lg:gap-3 xl:gap-3.5 px-2 lg:px-3 xl:px-4 py-1.5">
+              <div class="w-10 h-10 xl:w-11 xl:h-11 rounded-full bg-brand-red flex-shrink-0 flex items-center justify-center text-white shadow-xs">
+                <svg class="w-5 h-5 xl:w-5.5 xl:h-5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 10V7"/></svg>
               </div>
-              <h3 class="font-bold text-sm text-bf-ink mb-1">Compre e Retire</h3>
-              <p class="text-xs text-bf-muted leading-tight">Peça pelo WhatsApp e retire pronto em até 60 minutos na loja.</p>
+              <div class="min-w-0 flex-1">
+                <h3 class="font-bold text-xs lg:text-[13px] xl:text-sm text-bf-ink leading-tight mb-0.5">Compre e Retire</h3>
+                <p class="text-[11px] xl:text-xs text-bf-muted leading-tight">Compre online e retire na loja</p>
+              </div>
             </div>
 
-            <!-- Item 3 (Lucide: heart-pulse) -->
-            <div class="flex flex-col items-center text-center px-3">
-              <div class="w-12 h-12 rounded-full bg-brand-red-light border border-brand-red-soft flex items-center justify-center text-brand-red mb-3 shadow-xs">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg>
+            <!-- Item 3 (Lucide: plus/cross) -->
+            <div class="flex items-center gap-2.5 lg:gap-3 xl:gap-3.5 px-2 lg:px-3 xl:px-4 py-1.5">
+              <div class="w-10 h-10 xl:w-11 xl:h-11 rounded-full bg-brand-red flex-shrink-0 flex items-center justify-center text-white shadow-xs">
+                <svg class="w-5 h-5 xl:w-5.5 xl:h-5.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
               </div>
-              <h3 class="font-bold text-sm text-bf-ink mb-1">Atenção Farmacêutica</h3>
-              <p class="text-xs text-bf-muted leading-tight">Orientação profissional e acolhedora em todas as filiais.</p>
+              <div class="min-w-0 flex-1">
+                <h3 class="font-bold text-xs lg:text-[13px] xl:text-sm text-bf-ink leading-tight mb-0.5">Farmacinha</h3>
+                <p class="text-[11px] xl:text-xs text-bf-muted leading-tight">com atendimento próximo</p>
+              </div>
             </div>
 
             <!-- Item 4 (Lucide: badge-percent) -->
-            <div class="flex flex-col items-center text-center px-3">
-              <div class="w-12 h-12 rounded-full bg-slate-100 border border-bf-line flex items-center justify-center text-bf-ink mb-3 shadow-xs">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m15 9-6 6"/><path d="M9 9h.01"/><path d="M15 15h.01"/></svg>
+            <div class="flex items-center gap-2.5 lg:gap-3 xl:gap-3.5 px-2 lg:px-3 xl:px-4 py-1.5">
+              <div class="w-10 h-10 xl:w-11 xl:h-11 rounded-full bg-brand-red flex-shrink-0 flex items-center justify-center text-white shadow-xs">
+                <svg class="w-5 h-5 xl:w-5.5 xl:h-5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m15 9-6 6"/><path d="M9 9h.01"/><path d="M15 15h.01"/></svg>
               </div>
-              <h3 class="font-bold text-sm text-bf-ink mb-1">Clube de Vantagens</h3>
-              <p class="text-xs text-bf-muted leading-tight">Descontos exclusivos e campanhas semanais especiais.</p>
+              <div class="min-w-0 flex-1">
+                <h3 class="font-bold text-xs lg:text-[13px] xl:text-sm text-bf-ink leading-tight mb-0.5">Benefícios</h3>
+                <p class="text-[11px] xl:text-xs text-bf-muted leading-tight">Descontos e ofertas exclusivas</p>
+              </div>
             </div>
 
-            <!-- Item 5 (Lucide: message-circle) -->
-            <div class="flex flex-col items-center text-center px-3">
-              <div class="w-12 h-12 rounded-full bg-brand-red-light border border-brand-red-soft flex items-center justify-center text-brand-red mb-3 shadow-xs">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+            <!-- Item 5 (Lucide: smartphone) -->
+            <div class="flex items-center gap-2.5 lg:gap-3 xl:gap-3.5 px-2 lg:px-3 xl:px-4 py-1.5 last:pr-1">
+              <div class="w-10 h-10 xl:w-11 xl:h-11 rounded-full bg-brand-red flex-shrink-0 flex items-center justify-center text-white shadow-xs">
+                <svg class="w-5 h-5 xl:w-5.5 xl:h-5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
               </div>
-              <h3 class="font-bold text-sm text-bf-ink mb-1">Atendimento Direto</h3>
-              <p class="text-xs text-bf-muted leading-tight">Envie sua receita médica e tire dúvidas em tempo real.</p>
+              <div class="min-w-0 flex-1">
+                <h3 class="font-bold text-xs lg:text-[13px] xl:text-sm text-bf-ink leading-tight mb-0.5">Baixe o App</h3>
+                <p class="text-[11px] xl:text-xs text-bf-muted leading-tight">Mais praticidade exclusiva</p>
+              </div>
             </div>
 
           </div>
@@ -453,48 +578,58 @@
             <div class="flex overflow-x-auto snap-x snap-mandatory gap-3 pb-2 pt-1 -mx-2 px-2 no-scrollbar" style="-webkit-overflow-scrolling: touch;">
               
               <!-- Card 1 Mobile (Lucide: truck) -->
-              <div class="snap-start flex-shrink-0 w-[170px] bg-slate-50 border border-bf-line rounded-xl p-3.5 flex flex-col items-center text-center">
-                <div class="w-10 h-10 rounded-full bg-brand-red-light border border-brand-red-soft flex items-center justify-center text-brand-red mb-2 shadow-xs">
+              <div class="snap-start flex-shrink-0 w-[240px] bg-slate-50 border border-bf-line rounded-xl p-3 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-brand-red flex-shrink-0 flex items-center justify-center text-white shadow-xs">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18.5" r="2.5"/><circle cx="7" cy="18.5" r="2.5"/></svg>
                 </div>
-                <h4 class="font-bold text-xs text-bf-ink mb-0.5">Entrega Expressa</h4>
-                <p class="text-[11px] text-bf-muted leading-tight">Receba rápido em casa.</p>
+                <div class="min-w-0 flex-1">
+                  <h4 class="font-bold text-xs text-bf-ink leading-tight mb-0.5">Frete Grátis</h4>
+                  <p class="text-[11px] text-bf-muted leading-tight">Compras acima de R$ 169</p>
+                </div>
               </div>
 
-              <!-- Card 2 Mobile (Lucide: shopping-bag) -->
-              <div class="snap-start flex-shrink-0 w-[170px] bg-slate-50 border border-bf-line rounded-xl p-3.5 flex flex-col items-center text-center">
-                <div class="w-10 h-10 rounded-full bg-slate-100 border border-bf-line flex items-center justify-center text-bf-ink mb-2 shadow-xs">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              <!-- Card 2 Mobile (Lucide: store) -->
+              <div class="snap-start flex-shrink-0 w-[240px] bg-slate-50 border border-bf-line rounded-xl p-3 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-brand-red flex-shrink-0 flex items-center justify-center text-white shadow-xs">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 10V7"/></svg>
                 </div>
-                <h4 class="font-bold text-xs text-bf-ink mb-0.5">Compre & Retire</h4>
-                <p class="text-[11px] text-bf-muted leading-tight">Pronto em 60 min na loja.</p>
+                <div class="min-w-0 flex-1">
+                  <h4 class="font-bold text-xs text-bf-ink leading-tight mb-0.5">Compre & Retire</h4>
+                  <p class="text-[11px] text-bf-muted leading-tight">Compre online e retire</p>
+                </div>
               </div>
 
-              <!-- Card 3 Mobile (Lucide: heart-pulse) -->
-              <div class="snap-start flex-shrink-0 w-[170px] bg-slate-50 border border-bf-line rounded-xl p-3.5 flex flex-col items-center text-center">
-                <div class="w-10 h-10 rounded-full bg-brand-red-light border border-brand-red-soft flex items-center justify-center text-brand-red mb-2 shadow-xs">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg>
+              <!-- Card 3 Mobile (Lucide: plus/cross) -->
+              <div class="snap-start flex-shrink-0 w-[240px] bg-slate-50 border border-bf-line rounded-xl p-3 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-brand-red flex-shrink-0 flex items-center justify-center text-white shadow-xs">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
                 </div>
-                <h4 class="font-bold text-xs text-bf-ink mb-0.5">Farmacêutico</h4>
-                <p class="text-[11px] text-bf-muted leading-tight">Orientação acolhedora.</p>
+                <div class="min-w-0 flex-1">
+                  <h4 class="font-bold text-xs text-bf-ink leading-tight mb-0.5">Farmacinha</h4>
+                  <p class="text-[11px] text-bf-muted leading-tight">Atendimento próximo</p>
+                </div>
               </div>
 
               <!-- Card 4 Mobile (Lucide: badge-percent) -->
-              <div class="snap-start flex-shrink-0 w-[170px] bg-slate-50 border border-bf-line rounded-xl p-3.5 flex flex-col items-center text-center">
-                <div class="w-10 h-10 rounded-full bg-slate-100 border border-bf-line flex items-center justify-center text-bf-ink mb-2 shadow-xs">
+              <div class="snap-start flex-shrink-0 w-[240px] bg-slate-50 border border-bf-line rounded-xl p-3 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-brand-red flex-shrink-0 flex items-center justify-center text-white shadow-xs">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m15 9-6 6"/><path d="M9 9h.01"/><path d="M15 15h.01"/></svg>
                 </div>
-                <h4 class="font-bold text-xs text-bf-ink mb-0.5">Clube +B</h4>
-                <p class="text-[11px] text-bf-muted leading-tight">Super descontos no CPF.</p>
+                <div class="min-w-0 flex-1">
+                  <h4 class="font-bold text-xs text-bf-ink leading-tight mb-0.5">Benefícios</h4>
+                  <p class="text-[11px] text-bf-muted leading-tight">Ofertas exclusivas</p>
+                </div>
               </div>
 
-              <!-- Card 5 Mobile (Lucide: message-circle) -->
-              <div class="snap-start flex-shrink-0 w-[170px] bg-slate-50 border border-bf-line rounded-xl p-3.5 flex flex-col items-center text-center">
-                <div class="w-10 h-10 rounded-full bg-brand-red-light border border-brand-red-soft flex items-center justify-center text-brand-red mb-2 shadow-xs">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+              <!-- Card 5 Mobile (Lucide: smartphone) -->
+              <div class="snap-start flex-shrink-0 w-[240px] bg-slate-50 border border-bf-line rounded-xl p-3 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-brand-red flex-shrink-0 flex items-center justify-center text-white shadow-xs">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
                 </div>
-                <h4 class="font-bold text-xs text-bf-ink mb-0.5">WhatsApp Direto</h4>
-                <p class="text-[11px] text-bf-muted leading-tight">Envie sua receita médica.</p>
+                <div class="min-w-0 flex-1">
+                  <h4 class="font-bold text-xs text-bf-ink leading-tight mb-0.5">Baixe o App</h4>
+                  <p class="text-[11px] text-bf-muted leading-tight">Praticidade exclusiva</p>
+                </div>
               </div>
 
             </div>
@@ -506,254 +641,245 @@
 
 
     <!-- ==========================================================================
-         S3 — SOBRE A REDE (DUAS COLUNAS 40% / 60%)
+         S3 — CARROSSEL DE BANNERS / CAMPANHAS EM DESTAQUE (DIAS DA SEMANA — 100% LARGURA)
          ========================================================================== -->
-    <section id="sobre" class="py-12 sm:py-16 md:py-20 border-b border-bf-line overflow-hidden">
+    <section id="ofertas" class="py-12 sm:py-16 md:py-20 bg-[#FFEDEE] border-b border-bf-line overflow-hidden w-full scroll-mt-24 md:scroll-mt-28">
+      
+      <!-- Cabeçalho da Seção (Centralizado no Container) -->
       <div class="bf-container">
+        <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12 px-2">
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-red block mb-2">DIAS DA SEMANA</span>
+          <h2 class="text-2xl sm:text-3xl md:text-[38px] font-bold text-bf-ink tracking-tight leading-tight break-words">
+            Ofertas que <span class="text-brand-red">rendem mais</span> pra você.
+          </h2>
+        </div>
+      </div>
+
+      <!-- Contêiner Full-Width (100% da Largura da Tela — Edge-to-Edge) -->
+      <div class="relative w-full overflow-hidden group/banners">
+        
+        <!-- Botão Navegação Anterior (Esquerda) -->
+        <button onclick="scrollBanners('left')" class="flex absolute left-2 sm:left-3 md:left-5 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white/95 hover:bg-brand-red text-bf-ink hover:text-white shadow-bf-floating border border-bf-line items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 z-30 focus:outline-none focus:ring-2 focus:ring-brand-red backdrop-blur-sm" aria-label="Banners Anteriores">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
+        </button>
+
+        <!-- Botão Navegação Próximo (Direita) -->
+        <button onclick="scrollBanners('right')" class="flex absolute right-2 sm:right-3 md:right-5 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white/95 hover:bg-brand-red text-bf-ink hover:text-white shadow-bf-floating border border-bf-line items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 z-30 focus:outline-none focus:ring-2 focus:ring-brand-red backdrop-blur-sm" aria-label="Próximos Banners">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
+        </button>
+
+        <!-- Trilho Horizontal 100% Sangrado com Snap e Drag/Swipe (Exibe 3 banners + pedaço do 4º) -->
+        <div id="bannersTrack" class="w-full flex gap-4 sm:gap-5 md:gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar py-3 px-4 sm:px-6 md:px-8 lg:px-10 cursor-grab select-none" style="-webkit-overflow-scrolling: touch;">
+          
+          <!-- Banner 01 -->
+          <div class="snap-start flex-shrink-0 w-[76vw] sm:w-[46vw] md:w-[35vw] lg:w-[28vw] xl:w-[27vw] 2xl:w-[25.5vw] rounded-2xl md:rounded-3xl overflow-hidden shadow-bf-subtle hover:shadow-bf-card transition-all duration-300 hover:scale-[1.015] bg-brand-red">
+            <img src="assets/Pagina/S3%20BANNERZINHOS/baninhos%20(1).png" alt="Oferta +B Farma — Cuidado com a Pele até 30% OFF" class="w-full h-auto object-cover block" loading="eager" decoding="async" draggable="false">
+          </div>
+
+          <!-- Banner 02 -->
+          <div class="snap-start flex-shrink-0 w-[76vw] sm:w-[46vw] md:w-[35vw] lg:w-[28vw] xl:w-[27vw] 2xl:w-[25.5vw] rounded-2xl md:rounded-3xl overflow-hidden shadow-bf-subtle hover:shadow-bf-card transition-all duration-300 hover:scale-[1.015] bg-brand-red">
+            <img src="assets/Pagina/S3%20BANNERZINHOS/baninhos%20(2).png" alt="Oferta +B Farma — Alívio Rápido até 25% OFF" class="w-full h-auto object-cover block" loading="lazy" decoding="async" draggable="false">
+          </div>
+
+          <!-- Banner 03 -->
+          <div class="snap-start flex-shrink-0 w-[76vw] sm:w-[46vw] md:w-[35vw] lg:w-[28vw] xl:w-[27vw] 2xl:w-[25.5vw] rounded-2xl md:rounded-3xl overflow-hidden shadow-bf-subtle hover:shadow-bf-card transition-all duration-300 hover:scale-[1.015] bg-brand-red">
+            <img src="assets/Pagina/S3%20BANNERZINHOS/baninhos%20(3).png" alt="Oferta +B Farma — Cuidado com a Pele Dermocosméticos até 30% OFF" class="w-full h-auto object-cover block" loading="lazy" decoding="async" draggable="false">
+          </div>
+
+          <!-- Banner 04 -->
+          <div class="snap-start flex-shrink-0 w-[76vw] sm:w-[46vw] md:w-[35vw] lg:w-[28vw] xl:w-[27vw] 2xl:w-[25.5vw] rounded-2xl md:rounded-3xl overflow-hidden shadow-bf-subtle hover:shadow-bf-card transition-all duration-300 hover:scale-[1.015] bg-brand-red">
+            <img src="assets/Pagina/S3%20BANNERZINHOS/baninhos%20(4).png" alt="Oferta +B Farma — Beleza e Autocuidado até 30% OFF" class="w-full h-auto object-cover block" loading="lazy" decoding="async" draggable="false">
+          </div>
+
+          <!-- Banner 05 -->
+          <div class="snap-start flex-shrink-0 w-[76vw] sm:w-[46vw] md:w-[35vw] lg:w-[28vw] xl:w-[27vw] 2xl:w-[25.5vw] rounded-2xl md:rounded-3xl overflow-hidden shadow-bf-subtle hover:shadow-bf-card transition-all duration-300 hover:scale-[1.015] bg-brand-red">
+            <img src="assets/Pagina/S3%20BANNERZINHOS/baninhos%20(5).png" alt="Oferta +B Farma — Campanhas e Ofertas da Semana" class="w-full h-auto object-cover block" loading="lazy" decoding="async" draggable="false">
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================================================
+         S4 — SOBRE A +B FARMA & INDICADORES
+         ========================================================================== -->
+    <section id="sobre" class="py-12 sm:py-16 md:py-20 bg-[#FFEDEE] border-b border-bf-line overflow-hidden scroll-mt-24 md:scroll-mt-28">
+      <div class="bf-container">
+        
+        <!-- Grid Superior: Textos (Esquerda) + Imagem Família (Direita) -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          <!-- Coluna Textos (40%) -->
+          <!-- Coluna Textos (5 colunas) -->
           <div class="lg:col-span-5 w-full min-w-0">
-            <span class="text-xs font-bold uppercase tracking-widest text-brand-red block mb-2">SOBRE A +B FARMA</span>
-            <h2 class="text-2xl sm:text-3xl lg:text-[36px] font-bold text-bf-ink leading-tight mb-4 break-words">
-              Cuidado genuíno que faz parte da sua rotina.
+            <span class="text-xs sm:text-sm font-bold uppercase tracking-wider text-brand-red block mb-3">SOBRE A +B FARMA</span>
+            <h2 class="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-bf-ink leading-[1.18] tracking-tight mb-4 break-words">
+              Cuidado que está presente no <span class="text-brand-red">seu dia a dia.</span>
             </h2>
-            <p class="text-sm text-bf-body leading-relaxed mb-6 break-words">
-              Somos a <strong>+B Farma</strong>, a rede de farmácias do Grupo Mais Barato nascida para unir a máxima procedência de produtos farmacêuticos à economia real e um atendimento humanizado de verdade.
+            <p class="text-sm sm:text-[15px] text-bf-body leading-relaxed mb-6 max-w-xl">
+              Somos o +B Farma, a farmácia do grupo +B, feita para cuidar da sua saúde com qualidade, confiança e atendimento próximo de verdade.
             </p>
 
-            <!-- 3 Itens de Destaque (Lucide: check) -->
-            <div class="space-y-3 mb-8 w-full">
-              <div class="flex items-start gap-3 w-full min-w-0">
-                <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            <!-- 3 Itens de Destaque com Círculo Vermelho e Cruz/Plus Branca -->
+            <div class="space-y-3.5 mb-8">
+              <div class="flex items-center gap-3">
+                <div class="w-5 h-5 rounded-full bg-brand-red text-white flex items-center justify-center flex-shrink-0 shadow-xs">
+                  <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
                 </div>
-                <span class="text-xs sm:text-sm font-semibold text-bf-ink flex-1 min-w-0 break-words">Medicamentos e produtos de procedência 100% garantida</span>
+                <span class="text-xs sm:text-sm font-medium text-bf-ink">Medicamentos e produtos de qualidade</span>
               </div>
-              <div class="flex items-start gap-3 w-full min-w-0">
-                <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+              <div class="flex items-center gap-3">
+                <div class="w-5 h-5 rounded-full bg-brand-red text-white flex items-center justify-center flex-shrink-0 shadow-xs">
+                  <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
                 </div>
-                <span class="text-xs sm:text-sm font-semibold text-bf-ink flex-1 min-w-0 break-words">Atendimento humanizado e orientação com farmacêutico</span>
+                <span class="text-xs sm:text-sm font-medium text-bf-ink">Atendimento humanizado e especializado</span>
               </div>
-              <div class="flex items-start gap-3 w-full min-w-0">
-                <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+              <div class="flex items-center gap-3">
+                <div class="w-5 h-5 rounded-full bg-brand-red text-white flex items-center justify-center flex-shrink-0 shadow-xs">
+                  <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
                 </div>
-                <span class="text-xs sm:text-sm font-semibold text-bf-ink flex-1 min-w-0 break-words">Praticidade, agilidade e respeito pelo seu orçamento</span>
+                <span class="text-xs sm:text-sm font-medium text-bf-ink">Praticidade para facilitar sua rotina</span>
               </div>
             </div>
 
-            <!-- Botão CTA -->
-            <a href="#filiais" class="inline-flex items-center gap-2 px-6 py-3.5 bg-bf-ink hover:bg-black text-white font-semibold text-sm rounded-xl transition-all shadow-sm">
-              <span>Visite nossas filiais</span>
-              <span>→</span>
+            <!-- Botão CTA Pílula Vermelha -->
+            <a href="#filiais" class="inline-flex items-center gap-3 px-8 py-3.5 sm:py-4 bg-brand-red hover:bg-brand-red-hover active:bg-brand-red-active text-white font-bold text-sm sm:text-base rounded-full shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all duration-200">
+              <span>Saiba mais sobre nós</span>
+              <span class="text-lg leading-none">→</span>
             </a>
           </div>
 
-          <!-- Coluna Foto Institucional Real (60%) -->
+          <!-- Coluna Foto Institucional Família (7 colunas) -->
           <div class="lg:col-span-7 w-full min-w-0">
-            <div class="relative w-full aspect-[16/10] rounded-2xl overflow-hidden shadow-bf-card border border-bf-line">
-              <img src="assets/Fotografias/Und. Plaza/IAG_8452.webp" alt="Atendimento e Prateleiras da +B Farma" class="w-full h-full object-cover">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-              <div class="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 flex items-center justify-between text-white">
-                <div class="bg-white/90 backdrop-blur-md text-bf-ink px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl text-[11px] sm:text-xs font-bold shadow-sm">
-                  Farmácia Moderna & Climatizada
-                </div>
-                <span class="text-xs text-white/90 font-medium hidden sm:inline">Grupo Mais Barato</span>
+            <div class="relative w-full rounded-2xl sm:rounded-3xl lg:rounded-[32px] overflow-hidden shadow-bf-subtle border border-bf-line/60">
+              <img src="assets/Pagina/sobre-familia.webp" alt="Cuidado presente no seu dia a dia — +B Farma" class="w-full h-auto object-cover block" loading="lazy" decoding="async">
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Card Flutuante de Indicadores da Rede (4 Colunas com Divisórias) -->
+        <div class="mt-10 sm:mt-14 bg-white rounded-2xl sm:rounded-3xl border border-bf-line/80 shadow-bf-subtle py-6 px-4 sm:px-8">
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x lg:divide-bf-line/80 items-center">
+            
+            <!-- Item 1: Unidades -->
+            <div class="flex items-center gap-3.5 sm:gap-4 lg:justify-center lg:px-4">
+              <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-brand-red/30 bg-brand-red/5 flex items-center justify-center text-brand-red flex-shrink-0">
+                <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                  <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/>
+                  <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
+                  <path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/>
+                  <path d="M2 7h20"/>
+                  <path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 10V7"/>
+                </svg>
+              </div>
+              <div class="min-w-0">
+                <span class="text-2xl sm:text-3xl font-extrabold text-brand-red block leading-none">+50</span>
+                <span class="text-xs sm:text-sm font-semibold text-bf-ink block mt-1">Unidades</span>
               </div>
             </div>
-          </div>
 
+            <!-- Item 2: Clientes atendidos -->
+            <div class="flex items-center gap-3.5 sm:gap-4 lg:justify-center lg:px-4">
+              <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-brand-red/30 bg-brand-red/5 flex items-center justify-center text-brand-red flex-shrink-0">
+                <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </div>
+              <div class="min-w-0">
+                <span class="text-2xl sm:text-3xl font-extrabold text-brand-red block leading-none">+500 mil</span>
+                <span class="text-xs sm:text-sm font-semibold text-bf-ink block mt-1">Clientes atendidos</span>
+              </div>
+            </div>
+
+            <!-- Item 3: Cuidando de você -->
+            <div class="flex items-center gap-3.5 sm:gap-4 lg:justify-center lg:px-4">
+              <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-brand-red/30 bg-brand-red/5 flex items-center justify-center text-brand-red flex-shrink-0">
+                <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                  <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/>
+                  <polygon points="12 8 13.09 10.26 15.5 10.61 13.75 12.31 14.16 14.7 12 13.56 9.84 14.7 10.25 12.31 8.5 10.61 10.91 10.26 12 8"/>
+                </svg>
+              </div>
+              <div class="min-w-0">
+                <span class="text-2xl sm:text-3xl font-extrabold text-brand-red block leading-none">+10 anos</span>
+                <span class="text-xs sm:text-sm font-semibold text-bf-ink block mt-1">Cuidando de você</span>
+              </div>
+            </div>
+
+            <!-- Item 4: Atendidos em Belém. -->
+            <div class="flex items-center gap-3.5 sm:gap-4 lg:justify-center lg:px-4">
+              <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-brand-red/30 bg-brand-red/5 flex items-center justify-center text-brand-red flex-shrink-0">
+                <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                  <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div class="min-w-0">
+                <span class="text-2xl sm:text-3xl font-extrabold text-brand-red block leading-none">+100 bairros</span>
+                <span class="text-xs sm:text-sm font-semibold text-bf-ink block mt-1">Atendidos em Belém.</span>
+              </div>
+            </div>
+
+          </div>
         </div>
+
       </div>
     </section>
 
 
     <!-- ==========================================================================
-         S4 — INDICADORES / MÉTRICAS DA REDE
+         S6 — CARROSSEL DE BANNERS HORIZONTAIS (CLUBE +B & IFOOD / ENTREGA)
          ========================================================================== -->
-    <section class="py-10 sm:py-12 bg-white border-b border-bf-line">
-      <div class="bf-container">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 divide-y sm:divide-y-0 md:divide-x divide-bf-line">
-          
-          <!-- Indicador 1 (Lucide: store) -->
-          <div class="flex items-center gap-3 sm:gap-4 p-2 sm:p-3">
-            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-brand-red-light border border-brand-red-soft flex items-center justify-center text-brand-red flex-shrink-0">
-              <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"></path><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"></path><path d="M2 7h20"></path><path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12v0a2 2 0 0 1-2-2V7"></path></svg>
-            </div>
-            <div class="min-w-0">
-              <span class="text-2xl sm:text-3xl font-bold text-bf-ink block leading-none mb-1">+50</span>
-              <span class="text-[11px] sm:text-xs font-medium text-bf-muted block truncate">Unidades da Rede</span>
-            </div>
-          </div>
-
-          <!-- Indicador 2 (Lucide: users) -->
-          <div class="flex items-center gap-3 sm:gap-4 p-2 sm:p-3">
-            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-brand-red-light border border-brand-red-soft flex items-center justify-center text-brand-red flex-shrink-0">
-              <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-            </div>
-            <div class="min-w-0">
-              <span class="text-2xl sm:text-3xl font-bold text-bf-ink block leading-none mb-1">+500k</span>
-              <span class="text-[11px] sm:text-xs font-medium text-bf-muted block truncate">Clientes atendidos</span>
-            </div>
-          </div>
-
-          <!-- Indicador 3 (Lucide: shield-check) -->
-          <div class="flex items-center gap-3 sm:gap-4 p-2 sm:p-3 pt-4 sm:pt-3">
-            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-brand-red-light border border-brand-red-soft flex items-center justify-center text-brand-red flex-shrink-0">
-              <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
-            </div>
-            <div class="min-w-0">
-              <span class="text-2xl sm:text-3xl font-bold text-bf-ink block leading-none mb-1">+10 anos</span>
-              <span class="text-[11px] sm:text-xs font-medium text-bf-muted block truncate">Tradição & Cuidado</span>
-            </div>
-          </div>
-
-          <!-- Indicador 4 (Lucide: map-pin) -->
-          <div class="flex items-center gap-3 sm:gap-4 p-2 sm:p-3 pt-4 sm:pt-3">
-            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-brand-red-light border border-brand-red-soft flex items-center justify-center text-brand-red flex-shrink-0">
-              <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            </div>
-            <div class="min-w-0">
-              <span class="text-2xl sm:text-3xl font-bold text-bf-ink block leading-none mb-1">+100</span>
-              <span class="text-[11px] sm:text-xs font-medium text-bf-muted block truncate">Bairros atendidos</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ==========================================================================
-         S5 — OFERTAS & CAMPANHAS
-         ========================================================================== -->
-    <section id="ofertas" class="py-12 sm:py-16 md:py-20 bg-slate-50/70 border-b border-bf-line">
+    <section id="clube" class="py-8 sm:py-12 md:py-16 border-b border-bf-line scroll-mt-24 md:scroll-mt-28">
       <div class="bf-container">
         
-        <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 px-2">
-          <span class="text-xs font-bold uppercase tracking-widest text-brand-red block mb-2">CAMPANHAS EM DESTAQUE</span>
-          <h2 class="text-2xl sm:text-3xl font-bold text-bf-ink break-words">Ofertas que rendem mais economia.</h2>
-          <p class="text-xs sm:text-sm text-bf-muted mt-2">Acompanhe nossas campanhas semanais em medicamentos, cuidados pessoais e dermocosméticos.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Contêiner do Carrossel de Banners Horizontais -->
+        <div id="horizontalBannerCarousel" class="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-bf-subtle border border-bf-line bg-white select-none group/hbanner">
           
-          <!-- Card Oferta 1 -->
-          <div class="bg-white rounded-2xl border border-bf-line overflow-hidden shadow-bf-subtle hover:shadow-bf-card transition-all flex flex-col">
-            <div class="relative w-full aspect-[4/3] bg-slate-100 overflow-hidden">
-              <img src="assets/Fotografias/Und. Plaza/IAG_8462.webp" alt="Seção de Cuidados e Perfumaria" class="w-full h-full object-cover">
-              <span class="absolute top-3 left-3 bg-brand-red text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-xs">Semana da Saúde</span>
-            </div>
-            <div class="p-5 flex-1 flex flex-col justify-between">
-              <div>
-                <h4 class="font-bold text-base text-bf-ink mb-1">Medicamentos e Vitaminas</h4>
-                <p class="text-xs text-bf-muted leading-relaxed mb-4">Descontos especiais de até 50% para membros cadastrados no Clube +B.</p>
+          <!-- Trilho de Slides com Transição Suave -->
+          <div class="relative w-full overflow-hidden">
+            <div id="hBannersTrack" class="flex transition-transform duration-700 ease-in-out w-full">
+              
+              <!-- Slide 01: Clube +B -->
+              <div class="w-full flex-shrink-0 relative overflow-hidden">
+                <a href="https://wa.me/5591999999999?text=Ol%C3%A1%2C%20gostaria%20de%20me%20cadastrar%20no%20Clube%20%2BB%20Farma" target="_blank" rel="noopener" class="block w-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-red">
+                  <img src="assets/Pagina/S4%20BANNERS%20HORIZONTAIS/1-BANNER-HORIZONTAL.png" alt="+B Farma — Clube +B: Mais vantagens para você economizar todos os dias" class="w-full h-auto object-cover block" loading="eager" decoding="async" draggable="false">
+                </a>
               </div>
-              <a href="#clube" class="text-xs font-bold text-brand-red hover:text-brand-red-hover flex items-center gap-1">Ver detalhes da oferta →</a>
+
+              <!-- Slide 02: iFood / Pedidos Online -->
+              <div class="w-full flex-shrink-0 relative overflow-hidden">
+                <a href="https://wa.me/5591999999999?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20na%20%2BB%20Farma" target="_blank" rel="noopener" class="block w-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-red">
+                  <img src="assets/Pagina/S4%20BANNERS%20HORIZONTAIS/2-banner-ifod.png" alt="+B Farma no iFood — Peça pelo WhatsApp ou iFood e receba rápido" class="w-full h-auto object-cover block" loading="lazy" decoding="async" draggable="false">
+                </a>
+              </div>
+
             </div>
           </div>
 
-          <!-- Card Oferta 2 -->
-          <div class="bg-white rounded-2xl border border-bf-line overflow-hidden shadow-bf-subtle hover:shadow-bf-card transition-all flex flex-col">
-            <div class="relative w-full aspect-[4/3] bg-slate-100 overflow-hidden">
-              <img src="assets/Fotografias/Und. Tapanã/IMG_3705.webp" alt="Cuidados Infantis e Mamãe & Bebê" class="w-full h-full object-cover">
-              <span class="absolute top-3 left-3 bg-brand-red text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-xs">Mamãe & Bebê</span>
-            </div>
-            <div class="p-5 flex-1 flex flex-col justify-between">
-              <div>
-                <h4 class="font-bold text-base text-bf-ink mb-1">Linha Infantil & Fraldas</h4>
-                <p class="text-xs text-bf-muted leading-relaxed mb-4">Preços imperdíveis em fraldas, fórmulas e itens de higiene infantil.</p>
-              </div>
-              <a href="#clube" class="text-xs font-bold text-brand-red hover:text-brand-red-hover flex items-center gap-1">Ver detalhes da oferta →</a>
-            </div>
-          </div>
+          <!-- Botão de Navegação Anterior (Esquerda) -->
+          <button onclick="prevHSlide(); resetHAutoplay();" class="absolute left-2 sm:left-4 md:left-6 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white/90 hover:bg-brand-red text-bf-ink hover:text-white backdrop-blur-md border border-bf-line shadow-bf-floating flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 z-20 opacity-90 sm:opacity-0 group-hover/hbanner:opacity-100 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-brand-red" aria-label="Banner Anterior">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+          </button>
 
-          <!-- Card Oferta 3 -->
-          <div class="bg-white rounded-2xl border border-bf-line overflow-hidden shadow-bf-subtle hover:shadow-bf-card transition-all flex flex-col">
-            <div class="relative w-full aspect-[4/3] bg-slate-100 overflow-hidden">
-              <img src="assets/Fotografias/Und. Plaza/IAG_8514.webp" alt="Dermocosméticos e Higiene Pessoal" class="w-full h-full object-cover">
-              <span class="absolute top-3 left-3 bg-brand-red text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-xs">Dermocosméticos</span>
-            </div>
-            <div class="p-5 flex-1 flex flex-col justify-between">
-              <div>
-                <h4 class="font-bold text-base text-bf-ink mb-1">Higiene & Bem-Estar Diário</h4>
-                <p class="text-xs text-bf-muted leading-relaxed mb-4">Marcas consagradas de protetores solares, hidratantes e cuidados para a pele.</p>
-              </div>
-              <a href="#clube" class="text-xs font-bold text-brand-red hover:text-brand-red-hover flex items-center gap-1">Ver detalhes da oferta →</a>
-            </div>
+          <!-- Botão de Navegação Próximo (Direita) -->
+          <button onclick="nextHSlide(); resetHAutoplay();" class="absolute right-2 sm:right-4 md:right-6 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white/90 hover:bg-brand-red text-bf-ink hover:text-white backdrop-blur-md border border-bf-line shadow-bf-floating flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 z-20 opacity-90 sm:opacity-0 group-hover/hbanner:opacity-100 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-brand-red" aria-label="Próximo Banner">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </button>
+
+          <!-- Indicadores de Paginação (Dots / Pill) -->
+          <div class="absolute bottom-2.5 sm:bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 z-20 bg-black/30 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20">
+            <button onclick="setHSlide(0); resetHAutoplay();" class="h-slide-dot w-7 sm:w-8 h-2 sm:h-2.5 rounded-full bg-brand-red transition-all duration-300 focus:outline-none" aria-label="Ir para banner 1"></button>
+            <button onclick="setHSlide(1); resetHAutoplay();" class="h-slide-dot w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-white/60 hover:bg-white transition-all duration-300 focus:outline-none" aria-label="Ir para banner 2"></button>
           </div>
 
         </div>
 
-      </div>
-    </section>
-
-
-    <!-- ==========================================================================
-         S6 — CLUBE +B & BENEFÍCIOS
-         ========================================================================== -->
-    <section id="clube" class="py-12 sm:py-16 md:py-20 border-b border-bf-line">
-      <div class="bf-container">
-        <div class="bg-slate-100/90 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 border border-bf-line shadow-bf-subtle">
-          
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            
-            <!-- Textos & 4 Benefícios -->
-            <div class="lg:col-span-7 w-full min-w-0">
-              <span class="text-xs font-bold uppercase tracking-widest text-brand-red block mb-2">CLUBE +B</span>
-              <h2 class="text-2xl sm:text-3xl font-bold text-bf-ink leading-tight mb-3 break-words">
-                Mais vantagens para você economizar todos os dias.
-              </h2>
-              <p class="text-xs sm:text-sm text-bf-body mb-6 break-words">
-                Cadastre-se gratuitamente no Clube +B e aproveite descontos exclusivos nas lojas físicas e no atendimento via WhatsApp.
-              </p>
-
-              <!-- 4 Itens de Benefícios (Lucide: check) -->
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8 text-xs sm:text-sm font-medium text-bf-ink">
-                <div class="flex items-center gap-2.5">
-                  <svg class="w-4 h-4 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
-                  <span>Descontos exclusivos em medicamentos</span>
-                </div>
-                <div class="flex items-center gap-2.5">
-                  <svg class="w-4 h-4 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
-                  <span>Ofertas personalizadas semanais</span>
-                </div>
-                <div class="flex items-center gap-2.5">
-                  <svg class="w-4 h-4 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
-                  <span>Retirada rápida sem filas</span>
-                </div>
-                <div class="flex items-center gap-2.5">
-                  <svg class="w-4 h-4 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
-                  <span>Atendimento farmacêutico prioritário</span>
-                </div>
-              </div>
-
-              <!-- Botão CTA -->
-              <a href="https://wa.me" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3.5 bg-brand-red hover:bg-brand-red-hover text-white font-bold text-xs sm:text-sm rounded-xl shadow-sm transition-all">
-                <span>Quero Participar Gratuitamente</span>
-                <span>→</span>
-              </a>
-            </div>
-
-            <!-- Card de Destaque Clube +B -->
-            <div class="lg:col-span-5 w-full flex justify-center">
-              <div class="w-full max-w-sm bg-white rounded-2xl p-6 border border-bf-line shadow-bf-floating text-center">
-                <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-brand-red text-white flex items-center justify-center text-2xl font-bold mx-auto mb-4 shadow-sm">
-                  +B
-                </div>
-                <h4 class="font-bold text-base sm:text-lg text-bf-ink mb-1">Clube +B Farma</h4>
-                <p class="text-xs text-bf-muted mb-4">Economia imediata informando apenas o seu CPF no caixa.</p>
-                <div class="bg-slate-50 border border-bf-line rounded-xl p-3 text-xs font-semibold text-bf-ink">
-                  100% Gratuito · Sem Anuidade
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
       </div>
     </section>
 
@@ -761,7 +887,7 @@
     <!-- ==========================================================================
          S7 — FAQ (DÚVIDAS FREQUENTES COM ACORDEÃO)
          ========================================================================== -->
-    <section id="faq" class="py-12 sm:py-16 md:py-20 bg-slate-50/60 border-b border-bf-line">
+    <section id="faq" class="py-12 sm:py-16 md:py-20 bg-[#FFEDEE] border-b border-bf-line scroll-mt-24 md:scroll-mt-28">
       <div class="bf-container">
         
         <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 px-2">
@@ -776,7 +902,7 @@
           <div class="faq-item active bg-white rounded-xl border border-bf-line shadow-xs overflow-hidden transition-all">
             <button onclick="toggleFaq(this)" class="w-full py-3.5 sm:py-4 px-4 sm:px-6 text-left flex items-center justify-between gap-3 sm:gap-4 font-semibold text-xs sm:text-sm text-bf-ink hover:bg-slate-50 transition-colors">
               <span>Como funciona o Clube +B e como posso me cadastrar?</span>
-              <svg class="faq-chevron w-4 h-4 sm:w-5 sm:h-5 text-bf-muted transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              <svg class="faq-chevron w-4 h-4 sm:w-5 sm:h-5 text-brand-red transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
             <div class="faq-content px-4 sm:px-6 pb-4 text-xs text-bf-body leading-relaxed border-t border-slate-100 pt-3">
               O Clube +B é 100% gratuito. Basta informar seu CPF no caixa de qualquer filial ou no nosso atendimento online para ter acesso automático aos descontos imediatos em medicamentos e perfumaria.
@@ -787,7 +913,7 @@
           <div class="faq-item bg-white rounded-xl border border-bf-line shadow-xs overflow-hidden transition-all">
             <button onclick="toggleFaq(this)" class="w-full py-3.5 sm:py-4 px-4 sm:px-6 text-left flex items-center justify-between gap-3 sm:gap-4 font-semibold text-xs sm:text-sm text-bf-ink hover:bg-slate-50 transition-colors">
               <span>Quais formas de pagamento são aceitas nas filiais?</span>
-              <svg class="faq-chevron w-4 h-4 sm:w-5 sm:h-5 text-bf-muted transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              <svg class="faq-chevron w-4 h-4 sm:w-5 sm:h-5 text-brand-red transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
             <div class="faq-content px-4 sm:px-6 pb-4 text-xs text-bf-body leading-relaxed border-t border-slate-100 pt-3">
               Aceitamos cartões de crédito e débito de todas as bandeiras (com parcelamento facilitado), Pix com confirmação instantânea, dinheiro e principais convênios credenciados da rede.
@@ -798,7 +924,7 @@
           <div class="faq-item bg-white rounded-xl border border-bf-line shadow-xs overflow-hidden transition-all">
             <button onclick="toggleFaq(this)" class="w-full py-3.5 sm:py-4 px-4 sm:px-6 text-left flex items-center justify-between gap-3 sm:gap-4 font-semibold text-xs sm:text-sm text-bf-ink hover:bg-slate-50 transition-colors">
               <span>Como funciona o compre e retire na loja?</span>
-              <svg class="faq-chevron w-4 h-4 sm:w-5 sm:h-5 text-bf-muted transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              <svg class="faq-chevron w-4 h-4 sm:w-5 sm:h-5 text-brand-red transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
             <div class="faq-content px-4 sm:px-6 pb-4 text-xs text-bf-body leading-relaxed border-t border-slate-100 pt-3">
               Você pode enviar sua lista de produtos ou receita médica pelo nosso canal de atendimento, selecionar a filial mais próxima (Plaza ou Tapanã) e retirar seu pedido embalado em até 60 minutos.
@@ -809,7 +935,7 @@
           <div class="faq-item bg-white rounded-xl border border-bf-line shadow-xs overflow-hidden transition-all">
             <button onclick="toggleFaq(this)" class="w-full py-3.5 sm:py-4 px-4 sm:px-6 text-left flex items-center justify-between gap-3 sm:gap-4 font-semibold text-xs sm:text-sm text-bf-ink hover:bg-slate-50 transition-colors">
               <span>A +B Farma realiza entrega em domicílio (Delivery)?</span>
-              <svg class="faq-chevron w-4 h-4 sm:w-5 sm:h-5 text-bf-muted transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              <svg class="faq-chevron w-4 h-4 sm:w-5 sm:h-5 text-brand-red transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
             <div class="faq-content px-4 sm:px-6 pb-4 text-xs text-bf-body leading-relaxed border-t border-slate-100 pt-3">
               Sim! Realizamos entregas expressas para toda a área de cobertura das nossas filiais com rapidez, segurança e cuidado no manuseio de medicamentos.
@@ -825,7 +951,7 @@
     <!-- ==========================================================================
          S8 — AVALIAÇÕES / PROVA SOCIAL GOOGLE (FUNDO ESCURO #1C1D22)
          ========================================================================== -->
-    <section class="bg-bf-dark text-white pt-12 sm:pt-16 pb-28 sm:pb-36 rounded-t-[24px] sm:rounded-t-[32px] md:rounded-t-[40px] relative">
+    <section id="depoimentos" class="bg-bf-dark text-white pt-12 sm:pt-16 pb-28 sm:pb-36 rounded-t-[24px] sm:rounded-t-[32px] md:rounded-t-[40px] relative scroll-mt-24 md:scroll-mt-28">
       <div class="bf-container">
         
         <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 px-2">
@@ -911,7 +1037,7 @@
     <!-- ==========================================================================
          S9 — REPUTAÇÃO GOOGLE & FILIAIS PLAZA / TAPANÃ
          ========================================================================== -->
-    <section id="filiais" class="relative z-30 -mt-20 sm:-mt-24 mb-12 sm:mb-16">
+    <section id="filiais" class="relative z-30 -mt-20 sm:-mt-24 mb-12 sm:mb-16 scroll-mt-24 md:scroll-mt-28">
       <div class="bf-container">
         
         <div class="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 border border-bf-line shadow-bf-elevated">
@@ -1054,10 +1180,12 @@
       menu.classList.toggle('hidden-drawer');
     }
 
-    // Carrossel Hero
+    // Carrossel Hero (79vh)
     let currentSlide = 0;
     const slides = document.querySelectorAll('.hero-slide');
     const dots = document.querySelectorAll('.slide-dot');
+    const heroSection = document.getElementById('home');
+    let autoplayTimer = null;
 
     function updateCarousel() {
       slides.forEach((s, idx) => {
@@ -1069,9 +1197,9 @@
       });
       dots.forEach((d, idx) => {
         if (idx === currentSlide) {
-          d.className = 'slide-dot w-8 h-2.5 rounded-full bg-brand-red transition-all';
+          d.className = 'slide-dot w-7 sm:w-9 h-2.5 rounded-full bg-brand-red transition-all duration-300';
         } else {
-          d.className = 'slide-dot w-2.5 h-2.5 rounded-full bg-slate-300 hover:bg-slate-400 transition-all';
+          d.className = 'slide-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300';
         }
       });
     }
@@ -1091,8 +1219,188 @@
       updateCarousel();
     }
 
-    // Autoplay do carrossel a cada 6 segundos
-    setInterval(nextSlide, 6000);
+    function startAutoplay() {
+      if (autoplayTimer) clearInterval(autoplayTimer);
+      autoplayTimer = setInterval(nextSlide, 5000);
+    }
+
+    function resetAutoplay() {
+      if (autoplayTimer) clearInterval(autoplayTimer);
+      startAutoplay();
+    }
+
+    // Suporte a Touch / Swipe Gestures no Mobile
+    if (heroSection) {
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      heroSection.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      heroSection.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const threshold = 45;
+        if (touchEndX < touchStartX - threshold) {
+          nextSlide();
+          resetAutoplay();
+        } else if (touchEndX > touchStartX + threshold) {
+          prevSlide();
+          resetAutoplay();
+        }
+      }, { passive: true });
+
+      // Pausar autoplay ao passar o mouse (desktop)
+      heroSection.addEventListener('mouseenter', () => {
+        if (autoplayTimer) clearInterval(autoplayTimer);
+      });
+      heroSection.addEventListener('mouseleave', () => {
+        startAutoplay();
+      });
+    }
+
+    // Navegação com as teclas de seta (Esquerda / Direita)
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        prevSlide();
+        resetAutoplay();
+      } else if (e.key === 'ArrowRight') {
+        nextSlide();
+        resetAutoplay();
+      }
+    });
+
+    // Iniciar autoplay
+    startAutoplay();
+
+    // ==========================================================================
+    // CARROSSEL DE BANNERS (S3 BANNERZINHOS - OFERTAS QUE RENDEM MAIS)
+    // ==========================================================================
+    function scrollBanners(direction) {
+      const track = document.getElementById('bannersTrack');
+      if (!track) return;
+      const firstCard = track.querySelector('.snap-start, .snap-center');
+      const cardWidth = firstCard ? firstCard.offsetWidth + 24 : 500;
+      if (direction === 'left') {
+        track.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+      } else {
+        track.scrollBy({ left: cardWidth, behavior: 'smooth' });
+      }
+    }
+
+    // Suporte a Arrastar (Drag to Scroll) com o mouse no Desktop
+    const bannersTrack = document.getElementById('bannersTrack');
+    if (bannersTrack) {
+      let isDragging = false;
+      let startX = 0;
+      let scrollLeftPos = 0;
+
+      bannersTrack.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        bannersTrack.classList.add('cursor-grabbing');
+        bannersTrack.classList.remove('cursor-grab', 'scroll-smooth');
+        startX = e.pageX - bannersTrack.offsetLeft;
+        scrollLeftPos = bannersTrack.scrollLeft;
+      });
+
+      window.addEventListener('mouseup', () => {
+        if (isDragging) {
+          isDragging = false;
+          bannersTrack.classList.remove('cursor-grabbing');
+          bannersTrack.classList.add('cursor-grab', 'scroll-smooth');
+        }
+      });
+
+      bannersTrack.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - bannersTrack.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        bannersTrack.scrollLeft = scrollLeftPos - walk;
+      });
+    }
+
+    // ==========================================================================
+    // CARROSSEL DE BANNERS HORIZONTAIS (S4 / S6 - CLUBE +B & IFOOD / ENTREGA)
+    // ==========================================================================
+    let currentHSlide = 0;
+    const hTrack = document.getElementById('hBannersTrack');
+    const hDots = document.querySelectorAll('.h-slide-dot');
+    const hCarouselSection = document.getElementById('horizontalBannerCarousel');
+    const totalHSlides = hTrack ? hTrack.children.length : 0;
+    let hAutoplayTimer = null;
+
+    function updateHCarousel() {
+      if (!hTrack) return;
+      hTrack.style.transform = `translateX(-${currentHSlide * 100}%)`;
+      hDots.forEach((dot, idx) => {
+        if (idx === currentHSlide) {
+          dot.className = 'h-slide-dot w-7 sm:w-8 h-2 sm:h-2.5 rounded-full bg-brand-red transition-all duration-300 focus:outline-none';
+        } else {
+          dot.className = 'h-slide-dot w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-white/60 hover:bg-white transition-all duration-300 focus:outline-none';
+        }
+      });
+    }
+
+    function nextHSlide() {
+      if (totalHSlides <= 1) return;
+      currentHSlide = (currentHSlide + 1) % totalHSlides;
+      updateHCarousel();
+    }
+
+    function prevHSlide() {
+      if (totalHSlides <= 1) return;
+      currentHSlide = (currentHSlide - 1 + totalHSlides) % totalHSlides;
+      updateHCarousel();
+    }
+
+    function setHSlide(idx) {
+      currentHSlide = idx;
+      updateHCarousel();
+    }
+
+    function startHAutoplay() {
+      if (hAutoplayTimer) clearInterval(hAutoplayTimer);
+      hAutoplayTimer = setInterval(nextHSlide, 5500);
+    }
+
+    function resetHAutoplay() {
+      if (hAutoplayTimer) clearInterval(hAutoplayTimer);
+      startHAutoplay();
+    }
+
+    if (hCarouselSection) {
+      // Touch gestures no Mobile
+      let hTouchStartX = 0;
+      let hTouchEndX = 0;
+
+      hCarouselSection.addEventListener('touchstart', (e) => {
+        hTouchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      hCarouselSection.addEventListener('touchend', (e) => {
+        hTouchEndX = e.changedTouches[0].screenX;
+        const threshold = 40;
+        if (hTouchEndX < hTouchStartX - threshold) {
+          nextHSlide();
+          resetHAutoplay();
+        } else if (hTouchEndX > hTouchStartX + threshold) {
+          prevHSlide();
+          resetHAutoplay();
+        }
+      }, { passive: true });
+
+      // Pausar autoplay ao passar o mouse (desktop)
+      hCarouselSection.addEventListener('mouseenter', () => {
+        if (hAutoplayTimer) clearInterval(hAutoplayTimer);
+      });
+      hCarouselSection.addEventListener('mouseleave', () => {
+        startHAutoplay();
+      });
+    }
+
+    // Iniciar autoplay de banners horizontais
+    startHAutoplay();
   </script>
 
   <!-- Script Oficial Lucide Icons -->

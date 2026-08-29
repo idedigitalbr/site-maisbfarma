@@ -1,23 +1,23 @@
 # Features e Módulos do Projeto
 
-atualizado: 2026-08-28
+atualizado: 2026-08-29
 
 ---
 
 ## Implementadas
 
-- [x] **Design System Oficial (+B FARMA):** Contrato visual consolidado em `DESIGN-maisbfarma.md` com paleta `#E92125`, `#32343D`, `#E7E7E7`, `#FFFFFF`, `#1C1D22` e tipografia `Lufga`.
+- [x] **Design System Oficial (+B FARMA):** Contrato visual consolidado em `DESIGN-maisbfarma.md` com paleta `#E92125`, `#32343D`, `#E7E7E7`, Fundo `#FFEDEE`, `#1C1D22` e tipografia `Lufga`.
 - [x] **Showcase de Componentes:** Página `design-system-preview.html` com demonstração de todos os botões, cores, tipografias, inputs, cards e acordeões.
 - [x] **Página Institucional Completa (`index.html`):**
-  - [x] Faixa superior vermelha com redes sociais e links institucionais.
-  - [x] Navbar com logo oficial horizontal WebP e menu de navegação.
-  - [x] Carrossel Hero interativo com fotos reais das unidades Plaza e Tapanã, títulos e CTAs.
+  - [x] Faixa superior vermelha com redes sociais (Instagram, Facebook, YouTube) e links institucionais (Depoimentos, Grupo de Ofertas, Vendas no Atacado, Trabalhe Conosco).
+  - [x] Header com layout centralizado: Logotipo vertical oficial +B FARMA no centro, navegação esquerda com ícones contextuais semânticos (Início, Sobre, Nossas Lojas), navegação direita com ícones contextuais semânticos (Ofertas, Clube +B), compensação de scroll âncora (`scroll-mt`) e menu gaveta mobile responsivo.
+  - [x] **Carrossel Hero 79vh (Novo Conjunto PNG):** 10 banners institucionais e promocionais em alta definição (`0-banner-topo.png` e `banners (1)` a `(9)`), preenchimento cover com alinhamento `left center`, dots calibrados, touch swipe no mobile, teclado e autoplay.
   - [x] Bloco flutuante de benefícios em 5 colunas (Entrega, Compre e Retire, Farmacêutico, Clube, WhatsApp).
-  - [x] Seção Sobre a Rede com estatísticas e foto institucional.
-  - [x] Faixa de Indicadores de mercado (+50 unidades, +500 mil clientes atendidos, +10 anos de tradição).
-  - [x] Seção de Campanhas e Ofertas da Semana.
-  - [x] Bloco do Clube +B com detalhes das vantagens e botão de adesão.
-  - [x] Acordeão interativo de FAQ com suporte a acessibilidade e múltiplos tópicos.
+  - [x] **Carrossel de Banners de Ofertas (S3 Bannerzinhos):** 5 banners reais em alta definição com cantos arredondados, tag *DIAS DA SEMANA*, botões de navegação lateral, *drag to scroll* com mouse e *touch swipe* no mobile.
+  - [x] Seção Sobre a Rede com narrativa institucional e foto real da loja.
+  - [x] Faixa de Indicadores e Métricas (+50 unidades, +500 mil clientes atendidos, +10 anos de tradição, +100 bairros).
+  - [x] **Carrossel de Banners Horizontais (Clube +B & iFood):** Novo carrossel com os banners oficiais horizontais de alta definição (`1-BANNER-HORIZONTAL.png` e `2-banner-ifod.png`), navegação lateral, dots interativos, touch swipe e rotação automática.
+  - [x] **Acordeão interativo de FAQ:** Respostas rápidas para dúvidas frequentes com chevrons animados no tom vermelho institucional (`#E92125`).
   - [x] Prova social com avaliações 5 estrelas verificadas do Google Meu Negócio.
   - [x] Bloco de Reputação e Cards reais das filiais Plaza e Tapanã com status e horários.
   - [x] Rodapé completo em fundo escuro com logo branca e sub-faixa de direitos autorais.
