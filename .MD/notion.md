@@ -3,7 +3,7 @@ project_id: site-maisb-farma
 notion_page_id: 3bab42b6-c517-8035-ad51-ecd9d1327add
 notion_title: "[SITE] +B FARMA"
 sync_status: synced
-last_synced_at: 2026-08-31T10:50:00Z
+last_synced_at: 2026-08-31T17:05:00-03:00
 ---
 
 # Integração Notion — [SITE] +B FARMA
