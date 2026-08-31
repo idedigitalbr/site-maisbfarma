@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-08-31 — Reformulação da Seção de Reputação Google & Cards das Filiais (Alinhamento com Anexo 2 & Anexo 3)
+
+### Front-End & Layout da Seção de Reputação (#filiais)
+- **Faixa Branca Full-Width Encostada nas Laterais:** A cápsula/faixa branca de reputação do Google agora ocupa 100% da largura da tela (`w-full px-0`) sem gaps escuros laterais, mantendo altura compacta e esticada na horizontal (`py-4 lg:py-6`).
+- **Destaque do Ícone Oficial da Marca:** Redimensionamento e ampliação do ícone outline oficial da +B Farma (`assets/Logos/icone-b-farma.png` com `w-36` a `xl:w-64`) na lateral esquerda, com espaçamento generoso (`gap-10` a `gap-14`) empurrando o título institucional e as 5 estrelas do Google para a direita.
+- **Cards Google Maps com Largura Fixa e Travada:** Os cards das filiais Plaza e Tapanã foram travados com largura fixa (`w-[275px] sm:w-[285px] max-w-[285px] flex-shrink-0`), garantindo proporções de smartphone sem distorção em telas ultrawide.
+- **Foto Real da Fachada Tapanã:** Atualizada a imagem do Card 2 com a fotografia real da fachada externa com o logotipo +B (`assets/images/farma-tapana.webp`), alinhando com a foto interior do Plaza (`farma-plaza.webp`).
+- **Painel Vermelho Flutuante com Deslocamento Vertical:** Container vermelho com elevação (`-my-12 xl:-my-14`) projetando-se para fora da faixa branca e acomodando os 2 cards em layout escalonado (Plaza com elevação superior `-translate-y-7` e Tapanã alinhado na base).
+- **Rodapé Institucional (#1C1D22):** Fundo escuro unificado contínuo, logotipo branco centralizado com slogan, texto institucional, 4 botões de redes sociais (incluindo LinkedIn) e sub-faixa vermelha de copyright com assinatura `idedigital`.
+
 ## 2026-08-31 — Implementação do Carrossel Duplo de Avaliações do Google Maps (Prova Social)
 
 ### Front-End & Prova Social / Avaliações (S8)
