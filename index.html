@@ -33,7 +33,7 @@
               line: '#E7E7E7',
               'line-dark': '#D4D5DC',
               card: '#FFFFFF',
-              bg: '#FFEDEE',
+              bg: '#F4FEFD',
               gray: '#F0F2F5',
               dark: '#1C1D22',
               darker: '#141519',
@@ -149,11 +149,16 @@
       --color-hairline: #E7E7E7;
       --color-body: #555866;
       --color-muted: #7B7E8C;
-      --color-bg-page: #FFEDEE;
+      --color-bg-page: #F4FEFD;
     }
 
     *, *::before, *::after {
       box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    a, button, input, select, textarea {
+      touch-action: manipulation;
     }
 
     html {
@@ -167,7 +172,7 @@
     }
 
     html, body {
-      background-color: #FFEDEE;
+      background-color: #F4FEFD;
       color: var(--color-ink);
       font-family: 'Lufga', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       margin: 0;
@@ -191,39 +196,53 @@
       }
     }
 
-    /* Accordion FAQ */
+    /* Accordion FAQ com Transição Fluida via CSS Grid (Suporte 60fps Mobile) */
     .faq-chevron {
       color: #E92125;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .faq-item.active .faq-chevron {
       transform: rotate(180deg);
     }
-    .faq-item.active .faq-content {
-      display: block;
+    .faq-content-wrapper {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease-out;
+      opacity: 0;
     }
-    .faq-content {
-      display: none;
+    .faq-item.active .faq-content-wrapper {
+      grid-template-rows: 1fr;
+      opacity: 1;
+    }
+    .faq-content-inner {
+      overflow: hidden;
     }
 
-    /* Slides do Hero Carrossel (79vh com Cantos Inferiores Arredondados) */
+    /* Slides do Hero Carrossel (Calibragem Responsiva: 68dvh Mobile / 75dvh Tablet / 79dvh Desktop) */
     .hero-carousel {
       position: relative;
       width: 100%;
-      height: 79vh;
-      height: 79dvh;
-      min-height: 450px;
+      height: 68vh;
+      height: 68dvh;
+      min-height: 400px;
       overflow: hidden;
       background-color: #141519;
-      border-radius: 0 0 28px 28px;
+      border-radius: 0 0 24px 24px;
       isolation: isolate;
     }
     @media (min-width: 640px) {
       .hero-carousel {
+        height: 75vh;
+        height: 75dvh;
+        min-height: 440px;
         border-radius: 0 0 36px 36px;
       }
     }
     @media (min-width: 1024px) {
       .hero-carousel {
+        height: 79vh;
+        height: 79dvh;
+        min-height: 450px;
         border-radius: 0 0 44px 44px;
       }
     }
@@ -254,9 +273,9 @@
       display: block;
     }
 
-    /* Mobile Menu Drawer */
+    /* Mobile Menu Drawer com Backdrop */
     #mobileMenu {
-      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-in-out;
     }
     #mobileMenu.hidden-drawer {
       transform: translateY(-100%);
@@ -300,7 +319,7 @@
     }
   </style>
 </head>
-<body class="bg-[#FFEDEE] m-0 p-0 text-bf-ink selection:bg-brand-red selection:text-white overflow-x-hidden">
+<body class="bg-[#F4FEFD] m-0 p-0 text-bf-ink selection:bg-brand-red selection:text-white overflow-x-hidden">
 
   <!-- ==========================================================================
        HEADER & TOP BAR
@@ -336,15 +355,14 @@
         <!-- Links Institucionais (Direita — 11px, Peso 400 Regular / Suave) -->
         <div class="hidden md:flex items-center gap-5 lg:gap-7 font-normal text-white/85 text-[11px] tracking-normal">
           <a href="#depoimentos" class="hover:text-white hover:underline transition-colors">Depoimentos</a>
-          <a href="https://wa.me/5591999999999?text=Ol%C3%A1%2C%20gostaria%20de%20entrar%20no%20Grupo%20de%20Ofertas%20da%20%2BB%20Farma" target="_blank" rel="noopener" class="hover:text-white hover:underline transition-colors">Grupo de Ofertas</a>
-          <a href="https://wa.me/5591999999999?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20vendas%20no%20atacado" target="_blank" rel="noopener" class="hover:text-white hover:underline transition-colors">Vendas no Atacado</a>
-          <a href="https://wa.me/5591999999999?text=Ol%C3%A1%2C%20gostaria%20de%20enviar%20meu%20curr%C3%ADculo%20para%20o%20Trabalhe%20Conosco" target="_blank" rel="noopener" class="hover:text-white hover:underline transition-colors">Trabalhe Conosco</a>
+          <a href="https://linktr.ee/mais.bfarma" target="_blank" rel="noopener noreferrer" class="hover:text-white hover:underline transition-colors">Peça Pelo Ifood</a>
+          <a href="https://grupomaisbarato.portaldetalentos.senior.com.br/" target="_blank" rel="noopener noreferrer" class="hover:text-white hover:underline transition-colors">Trabalhe Conosco</a>
         </div>
 
-        <!-- Mobile: Link direto Grupo de Ofertas -->
+        <!-- Mobile: Link direto Peça Pelo Ifood -->
         <div class="md:hidden flex items-center gap-2 text-[10px] font-bold text-white">
-          <a href="https://wa.me/5591999999999?text=Ol%C3%A1%2C%20gostaria%20de%20entrar%20no%20Grupo%20de%20Ofertas%20da%20%2BB%20Farma" target="_blank" rel="noopener" class="bg-white/20 hover:bg-white hover:text-brand-red px-2 py-0.5 rounded-full transition-colors flex items-center gap-1">
-            <span>Grupo de Ofertas</span>
+          <a href="https://linktr.ee/mais.bfarma" target="_blank" rel="noopener noreferrer" class="bg-white/20 hover:bg-white hover:text-brand-red px-2 py-0.5 rounded-full transition-colors flex items-center gap-1">
+            <span>Peça Pelo Ifood</span>
             <span>→</span>
           </a>
         </div>
@@ -402,56 +420,60 @@
             <span>Ofertas</span>
           </a>
 
-          <a href="#clube" class="group flex items-center gap-1.5 font-bold text-xs lg:text-[13.5px] text-brand-red hover:text-brand-red-hover transition-colors">
-            <svg class="w-4 h-4 text-brand-red group-hover:text-brand-red-hover transition-colors flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
+          <a href="https://linktr.ee/mais.bfarma" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 bg-brand-red hover:bg-brand-red-hover active:bg-brand-red-active text-white text-xs lg:text-[13.5px] font-bold rounded-xl shadow-xs hover:shadow-sm hover:scale-[1.02] active:scale-[0.98] transition-all">
+            <svg class="w-4 h-4 text-white flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
             </svg>
-            <span>Clube +B</span>
+            <span>Fale Conosco</span>
           </a>
 
         </nav>
 
         <!-- Ações Mobile (Hamburger + CTA WhatsApp) -->
         <div class="lg:hidden flex items-center gap-2 flex-shrink-0">
-          <a href="https://wa.me/5591999999999" target="_blank" rel="noopener" class="inline-flex items-center gap-1 px-2.5 py-1 bg-brand-red hover:bg-brand-red-hover text-white text-xs font-bold rounded-lg shadow-sm transition-all" aria-label="Pedir no WhatsApp">
+          <a href="https://wa.me/5591991844989?text=Ol%C3%A1%21%20Gostaria%20de%20atendimento%20da%20%2BB%20Farma." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 bg-brand-red hover:bg-brand-red-hover active:bg-brand-red-active text-white text-xs font-bold rounded-lg shadow-xs transition-all active:scale-95" aria-label="Pedir no WhatsApp">
             <span>WhatsApp</span>
             <span>→</span>
           </a>
-          <button onclick="toggleMobileMenu()" class="p-1 sm:p-1.5 text-bf-ink hover:text-brand-red hover:bg-slate-100 rounded-lg focus:outline-none transition-colors" aria-label="Abrir Menu">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="p-2 text-bf-ink hover:text-brand-red hover:bg-slate-100 active:bg-slate-200 rounded-lg focus:outline-none transition-colors" aria-label="Abrir Menu">
+            <svg id="hamburgerIcon" class="w-5 h-5 block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            <svg id="closeMenuIcon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
           </button>
         </div>
 
       </div>
     </div>
 
+    <!-- MOBILE MENU OVERLAY BACKDROP -->
+    <div id="mobileMenuOverlay" onclick="toggleMobileMenu()" class="fixed inset-0 bg-black/45 backdrop-blur-xs z-30 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
     <!-- MOBILE MENU DRAWER -->
-    <div id="mobileMenu" class="hidden-drawer lg:hidden fixed top-[84px] left-0 w-full bg-white border-b border-bf-line shadow-bf-floating py-4 px-6 z-40">
+    <div id="mobileMenu" class="hidden-drawer lg:hidden fixed top-[78px] sm:top-[84px] left-0 w-full max-h-[calc(100dvh-78px)] sm:max-h-[calc(100dvh-84px)] overflow-y-auto bg-white border-b border-bf-line shadow-bf-floating py-5 px-5 sm:px-6 z-40">
       <div class="flex flex-col gap-4">
         
         <!-- Navegação Principal Mobile com Ícones Semânticos -->
-        <nav class="flex flex-col gap-2.5 text-sm font-bold text-bf-ink pb-4 border-b border-slate-100">
-          <a href="#home" onclick="toggleMobileMenu()" class="flex items-center gap-2.5 py-2 text-brand-red">
+        <nav class="flex flex-col gap-1.5 text-sm font-bold text-bf-ink pb-4 border-b border-slate-100">
+          <a href="#home" onclick="toggleMobileMenu()" class="flex items-center gap-3 py-2.5 px-2 rounded-xl text-brand-red bg-brand-red/5 hover:bg-brand-red/10 transition-colors">
             <svg class="w-4 h-4 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
             <span>Início</span>
           </a>
-          <a href="#sobre" onclick="toggleMobileMenu()" class="flex items-center gap-2.5 py-2 hover:text-brand-red transition-colors">
+          <a href="#sobre" onclick="toggleMobileMenu()" class="flex items-center gap-3 py-2.5 px-2 rounded-xl text-bf-ink hover:text-brand-red hover:bg-slate-50 transition-colors">
             <svg class="w-4 h-4 text-bf-ink flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-            <span>Sobre</span>
+            <span>Sobre Nós</span>
           </a>
-          <a href="#filiais" onclick="toggleMobileMenu()" class="flex items-center gap-2.5 py-2 hover:text-brand-red transition-colors">
+          <a href="#filiais" onclick="toggleMobileMenu()" class="flex items-center gap-3 py-2.5 px-2 rounded-xl text-bf-ink hover:text-brand-red hover:bg-slate-50 transition-colors">
             <svg class="w-4 h-4 text-bf-ink flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>Nossas Lojas</span>
+            <span>Nossas Lojas (Filiais)</span>
           </a>
-          <a href="#ofertas" onclick="toggleMobileMenu()" class="flex items-center gap-2.5 py-2 hover:text-brand-red transition-colors">
+          <a href="#ofertas" onclick="toggleMobileMenu()" class="flex items-center gap-3 py-2.5 px-2 rounded-xl text-bf-ink hover:text-brand-red hover:bg-slate-50 transition-colors">
             <svg class="w-4 h-4 text-bf-ink flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>
             <span>Ofertas da Semana</span>
           </a>
-          <a href="#clube" onclick="toggleMobileMenu()" class="flex items-center gap-2.5 py-2 hover:text-brand-red transition-colors">
-            <svg class="w-4 h-4 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
-            <span>Clube +B</span>
+          <a href="https://linktr.ee/mais.bfarma" target="_blank" rel="noopener noreferrer" onclick="toggleMobileMenu()" class="flex items-center gap-3 py-2.5 px-2 rounded-xl text-brand-red hover:bg-brand-red/10 transition-colors">
+            <svg class="w-4 h-4 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span>Fale Conosco (Linktree)</span>
           </a>
-          <a href="#faq" onclick="toggleMobileMenu()" class="flex items-center gap-2.5 py-2 hover:text-brand-red transition-colors">
+          <a href="#faq" onclick="toggleMobileMenu()" class="flex items-center gap-3 py-2.5 px-2 rounded-xl text-bf-ink hover:text-brand-red hover:bg-slate-50 transition-colors">
             <svg class="w-4 h-4 text-bf-ink flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
             <span>Dúvidas Frequentes</span>
           </a>
@@ -460,17 +482,22 @@
         <!-- Links Rápidos da Faixa Superior no Mobile -->
         <div class="flex flex-col gap-2 text-xs font-semibold text-bf-muted pb-4 border-b border-slate-100">
           <span class="text-[11px] uppercase tracking-wider font-bold text-brand-red">Institucional & Atendimento</span>
-          <a href="#depoimentos" onclick="toggleMobileMenu()" class="py-1 hover:text-brand-red flex items-center gap-2">
+          <a href="#depoimentos" onclick="toggleMobileMenu()" class="py-1.5 px-2 rounded-lg hover:text-brand-red hover:bg-slate-50 flex items-center gap-2.5">
             <svg class="w-3.5 h-3.5 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            <span>Depoimentos de Clientes</span>
+            <span>Depoimentos no Google</span>
           </a>
-          <a href="https://wa.me/5591999999999?text=Ol%C3%A1%2C%20gostaria%20de%20entrar%20no%20Grupo%20de%20Ofertas%20da%20%2BB%20Farma" target="_blank" rel="noopener" class="py-1 hover:text-brand-red">Grupo de Ofertas no WhatsApp</a>
-          <a href="https://wa.me/5591999999999?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20vendas%20no%20atacado" target="_blank" rel="noopener" class="py-1 hover:text-brand-red">Vendas no Atacado</a>
-          <a href="https://wa.me/5591999999999?text=Ol%C3%A1%2C%20gostaria%20de%20enviar%20meu%20curr%C3%ADculo%20para%20o%20Trabalhe%20Conosco" target="_blank" rel="noopener" class="py-1 hover:text-brand-red">Trabalhe Conosco</a>
+          <a href="https://linktr.ee/mais.bfarma" target="_blank" rel="noopener noreferrer" onclick="toggleMobileMenu()" class="py-1.5 px-2 rounded-lg hover:text-brand-red hover:bg-slate-50 flex items-center gap-2.5">
+            <svg class="w-3.5 h-3.5 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <span>Peça Pelo Ifood</span>
+          </a>
+          <a href="https://grupomaisbarato.portaldetalentos.senior.com.br/" target="_blank" rel="noopener noreferrer" onclick="toggleMobileMenu()" class="py-1.5 px-2 rounded-lg hover:text-brand-red hover:bg-slate-50 flex items-center gap-2.5">
+            <svg class="w-3.5 h-3.5 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <span>Trabalhe Conosco</span>
+          </a>
         </div>
 
         <!-- Botão CTA Mobile -->
-        <a href="https://wa.me/5591999999999" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 py-3 bg-brand-red hover:bg-brand-red-hover text-white text-sm font-bold rounded-xl shadow-sm transition-all">
+        <a href="https://wa.me/5591991844989?text=Ol%C3%A1%21%20Gostaria%20de%20falar%20com%20a%20%2BB%20Farma." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 py-3 bg-brand-red hover:bg-brand-red-hover text-white text-sm font-bold rounded-xl shadow-xs active:scale-[0.98] transition-all">
           <span>Pedir no WhatsApp</span>
           <span>→</span>
         </a>
@@ -544,26 +571,26 @@
       </div>
 
       <!-- Botões de Navegação Lateral (Prev / Next) -->
-      <button onclick="prevSlide(); resetAutoplay();" class="absolute left-3 sm:left-6 md:left-8 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-black/40 hover:bg-brand-red text-white backdrop-blur-md border border-white/20 shadow-bf-floating flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 z-20 focus:outline-none focus:ring-2 focus:ring-brand-red" aria-label="Banner Anterior">
-        <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
+      <button onclick="prevSlide(); resetAutoplay();" class="absolute left-2 sm:left-6 md:left-8 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-11 sm:h-11 md:w-13 md:h-13 rounded-full bg-black/35 hover:bg-brand-red text-white backdrop-blur-md border border-white/20 shadow-bf-floating flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 z-20 focus:outline-none focus:ring-2 focus:ring-brand-red" aria-label="Banner Anterior">
+        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
       </button>
 
-      <button onclick="nextSlide(); resetAutoplay();" class="absolute right-3 sm:right-6 md:right-8 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-black/40 hover:bg-brand-red text-white backdrop-blur-md border border-white/20 shadow-bf-floating flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 z-20 focus:outline-none focus:ring-2 focus:ring-brand-red" aria-label="Próximo Banner">
-        <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
+      <button onclick="nextSlide(); resetAutoplay();" class="absolute right-2 sm:right-6 md:right-8 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-11 sm:h-11 md:w-13 md:h-13 rounded-full bg-black/35 hover:bg-brand-red text-white backdrop-blur-md border border-white/20 shadow-bf-floating flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 z-20 focus:outline-none focus:ring-2 focus:ring-brand-red" aria-label="Próximo Banner">
+        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
       </button>
 
       <!-- Indicadores de Pontos (Dots) com Glassmorphism posicionados harmoniosamente logo acima dos benefícios -->
-      <div class="absolute bottom-10 sm:bottom-13 md:bottom-16 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-black/45 backdrop-blur-md border border-white/20 shadow-lg">
-        <button onclick="setSlide(0); resetAutoplay();" class="slide-dot w-7 sm:w-9 h-2.5 rounded-full bg-brand-red transition-all duration-300" aria-label="Slide 1"></button>
-        <button onclick="setSlide(1); resetAutoplay();" class="slide-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300" aria-label="Slide 2"></button>
-        <button onclick="setSlide(2); resetAutoplay();" class="slide-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300" aria-label="Slide 3"></button>
-        <button onclick="setSlide(3); resetAutoplay();" class="slide-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300" aria-label="Slide 4"></button>
-        <button onclick="setSlide(4); resetAutoplay();" class="slide-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300" aria-label="Slide 5"></button>
-        <button onclick="setSlide(5); resetAutoplay();" class="slide-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300" aria-label="Slide 6"></button>
-        <button onclick="setSlide(6); resetAutoplay();" class="slide-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300" aria-label="Slide 7"></button>
-        <button onclick="setSlide(7); resetAutoplay();" class="slide-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300" aria-label="Slide 8"></button>
-        <button onclick="setSlide(8); resetAutoplay();" class="slide-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300" aria-label="Slide 9"></button>
-        <button onclick="setSlide(9); resetAutoplay();" class="slide-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300" aria-label="Slide 10"></button>
+      <div class="absolute bottom-6 sm:bottom-10 md:bottom-14 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1 sm:gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-black/45 backdrop-blur-md border border-white/20 shadow-lg max-w-[92vw] overflow-x-auto no-scrollbar">
+        <button onclick="setSlide(0); resetAutoplay();" class="slide-dot w-6 sm:w-8 md:w-9 h-2 sm:h-2.5 rounded-full bg-brand-red transition-all duration-300 flex-shrink-0" aria-label="Slide 1"></button>
+        <button onclick="setSlide(1); resetAutoplay();" class="slide-dot w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300 flex-shrink-0" aria-label="Slide 2"></button>
+        <button onclick="setSlide(2); resetAutoplay();" class="slide-dot w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300 flex-shrink-0" aria-label="Slide 3"></button>
+        <button onclick="setSlide(3); resetAutoplay();" class="slide-dot w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300 flex-shrink-0" aria-label="Slide 4"></button>
+        <button onclick="setSlide(4); resetAutoplay();" class="slide-dot w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300 flex-shrink-0" aria-label="Slide 5"></button>
+        <button onclick="setSlide(5); resetAutoplay();" class="slide-dot w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300 flex-shrink-0" aria-label="Slide 6"></button>
+        <button onclick="setSlide(6); resetAutoplay();" class="slide-dot w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300 flex-shrink-0" aria-label="Slide 7"></button>
+        <button onclick="setSlide(7); resetAutoplay();" class="slide-dot w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300 flex-shrink-0" aria-label="Slide 8"></button>
+        <button onclick="setSlide(8); resetAutoplay();" class="slide-dot w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300 flex-shrink-0" aria-label="Slide 9"></button>
+        <button onclick="setSlide(9); resetAutoplay();" class="slide-dot w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300 flex-shrink-0" aria-label="Slide 10"></button>
       </div>
 
     </section>
@@ -572,9 +599,9 @@
     <!-- ==========================================================================
          S2 — BENEFÍCIOS RÁPIDOS (CARROSSEL DESLIZÁVEL NO MOBILE / 5 COLS NO DESKTOP)
          ========================================================================== -->
-    <section id="beneficios" class="relative z-30 -mt-8 sm:-mt-12 md:-mt-14 mb-12 sm:mb-16 scroll-mt-24 md:scroll-mt-28">
+    <section id="beneficios" class="relative z-30 -mt-5 sm:-mt-10 md:-mt-14 mb-8 sm:mb-12 md:mb-16 scroll-mt-24 md:scroll-mt-28">
       <div class="bf-container">
-        <div class="bg-white rounded-2xl md:rounded-3xl border border-bf-line shadow-bf-floating p-3.5 sm:p-5 md:py-5 md:px-4 lg:px-6">
+        <div class="bg-white rounded-2xl md:rounded-3xl border border-bf-line shadow-bf-floating p-3 sm:p-4 md:py-5 md:px-4 lg:px-6">
           
           <!-- DESKTOP / TABLET (>= md): GRID DE 5 COLUNAS HORIZONTAIS (LUCIDE ICONS) -->
           <div class="hidden md:grid md:grid-cols-5 divide-x divide-bf-line items-center">
@@ -638,65 +665,65 @@
 
           <!-- MOBILE (< md): CARROSSEL HORIZONTAL DESLIZÁVEL (LUCIDE ICONS) -->
           <div class="md:hidden">
-            <div class="flex items-center justify-between mb-2 px-1 text-[11px] font-bold text-bf-muted">
-              <span>NOSSAS VANTAGENS</span>
-              <span class="text-brand-red font-semibold flex items-center gap-1">Deslize ➔</span>
+            <div class="flex items-center justify-between mb-2.5 px-1 text-[11px] font-bold text-bf-muted">
+              <span class="text-brand-red tracking-wider uppercase">✦ NOSSAS VANTAGENS</span>
+              <span class="text-bf-muted font-medium flex items-center gap-1">Deslize para ver ➔</span>
             </div>
             
-            <div class="flex overflow-x-auto snap-x snap-mandatory gap-3 pb-2 pt-1 -mx-2 px-2 no-scrollbar" style="-webkit-overflow-scrolling: touch;">
+            <div class="flex overflow-x-auto snap-x snap-mandatory gap-2.5 pb-1 pt-0.5 -mx-1 px-1 no-scrollbar" style="-webkit-overflow-scrolling: touch;">
               
               <!-- Card 1 Mobile (Lucide: truck) -->
-              <div class="snap-start flex-shrink-0 w-[240px] bg-slate-50 border border-bf-line rounded-xl p-3 flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-brand-red flex-shrink-0 flex items-center justify-center text-white shadow-xs">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18.5" r="2.5"/><circle cx="7" cy="18.5" r="2.5"/></svg>
+              <div class="snap-start flex-shrink-0 w-[220px] sm:w-[240px] bg-slate-50/80 hover:bg-white border border-bf-line rounded-xl p-3 flex items-center gap-3 transition-colors shadow-xs">
+                <div class="w-9 h-9 rounded-full bg-brand-red flex-shrink-0 flex items-center justify-center text-white shadow-xs">
+                  <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18.5" r="2.5"/><circle cx="7" cy="18.5" r="2.5"/></svg>
                 </div>
                 <div class="min-w-0 flex-1">
                   <h4 class="font-bold text-xs text-bf-ink leading-tight mb-0.5">Frete Grátis</h4>
-                  <p class="text-[11px] text-bf-muted leading-tight">Compras acima de R$ 169</p>
+                  <p class="text-[10.5px] text-bf-muted leading-tight">Compras acima de R$ 169</p>
                 </div>
               </div>
 
               <!-- Card 2 Mobile (Lucide: store) -->
-              <div class="snap-start flex-shrink-0 w-[240px] bg-slate-50 border border-bf-line rounded-xl p-3 flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-brand-red flex-shrink-0 flex items-center justify-center text-white shadow-xs">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 10V7"/></svg>
+              <div class="snap-start flex-shrink-0 w-[220px] sm:w-[240px] bg-slate-50/80 hover:bg-white border border-bf-line rounded-xl p-3 flex items-center gap-3 transition-colors shadow-xs">
+                <div class="w-9 h-9 rounded-full bg-brand-red flex-shrink-0 flex items-center justify-center text-white shadow-xs">
+                  <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 10V7"/></svg>
                 </div>
                 <div class="min-w-0 flex-1">
                   <h4 class="font-bold text-xs text-bf-ink leading-tight mb-0.5">Compre & Retire</h4>
-                  <p class="text-[11px] text-bf-muted leading-tight">Compre online e retire</p>
+                  <p class="text-[10.5px] text-bf-muted leading-tight">Compre online e retire</p>
                 </div>
               </div>
 
               <!-- Card 3 Mobile (Lucide: plus/cross) -->
-              <div class="snap-start flex-shrink-0 w-[240px] bg-slate-50 border border-bf-line rounded-xl p-3 flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-brand-red flex-shrink-0 flex items-center justify-center text-white shadow-xs">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+              <div class="snap-start flex-shrink-0 w-[220px] sm:w-[240px] bg-slate-50/80 hover:bg-white border border-bf-line rounded-xl p-3 flex items-center gap-3 transition-colors shadow-xs">
+                <div class="w-9 h-9 rounded-full bg-brand-red flex-shrink-0 flex items-center justify-center text-white shadow-xs">
+                  <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
                 </div>
                 <div class="min-w-0 flex-1">
                   <h4 class="font-bold text-xs text-bf-ink leading-tight mb-0.5">Farmacinha</h4>
-                  <p class="text-[11px] text-bf-muted leading-tight">Atendimento próximo</p>
+                  <p class="text-[10.5px] text-bf-muted leading-tight">Atendimento próximo</p>
                 </div>
               </div>
 
               <!-- Card 4 Mobile (Lucide: badge-percent) -->
-              <div class="snap-start flex-shrink-0 w-[240px] bg-slate-50 border border-bf-line rounded-xl p-3 flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-brand-red flex-shrink-0 flex items-center justify-center text-white shadow-xs">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m15 9-6 6"/><path d="M9 9h.01"/><path d="M15 15h.01"/></svg>
+              <div class="snap-start flex-shrink-0 w-[220px] sm:w-[240px] bg-slate-50/80 hover:bg-white border border-bf-line rounded-xl p-3 flex items-center gap-3 transition-colors shadow-xs">
+                <div class="w-9 h-9 rounded-full bg-brand-red flex-shrink-0 flex items-center justify-center text-white shadow-xs">
+                  <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m15 9-6 6"/><path d="M9 9h.01"/><path d="M15 15h.01"/></svg>
                 </div>
                 <div class="min-w-0 flex-1">
                   <h4 class="font-bold text-xs text-bf-ink leading-tight mb-0.5">Benefícios</h4>
-                  <p class="text-[11px] text-bf-muted leading-tight">Ofertas exclusivas</p>
+                  <p class="text-[10.5px] text-bf-muted leading-tight">Ofertas exclusivas</p>
                 </div>
               </div>
 
               <!-- Card 5 Mobile (Lucide: smartphone) -->
-              <div class="snap-start flex-shrink-0 w-[240px] bg-slate-50 border border-bf-line rounded-xl p-3 flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-brand-red flex-shrink-0 flex items-center justify-center text-white shadow-xs">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+              <div class="snap-start flex-shrink-0 w-[220px] sm:w-[240px] bg-slate-50/80 hover:bg-white border border-bf-line rounded-xl p-3 flex items-center gap-3 transition-colors shadow-xs">
+                <div class="w-9 h-9 rounded-full bg-brand-red flex-shrink-0 flex items-center justify-center text-white shadow-xs">
+                  <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
                 </div>
                 <div class="min-w-0 flex-1">
                   <h4 class="font-bold text-xs text-bf-ink leading-tight mb-0.5">Baixe o App</h4>
-                  <p class="text-[11px] text-bf-muted leading-tight">Praticidade exclusiva</p>
+                  <p class="text-[10.5px] text-bf-muted leading-tight">Praticidade exclusiva</p>
                 </div>
               </div>
 
@@ -709,14 +736,14 @@
 
 
     <!-- ==========================================================================
-         S3 — CARROSSEL DE BANNERS / CAMPANHAS EM DESTAQUE (DIAS DA SEMANA — 100% LARGURA)
+         S3 — CARROSSEL DE BANNERS / CAMPANHAS EM DESTAQUE (NÃO PERCA — 100% LARGURA)
          ========================================================================== -->
-    <section id="ofertas" class="py-12 sm:py-16 md:py-20 bg-[#FFEDEE] border-b border-bf-line overflow-hidden w-full scroll-mt-24 md:scroll-mt-28">
+    <section id="ofertas" class="py-12 sm:py-16 md:py-20 bg-[#F4FEFD] border-b border-bf-line overflow-hidden w-full scroll-mt-24 md:scroll-mt-28">
       
       <!-- Cabeçalho da Seção (Centralizado no Container) -->
       <div class="bf-container">
         <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12 px-2">
-          <span class="text-xs font-bold uppercase tracking-widest text-brand-red block mb-2">DIAS DA SEMANA</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-red block mb-2">NÃO PERCA</span>
           <h2 class="text-2xl sm:text-3xl md:text-[38px] font-bold text-bf-ink tracking-tight leading-tight break-words">
             Ofertas que <span class="text-brand-red">rendem mais</span> pra você.
           </h2>
@@ -727,40 +754,40 @@
       <div class="relative w-full overflow-hidden group/banners">
         
         <!-- Botão Navegação Anterior (Esquerda) -->
-        <button onclick="scrollBanners('left')" class="flex absolute left-2 sm:left-3 md:left-5 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white/95 hover:bg-brand-red text-bf-ink hover:text-white shadow-bf-floating border border-bf-line items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 z-30 focus:outline-none focus:ring-2 focus:ring-brand-red backdrop-blur-sm" aria-label="Banners Anteriores">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
+        <button onclick="scrollBanners('left')" class="flex absolute left-1.5 sm:left-3 md:left-5 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white/90 hover:bg-brand-red text-bf-ink hover:text-white shadow-bf-floating border border-bf-line items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 z-30 focus:outline-none focus:ring-2 focus:ring-brand-red backdrop-blur-md" aria-label="Banners Anteriores">
+          <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
         </button>
 
         <!-- Botão Navegação Próximo (Direita) -->
-        <button onclick="scrollBanners('right')" class="flex absolute right-2 sm:right-3 md:right-5 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white/95 hover:bg-brand-red text-bf-ink hover:text-white shadow-bf-floating border border-bf-line items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 z-30 focus:outline-none focus:ring-2 focus:ring-brand-red backdrop-blur-sm" aria-label="Próximos Banners">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
+        <button onclick="scrollBanners('right')" class="flex absolute right-1.5 sm:right-3 md:right-5 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white/90 hover:bg-brand-red text-bf-ink hover:text-white shadow-bf-floating border border-bf-line items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 z-30 focus:outline-none focus:ring-2 focus:ring-brand-red backdrop-blur-md" aria-label="Próximos Banners">
+          <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
         </button>
 
         <!-- Trilho Horizontal 100% Sangrado com Snap e Drag/Swipe (Exibe 3 banners + pedaço do 4º) -->
-        <div id="bannersTrack" class="w-full flex gap-4 sm:gap-5 md:gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar py-3 px-4 sm:px-6 md:px-8 lg:px-10 cursor-grab select-none" style="-webkit-overflow-scrolling: touch;">
+        <div id="bannersTrack" class="w-full flex gap-3.5 sm:gap-5 md:gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar py-2.5 sm:py-3 px-3 sm:px-6 md:px-8 lg:px-10 cursor-grab select-none" style="-webkit-overflow-scrolling: touch;">
           
           <!-- Banner 01 -->
-          <div class="snap-start flex-shrink-0 w-[76vw] sm:w-[46vw] md:w-[35vw] lg:w-[28vw] xl:w-[27vw] 2xl:w-[25.5vw] rounded-2xl md:rounded-3xl overflow-hidden shadow-bf-subtle hover:shadow-bf-card transition-all duration-300 hover:scale-[1.015] bg-brand-red">
+          <div class="snap-start flex-shrink-0 w-[78vw] sm:w-[46vw] md:w-[35vw] lg:w-[28vw] xl:w-[27vw] 2xl:w-[25.5vw] rounded-2xl md:rounded-3xl overflow-hidden shadow-bf-subtle hover:shadow-bf-card transition-all duration-300 hover:scale-[1.015] bg-brand-red">
             <img src="assets/Pagina/S3%20BANNERZINHOS/baninhos%20(1).png" alt="Oferta +B Farma — Cuidado com a Pele até 30% OFF" class="w-full h-auto object-cover block" loading="eager" decoding="async" draggable="false">
           </div>
 
           <!-- Banner 02 -->
-          <div class="snap-start flex-shrink-0 w-[76vw] sm:w-[46vw] md:w-[35vw] lg:w-[28vw] xl:w-[27vw] 2xl:w-[25.5vw] rounded-2xl md:rounded-3xl overflow-hidden shadow-bf-subtle hover:shadow-bf-card transition-all duration-300 hover:scale-[1.015] bg-brand-red">
+          <div class="snap-start flex-shrink-0 w-[78vw] sm:w-[46vw] md:w-[35vw] lg:w-[28vw] xl:w-[27vw] 2xl:w-[25.5vw] rounded-2xl md:rounded-3xl overflow-hidden shadow-bf-subtle hover:shadow-bf-card transition-all duration-300 hover:scale-[1.015] bg-brand-red">
             <img src="assets/Pagina/S3%20BANNERZINHOS/baninhos%20(2).png" alt="Oferta +B Farma — Alívio Rápido até 25% OFF" class="w-full h-auto object-cover block" loading="lazy" decoding="async" draggable="false">
           </div>
 
           <!-- Banner 03 -->
-          <div class="snap-start flex-shrink-0 w-[76vw] sm:w-[46vw] md:w-[35vw] lg:w-[28vw] xl:w-[27vw] 2xl:w-[25.5vw] rounded-2xl md:rounded-3xl overflow-hidden shadow-bf-subtle hover:shadow-bf-card transition-all duration-300 hover:scale-[1.015] bg-brand-red">
+          <div class="snap-start flex-shrink-0 w-[78vw] sm:w-[46vw] md:w-[35vw] lg:w-[28vw] xl:w-[27vw] 2xl:w-[25.5vw] rounded-2xl md:rounded-3xl overflow-hidden shadow-bf-subtle hover:shadow-bf-card transition-all duration-300 hover:scale-[1.015] bg-brand-red">
             <img src="assets/Pagina/S3%20BANNERZINHOS/baninhos%20(3).png" alt="Oferta +B Farma — Cuidado com a Pele Dermocosméticos até 30% OFF" class="w-full h-auto object-cover block" loading="lazy" decoding="async" draggable="false">
           </div>
 
           <!-- Banner 04 -->
-          <div class="snap-start flex-shrink-0 w-[76vw] sm:w-[46vw] md:w-[35vw] lg:w-[28vw] xl:w-[27vw] 2xl:w-[25.5vw] rounded-2xl md:rounded-3xl overflow-hidden shadow-bf-subtle hover:shadow-bf-card transition-all duration-300 hover:scale-[1.015] bg-brand-red">
+          <div class="snap-start flex-shrink-0 w-[78vw] sm:w-[46vw] md:w-[35vw] lg:w-[28vw] xl:w-[27vw] 2xl:w-[25.5vw] rounded-2xl md:rounded-3xl overflow-hidden shadow-bf-subtle hover:shadow-bf-card transition-all duration-300 hover:scale-[1.015] bg-brand-red">
             <img src="assets/Pagina/S3%20BANNERZINHOS/baninhos%20(4).png" alt="Oferta +B Farma — Beleza e Autocuidado até 30% OFF" class="w-full h-auto object-cover block" loading="lazy" decoding="async" draggable="false">
           </div>
 
           <!-- Banner 05 -->
-          <div class="snap-start flex-shrink-0 w-[76vw] sm:w-[46vw] md:w-[35vw] lg:w-[28vw] xl:w-[27vw] 2xl:w-[25.5vw] rounded-2xl md:rounded-3xl overflow-hidden shadow-bf-subtle hover:shadow-bf-card transition-all duration-300 hover:scale-[1.015] bg-brand-red">
+          <div class="snap-start flex-shrink-0 w-[78vw] sm:w-[46vw] md:w-[35vw] lg:w-[28vw] xl:w-[27vw] 2xl:w-[25.5vw] rounded-2xl md:rounded-3xl overflow-hidden shadow-bf-subtle hover:shadow-bf-card transition-all duration-300 hover:scale-[1.015] bg-brand-red">
             <img src="assets/Pagina/S3%20BANNERZINHOS/baninhos%20(5).png" alt="Oferta +B Farma — Campanhas e Ofertas da Semana" class="w-full h-auto object-cover block" loading="lazy" decoding="async" draggable="false">
           </div>
 
@@ -774,7 +801,7 @@
     <!-- ==========================================================================
          S4 — SOBRE A +B FARMA & INDICADORES
          ========================================================================== -->
-    <section id="sobre" class="py-12 sm:py-16 md:py-20 bg-[#FFEDEE] border-b border-bf-line overflow-hidden scroll-mt-24 md:scroll-mt-28">
+    <section id="sobre" class="py-12 sm:py-16 md:py-20 bg-[#F4FEFD] border-b border-bf-line overflow-hidden scroll-mt-24 md:scroll-mt-28">
       <div class="bf-container">
         
         <!-- Grid Superior: Textos (Esquerda) + Imagem Família (Direita) -->
@@ -791,7 +818,7 @@
             </p>
 
             <!-- 3 Itens de Destaque com Círculo Vermelho e Cruz/Plus Branca -->
-            <div class="space-y-3.5 mb-8">
+            <div class="space-y-3.5">
               <div class="flex items-center gap-3">
                 <div class="w-5 h-5 rounded-full bg-brand-red text-white flex items-center justify-center flex-shrink-0 shadow-xs">
                   <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
@@ -812,11 +839,6 @@
               </div>
             </div>
 
-            <!-- Botão CTA Pílula Vermelha -->
-            <a href="#filiais" class="inline-flex items-center gap-3 px-8 py-3.5 sm:py-4 bg-brand-red hover:bg-brand-red-hover active:bg-brand-red-active text-white font-bold text-sm sm:text-base rounded-full shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all duration-200">
-              <span>Saiba mais sobre nós</span>
-              <span class="text-lg leading-none">→</span>
-            </a>
           </div>
 
           <!-- Coluna Foto Institucional Equipe +B Farma com Botão de Play (7 colunas) -->
@@ -844,12 +866,12 @@
         </div>
 
         <!-- Card Flutuante de Indicadores da Rede (4 Colunas com Divisórias) -->
-        <div class="mt-10 sm:mt-14 bg-white rounded-2xl sm:rounded-3xl border border-bf-line/80 shadow-bf-subtle py-6 px-4 sm:px-8">
-          <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x lg:divide-bf-line/80 items-center">
+        <div class="mt-10 sm:mt-14 bg-white rounded-2xl sm:rounded-3xl border border-bf-line/80 shadow-bf-subtle py-5 sm:py-6 px-3 sm:px-8">
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-6 lg:gap-0 lg:divide-x lg:divide-bf-line/80 items-center">
             
             <!-- Item 1: Unidades -->
-            <div class="flex items-center gap-3.5 sm:gap-4 lg:justify-center lg:px-4">
-              <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-brand-red/30 bg-brand-red/5 flex items-center justify-center text-brand-red flex-shrink-0">
+            <div class="flex items-center gap-2.5 sm:gap-4 p-2.5 sm:p-0 bg-[#F4FEFD]/45 sm:bg-transparent rounded-xl sm:rounded-none border border-brand-red/10 sm:border-0 lg:justify-center lg:px-4">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-brand-red/30 bg-brand-red/5 flex items-center justify-center text-brand-red flex-shrink-0">
                 <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                   <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/>
                   <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
@@ -859,14 +881,14 @@
                 </svg>
               </div>
               <div class="min-w-0">
-                <span class="text-2xl sm:text-3xl font-extrabold text-brand-red block leading-none">+50</span>
-                <span class="text-xs sm:text-sm font-semibold text-bf-ink block mt-1">Unidades</span>
+                <span class="text-xl sm:text-2xl md:text-3xl font-extrabold text-brand-red block leading-none">+50</span>
+                <span class="text-[11px] sm:text-xs md:text-sm font-semibold text-bf-ink block mt-1 truncate">Unidades</span>
               </div>
             </div>
 
             <!-- Item 2: Clientes atendidos -->
-            <div class="flex items-center gap-3.5 sm:gap-4 lg:justify-center lg:px-4">
-              <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-brand-red/30 bg-brand-red/5 flex items-center justify-center text-brand-red flex-shrink-0">
+            <div class="flex items-center gap-2.5 sm:gap-4 p-2.5 sm:p-0 bg-[#F4FEFD]/45 sm:bg-transparent rounded-xl sm:rounded-none border border-brand-red/10 sm:border-0 lg:justify-center lg:px-4">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-brand-red/30 bg-brand-red/5 flex items-center justify-center text-brand-red flex-shrink-0">
                 <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                   <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
                   <circle cx="9" cy="7" r="4"/>
@@ -875,36 +897,36 @@
                 </svg>
               </div>
               <div class="min-w-0">
-                <span class="text-2xl sm:text-3xl font-extrabold text-brand-red block leading-none">+500 mil</span>
-                <span class="text-xs sm:text-sm font-semibold text-bf-ink block mt-1">Clientes atendidos</span>
+                <span class="text-xl sm:text-2xl md:text-3xl font-extrabold text-brand-red block leading-none">+500 mil</span>
+                <span class="text-[11px] sm:text-xs md:text-sm font-semibold text-bf-ink block mt-1 truncate">Clientes</span>
               </div>
             </div>
 
             <!-- Item 3: Cuidando de você -->
-            <div class="flex items-center gap-3.5 sm:gap-4 lg:justify-center lg:px-4">
-              <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-brand-red/30 bg-brand-red/5 flex items-center justify-center text-brand-red flex-shrink-0">
+            <div class="flex items-center gap-2.5 sm:gap-4 p-2.5 sm:p-0 bg-[#F4FEFD]/45 sm:bg-transparent rounded-xl sm:rounded-none border border-brand-red/10 sm:border-0 lg:justify-center lg:px-4">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-brand-red/30 bg-brand-red/5 flex items-center justify-center text-brand-red flex-shrink-0">
                 <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                   <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/>
                   <polygon points="12 8 13.09 10.26 15.5 10.61 13.75 12.31 14.16 14.7 12 13.56 9.84 14.7 10.25 12.31 8.5 10.61 10.91 10.26 12 8"/>
                 </svg>
               </div>
               <div class="min-w-0">
-                <span class="text-2xl sm:text-3xl font-extrabold text-brand-red block leading-none">+10 anos</span>
-                <span class="text-xs sm:text-sm font-semibold text-bf-ink block mt-1">Cuidando de você</span>
+                <span class="text-xl sm:text-2xl md:text-3xl font-extrabold text-brand-red block leading-none">+10 anos</span>
+                <span class="text-[11px] sm:text-xs md:text-sm font-semibold text-bf-ink block mt-1 truncate">Cuidado real</span>
               </div>
             </div>
 
             <!-- Item 4: Atendidos em Belém. -->
-            <div class="flex items-center gap-3.5 sm:gap-4 lg:justify-center lg:px-4">
-              <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-brand-red/30 bg-brand-red/5 flex items-center justify-center text-brand-red flex-shrink-0">
+            <div class="flex items-center gap-2.5 sm:gap-4 p-2.5 sm:p-0 bg-[#F4FEFD]/45 sm:bg-transparent rounded-xl sm:rounded-none border border-brand-red/10 sm:border-0 lg:justify-center lg:px-4">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-brand-red/30 bg-brand-red/5 flex items-center justify-center text-brand-red flex-shrink-0">
                 <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                   <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/>
                   <circle cx="12" cy="10" r="3"/>
                 </svg>
               </div>
               <div class="min-w-0">
-                <span class="text-2xl sm:text-3xl font-extrabold text-brand-red block leading-none">+100 bairros</span>
-                <span class="text-xs sm:text-sm font-semibold text-bf-ink block mt-1">Atendidos em Belém.</span>
+                <span class="text-xl sm:text-2xl md:text-3xl font-extrabold text-brand-red block leading-none">+100 bairros</span>
+                <span class="text-[11px] sm:text-xs md:text-sm font-semibold text-bf-ink block mt-1 truncate">Em Belém</span>
               </div>
             </div>
 
@@ -930,14 +952,14 @@
               
               <!-- Slide 01: Clube +B -->
               <div class="w-full flex-shrink-0 relative overflow-hidden">
-                <a href="https://wa.me/5591999999999?text=Ol%C3%A1%2C%20gostaria%20de%20me%20cadastrar%20no%20Clube%20%2BB%20Farma" target="_blank" rel="noopener" class="block w-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-red">
+                <a href="https://linktr.ee/mais.bfarma" target="_blank" rel="noopener noreferrer" class="block w-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-red">
                   <img src="assets/Pagina/S4%20BANNERS%20HORIZONTAIS/1-BANNER-HORIZONTALL.png" alt="+B Farma — Clube +B: Mais vantagens para você economizar todos os dias" class="w-full h-auto object-cover block" loading="eager" decoding="async" draggable="false">
                 </a>
               </div>
 
               <!-- Slide 02: iFood / Pedidos Online -->
               <div class="w-full flex-shrink-0 relative overflow-hidden">
-                <a href="https://wa.me/5591999999999?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20na%20%2BB%20Farma" target="_blank" rel="noopener" class="block w-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-red">
+                <a href="https://linktr.ee/mais.bfarma" target="_blank" rel="noopener noreferrer" class="block w-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-red">
                   <img src="assets/Pagina/S4%20BANNERS%20HORIZONTAIS/2-banner-ifood.png" alt="+B Farma no iFood — Peça pelo WhatsApp ou iFood e receba rápido" class="w-full h-auto object-cover block" loading="lazy" decoding="async" draggable="false">
                 </a>
               </div>
@@ -970,7 +992,7 @@
     <!-- ==========================================================================
          S7 — FAQ (DÚVIDAS FREQUENTES COM ACORDEÃO)
          ========================================================================== -->
-    <section id="faq" class="py-12 sm:py-16 md:py-20 bg-[#FFEDEE] border-b border-bf-line scroll-mt-24 md:scroll-mt-28">
+    <section id="faq" class="py-12 sm:py-16 md:py-20 bg-[#F4FEFD] border-b border-bf-line scroll-mt-24 md:scroll-mt-28">
       <div class="bf-container">
         
         <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 px-2">
@@ -982,46 +1004,54 @@
         <div class="max-w-3xl mx-auto space-y-3 sm:space-y-4">
           
           <!-- Accordion 1 -->
-          <div class="faq-item active bg-white rounded-xl border border-bf-line shadow-xs overflow-hidden transition-all">
+          <div class="faq-item active bg-white rounded-xl border border-bf-line shadow-xs overflow-hidden transition-all duration-200">
             <button onclick="toggleFaq(this)" class="w-full py-3.5 sm:py-4 px-4 sm:px-6 text-left flex items-center justify-between gap-3 sm:gap-4 font-semibold text-xs sm:text-sm text-bf-ink hover:bg-slate-50 transition-colors">
               <span>Como funciona o Clube +B e como posso me cadastrar?</span>
-              <svg class="faq-chevron w-4 h-4 sm:w-5 sm:h-5 text-brand-red transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              <svg class="faq-chevron w-4 h-4 sm:w-5 sm:h-5 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
-            <div class="faq-content px-4 sm:px-6 pb-4 text-xs text-bf-body leading-relaxed border-t border-slate-100 pt-3">
-              O Clube +B é 100% gratuito. Basta informar seu CPF no caixa de qualquer filial ou no nosso atendimento online para ter acesso automático aos descontos imediatos em medicamentos e perfumaria.
+            <div class="faq-content-wrapper">
+              <div class="faq-content-inner px-4 sm:px-6 pb-4 text-xs text-bf-body leading-relaxed border-t border-slate-100 pt-3">
+                O Clube +B é 100% gratuito. Basta informar seu CPF no caixa de qualquer filial ou no nosso atendimento online para ter acesso automático aos descontos imediatos em medicamentos e perfumaria.
+              </div>
             </div>
           </div>
 
           <!-- Accordion 2 -->
-          <div class="faq-item bg-white rounded-xl border border-bf-line shadow-xs overflow-hidden transition-all">
+          <div class="faq-item bg-white rounded-xl border border-bf-line shadow-xs overflow-hidden transition-all duration-200">
             <button onclick="toggleFaq(this)" class="w-full py-3.5 sm:py-4 px-4 sm:px-6 text-left flex items-center justify-between gap-3 sm:gap-4 font-semibold text-xs sm:text-sm text-bf-ink hover:bg-slate-50 transition-colors">
               <span>Quais formas de pagamento são aceitas nas filiais?</span>
-              <svg class="faq-chevron w-4 h-4 sm:w-5 sm:h-5 text-brand-red transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              <svg class="faq-chevron w-4 h-4 sm:w-5 sm:h-5 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
-            <div class="faq-content px-4 sm:px-6 pb-4 text-xs text-bf-body leading-relaxed border-t border-slate-100 pt-3">
-              Aceitamos cartões de crédito e débito de todas as bandeiras (com parcelamento facilitado), Pix com confirmação instantânea, dinheiro e principais convênios credenciados da rede.
+            <div class="faq-content-wrapper">
+              <div class="faq-content-inner px-4 sm:px-6 pb-4 text-xs text-bf-body leading-relaxed border-t border-slate-100 pt-3">
+                Aceitamos cartões de crédito e débito de todas as bandeiras (com parcelamento facilitado), Pix com confirmação instantânea, dinheiro e principais convênios credenciados da rede.
+              </div>
             </div>
           </div>
 
           <!-- Accordion 3 -->
-          <div class="faq-item bg-white rounded-xl border border-bf-line shadow-xs overflow-hidden transition-all">
+          <div class="faq-item bg-white rounded-xl border border-bf-line shadow-xs overflow-hidden transition-all duration-200">
             <button onclick="toggleFaq(this)" class="w-full py-3.5 sm:py-4 px-4 sm:px-6 text-left flex items-center justify-between gap-3 sm:gap-4 font-semibold text-xs sm:text-sm text-bf-ink hover:bg-slate-50 transition-colors">
               <span>Como funciona o compre e retire na loja?</span>
-              <svg class="faq-chevron w-4 h-4 sm:w-5 sm:h-5 text-brand-red transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              <svg class="faq-chevron w-4 h-4 sm:w-5 sm:h-5 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
-            <div class="faq-content px-4 sm:px-6 pb-4 text-xs text-bf-body leading-relaxed border-t border-slate-100 pt-3">
-              Você pode enviar sua lista de produtos ou receita médica pelo nosso canal de atendimento, selecionar a filial mais próxima (Plaza ou Tapanã) e retirar seu pedido embalado em até 60 minutos.
+            <div class="faq-content-wrapper">
+              <div class="faq-content-inner px-4 sm:px-6 pb-4 text-xs text-bf-body leading-relaxed border-t border-slate-100 pt-3">
+                Você pode enviar sua lista de produtos ou receita médica pelo nosso canal de atendimento, selecionar a filial mais próxima (Plaza ou Tapanã) e retirar seu pedido embalado em até 60 minutos.
+              </div>
             </div>
           </div>
 
           <!-- Accordion 4 -->
-          <div class="faq-item bg-white rounded-xl border border-bf-line shadow-xs overflow-hidden transition-all">
+          <div class="faq-item bg-white rounded-xl border border-bf-line shadow-xs overflow-hidden transition-all duration-200">
             <button onclick="toggleFaq(this)" class="w-full py-3.5 sm:py-4 px-4 sm:px-6 text-left flex items-center justify-between gap-3 sm:gap-4 font-semibold text-xs sm:text-sm text-bf-ink hover:bg-slate-50 transition-colors">
               <span>A +B Farma realiza entrega em domicílio (Delivery)?</span>
-              <svg class="faq-chevron w-4 h-4 sm:w-5 sm:h-5 text-brand-red transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              <svg class="faq-chevron w-4 h-4 sm:w-5 sm:h-5 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
-            <div class="faq-content px-4 sm:px-6 pb-4 text-xs text-bf-body leading-relaxed border-t border-slate-100 pt-3">
-              Sim! Realizamos entregas expressas para toda a área de cobertura das nossas filiais com rapidez, segurança e cuidado no manuseio de medicamentos.
+            <div class="faq-content-wrapper">
+              <div class="faq-content-inner px-4 sm:px-6 pb-4 text-xs text-bf-body leading-relaxed border-t border-slate-100 pt-3">
+                Sim! Realizamos entregas expressas para toda a área de cobertura das nossas filiais com rapidez, segurança e cuidado no manuseio de medicamentos.
+              </div>
             </div>
           </div>
 
@@ -1442,15 +1472,15 @@
       <div class="w-full px-0 relative">
         
         <!-- Container Branco Full-Width Totalmente Encostado nas Laterais -->
-        <div class="w-full bg-white rounded-none sm:rounded-none lg:rounded-[36px] xl:rounded-[44px] py-4 sm:py-5 lg:py-6 px-6 sm:px-10 lg:px-12 xl:px-16 border-y border-slate-100/10 shadow-[0_25px_60px_rgba(0,0,0,0.35)] relative z-10 overflow-visible">
+        <div class="w-full bg-white rounded-none sm:rounded-none lg:rounded-[36px] xl:rounded-[44px] py-4 sm:py-5 lg:py-6 px-4 sm:px-8 lg:px-12 xl:px-16 border-y border-slate-100/10 shadow-[0_25px_60px_rgba(0,0,0,0.35)] relative z-10 overflow-visible">
           
-          <div class="w-full flex flex-col lg:flex-row items-center justify-between gap-8 xl:gap-12 relative">
+          <div class="w-full flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8 xl:gap-12 relative">
             
             <!-- COLUNA ESQUERDA: ÍCONE MAIOR OFICIAL + ÁREA INSTITUCIONAL COM TEXTO EMPURRADO -->
-            <div class="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 lg:gap-10 xl:gap-14 flex-1 min-w-0 relative">
+            <div class="flex flex-col sm:flex-row items-center gap-5 sm:gap-8 lg:gap-10 xl:gap-14 flex-1 min-w-0 relative text-center sm:text-left">
               
               <!-- Ícone Oficial +B Farma em Destaque Maior (assets/Logos/icone-b-farma.png) -->
-              <div class="flex-shrink-0 w-36 sm:w-44 md:w-52 lg:w-56 xl:w-64 select-none">
+              <div class="flex-shrink-0 w-28 sm:w-44 md:w-52 lg:w-56 xl:w-64 select-none">
                 <img src="assets/Logos/icone-b-farma.png" alt="+B Farma Ícone" class="w-full h-auto object-contain block drop-shadow-sm" loading="lazy">
               </div>
 
@@ -1468,7 +1498,7 @@
                 </p>
 
                 <!-- Bloco de Prova Social Google (G Logo Oficial + 5 Estrelas Douradas) -->
-                <div class="flex items-center gap-2 sm:gap-2.5 mt-0.5">
+                <div class="flex items-center justify-center sm:justify-start gap-2 sm:gap-2.5 mt-0.5">
                   <!-- Google 4-Color G Logo Oficial -->
                   <svg viewBox="0 0 24 24" style="width: 26px; height: 26px; min-width: 26px; max-width: 26px;" class="flex-shrink-0">
                     <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
@@ -1492,16 +1522,16 @@
 
 
             <!-- COLUNA DIREITA: BLOCO VERMELHO ATRÁS DOS CARDS COM LARGURA FIXA NÃO ESTICÁVEL -->
-            <div class="flex-shrink-0 relative z-20 flex justify-center">
+            <div class="flex-shrink-0 relative z-20 flex justify-center w-full lg:w-auto">
               
               <!-- Bloco Vermelho de Fundo (#E92125 com cantos arredondados e elevação) -->
-              <div class="bg-brand-red rounded-[28px] sm:rounded-[36px] p-3.5 sm:p-4 shadow-[0_20px_50px_rgba(233,33,37,0.35)] relative lg:-my-12 xl:-my-14 z-20 overflow-visible w-fit">
+              <div class="bg-brand-red rounded-[24px] sm:rounded-[36px] p-3 sm:p-4 shadow-[0_20px_50px_rgba(233,33,37,0.35)] relative lg:-my-12 xl:-my-14 z-20 overflow-visible w-full max-w-[310px] sm:max-w-none sm:w-fit mx-auto">
                 
                 <!-- Flex dos 2 Cards com Largura Fixa Exata -->
-                <div class="flex flex-col sm:flex-row gap-3.5 sm:gap-4 items-start relative z-30">
+                <div class="flex flex-col sm:flex-row gap-3.5 sm:gap-4 items-center sm:items-start relative z-30">
                   
                   <!-- ==================== CARD 1: +B FARMA (PLAZA) ==================== -->
-                  <div class="google-maps-card bg-white rounded-[13px] border border-[#dadce0] shadow-[0_4px_16px_rgba(0,0,0,0.18)] overflow-hidden flex flex-col text-[#202124] w-[275px] sm:w-[285px] max-w-[285px] flex-shrink-0 lg:-translate-y-7 relative z-40 transition-transform duration-300 hover:scale-[1.01]">
+                  <div class="google-maps-card bg-white rounded-[13px] border border-[#dadce0] shadow-[0_4px_16px_rgba(0,0,0,0.18)] overflow-hidden flex flex-col text-[#202124] w-full max-w-[285px] sm:w-[285px] flex-shrink-0 lg:-translate-y-7 relative z-40 transition-transform duration-300 hover:scale-[1.01]">
                     
                     <!-- Foto Topo Real da Loja (+B Farma Plaza) -->
                     <div class="relative w-full aspect-[16/9] overflow-hidden bg-slate-100">
@@ -1563,8 +1593,8 @@
                       </div>
                     </div>
 
-                    <!-- Botões de Ação Circulares (5 Colunas: Rotas, Salvar, Próximo, Enviar, Compartilhar) -->
-                    <div class="grid grid-cols-5 gap-0.5 py-2 px-1 text-center border-b border-[#dadce0] items-start">
+                    <!-- Botões de Ação Circulares (3 Colunas: Rotas, Salvar, Compartilhar) -->
+                    <div class="grid grid-cols-3 gap-1 py-2 px-2 text-center border-b border-[#dadce0] items-start">
                       
                       <!-- Rotas -->
                       <a href="https://maps.app.goo.gl/zaZgizNzeF6Jwy59A" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center gap-1 focus:outline-none" title="Ver Rotas no Google Maps">
@@ -1586,28 +1616,6 @@
                         <span class="text-[9px] font-medium text-[#007b83] leading-tight">Salvar</span>
                       </a>
 
-                      <!-- Próximo -->
-                      <a href="https://maps.app.goo.gl/zaZgizNzeF6Jwy59A" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center gap-1 focus:outline-none" title="Lugares Próximos">
-                        <div class="gmaps-btn-circle bg-[#e0f2f1] text-[#007b83] group-hover:bg-[#d0ebea] transition-all">
-                          <svg class="gmaps-btn-icon fill-current" viewBox="0 0 24 24">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/>
-                          </svg>
-                        </div>
-                        <span class="text-[9px] font-medium text-[#007b83] leading-tight">Próximo</span>
-                      </a>
-
-                      <!-- Enviar para o smartphone -->
-                      <a href="https://maps.app.goo.gl/zaZgizNzeF6Jwy59A" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center gap-1 focus:outline-none" title="Enviar para smartphone">
-                        <div class="gmaps-btn-circle bg-[#e0f2f1] text-[#007b83] group-hover:bg-[#d0ebea] transition-all">
-                          <svg class="gmaps-btn-icon fill-current" viewBox="0 0 24 24">
-                            <path d="M17 1H7c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 18H7V5h10v14zm-4-8v-2h-2v2H8l4 4 4-4h-3z"/>
-                          </svg>
-                        </div>
-                        <span class="text-[8.5px] font-medium text-[#007b83] leading-[1.05] text-center">
-                          Enviar para<br>o<br>smartphone
-                        </span>
-                      </a>
-
                       <!-- Compartilhar -->
                       <a href="https://maps.app.goo.gl/zaZgizNzeF6Jwy59A" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center gap-1 focus:outline-none" title="Compartilhar">
                         <div class="gmaps-btn-circle bg-[#e0f2f1] text-[#007b83] group-hover:bg-[#d0ebea] transition-all">
@@ -1615,9 +1623,7 @@
                             <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/>
                           </svg>
                         </div>
-                        <span class="text-[8.5px] font-medium text-[#007b83] leading-[1.05] text-center">
-                          Compartilh<br>ar
-                        </span>
+                        <span class="text-[9px] font-medium text-[#007b83] leading-tight">Compartilhar</span>
                       </a>
 
                     </div>
@@ -1674,18 +1680,6 @@
                         </div>
                       </div>
 
-                      <!-- Site -->
-                      <div class="flex items-center gap-2">
-                        <svg class="gmaps-icon text-[#007b83] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                          <circle cx="12" cy="12" r="10"/>
-                          <line x1="2" y1="12" x2="22" y2="12"/>
-                          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"/>
-                        </svg>
-                        <a href="https://www.grupomaisbarato.com.br/" target="_blank" rel="noopener noreferrer" class="text-[#1a73e8] hover:underline truncate">
-                          grupomaisbarato.com.br
-                        </a>
-                      </div>
-
                       <!-- Telefone -->
                       <div class="flex items-center gap-2">
                         <svg class="gmaps-icon text-[#007b83] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -1702,7 +1696,7 @@
 
 
                   <!-- ==================== CARD 2: +B FARMA (TAPANÃ) ==================== -->
-                  <div class="google-maps-card bg-white rounded-[13px] border border-[#dadce0] shadow-[0_4px_16px_rgba(0,0,0,0.18)] overflow-hidden flex flex-col text-[#202124] w-[275px] sm:w-[285px] max-w-[285px] flex-shrink-0 lg:translate-y-1 relative z-40 transition-transform duration-300 hover:scale-[1.01]">
+                  <div class="google-maps-card bg-white rounded-[13px] border border-[#dadce0] shadow-[0_4px_16px_rgba(0,0,0,0.18)] overflow-hidden flex flex-col text-[#202124] w-full max-w-[285px] sm:w-[285px] flex-shrink-0 lg:translate-y-1 relative z-40 transition-transform duration-300 hover:scale-[1.01]">
                     
                     <!-- Foto Topo Real da Loja (+B Farma Tapanã) -->
                     <div class="relative w-full aspect-[16/9] overflow-hidden bg-slate-100">
@@ -1764,8 +1758,8 @@
                       </div>
                     </div>
 
-                    <!-- Botões de Ação Circulares (5 Colunas: Rotas, Salvar, Próximo, Enviar, Compartilhar) -->
-                    <div class="grid grid-cols-5 gap-0.5 py-2 px-1 text-center border-b border-[#dadce0] items-start">
+                    <!-- Botões de Ação Circulares (3 Colunas: Rotas, Salvar, Compartilhar) -->
+                    <div class="grid grid-cols-3 gap-1 py-2 px-2 text-center border-b border-[#dadce0] items-start">
                       
                       <!-- Rotas -->
                       <a href="https://maps.app.goo.gl/kUGs3rsC7uo7bVvcA" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center gap-1 focus:outline-none" title="Ver Rotas no Google Maps">
@@ -1787,28 +1781,6 @@
                         <span class="text-[9px] font-medium text-[#007b83] leading-tight">Salvar</span>
                       </a>
 
-                      <!-- Próximo -->
-                      <a href="https://maps.app.goo.gl/kUGs3rsC7uo7bVvcA" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center gap-1 focus:outline-none" title="Lugares Próximos">
-                        <div class="gmaps-btn-circle bg-[#e0f2f1] text-[#007b83] group-hover:bg-[#d0ebea] transition-all">
-                          <svg class="gmaps-btn-icon fill-current" viewBox="0 0 24 24">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/>
-                          </svg>
-                        </div>
-                        <span class="text-[9px] font-medium text-[#007b83] leading-tight">Próximo</span>
-                      </a>
-
-                      <!-- Enviar para o smartphone -->
-                      <a href="https://maps.app.goo.gl/kUGs3rsC7uo7bVvcA" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center gap-1 focus:outline-none" title="Enviar para smartphone">
-                        <div class="gmaps-btn-circle bg-[#e0f2f1] text-[#007b83] group-hover:bg-[#d0ebea] transition-all">
-                          <svg class="gmaps-btn-icon fill-current" viewBox="0 0 24 24">
-                            <path d="M17 1H7c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 18H7V5h10v14zm-4-8v-2h-2v2H8l4 4 4-4h-3z"/>
-                          </svg>
-                        </div>
-                        <span class="text-[8.5px] font-medium text-[#007b83] leading-[1.05] text-center">
-                          Enviar para<br>o<br>smartphone
-                        </span>
-                      </a>
-
                       <!-- Compartilhar -->
                       <a href="https://maps.app.goo.gl/kUGs3rsC7uo7bVvcA" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center gap-1 focus:outline-none" title="Compartilhar">
                         <div class="gmaps-btn-circle bg-[#e0f2f1] text-[#007b83] group-hover:bg-[#d0ebea] transition-all">
@@ -1816,9 +1788,7 @@
                             <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/>
                           </svg>
                         </div>
-                        <span class="text-[8.5px] font-medium text-[#007b83] leading-[1.05] text-center">
-                          Compartilh<br>ar
-                        </span>
+                        <span class="text-[9px] font-medium text-[#007b83] leading-tight">Compartilhar</span>
                       </a>
 
                     </div>
@@ -1841,7 +1811,7 @@
                       </svg>
                     </a>
 
-                    <!-- Lista de Detalhes (Endereço, Horário, Site, Telefone) -->
+                    <!-- Lista de Detalhes (Endereço, Horário, Telefone) -->
                     <div class="py-2 px-2.5 flex flex-col gap-1.5 text-[10.5px] text-[#3c4043]">
                       
                       <!-- Endereço e Localizado em -->
@@ -1873,18 +1843,6 @@
                             <polyline points="6 9 12 15 18 9"/>
                           </svg>
                         </div>
-                      </div>
-
-                      <!-- Site Oficial -->
-                      <div class="flex items-center gap-2">
-                        <svg class="gmaps-icon text-[#007b83] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                          <circle cx="12" cy="12" r="10"/>
-                          <line x1="2" y1="12" x2="22" y2="12"/>
-                          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"/>
-                        </svg>
-                        <a href="https://www.grupomaisbarato.com.br/" target="_blank" rel="noopener noreferrer" class="text-[#1a73e8] hover:underline truncate">
-                          grupomaisbarato.com.br
-                        </a>
                       </div>
 
                       <!-- Telefone -->
@@ -1971,22 +1929,54 @@
 
 
   <!-- ==========================================================================
-       SCRIPTS INTERATIVOS (CARROSSEL, ACCORDION & MOBILE MENU)
+       BOTÃO VOLTAR AO TOPO (SURGE COM SCROLL > 350PX)
+       ========================================================================== -->
+  <button id="backToTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Voltar ao Topo" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 w-10 h-10 rounded-full bg-white text-bf-ink hover:text-brand-red border border-bf-line shadow-bf-floating flex items-center justify-center transition-all duration-300 opacity-0 pointer-events-none hover:scale-110 active:scale-95 focus:outline-none select-none">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <!-- ==========================================================================
+       SCRIPTS INTERATIVOS (CARROSSEL, ACCORDION, MOBILE MENU & TOUCH OPTIMIZATIONS)
        ========================================================================== -->
   <script>
     // FAQ Accordion
     function toggleFaq(button) {
       const item = button.closest('.faq-item');
+      if (!item) return;
       item.classList.toggle('active');
     }
 
-    // Mobile Menu
+    // Mobile Menu Drawer com Backdrop e Bloqueio de Scroll
     function toggleMobileMenu() {
       const menu = document.getElementById('mobileMenu');
-      menu.classList.toggle('hidden-drawer');
+      const overlay = document.getElementById('mobileMenuOverlay');
+      const burgerIcon = document.getElementById('hamburgerIcon');
+      const closeIcon = document.getElementById('closeMenuIcon');
+      if (!menu) return;
+
+      const isHidden = menu.classList.contains('hidden-drawer');
+      if (isHidden) {
+        menu.classList.remove('hidden-drawer');
+        if (overlay) {
+          overlay.classList.remove('opacity-0', 'pointer-events-none');
+          overlay.classList.add('opacity-100', 'pointer-events-auto');
+        }
+        if (burgerIcon) burgerIcon.classList.add('hidden');
+        if (closeIcon) closeIcon.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      } else {
+        menu.classList.add('hidden-drawer');
+        if (overlay) {
+          overlay.classList.remove('opacity-100', 'pointer-events-auto');
+          overlay.classList.add('opacity-0', 'pointer-events-none');
+        }
+        if (burgerIcon) burgerIcon.classList.remove('hidden');
+        if (closeIcon) closeIcon.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
     }
 
-    // Carrossel Hero (79vh)
+    // Carrossel Hero (Calibragem Responsiva)
     let currentSlide = 0;
     const slides = document.querySelectorAll('.hero-slide');
     const dots = document.querySelectorAll('.slide-dot');
@@ -2003,9 +1993,9 @@
       });
       dots.forEach((d, idx) => {
         if (idx === currentSlide) {
-          d.className = 'slide-dot w-7 sm:w-9 h-2.5 rounded-full bg-brand-red transition-all duration-300';
+          d.className = 'slide-dot w-6 sm:w-8 md:w-9 h-2 sm:h-2.5 rounded-full bg-brand-red transition-all duration-300 flex-shrink-0';
         } else {
-          d.className = 'slide-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300';
+          d.className = 'slide-dot w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300 flex-shrink-0';
         }
       });
     }
@@ -2035,7 +2025,7 @@
       startAutoplay();
     }
 
-    // Suporte a Touch / Swipe Gestures no Mobile
+    // Suporte a Touch / Swipe Gestures no Hero Mobile
     if (heroSection) {
       let touchStartX = 0;
       let touchEndX = 0;
@@ -2046,7 +2036,7 @@
 
       heroSection.addEventListener('touchend', (e) => {
         touchEndX = e.changedTouches[0].screenX;
-        const threshold = 45;
+        const threshold = 40;
         if (touchEndX < touchStartX - threshold) {
           nextSlide();
           resetAutoplay();
@@ -2076,7 +2066,7 @@
       }
     });
 
-    // Iniciar autoplay
+    // Iniciar autoplay Hero
     startAutoplay();
 
     // ==========================================================================
@@ -2086,7 +2076,7 @@
       const track = document.getElementById('bannersTrack');
       if (!track) return;
       const firstCard = track.querySelector('.snap-start, .snap-center');
-      const cardWidth = firstCard ? firstCard.offsetWidth + 24 : 500;
+      const cardWidth = firstCard ? firstCard.offsetWidth + 18 : 340;
       if (direction === 'left') {
         track.scrollBy({ left: -cardWidth, behavior: 'smooth' });
       } else {
@@ -2094,7 +2084,7 @@
       }
     }
 
-    // Suporte a Arrastar (Drag to Scroll) com o mouse no Desktop
+    // Suporte a Touch Swipe & Arrastar com Mouse no Carrossel de Ofertas
     const bannersTrack = document.getElementById('bannersTrack');
     if (bannersTrack) {
       let isDragging = false;
@@ -2207,6 +2197,41 @@
 
     // Iniciar autoplay de banners horizontais
     startHAutoplay();
+
+    // ==========================================================================
+    // PAUSA DE PROVA SOCIAL (MARQUEE) AO TOCAR NA TELA NO MOBILE
+    // ==========================================================================
+    const depoimentosSection = document.getElementById('depoimentos');
+    if (depoimentosSection) {
+      const marquees = depoimentosSection.querySelectorAll('.animate-marquee-left, .animate-marquee-right');
+      let resumeTimer = null;
+
+      depoimentosSection.addEventListener('touchstart', () => {
+        marquees.forEach(m => m.style.animationPlayState = 'paused');
+        if (resumeTimer) clearTimeout(resumeTimer);
+      }, { passive: true });
+
+      depoimentosSection.addEventListener('touchend', () => {
+        resumeTimer = setTimeout(() => {
+          marquees.forEach(m => m.style.animationPlayState = 'running');
+        }, 2200);
+      }, { passive: true });
+    }
+
+    // ==========================================================================
+    // CONTROLE DO BOTÃO VOLTAR AO TOPO COM SCROLL
+    // ==========================================================================
+    window.addEventListener('scroll', () => {
+      const btn = document.getElementById('backToTopBtn');
+      if (!btn) return;
+      if (window.scrollY > 350) {
+        btn.classList.remove('opacity-0', 'pointer-events-none');
+        btn.classList.add('opacity-100', 'pointer-events-auto');
+      } else {
+        btn.classList.remove('opacity-100', 'pointer-events-auto');
+        btn.classList.add('opacity-0', 'pointer-events-none');
+      }
+    }, { passive: true });
   </script>
 
   <!-- ==========================================================================
@@ -2217,7 +2242,7 @@
     <div class="absolute inset-0" onclick="closeVideoModal()"></div>
 
     <!-- Contêiner do Modal Vertical 9:16 com animação suave de zoom -->
-    <div id="videoModalContainer" class="relative w-full max-w-[360px] sm:max-w-[400px] md:max-w-[430px] aspect-[9/16] max-h-[85vh] sm:max-h-[88vh] bg-black rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-white/20 transform scale-95 transition-all duration-300 z-10 flex items-center justify-center" style="aspect-ratio: 9/16;">
+    <div id="videoModalContainer" class="relative w-full max-w-[340px] sm:max-w-[400px] md:max-w-[430px] aspect-[9/16] max-h-[82vh] sm:max-h-[88vh] bg-black rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-white/20 transform scale-95 transition-all duration-300 z-10 flex items-center justify-center" style="aspect-ratio: 9/16;">
       
       <!-- Botão Fechar no Topo Direito -->
       <button onclick="closeVideoModal()" aria-label="Fechar vídeo" class="absolute top-3 right-3 sm:top-4 sm:right-4 z-30 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/70 hover:bg-brand-red text-white backdrop-blur-md border border-white/25 flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-brand-red cursor-pointer shadow-lg">
@@ -2288,12 +2313,16 @@
     window.openVideoModal = openVideoModal;
     window.closeVideoModal = closeVideoModal;
 
-    // Fechar ao pressionar tecla ESC
+    // Fechar ao pressionar tecla ESC (Modal e Mobile Menu)
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
         const modal = document.getElementById('videoModal');
         if (modal && !modal.classList.contains('pointer-events-none')) {
           closeVideoModal();
+        }
+        const menu = document.getElementById('mobileMenu');
+        if (menu && !menu.classList.contains('hidden-drawer')) {
+          toggleMobileMenu();
         }
       }
     });

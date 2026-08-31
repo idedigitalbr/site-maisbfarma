@@ -19,7 +19,7 @@ colors:
   muted-light: "#A0A3B1"
   
   # Superfícies e Linhas
-  canvas: "#FFEDEE"
+  canvas: "#F4FEFD"
   surface-soft: "#F8F9FA"
   surface-card: "#FFFFFF"
   surface-strong: "#F0F2F5"

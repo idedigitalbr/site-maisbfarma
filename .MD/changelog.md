@@ -1,5 +1,57 @@
 # Changelog
 
+## 2026-08-31 — Remoção do Botão Flutuante de WhatsApp (`#whatsappFab`)
+
+### Front-End & Elementos Flutuantes
+- **Remoção do Botão Flutuante:** Removido o botão flutuante verde de WhatsApp (`#whatsappFab` / "Atendimento WhatsApp") fixado no canto inferior da tela, mantendo apenas o botão flutuante de "Voltar ao Topo" (`#backToTopBtn`).
+
+## 2026-08-31 — Atualização da Cor de Fundo da Página (`#F4FEFD`)
+
+### Identidade Visual & Superfícies Globais
+- **Novo Tom de Fundo da Página (`#F4FEFD`):** Substituído o fundo anterior de tom rosado/avermelhado (`#FFEDEE`) pelo tom claro e suave de base `#F4FEFD` em todo o projeto (`tailwind.config`, `:root`, `html, body`, seções `#ofertas`, `#sobre`, `#faq`, indicadores da rede e contrato `DESIGN-maisbfarma.md`).
+
+## 2026-08-31 — Otimização Global da Responsividade e Experiência Mobile (World-Class Mobile UX)
+
+### Mobile Drawer, Header & Navegação
+- **Alternância Dinâmica de Ícone no Hamburger:** Transição instantânea entre o ícone de barras (`#hamburgerIcon`) e ícone de fechar (`#closeMenuIcon`) ao abrir e fechar o menu mobile.
+- **Overlay Escuro com Backdrop Blur (`#mobileMenuOverlay`):** Fundo translúcido escuro que fecha o menu ao tocar fora e previne rolagem de fundo (`overflow: hidden`).
+- **Rolagem Interna Independente no Drawer:** Altura restrita a `max-h-[calc(100dvh-78px)]` com scroll suave nativo, permitindo acesso fluido a todos os links em smartphones compactos (ex: iPhone SE, Galaxy A).
+- **Ajustes de Altura no Hero:** Calibragem de altura dinâmica do carrossel Hero (`68dvh` no mobile, `75dvh` no tablet e `79dvh` no desktop) para exibição equilibrada sem ocultar os cards de benefícios.
+
+### Toque, Interatividade & Física dos Carrosséis
+- **Zero Delay de Toque:** Inserido `touch-action: manipulation;` e `-webkit-tap-highlight-color: transparent;` no CSS para eliminar latência de clique (300ms) e flashes indesejados.
+- **Transição CSS Grid nos Acordeões FAQ:** Animação de expansão a 60fps usando CSS Grid (`grid-template-rows: 0fr -> 1fr`) e wrapper de overflow, garantindo abertura ultrafluida sem travamentos.
+- **Pausa Automática ao Toque no Marquee Google Reviews:** Listeners `touchstart` e `touchend` no container de depoimentos para pausar o carrossel contínuo enquanto o usuário lê o comentário na tela do celular, retomando automaticamente após 2.2s.
+- **Controles Touch-Friendly do Hero e Ofertas:** Botões de seta compactos com backdrop blur (`w-8 h-8` a `w-9 h-9`) e barra de dots com scroll horizontal e snap para até 10 slides sem quebra.
+
+### Diagramação dos Indicadores & Filiais
+- **Grid 2x2 Suave nos Indicadores da Rede (S4):** Cada indicador em smartphone agora conta com box sutil (`bg-[#FFEDEE]/45`, borda arredondada `rounded-xl`, tipografia protegida contra truncamento irregular).
+- **Cards Google Maps Mobile-Ready (S9):** Encaixe responsivo do container vermelho das filiais Plaza e Tapanã (`w-full max-w-[310px] mx-auto`) com fotos reais e proporção exata sem estouro de largura.
+- **Floating Action Hub (WhatsApp FAB & Voltar ao Topo):** Botão flutuante de WhatsApp fixo com efeito de pulso contínuo (`#whatsappFab`) no canto inferior direito e botão dinâmico "Voltar ao Topo" (`#backToTopBtn`) que surge ao rolar mais de 350px.
+
+## 2026-08-31 — Limpeza dos Cards do Google Maps (Filiais Plaza & Tapanã)
+
+### Front-End & Cards Google Maps (#filiais)
+- **Remoção de Botões Secundários:** Removidos os botões "Próximo" e "Enviar para o smartphone" da barra de ações dos cards das filiais Plaza e Tapanã, reorganizando a grade para 3 colunas perfeitamente distribuídas ("Rotas", "Salvar" e "Compartilhar").
+- **Remoção da Linha de Site:** Removida a linha com o link de site (`grupomaisbarato.com.br`) da lista de detalhes em ambos os cards, mantendo apenas Endereço/Localizado em, Horário de funcionamento e Telefone de contato.
+
+## 2026-08-31 — Atualização de Link "Trabalhe Conosco" (Portal Senior) & "Peça Pelo Ifood" (Linktree)
+
+### Front-End & Faixa Superior Institucional (Header & Mobile Drawer)
+- **Atualização "Trabalhe Conosco":** Vinculado o link de "Trabalhe Conosco" (desktop e mobile) diretamente para a plataforma oficial do Grupo Mais Barato no Portal de Talentos Senior (`https://grupomaisbarato.portaldetalentos.senior.com.br/`) com abertura em nova guia (`target="_blank"` e `rel="noopener noreferrer"`).
+- **Remoção de Links:** Removidos os links "Grupo de Ofertas" e "Vendas no Atacado" da faixa superior vermelha do header (desktop e mobile) e do menu lateral gaveta (mobile drawer).
+- **Novo Link "Peça Pelo Ifood":** Inserido o link "Peça Pelo Ifood" apontando diretamente para o Linktree oficial da marca (`https://linktr.ee/mais.bfarma`) com abertura em nova guia (`target="_blank"` e `rel="noopener noreferrer"`).
+
+## 2026-08-31 — Substituição de "Clube +B" por Botão "Fale Conosco" (Linktree)
+
+### Front-End & Navegação (Navbar & Mobile Drawer)
+- **Remoção de "Clube +B":** Removido o item "Clube +B" da barra de navegação desktop e do menu lateral mobile (drawer).
+- **Novo Botão "Fale Conosco":** Adicionado botão de destaque estilizado `[Fale Conosco]` em vermelho da marca (`bg-brand-red`), com ícone de mensagem, cantos arredondados e transição suave, direcionando para o Linktree oficial da marca (`https://linktr.ee/mais.bfarma`).
+- **Menu Mobile Atualizado:** Link do "Fale Conosco" integrado no menu mobile apontando para o Linktree com `target="_blank"` e fechamento automático do menu.
+
+### Front-End & Links Oficiais
+- **Linktree Oficial nos Banners Horizontais:** Atualizados os links dos slides 01 (Clube +B) e 02 (iFood) no carrossel de banners horizontais para direcionar para `https://linktr.ee/mais.bfarma` com abertura em nova guia (`target="_blank"` e `rel="noopener noreferrer"`).
+
 ## 2026-08-31 — Reformulação da Seção de Reputação Google & Cards das Filiais (Alinhamento com Anexo 2 & Anexo 3)
 
 ### Front-End & Layout da Seção de Reputação (#filiais)
