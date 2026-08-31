@@ -230,6 +230,32 @@
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
+
+    /* Animação Contínua de Marquee para Avaliações (Dual-Row Infinite Scroll) */
+    @keyframes marqueeLeft {
+      0% { transform: translate3d(0, 0, 0); }
+      100% { transform: translate3d(-50%, 0, 0); }
+    }
+    @keyframes marqueeRight {
+      0% { transform: translate3d(-50%, 0, 0); }
+      100% { transform: translate3d(0, 0, 0); }
+    }
+    .animate-marquee-left {
+      display: flex;
+      width: max-content;
+      animation: marqueeLeft 42s linear infinite;
+      will-change: transform;
+    }
+    .animate-marquee-right {
+      display: flex;
+      width: max-content;
+      animation: marqueeRight 46s linear infinite;
+      will-change: transform;
+    }
+    .animate-marquee-left:hover,
+    .animate-marquee-right:hover {
+      animation-play-state: paused;
+    }
   </style>
 </head>
 <body class="bg-[#FFEDEE] m-0 p-0 text-bf-ink selection:bg-brand-red selection:text-white overflow-x-hidden">
@@ -751,10 +777,25 @@
             </a>
           </div>
 
-          <!-- Coluna Foto Institucional Família (7 colunas) -->
+          <!-- Coluna Foto Institucional Equipe +B Farma com Botão de Play (7 colunas) -->
           <div class="lg:col-span-7 w-full min-w-0">
-            <div class="relative w-full rounded-2xl sm:rounded-3xl lg:rounded-[32px] overflow-hidden shadow-bf-subtle border border-bf-line/60">
-              <img src="assets/Pagina/sobre-familia.webp" alt="Cuidado presente no seu dia a dia — +B Farma" class="w-full h-auto object-cover block" loading="lazy" decoding="async">
+            <div onclick="openVideoModal()" class="relative w-full rounded-2xl sm:rounded-3xl lg:rounded-[32px] overflow-hidden shadow-bf-subtle border border-bf-line/60 group/videobtn cursor-pointer select-none" role="button" tabindex="0" aria-label="Assistir ao vídeo institucional da +B Farma" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openVideoModal(); }">
+              <img src="assets/Pagina/S3%20SOBRE/sobre-farma.png" alt="Equipe +B Farma — Cuidado que está presente no seu dia a dia" class="w-full h-auto object-cover block transition-transform duration-700 ease-out group-hover/videobtn:scale-105" loading="lazy" decoding="async">
+              
+              <!-- Overlay suave no hover -->
+              <div class="absolute inset-0 bg-black/10 group-hover/videobtn:bg-black/25 transition-colors duration-300"></div>
+
+              <!-- Botão de Play Central Estilizado (Tamanho Reduzido & Blur Sutil) -->
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-white/30 group-hover/videobtn:bg-white/45 backdrop-blur-[2px] border-2 border-brand-red text-brand-red shadow-lg transition-all duration-300 group-hover/videobtn:scale-110 group-hover/videobtn:shadow-brand-red/30">
+                  <!-- Pulso animado sutil -->
+                  <span class="absolute -inset-1 rounded-full border border-brand-red/40 animate-ping opacity-60 pointer-events-none"></span>
+                  <!-- Ícone Triângulo Play Outline em Vermelho -->
+                  <svg class="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 translate-x-0.5 text-brand-red transition-transform duration-300 group-hover/videobtn:scale-105" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                  </svg>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -848,14 +889,14 @@
               <!-- Slide 01: Clube +B -->
               <div class="w-full flex-shrink-0 relative overflow-hidden">
                 <a href="https://wa.me/5591999999999?text=Ol%C3%A1%2C%20gostaria%20de%20me%20cadastrar%20no%20Clube%20%2BB%20Farma" target="_blank" rel="noopener" class="block w-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-red">
-                  <img src="assets/Pagina/S4%20BANNERS%20HORIZONTAIS/1-BANNER-HORIZONTAL.png" alt="+B Farma — Clube +B: Mais vantagens para você economizar todos os dias" class="w-full h-auto object-cover block" loading="eager" decoding="async" draggable="false">
+                  <img src="assets/Pagina/S4%20BANNERS%20HORIZONTAIS/1-BANNER-HORIZONTALL.png" alt="+B Farma — Clube +B: Mais vantagens para você economizar todos os dias" class="w-full h-auto object-cover block" loading="eager" decoding="async" draggable="false">
                 </a>
               </div>
 
               <!-- Slide 02: iFood / Pedidos Online -->
               <div class="w-full flex-shrink-0 relative overflow-hidden">
                 <a href="https://wa.me/5591999999999?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20na%20%2BB%20Farma" target="_blank" rel="noopener" class="block w-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-red">
-                  <img src="assets/Pagina/S4%20BANNERS%20HORIZONTAIS/2-banner-ifod.png" alt="+B Farma no iFood — Peça pelo WhatsApp ou iFood e receba rápido" class="w-full h-auto object-cover block" loading="lazy" decoding="async" draggable="false">
+                  <img src="assets/Pagina/S4%20BANNERS%20HORIZONTAIS/2-banner-ifood.png" alt="+B Farma no iFood — Peça pelo WhatsApp ou iFood e receba rápido" class="w-full h-auto object-cover block" loading="lazy" decoding="async" draggable="false">
                 </a>
               </div>
 
@@ -949,95 +990,424 @@
 
 
     <!-- ==========================================================================
-         S8 — AVALIAÇÕES / PROVA SOCIAL GOOGLE (FUNDO ESCURO #1C1D22)
+         S8 — AVALIAÇÕES / PROVA SOCIAL GOOGLE MAPS (DUAL-ROW INFINITE MARQUEE)
          ========================================================================== -->
-    <section id="depoimentos" class="bg-bf-dark text-white pt-12 sm:pt-16 pb-28 sm:pb-36 rounded-t-[24px] sm:rounded-t-[32px] md:rounded-t-[40px] relative scroll-mt-24 md:scroll-mt-28">
-      <div class="bf-container">
-        
-        <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 px-2">
-          <span class="text-xs font-bold uppercase tracking-widest text-brand-red block mb-2">PROVA SOCIAL</span>
-          <h2 class="text-2xl sm:text-3xl font-bold text-white break-words">O que nossos clientes dizem.</h2>
-          <p class="text-xs sm:text-sm text-slate-400 mt-2">Centenas de avaliações 5 estrelas verificadas no Google Meu Negócio.</p>
+    <section id="depoimentos" class="bg-[#1E212A] text-white py-12 sm:py-16 rounded-t-[28px] sm:rounded-t-[36px] rounded-b-[28px] sm:rounded-b-[36px] relative overflow-hidden scroll-mt-24 md:scroll-mt-28 shadow-none">
+      
+      <!-- Cabeçalho da Seção -->
+      <div class="bf-container mb-8 sm:mb-10">
+        <div class="text-center max-w-2xl mx-auto px-2">
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-red block mb-2">AVALIAÇÕES NO GOOGLE</span>
+          <h2 class="text-2xl sm:text-3xl md:text-[34px] font-bold text-white tracking-tight break-words">O que nossos clientes dizem no Google.</h2>
+          <div class="flex items-center justify-center gap-2 mt-3 flex-wrap">
+            <div class="flex items-center gap-1 text-amber-400">
+              <svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="text-xs sm:text-sm font-semibold text-slate-300">Classificação 4.9 de 5.0 estrelas</span>
+            <span class="text-slate-500">·</span>
+            <span class="text-xs sm:text-sm text-slate-400">Unidades Plaza & Tapanã</span>
+          </div>
         </div>
+      </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+      <!-- Contêiner do Marquee Duplo com Gradientes Laterais Escuros de Fade (Sem Sombras Brancas) -->
+      <div class="relative w-full overflow-hidden select-none py-2">
+        
+        <!-- Máscaras Laterais Escuras de Transição Suave -->
+        <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-24 md:w-36 bg-gradient-to-r from-[#1E212A] via-[#1E212A]/80 to-transparent z-20"></div>
+        <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-24 md:w-36 bg-gradient-to-l from-[#1E212A] via-[#1E212A]/80 to-transparent z-20"></div>
+
+        <!-- LINHA 1 (Scroll Contínuo para a Esquerda) -->
+        <div class="animate-marquee-left gap-4 sm:gap-5 mb-4 sm:mb-5">
           
-          <!-- Review 1 -->
-          <div class="bg-bf-darkcard border border-slate-700/60 rounded-2xl p-4 sm:p-5 shadow-xs">
-            <div class="flex items-center gap-3 mb-3">
-              <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-700 text-slate-200 font-bold flex items-center justify-center text-xs flex-shrink-0">LN</div>
+          <!-- Card 1: Luciana Nascimento -->
+          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#282B35] hover:bg-[#313542] border border-slate-700/50 hover:border-slate-500/80 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25">
+            <div class="flex items-center gap-3 mb-2.5">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&auto=format&fit=crop&q=80" alt="Luciana Nascimento" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border border-white/10 flex-shrink-0">
               <div class="min-w-0">
                 <h5 class="text-xs sm:text-sm font-bold text-white truncate">Luciana Nascimento</h5>
-                <span class="text-[10px] sm:text-[11px] text-slate-400">há 1 semana · Google</span>
+                <span class="text-[10px] sm:text-[11px] text-slate-400">1 avaliação</span>
               </div>
             </div>
-            <!-- Lucide Stars -->
-            <div class="flex items-center gap-1 text-amber-400 mb-2">
-              <svg class="w-3.5 h-3.5 fill-amber-400 text-amber-400" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg class="w-3.5 h-3.5 fill-amber-400 text-amber-400" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg class="w-3.5 h-3.5 fill-amber-400 text-amber-400" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg class="w-3.5 h-3.5 fill-amber-400 text-amber-400" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg class="w-3.5 h-3.5 fill-amber-400 text-amber-400" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <div class="flex items-center gap-1.5 text-amber-400 mb-2">
+              <div class="flex items-center gap-0.5">
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <span class="text-[10px] sm:text-[11px] text-slate-400">há 2 semanas</span>
             </div>
-            <p class="text-xs text-slate-300 leading-relaxed italic break-words">
-              "Ótimo atendimento e preços muito bons! Sempre compro pelo atendimento e retiro rapidinho na loja."
+            <p class="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal break-words line-clamp-3">
+              "Ótimo atendimento e preços muito bons"
             </p>
           </div>
 
-          <!-- Review 2 -->
-          <div class="bg-bf-darkcard border border-slate-700/60 rounded-2xl p-4 sm:p-5 shadow-xs">
-            <div class="flex items-center gap-3 mb-3">
-              <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-700 text-slate-200 font-bold flex items-center justify-center text-xs flex-shrink-0">KS</div>
+          <!-- Card 2: Karlene Suelen -->
+          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#282B35] hover:bg-[#313542] border border-slate-700/50 hover:border-slate-500/80 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25">
+            <div class="flex items-center gap-3 mb-2.5">
+              <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#246D65] text-white font-bold flex items-center justify-center text-sm flex-shrink-0 shadow-xs">K</div>
               <div class="min-w-0">
-                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Kariene Suelen</h5>
-                <span class="text-[10px] sm:text-[11px] text-slate-400">há 5 dias · Google</span>
+                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Karlene Suelen</h5>
+                <span class="text-[10px] sm:text-[11px] text-slate-400">2 avaliações</span>
               </div>
             </div>
-            <!-- Lucide Stars -->
-            <div class="flex items-center gap-1 text-amber-400 mb-2">
-              <svg class="w-3.5 h-3.5 fill-amber-400 text-amber-400" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg class="w-3.5 h-3.5 fill-amber-400 text-amber-400" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg class="w-3.5 h-3.5 fill-amber-400 text-amber-400" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg class="w-3.5 h-3.5 fill-amber-400 text-amber-400" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg class="w-3.5 h-3.5 fill-amber-400 text-amber-400" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <div class="flex items-center gap-1.5 text-amber-400 mb-2">
+              <div class="flex items-center gap-0.5">
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <span class="text-[10px] sm:text-[11px] text-slate-400">há 1 semana</span>
             </div>
-            <p class="text-xs text-slate-300 leading-relaxed italic break-words">
-              "Excelente atendimento e preço justo. A melhor farmácia da região com variedade completa e equipe atenciosa."
+            <p class="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal break-words line-clamp-3">
+              "Excelente atendimento e preço bom."
             </p>
           </div>
 
-          <!-- Review 3 -->
-          <div class="bg-bf-darkcard border border-slate-700/60 rounded-2xl p-4 sm:p-5 shadow-xs">
-            <div class="flex items-center gap-3 mb-3">
-              <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-700 text-slate-200 font-bold flex items-center justify-center text-xs flex-shrink-0">GT</div>
+          <!-- Card 3: Giulia Tochetto Castagneti -->
+          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#282B35] hover:bg-[#313542] border border-slate-700/50 hover:border-slate-500/80 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25">
+            <div class="flex items-center gap-3 mb-2.5">
+              <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#9333EA] text-white font-bold flex items-center justify-center text-sm flex-shrink-0 shadow-xs">G</div>
               <div class="min-w-0">
-                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Giulia Castagneti</h5>
-                <span class="text-[10px] sm:text-[11px] text-slate-400">há 1 semana · Google</span>
+                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Giulia Tochetto Castagneti</h5>
+                <span class="text-[10px] sm:text-[11px] text-slate-400">1 avaliação</span>
               </div>
             </div>
-            <!-- Lucide Stars -->
-            <div class="flex items-center gap-1 text-amber-400 mb-2">
-              <svg class="w-3.5 h-3.5 fill-amber-400 text-amber-400" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg class="w-3.5 h-3.5 fill-amber-400 text-amber-400" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg class="w-3.5 h-3.5 fill-amber-400 text-amber-400" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg class="w-3.5 h-3.5 fill-amber-400 text-amber-400" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg class="w-3.5 h-3.5 fill-amber-400 text-amber-400" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <div class="flex items-center gap-1.5 text-amber-400 mb-2">
+              <div class="flex items-center gap-0.5">
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <span class="text-[10px] sm:text-[11px] text-slate-400">há 1 semana</span>
             </div>
-            <p class="text-xs text-slate-300 leading-relaxed italic break-words">
-              "Atendimento maravilhoso e preços ótimos. Farmacêuticos super dedicados e ambiente impecável!"
+            <p class="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal break-words line-clamp-3">
+              "Atendimento maravilhoso e preços justos, recomendo!"
+            </p>
+          </div>
+
+          <!-- Card 4: Tamires Mesquita -->
+          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#282B35] hover:bg-[#313542] border border-slate-700/50 hover:border-slate-500/80 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25">
+            <div class="flex items-center gap-3 mb-2.5">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&auto=format&fit=crop&q=80" alt="Tamires Mesquita" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border border-white/10 flex-shrink-0">
+              <div class="min-w-0">
+                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Tamires Mesquita</h5>
+                <span class="text-[10px] sm:text-[11px] text-slate-400">2 avaliações</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-1.5 text-amber-400 mb-2">
+              <div class="flex items-center gap-0.5">
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <span class="text-[10px] sm:text-[11px] text-slate-400">há 3 meses</span>
+            </div>
+            <p class="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal break-words line-clamp-3">
+              "Onde você encontra medicamentos e produtos de beleza e cuidados com a pele com excelente preço."
+            </p>
+          </div>
+
+          <!-- Card 5: Ellen Brilhante -->
+          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#282B35] hover:bg-[#313542] border border-slate-700/50 hover:border-slate-500/80 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25">
+            <div class="flex items-center gap-3 mb-2.5">
+              <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#555866] text-white font-bold flex items-center justify-center text-sm flex-shrink-0 shadow-xs">E</div>
+              <div class="min-w-0">
+                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Ellen Brilhante</h5>
+                <span class="text-[10px] sm:text-[11px] text-slate-400">3 avaliações</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-1.5 text-amber-400 mb-2">
+              <div class="flex items-center gap-0.5">
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <span class="text-[10px] sm:text-[11px] text-slate-400">há 11 meses</span>
+            </div>
+            <p class="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal break-words line-clamp-3">
+              "Rede de supermercado nível A, mix de produtos muito sortido."
+            </p>
+          </div>
+
+          <!-- DUPLICAÇÃO DA LINHA 1 (SEAMLESS INFINITE LOOP) -->
+          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#282B35] hover:bg-[#313542] border border-slate-700/50 hover:border-slate-500/80 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25" aria-hidden="true">
+            <div class="flex items-center gap-3 mb-2.5">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&auto=format&fit=crop&q=80" alt="Luciana Nascimento" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border border-white/10 flex-shrink-0">
+              <div class="min-w-0">
+                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Luciana Nascimento</h5>
+                <span class="text-[10px] sm:text-[11px] text-slate-400">1 avaliação</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-1.5 text-amber-400 mb-2">
+              <div class="flex items-center gap-0.5">
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <span class="text-[10px] sm:text-[11px] text-slate-400">há 2 semanas</span>
+            </div>
+            <p class="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal break-words line-clamp-3">
+              "Ótimo atendimento e preços muito bons"
+            </p>
+          </div>
+
+          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#282B35] hover:bg-[#313542] border border-slate-700/50 hover:border-slate-500/80 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25" aria-hidden="true">
+            <div class="flex items-center gap-3 mb-2.5">
+              <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#246D65] text-white font-bold flex items-center justify-center text-sm flex-shrink-0 shadow-xs">K</div>
+              <div class="min-w-0">
+                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Karlene Suelen</h5>
+                <span class="text-[10px] sm:text-[11px] text-slate-400">2 avaliações</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-1.5 text-amber-400 mb-2">
+              <div class="flex items-center gap-0.5">
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <span class="text-[10px] sm:text-[11px] text-slate-400">há 1 semana</span>
+            </div>
+            <p class="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal break-words line-clamp-3">
+              "Excelente atendimento e preço bom."
+            </p>
+          </div>
+
+          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#282B35] hover:bg-[#313542] border border-slate-700/50 hover:border-slate-500/80 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25" aria-hidden="true">
+            <div class="flex items-center gap-3 mb-2.5">
+              <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#9333EA] text-white font-bold flex items-center justify-center text-sm flex-shrink-0 shadow-xs">G</div>
+              <div class="min-w-0">
+                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Giulia Tochetto Castagneti</h5>
+                <span class="text-[10px] sm:text-[11px] text-slate-400">1 avaliação</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-1.5 text-amber-400 mb-2">
+              <div class="flex items-center gap-0.5">
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <span class="text-[10px] sm:text-[11px] text-slate-400">há 1 semana</span>
+            </div>
+            <p class="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal break-words line-clamp-3">
+              "Atendimento maravilhoso e preços justos, recomendo!"
+            </p>
+          </div>
+
+        </div>
+
+        <!-- LINHA 2 (Scroll Contínuo para a Direita) -->
+        <div class="animate-marquee-right gap-4 sm:gap-5">
+          
+          <!-- Card 6: Alfredo Maidana -->
+          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#282B35] hover:bg-[#313542] border border-slate-700/50 hover:border-slate-500/80 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25">
+            <div class="flex items-center gap-3 mb-2.5">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80" alt="Alfredo Maidana" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border border-white/10 flex-shrink-0">
+              <div class="min-w-0">
+                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Alfredo Maidana</h5>
+                <span class="text-[10px] sm:text-[11px] text-slate-400">1 avaliação</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-1.5 text-amber-400 mb-2">
+              <div class="flex items-center gap-0.5">
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <span class="text-[10px] sm:text-[11px] text-slate-400">há 1 semana</span>
+            </div>
+            <p class="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal break-words line-clamp-3">
+              "Atendimento excelente, entrega pontual e ganhei um bombom."
+            </p>
+          </div>
+
+          <!-- Card 7: lango lango -->
+          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#282B35] hover:bg-[#313542] border border-slate-700/50 hover:border-slate-500/80 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25">
+            <div class="flex items-center gap-3 mb-2.5">
+              <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#0284C7] text-white font-bold flex items-center justify-center text-sm flex-shrink-0 shadow-xs">l</div>
+              <div class="min-w-0">
+                <h5 class="text-xs sm:text-sm font-bold text-white truncate">lango lango</h5>
+                <span class="text-[10px] sm:text-[11px] text-slate-400">1 avaliação</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-1.5 text-amber-400 mb-2">
+              <div class="flex items-center gap-0.5">
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <span class="text-[10px] sm:text-[11px] text-slate-400">há 2 semanas</span>
+            </div>
+            <p class="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal break-words line-clamp-3">
+              "Melhor farmácia e melhores preço de Medianeira, recomendo e assino em baixo!"
+            </p>
+          </div>
+
+          <!-- Card 8: Mauricio Pedroso Da Silva -->
+          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#282B35] hover:bg-[#313542] border border-slate-700/50 hover:border-slate-500/80 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25">
+            <div class="flex items-center gap-3 mb-2.5">
+              <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#EA580C] text-white font-bold flex items-center justify-center text-sm flex-shrink-0 shadow-xs">M</div>
+              <div class="min-w-0">
+                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Mauricio Pedroso Da Silva</h5>
+                <span class="text-[10px] sm:text-[11px] text-slate-400">1 avaliação</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-1.5 text-amber-400 mb-2">
+              <div class="flex items-center gap-0.5">
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <span class="text-[10px] sm:text-[11px] text-slate-400">há 2 semanas</span>
+            </div>
+            <p class="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal break-words line-clamp-3">
+              "Ótimo atendimento preço excelente"
+            </p>
+          </div>
+
+          <!-- Card 9: Adriano Branco -->
+          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#282B35] hover:bg-[#313542] border border-slate-700/50 hover:border-slate-500/80 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25">
+            <div class="flex items-center gap-3 mb-2.5">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Adriano Branco" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border border-white/10 flex-shrink-0">
+              <div class="min-w-0">
+                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Adriano Branco</h5>
+                <span class="text-[10px] sm:text-[11px] text-slate-400">Guia Local · 15 avaliações</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-1.5 text-amber-400 mb-2">
+              <div class="flex items-center gap-0.5">
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <span class="text-[10px] sm:text-[11px] text-slate-400">há 2 semanas</span>
+            </div>
+            <p class="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal break-words line-clamp-3">
+              "Ambiente impecável, farmacêuticos competentes e variedade total de medicamentos."
+            </p>
+          </div>
+
+          <!-- DUPLICAÇÃO DA LINHA 2 (SEAMLESS INFINITE LOOP) -->
+          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#282B35] hover:bg-[#313542] border border-slate-700/50 hover:border-slate-500/80 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25" aria-hidden="true">
+            <div class="flex items-center gap-3 mb-2.5">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80" alt="Alfredo Maidana" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border border-white/10 flex-shrink-0">
+              <div class="min-w-0">
+                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Alfredo Maidana</h5>
+                <span class="text-[10px] sm:text-[11px] text-slate-400">1 avaliação</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-1.5 text-amber-400 mb-2">
+              <div class="flex items-center gap-0.5">
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <span class="text-[10px] sm:text-[11px] text-slate-400">há 1 semana</span>
+            </div>
+            <p class="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal break-words line-clamp-3">
+              "Atendimento excelente, entrega pontual e ganhei um bombom."
+            </p>
+          </div>
+
+          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#282B35] hover:bg-[#313542] border border-slate-700/50 hover:border-slate-500/80 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25" aria-hidden="true">
+            <div class="flex items-center gap-3 mb-2.5">
+              <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#0284C7] text-white font-bold flex items-center justify-center text-sm flex-shrink-0 shadow-xs">l</div>
+              <div class="min-w-0">
+                <h5 class="text-xs sm:text-sm font-bold text-white truncate">lango lango</h5>
+                <span class="text-[10px] sm:text-[11px] text-slate-400">1 avaliação</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-1.5 text-amber-400 mb-2">
+              <div class="flex items-center gap-0.5">
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <span class="text-[10px] sm:text-[11px] text-slate-400">há 2 semanas</span>
+            </div>
+            <p class="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal break-words line-clamp-3">
+              "Melhor farmácia e melhores preço de Medianeira, recomendo e assino em baixo!"
+            </p>
+          </div>
+
+          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#282B35] hover:bg-[#313542] border border-slate-700/50 hover:border-slate-500/80 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25" aria-hidden="true">
+            <div class="flex items-center gap-3 mb-2.5">
+              <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#EA580C] text-white font-bold flex items-center justify-center text-sm flex-shrink-0 shadow-xs">M</div>
+              <div class="min-w-0">
+                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Mauricio Pedroso Da Silva</h5>
+                <span class="text-[10px] sm:text-[11px] text-slate-400">1 avaliação</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-1.5 text-amber-400 mb-2">
+              <div class="flex items-center gap-0.5">
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <span class="text-[10px] sm:text-[11px] text-slate-400">há 2 semanas</span>
+            </div>
+            <p class="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal break-words line-clamp-3">
+              "Ótimo atendimento preço excelente"
             </p>
           </div>
 
         </div>
 
       </div>
+
+      <!-- Links Oficiais para Avaliar / Ver no Google Maps -->
+      <div class="bf-container mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+        <a href="https://maps.app.goo.gl/mUSdPgqT883Qq5qR8" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-800/80 hover:bg-brand-red border border-slate-700 text-white text-xs sm:text-sm font-semibold transition-all duration-300 hover:scale-105 shadow-sm no-underline">
+          <svg class="w-4 h-4 text-white flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Ver avaliações no Maps (Plaza) ↗</span>
+        </a>
+        <a href="https://maps.app.goo.gl/62BFQ6qK31X7e7wR6" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-800/80 hover:bg-brand-red border border-slate-700 text-white text-xs sm:text-sm font-semibold transition-all duration-300 hover:scale-105 shadow-sm no-underline">
+          <svg class="w-4 h-4 text-white flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Ver avaliações no Maps (Tapanã) ↗</span>
+        </a>
+      </div>
+
     </section>
 
 
     <!-- ==========================================================================
          S9 — REPUTAÇÃO GOOGLE & FILIAIS PLAZA / TAPANÃ
          ========================================================================== -->
-    <section id="filiais" class="relative z-30 -mt-20 sm:-mt-24 mb-12 sm:mb-16 scroll-mt-24 md:scroll-mt-28">
+    <section id="filiais" class="relative z-30 my-12 sm:my-16 scroll-mt-24 md:scroll-mt-28">
       <div class="bf-container">
         
         <div class="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 border border-bf-line shadow-bf-elevated">
@@ -1401,6 +1771,96 @@
 
     // Iniciar autoplay de banners horizontais
     startHAutoplay();
+  </script>
+
+  <!-- ==========================================================================
+       MODAL DE VÍDEO INSTITUCIONAL (+B FARMA)
+       ========================================================================== -->
+  <div id="videoModal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 md:p-8 bg-black/85 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300" role="dialog" aria-modal="true" aria-label="Vídeo Institucional +B Farma">
+    <!-- Overlay de fundo escuro para clique fora -->
+    <div class="absolute inset-0" onclick="closeVideoModal()"></div>
+
+    <!-- Contêiner do Modal Vertical 9:16 com animação suave de zoom -->
+    <div id="videoModalContainer" class="relative w-full max-w-[360px] sm:max-w-[400px] md:max-w-[430px] aspect-[9/16] max-h-[85vh] sm:max-h-[88vh] bg-black rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-white/20 transform scale-95 transition-all duration-300 z-10 flex items-center justify-center" style="aspect-ratio: 9/16;">
+      
+      <!-- Botão Fechar no Topo Direito -->
+      <button onclick="closeVideoModal()" aria-label="Fechar vídeo" class="absolute top-3 right-3 sm:top-4 sm:right-4 z-30 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/70 hover:bg-brand-red text-white backdrop-blur-md border border-white/25 flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-brand-red cursor-pointer shadow-lg">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Player de Vídeo HTML5 Vertical 9:16 -->
+      <div class="relative w-full h-full bg-black flex items-center justify-center overflow-hidden">
+        <video id="institutionalVideo" src="assets/Pagina/S3%20SOBRE/farmab-video.mp4" class="w-full h-full object-cover rounded-2xl sm:rounded-3xl" controls preload="auto" playsinline>
+          <source src="assets/Pagina/S3%20SOBRE/farmab-video.mp4" type="video/mp4">
+          Seu navegador não suporta a reprodução deste vídeo.
+        </video>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // ==========================================================================
+    // CONTROLE DO MODAL DE VÍDEO INSTITUCIONAL (SEÇÃO SOBRE)
+    // ==========================================================================
+    function openVideoModal() {
+      const modal = document.getElementById('videoModal');
+      const container = document.getElementById('videoModalContainer');
+      const video = document.getElementById('institutionalVideo');
+      if (!modal || !video) return;
+
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100', 'pointer-events-auto');
+      if (container) {
+        container.classList.remove('scale-95');
+        container.classList.add('scale-100');
+      }
+      document.body.style.overflow = 'hidden';
+
+      // Inicia reprodução
+      video.currentTime = 0;
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(function(err) {
+          console.warn('Autoplay bloqueado pelo navegador:', err);
+        });
+      }
+    }
+
+    function closeVideoModal() {
+      const modal = document.getElementById('videoModal');
+      const container = document.getElementById('videoModalContainer');
+      const video = document.getElementById('institutionalVideo');
+      if (!modal) return;
+
+      modal.classList.remove('opacity-100', 'pointer-events-auto');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      if (container) {
+        container.classList.remove('scale-100');
+        container.classList.add('scale-95');
+      }
+      document.body.style.overflow = '';
+      if (video) {
+        video.pause();
+      }
+    }
+
+    // Exportação para escopo global do window
+    window.openVideoModal = openVideoModal;
+    window.closeVideoModal = closeVideoModal;
+
+    // Fechar ao pressionar tecla ESC
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        const modal = document.getElementById('videoModal');
+        if (modal && !modal.classList.contains('pointer-events-none')) {
+          closeVideoModal();
+        }
+      }
+    });
   </script>
 
   <!-- Script Oficial Lucide Icons -->

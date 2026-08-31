@@ -1,6 +1,38 @@
 # Changelog
 
-## 2026-08-29 — Atualização da Cor dos Chevrons do FAQ para Vermelho da Marca
+## 2026-08-31 — Implementação do Carrossel Duplo de Avaliações do Google Maps (Prova Social)
+
+### Front-End & Prova Social / Avaliações (S8)
+- **Carrossel Duplo Infinito (Dual-Row Infinite Marquee):** Implementada a nova seção de avaliações inspirada no layout escuro de referência (**Anexo 2**), substituindo o grid estático por dois trilhos contínuos com direções complementares (`animate-marquee-left` e `animate-marquee-right`).
+- **Eliminação de Sombras Brancas e Conflitos:** Removida sobreposição negativa com a seção de filiais e ajustada a paleta para `#1E212A` com cards `#282B35` limpos e elegantes.
+- **Fotos de Perfil Reais e Avatares Coloridos:** Fotos reais de alta qualidade para clientes como Luciana Nascimento, Tamires Mesquita, Adriano Branco e Alfredo Maidana, além de avatares com as cores oficiais do Google Maps.
+- **Tradução Completa para Português (PT-BR) & Remoção de Badges 'NOVO':** Todos os termos em inglês presentes nos cards de depoimento foram traduzidos para português nativo (`1 avaliação`, `2 avaliações`, `Guia Local`, `há 2 semanas`, `há 1 semana`, `há 3 meses`), e as tags "NOVO" foram completamente removidas para um design mais limpo e minimalista.
+- **Cards de Depoimento Limpos e Elegantes:** Removidos os links individuais e ícones de tooltip de todos os cards de depoimento (incluindo Tamires), mantendo os cards 100% focados na leitura do depoimento visual e prova social contínua.
+- **Botões Oficiais de Ação no Google Maps:** Mantidos apenas os botões pílula centrais de ação na base da seção para quem deseja abrir a ficha completa do Google Maps da unidade Plaza ou Tapanã.
+
+## 2026-08-31 — Implementação e Refinamento do Modal de Vídeo Institucional
+
+### Front-End & Vídeo / Seção Sobre (S4)
+- **Refinamento do Botão de Play:** Reduzido o diâmetro do botão (`w-12` a `w-16`) e do ícone (`w-5` a `w-7`), com blur sutil e leve (`backdrop-blur-[2px]` e `bg-white/30`) para um visual minimalista e elegante sem ofuscar as pessoas na foto.
+- **Proporção Vertical 9:16 (Stories/Reels):** Ajustado o contêiner do modal para formato vertical (`aspect-ratio: 9/16`, `max-w-[430px]`, `max-h-[88vh]`), com enquadramento `object-cover` e cantos arredondados, exibindo o vídeo gravado em orientação portrait com qualidade máxima sem faixas pretas laterais desnecessárias.
+- **Correção da Reprodução e Modal:** 
+  - Reposicionado o elemento `<div id="videoModal">` e funções JS para vinculação direta com escopo global `window.openVideoModal` / `window.closeVideoModal`;
+  - Definido `src` direto no elemento `<video>` com `preload="auto"`, iniciando o vídeo a partir do início (`currentTime = 0`) no momento da abertura do popup;
+  - Bloqueio de scroll de página quando ativo (`overflow: hidden`);
+  - Fechamento com reset/pausa através do botão `X`, clique no backdrop escurecido (`bg-black/85`) e tecla `ESC`.
+
+## 2026-08-31 — Atualização da Foto da Seção Sobre
+
+### Front-End & Seção Sobre (S4)
+- **Nova Imagem Institucional da Equipe:** Substituída a foto antiga pela nova imagem oficial da equipe farmacêutica em alta resolução (`assets/Pagina/S3 SOBRE/sobre-farma.png`), transmitindo ainda mais proximidade, credibilidade e atendimento humanizado.
+
+## 2026-08-31 — Atualização dos Banners Horizontais (S4 / Antes do FAQ)
+
+### Front-End & Assets
+- **Sincronização dos Arquivos de Imagem:** Atualizados os caminhos do carrossel de banners horizontais (S4/S6) no `index.html` para apontar para as novas artes oficiais:
+  - `assets/Pagina/S4 BANNERS HORIZONTAIS/1-BANNER-HORIZONTALL.png` (Clube +B: Mais vantagens para você, todos os dias)
+  - `assets/Pagina/S4 BANNERS HORIZONTAIS/2-banner-ifood.png` (Estamos no iFood: Compre on-line pelo app e receba no conforto da sua casa - Filiais Plaza e Tapanã)
+
 
 ### Front-End & FAQ / Acessibilidade
 - **Setas do Acordeão em Vermelho Oficial:** Substituída a cor neutra/acinzentada (`text-bf-muted`) das setas/chevrons dos 4 acordeões de Dúvidas Frequentes pela cor vermelha oficial da rede +B Farma (`text-brand-red` / `#E92125`), aumentando o destaque visual e alinhamento com a identidade cromática da marca.

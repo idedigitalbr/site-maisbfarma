@@ -1,6 +1,6 @@
 # Features e Módulos do Projeto
 
-atualizado: 2026-08-29
+atualizado: 2026-08-31
 
 ---
 
@@ -14,11 +14,11 @@ atualizado: 2026-08-29
   - [x] **Carrossel Hero 79vh (Novo Conjunto PNG):** 10 banners institucionais e promocionais em alta definição (`0-banner-topo.png` e `banners (1)` a `(9)`), preenchimento cover com alinhamento `left center`, dots calibrados, touch swipe no mobile, teclado e autoplay.
   - [x] Bloco flutuante de benefícios em 5 colunas (Entrega, Compre e Retire, Farmacêutico, Clube, WhatsApp).
   - [x] **Carrossel de Banners de Ofertas (S3 Bannerzinhos):** 5 banners reais em alta definição com cantos arredondados, tag *DIAS DA SEMANA*, botões de navegação lateral, *drag to scroll* com mouse e *touch swipe* no mobile.
-  - [x] Seção Sobre a Rede com narrativa institucional e foto real da loja.
+  - [x] **Seção Sobre a Rede:** Narrativa institucional, 3 pilares de atendimento, foto real oficial da equipe (`sobre-farma.png`) com botão de play integrado e modal interativo para exibição do vídeo institucional (`farmab-video.mp4`).
   - [x] Faixa de Indicadores e Métricas (+50 unidades, +500 mil clientes atendidos, +10 anos de tradição, +100 bairros).
-  - [x] **Carrossel de Banners Horizontais (Clube +B & iFood):** Novo carrossel com os banners oficiais horizontais de alta definição (`1-BANNER-HORIZONTAL.png` e `2-banner-ifod.png`), navegação lateral, dots interativos, touch swipe e rotação automática.
+  - [x] **Carrossel de Banners Horizontais (Clube +B & iFood):** Novo carrossel com os banners oficiais horizontais de alta definição (`1-BANNER-HORIZONTALL.png` e `2-banner-ifood.png`), navegação lateral, dots interativos, touch swipe e rotação automática.
   - [x] **Acordeão interativo de FAQ:** Respostas rápidas para dúvidas frequentes com chevrons animados no tom vermelho institucional (`#E92125`).
-  - [x] Prova social com avaliações 5 estrelas verificadas do Google Meu Negócio.
+  - [x] **Prova Social Google Maps (Dual-Row Infinite Marquee):** Trilho duplo contínuo em tema escuro (idêntico à referência do Anexo 2) com 10 avaliações reais de clientes das filiais Plaza e Tapanã, 5 estrelas âmbar, badges NEW, pause on hover e links diretos para os perfis no Maps.
   - [x] Bloco de Reputação e Cards reais das filiais Plaza e Tapanã com status e horários.
   - [x] Rodapé completo em fundo escuro com logo branca e sub-faixa de direitos autorais.
 - [x] **Otimização de Mídias:** 33 fotos Full HD e 4 logos convertidos para WebP (economia de 96.9% de peso).
