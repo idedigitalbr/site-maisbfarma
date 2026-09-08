@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-09-08 — SEO Global, Otimização de Imagens (WebP -80%), Favicons e LGPD
+
+### SEO, Metadados & Compartilhamento Social
+- **Favicons Nativos:** Gerados e vinculados `favicon.ico`, `favicon.png` (32x32 e 192x192) e `apple-touch-icon.png` a partir do ícone oficial da +B Farma em `index.html` e `design-system-preview.html`.
+- **OpenGraph & Twitter Cards:** Configuração completa de tags sociais (`og:type`, `og:title`, `og:description`, `og:image`, `og:url`, `twitter:card`) com banner oficial 1200x630 gerado em `assets/Logos/og-share.jpg` para prévia rica no WhatsApp, Facebook, LinkedIn e Telegram.
+- **Dados Estruturados Schema.org (JSON-LD):** Implementação de Schema `Pharmacy` / `LocalBusiness` com mapeamento detalhado das unidades físicas Plaza e Tapanã (endereço completo, coordenadas, telefones, horário de funcionamento e filial do Grupo Mais Barato).
+- **Tag Canônica e Theme-Color:** Adicionada tag `<link rel="canonical" href="https://maisbfarma.com.br/">` e `<meta name="theme-color" content="#E92125">`.
+
+### Performance & Otimização de Mídia
+- **Conversão de Banners para WebP:** Todos os 19 banners das seções S1 (Hero Carrossel), S3 (Bannerzinhos), S3 (Sobre) e S4 (Banners Horizontais) foram convertidos de PNG para WebP de alta fidelidade (qualidade 85 Lanczos).
+- **Redução de Payload de 80.7%:** O peso total dos banners caiu de 9.99 MB para 1.93 MB, acelerando drasticamente o carregamento em dispositivos móveis e redes 3G/4G.
+- **Limpeza de Duplicação no Repositório:** Removida a pasta redundante `src/lufga_fonts/` (mantendo as fontes consolidadas em `assets/fonts/`).
+
+### Acessibilidade, Links & Conformidade LGPD
+- **Acessibilidade nos FAQs:** Adicionados atributos `aria-expanded` dinâmicos e `aria-controls` aos botões de sanfona para navegação acessível via leitores de tela.
+- **Redes Sociais Oficiais:** Atualizados os links de topo e rodapé para os canais oficiais da marca (`@mais.bfarma` no Instagram e Grupo Mais Barato no Facebook/LinkedIn), garantindo `rel="noopener noreferrer"`.
+- **Modal de Termos & Privacidade (LGPD):** Substituído o link inativo `href="#"` por um modal institucional acessível sobre política de privacidade, sigilo médico-farmacêutico e direitos do titular com suporte a fechamento por tecla ESC e backdrop.
+
 ## 2026-08-31 — Remoção do Botão Flutuante de WhatsApp (`#whatsappFab`)
 
 ### Front-End & Elementos Flutuantes
