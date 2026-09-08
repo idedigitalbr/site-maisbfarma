@@ -53,7 +53,7 @@ site-maisb-farma/
 ### 3.2 Componentes Globais & Seções Padronizadas
 1. **Header & Top Bar:** Faixa superior vermelha (`#E92125`), barra de navegação branca (`#FFFFFF`) com logo horizontal e menu responsivo.
 2. **Hero / Carrossel:** Carrossel dinâmico com fotos reais em WebP das filiais Plaza e Tapanã, títulos de destaque e CTAs de ação.
-3. **Benefícios Flutuantes:** Container com 5 colunas de vantagens destacando entrega expressa, compre & retire, farmacêutico de plantão, Clube +B e atendimento via WhatsApp.
+3. **Vantagens e atalhos de compra:** Container responsivo com WhatsApp, iFood, Lojas, Clube +B e Atendimento, usando grid de duas colunas no mobile e sem promessas operacionais não confirmadas.
 4. **Sobre Nós:** Apresentação da rede e foto institucional da loja física.
 5. **Indicadores:** Bloco numérico com estatísticas de mercado (+50 unidades, +500 mil clientes atendidos, +10 anos de atuação).
 6. **Ofertas da Semana:** Cards de campanhas promocionais e encartes.

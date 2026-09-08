@@ -1,5 +1,32 @@
 # Changelog
 
+## 2026-09-08 — Revisão do checklist comercial e canais por unidade
+
+- Ajustados atalhos de vantagens para WhatsApp, iFood, lojas, Clube +B e atendimento, removendo promessas não confirmadas de frete e aplicativo.
+- Mantidos três slides no hero e o seletor de pedido; iFood passou a usar links diretos de Plaza e Tapanã obtidos no Linktree oficial.
+- Revisados texto institucional, FAQ de retirada/delivery e indicadores para evitar números não validados.
+- Removidos links de Linktree da interface e do Schema.org; adicionados `sitemap.xml` e `robots.txt`.
+- Menu mobile simplificado para os nomes comerciais do checklist; modal de pedido validado no navegador local.
+- Cards das lojas receberam CTAs diretos para WhatsApp e iFood de cada unidade.
+- Número do WhatsApp Tapanã alinhado ao contato publicado no Linktree oficial (`+55 91 9354-1844`).
+- Vantagens passou a ser o destino `#vantagens` do menu; seção duplicada de compra foi retirada da apresentação.
+- Fundo geral, Ofertas e FAQ migrados para branco/`#F8F9FA`, reduzindo o uso de `#F4FEFD`.
+- Banners de ofertas passaram a ter links de destino para categorias e canais de compra.
+- Marquee de avaliações foi retirado da apresentação até existir conteúdo verificável; seção agora direciona para as páginas oficiais no Google.
+- Removidas notas, estrelas e contagens estáticas dos cards de filiais; a nota atual passa a ser consultada diretamente na ficha do Google.
+- Hero ajustado para autoplay de 6 segundos, pausa ao passar o mouse e respeito a `prefers-reduced-motion`.
+- Hero alinhado às artes 01, 03 e 08 do checklist, com CTAs para Sobre, Lojas e Ofertas; S3 reduzido a quatro campanhas.
+- S2 mobile convertido para grid de duas colunas e S6 deixou de ser carrossel, passando a dois cards independentes.
+- Categorias passaram a abrir o seletor de unidade/canal; footer reorganizado com navegação institucional e de atendimento.
+- Horários fixos foram retirados do Schema, dos cards e do modal até validação operacional; os links apontam para a ficha atual no Google.
+- FAQ ampliado com dúvidas sobre pedido pelo WhatsApp e localização das unidades.
+- Marquee legado de avaliações removido da interface; a seção ficou reservada para avaliações verificadas futuras.
+- Markup legado de avaliações removido por completo para impedir que nomes, textos e notas antigas apareçam na árvore de acessibilidade ou em indexação acidental.
+- Revisão visual responsiva concluída em 360px, 390px e 430px, incluindo cabeçalho, hero, grid de vantagens e verificação de overflow horizontal.
+- Removidas estrelas estáticas, estilos e handlers do antigo marquee; a prova social agora aponta somente para as fichas atuais do Google.
+- Avatares de banco de imagens removidos do HTML da prova social.
+- FAQ ajustado para orientar confirmação direta com a unidade quando a regra operacional não está publicada.
+
 ## 2026-09-08 — SEO Global, Otimização de Imagens (WebP -80%), Favicons e LGPD
 
 ### SEO, Metadados & Compartilhamento Social
@@ -262,3 +289,9 @@
   - `deploy.md`: Procedimentos reais de entrega via VPS Docker/Nginx e Cloudflare.
   - `notas.md`: Registro das decisões de engenharia.
   - `notion.md`: Sincronização com o painel DB_IDE do Notion.
+
+## 2026-09-08 — Validação para commit no GitHub
+
+- Revisadas as alterações pendentes de layout, canais de pedido, conteúdo, SEO e documentação.
+- Validação estática aprovada: 115 referências HTML (arquivos locais e âncoras), sintaxe dos scripts inline com Node.js, JSON-LD, XML do sitemap e referência no robots.txt; git diff --check sem erros.
+- Pendências comerciais e de analytics preservadas no checklist. Esta etapa não inclui deploy nem sincronização do Notion.

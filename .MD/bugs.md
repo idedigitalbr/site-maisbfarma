@@ -35,6 +35,14 @@ atualizado: 2026-09-08
 
 ## Em investigação
 
+- [ ] Validar oficialmente horários, regras de retirada, formas de pagamento e dados das avaliações antes de publicar afirmações operacionais.
+- [ ] Confirmar com a operação se a campanha recorrente de quinta-feira continua vigente antes de manter a arte correspondente no hero.
+- [ ] Inserir 3 ou 4 avaliações verificadas no lugar do template legado, sem avatares de banco de imagens.
+- [x] Revisar os links do Linktree no header/footer e ocultar a seção duplicada “Como você quer comprar?”.
+- [ ] Configurar GA4/GTM somente depois de receber o ID oficial de mensuração.
+- [x] Fazer a revisão visual final nos viewports de 360px, 390px e 430px; cabeçalho, hero, grid de vantagens e overflow horizontal conferidos em navegador local.
+- [ ] Confirmar o mix comercial das categorias Mamãe & Bebê e Vitaminas & Suplementos.
+
 - [ ] **Desempenho de carregamento de fontes Lufga em conexões lentas:**
   - *Investigação:* Monitorar se o fallback para `system-ui` / `Plus Jakarta Sans` evita FOIT (Flash of Invisible Text) através de `font-display: swap`.
 

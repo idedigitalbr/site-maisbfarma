@@ -40,7 +40,7 @@ atualizado: 2026-08-28
 
 - [ ] Acessar a URL de produção via HTTPS e verificar certificado SSL ativo.
 - [ ] Testar navegação dos links do menu e âncoras da página.
-- [ ] Testar o carrossel Hero (troca de slides e responsividade).
+- [x] Testar o carrossel Hero (troca de slides, autoplay, navegação manual e responsividade visual nos tamanhos revisados).
 - [ ] Testar a abertura e fechamento dos acordeões de FAQ.
 - [ ] Verificar o carregamento de todas as fotos e logotipos WebP.
 - [ ] Testar o comportamento em dispositivo móvel (375px e 430px).
