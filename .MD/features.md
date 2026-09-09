@@ -14,13 +14,14 @@ atualizado: 2026-09-08
   - [x] **Carrossel Hero 79vh:** 3 slides WebP institucionais e promocionais com CTAs HTML, dots, touch swipe e autoplay.
   - [x] Bloco de vantagens com WhatsApp, iFood, Lojas, Clube +B e Atendimento; cinco colunas no desktop e grid de duas colunas no mobile.
   - [x] **Carrossel de Banners de Ofertas (S3 Bannerzinhos):** 4 banners reais em alta definição com cantos arredondados, tag *NÃO PERCA*, botões de navegação lateral, *drag to scroll* com mouse e *touch swipe* no mobile.
+  - [x] **Categorias Circulares:** composição responsiva com dez categorias ilustradas, selos Lucide, benefícios, controles laterais, rolagem por toque e CTA de ofertas, baseada na referência visual aprovada.
   - [x] **Seção Sobre a Rede:** Narrativa institucional, 3 pilares de atendimento, foto real oficial da equipe (`sobre-farma.png`) com botão de play integrado e modal interativo para exibição do vídeo institucional (`farmab-video.mp4`).
   - [x] Faixa institucional com atributos de marca, sem números não validados.
-  - [x] **Banners Horizontais (Clube +B & iFood):** Dois cards oficiais WebP independentes, lado a lado no desktop e empilhados no mobile; iFood abre o seletor por unidade.
+  - [x] **Banners Horizontais (Clube +B & iFood):** Carrossel com um banner por vez, transição suave por `transform`, setas, dots, autoplay e swipe; o slide do iFood usa `banner-ifood.png` e abre o seletor por unidade.
   - [x] **Acordeão interativo de FAQ:** Respostas rápidas para dúvidas frequentes com chevrons animados no tom vermelho institucional (`#E92125`).
-  - [ ] **Prova Social Google Maps:** A seção direciona para as fichas públicas; avaliações textuais aguardam validação para publicação.
-  - [x] Cards das filiais Plaza e Tapanã com localização, contatos diretos e canais de pedido.
-  - [x] Rodapé completo em fundo escuro com logo branca e sub-faixa de direitos autorais.
+  - [x] **Prova Social Google Maps:** Depoimentos restaurados em dois trilhos contínuos, com cards visíveis, pausa ao toque e links de consulta às fichas oficiais.
+  - [x] Cards das filiais Plaza e Tapanã com localização, telefone e acesso ao Google, sem botões extras de WhatsApp e iFood.
+  - [x] Rodapé simples em fundo escuro com logo branca, descrição, redes sociais e sub-faixa de direitos autorais, sem colunas extras de navegação.
 - [x] **Otimização de Mídias:** 33 fotos Full HD e 4 logos convertidos para WebP (economia de 96.9% de peso).
 - [x] **Otimização Global de Mobile (World-Class UX):** Suporte nativo completo para telas compactas (320px a 430px), drawer mobile com overlay escuro e scroll interno, alternância dinâmica de ícones, acordeão FAQ via CSS Grid a 60fps, pausa por toque nos depoimentos Google, floating hub (WhatsApp FAB com pulso e botão voltar ao topo) e touch/swipe physics em todos os carrosséis.
 - [x] **Responsividade:** Layout preparado para resoluções mobile (320px a 430px), tablet e desktop; revisão visual concluída em 360px, 390px e 430px.

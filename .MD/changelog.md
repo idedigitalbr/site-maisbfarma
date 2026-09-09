@@ -1,5 +1,59 @@
 # Changelog
 
+## 2026-09-09 — Restauração integral após regressão local
+
+- Restaurado o `index.html` completo a partir da versão preservada na aba do navegador, mantendo Categorias antes de Ofertas.
+- Recompostos hero, carrossel horizontal, depoimentos, filiais, rodapé, modais e scripts; mantidos os três banners atuais do hero.
+- A captura integral e os backups permaneceram preservados em `.recovery/2026-09-08-1952`.
+- Alteração local; sem commit, push ou deploy.
+
+## 2026-09-08 — Nova seção de categorias circulares
+
+- Substituído o grid anterior pela composição aprovada com título editorial, benefícios, dez categorias circulares e faixa de ofertas.
+- Integradas as imagens fornecidas e geradas cópias WebP de 640 px, reduzindo o carregamento conjunto das dez categorias para aproximadamente 380 KB sem remover os PNGs originais.
+- Adicionados controles laterais, rolagem suave/touch e abertura do seletor de pedido nas categorias e CTAs.
+- Corrigidos por regressão o recorte dos rótulos e a colisão dos benefícios no mobile.
+- Validação: 5 testes Playwright aprovados e inspeção visual em 1672 px e 390 px.
+- Alteração local; sem commit, push, deploy ou sincronização externa nesta tarefa.
+
+## 2026-09-08 — Ajuste de depoimentos fora de contexto
+
+- Substituídos os depoimentos que mencionavam supermercado e Medianeira por textos coerentes com atendimento, preços e medicamentos da +B Farma.
+- Mantida a mesma estrutura do carrossel histórico, incluindo as cópias `aria-hidden` usadas no loop visual.
+- Validado que os termos antigos não aparecem mais nos cards de depoimentos; referências restantes a “+B Supermercados” pertencem somente aos locais dos cards das filiais.
+
+## 2026-09-08 — Restauração do carrossel horizontal
+
+- Restaurada a estrutura anterior do carrossel Clube +B/iFood, com um slide de largura total por vez e transição suave por `transform`.
+- Restaurados setas, dots, swipe e autoplay; mantido o asset correto `banner-ifood.png` no segundo slide.
+- Validação: teste estrutural do carrossel aprovado e asset PNG confirmado no caminho esperado.
+- Alteração local; sem commit, push, deploy ou sincronização externa nesta correção.
+
+## 2026-09-08 — Ajuste dos banners horizontais e remoção dos indicadores
+
+- Removida a faixa superior de indicadores com ícones (Saúde, Beleza e Conveniência).
+- Alterada a seção Clube +B/iFood para exibir um único banner por vez, com setas e navegação por arraste.
+- Corrigido o segundo slide para usar `assets/Pagina/S4 BANNERS HORIZONTAIS/banner-ifood.png`.
+- Validação: teste estrutural aprovado, asset PNG confirmado no caminho esperado e `git diff --check` sem erros.
+- Alteração local; sem commit, push, deploy ou sincronização externa nesta correção.
+
+## 2026-09-08 — FAQ compacto e estados em vermelho
+
+- Removidos os 29 px residuais das respostas fechadas: padding e divisor ficaram em um elemento interno ao painel recolhível.
+- Hover, estado aberto e foco por teclado com borda vermelha e cabeçalho rosado; texto em vermelho escuro da paleta. Foco visível e preferência por movimento reduzido preservados.
+- Validação no navegador local: respostas fechadas com altura 0 px, abertura/fechamento por clique, acionamento por Enter e foco vermelho; viewport de 390 px sem overflow horizontal.
+- Alteração local, sem commit, push, deploy ou sincronização externa nesta tarefa.
+
+## 2026-09-08 — Remoção dos extras na seção de filiais e no rodapé
+
+- Removidos os botões WhatsApp e Pedir no iFood dos dois cards de filiais.
+- Removida a faixa “Prefere falar com a gente?” abaixo dos cards.
+- Restaurada a estrutura simples do rodapé anterior ao commit 66fb1d9: logo, descrição, redes sociais e faixa de direitos autorais. Mantidas as três redes atuais, sem reintroduzir Linktree e LinkedIn.
+- Validação: comparação normalizada do rodapé com c651828, confirmação de ausência dos blocos removidos e git diff --check sem erros.
+- Prévia visual validada em navegador local via HTTP: cards sem botões extras, faixa de contato ausente e rodapé simples preservado.
+- Alteração local; sem commit, push, deploy ou sincronização externa nesta correção.
+
+
 ## 2026-09-08 — Revisão do checklist comercial e canais por unidade
 
 - Ajustados atalhos de vantagens para WhatsApp, iFood, lojas, Clube +B e atendimento, removendo promessas não confirmadas de frete e aplicativo.
@@ -290,8 +344,20 @@
   - `notas.md`: Registro das decisões de engenharia.
   - `notion.md`: Sincronização com o painel DB_IDE do Notion.
 
+## 2026-09-08 — Restauração dos depoimentos do Google
+
+- Restaurado literalmente o bloco S8 da última versão anterior a 08/09 no GitHub (`0c8caea`, de 31/08), incluindo nomes, textos, avatares, estrelas, dois trilhos contínuos e botões das unidades.
+- Recolocados os estilos originais `animate-marquee-left` e `animate-marquee-right`, com pausa no hover e no toque.
+- O restante do layout atual foi preservado; validação feita por comparação normalizada com o commit histórico, sintaxe JavaScript e inspeção visual no navegador.
+
 ## 2026-09-08 — Validação para commit no GitHub
 
 - Revisadas as alterações pendentes de layout, canais de pedido, conteúdo, SEO e documentação.
 - Validação estática aprovada: 115 referências HTML (arquivos locais e âncoras), sintaxe dos scripts inline com Node.js, JSON-LD, XML do sitemap e referência no robots.txt; git diff --check sem erros.
 - Pendências comerciais e de analytics preservadas no checklist. Esta etapa não inclui deploy nem sincronização do Notion.
+
+## 2026-09-08 — Hero sem sobreposição HTML
+
+- Ocultadas as camadas de textos, descrições e botões dos três slides do carrossel hero; as artes passam a aparecer sem conteúdo duplicado.
+- Mantidos os slides, imagens, setas, indicadores e lógica de autoplay/navegação.
+- Validação estrutural aprovada: 3 slides detectados e regra CSS aplicada às camadas de overlay; inspeção visual no navegador local não foi possível neste ambiente.

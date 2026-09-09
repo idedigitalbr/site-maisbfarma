@@ -54,14 +54,15 @@ site-maisb-farma/
 1. **Header & Top Bar:** Faixa superior vermelha (`#E92125`), barra de navegação branca (`#FFFFFF`) com logo horizontal e menu responsivo.
 2. **Hero / Carrossel:** Carrossel dinâmico com fotos reais em WebP das filiais Plaza e Tapanã, títulos de destaque e CTAs de ação.
 3. **Vantagens e atalhos de compra:** Container responsivo com WhatsApp, iFood, Lojas, Clube +B e Atendimento, usando grid de duas colunas no mobile e sem promessas operacionais não confirmadas.
-4. **Sobre Nós:** Apresentação da rede e foto institucional da loja física.
-5. **Indicadores:** Bloco numérico com estatísticas de mercado (+50 unidades, +500 mil clientes atendidos, +10 anos de atuação).
-6. **Ofertas da Semana:** Cards de campanhas promocionais e encartes.
-7. **Clube +B:** Seção explicativa sobre as vantagens do programa de fidelidade.
-8. **FAQ Acordeão:** Seção interativa com respostas às principais dúvidas dos clientes.
-9. **Prova Social & Avaliações:** Seção em fundo escuro (`#1C1D22`) com depoimentos 5 estrelas verificados no Google Meu Negócio.
-10. **Reputação & Filiais:** Cards dedicados às unidades Plaza e Tapanã com status de funcionamento e rotas.
-11. **Footer Institucional:** Rodapé escuro com logo branca, redes sociais e faixa inferior de direitos autorais.
+4. **Categorias Circulares:** Trilho horizontal responsivo com dez categorias ilustradas, imagens WebP otimizadas, badges Lucide, controles acessíveis e CTAs ligados ao seletor de pedido.
+5. **Sobre Nós:** Apresentação da rede e foto institucional da loja física.
+6. **Indicadores:** Bloco numérico com estatísticas de mercado (+50 unidades, +500 mil clientes atendidos, +10 anos de atuação).
+7. **Ofertas da Semana:** Cards de campanhas promocionais e encartes.
+8. **Clube +B:** Seção explicativa sobre as vantagens do programa de fidelidade.
+9. **FAQ Acordeão:** Seção interativa com respostas às principais dúvidas dos clientes.
+10. **Prova Social & Avaliações:** Seção em fundo escuro (`#1C1D22`) com depoimentos 5 estrelas verificados no Google Meu Negócio.
+11. **Reputação & Filiais:** Cards dedicados às unidades Plaza e Tapanã com status de funcionamento e rotas.
+12. **Footer Institucional:** Rodapé escuro com logo branca, redes sociais e faixa inferior de direitos autorais.
 
 ### 3.3 Camada de Lógica & Interatividade (Vanilla JS)
 - **FAQ Accordion Controller:** Função `toggleFaq(button)` que gerencia a expansão e o fechamento acessível de perguntas.

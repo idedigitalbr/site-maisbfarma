@@ -1,35 +1,36 @@
 <!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>+B FARMA — Cuidado, Saúde e Economia Todos os Dias</title>
-  <meta name="description" content="Site institucional oficial da +B FARMA (Grupo Mais Barato). Farmácias completas nas unidades Plaza e Tapanã, atendimento farmacêutico humanizado e Clube +B.">
-  <link rel="canonical" href="https://maisbfarma.com.br/">
-  <meta name="theme-color" content="#E92125">
+  <meta name="description" content="Site institucional oficial da +B FARMA (Grupo Mais Barato). Farmácias completas nas unidades Plaza e Tapanã, atendimento farmacêutico humanizado e Clube +B." />
+  <link rel="canonical" href="https://maisbfarma.com.br/" />
+  <meta name="theme-color" content="#E92125" />
 
   <!-- Favicon & Touch Icons -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
 
   <!-- Open Graph / Facebook / WhatsApp -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://maisbfarma.com.br/">
-  <meta property="og:title" content="+B FARMA — Cuidado, Saúde e Economia Todos os Dias">
-  <meta property="og:description" content="Site institucional oficial da +B FARMA (Grupo Mais Barato). Farmácias completas nas unidades Plaza e Tapanã, atendimento farmacêutico humanizado e Clube +B.">
-  <meta property="og:image" content="assets/Logos/og-share.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:site_name" content="+B FARMA">
-  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://maisbfarma.com.br/" />
+  <meta property="og:title" content="+B FARMA — Cuidado, Saúde e Economia Todos os Dias" />
+  <meta property="og:description" content="Site institucional oficial da +B FARMA (Grupo Mais Barato). Farmácias completas nas unidades Plaza e Tapanã, atendimento farmacêutico humanizado e Clube +B." />
+  <meta property="og:image" content="assets/Logos/og-share.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="+B FARMA" />
+  <meta property="og:locale" content="pt_BR" />
 
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://maisbfarma.com.br/">
-  <meta name="twitter:title" content="+B FARMA — Cuidado, Saúde e Economia Todos os Dias">
-  <meta name="twitter:description" content="Site institucional oficial da +B FARMA (Grupo Mais Barato). Farmácias completas nas unidades Plaza e Tapanã, atendimento farmacêutico humanizado e Clube +B.">
-  <meta name="twitter:image" content="assets/Logos/og-share.jpg">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://maisbfarma.com.br/" />
+  <meta name="twitter:title" content="+B FARMA — Cuidado, Saúde e Economia Todos os Dias" />
+  <meta name="twitter:description" content="Site institucional oficial da +B FARMA (Grupo Mais Barato). Farmácias completas nas unidades Plaza e Tapanã, atendimento farmacêutico humanizado e Clube +B." />
+  <meta name="twitter:image" content="assets/Logos/og-share.jpg" />
 
   <!-- Dados Estruturados Schema.org (Google SEO & Local Business Pack) -->
   <script type="application/ld+json">
@@ -106,8 +107,8 @@
 
   <!-- Fallbacks & Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -295,39 +296,6 @@
     }
 
     /* Accordion FAQ com Transição Fluida via CSS Grid (Suporte 60fps Mobile) */
-    .faq-item.active,
-    .faq-item:has(> button:focus-visible) {
-      border-color: #E92125;
-      box-shadow: 0 0 0 1px rgba(233, 33, 37, 0.08);
-    }
-    .faq-item > button {
-      min-height: 48px;
-      outline: none;
-      -webkit-tap-highlight-color: transparent;
-    }
-    .faq-item.active > button,
-    .faq-item > button:focus-visible {
-      color: #C8161A;
-      background-color: #FDE8E9;
-    }
-    .faq-item > button:focus-visible {
-      outline: 2px solid #E92125;
-      outline-offset: -4px;
-      border-radius: 11px;
-    }
-    .faq-item > button:active {
-      color: #A81014;
-      background-color: #FDE8E9;
-    }
-    @media (hover: hover) {
-      .faq-item:hover {
-        border-color: #E92125;
-      }
-      .faq-item > button:hover {
-        color: #C8161A;
-        background-color: #FDE8E9;
-      }
-    }
     .faq-chevron {
       color: #E92125;
       transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -346,48 +314,32 @@
       opacity: 1;
     }
     .faq-content-inner {
-      min-height: 0;
       overflow: hidden;
     }
-    .faq-content-wrapper {
-      visibility: hidden;
-      transition: grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease-out, visibility 0.3s;
-    }
-    .faq-item.active .faq-content-wrapper {
-      visibility: visible;
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .faq-item, .faq-item > button, .faq-chevron, .faq-content-wrapper {
-        transition: none;
-      }
-    }
 
-    /* Slides do Hero Carrossel (Calibragem Responsiva: 68dvh Mobile / 75dvh Tablet / 79dvh Desktop) */
+    /* Slides do Hero Carrossel (Calibragem Responsiva e Proporcional 2.56:1) */
     .hero-carousel {
       position: relative;
       width: 100%;
-      height: 68vh;
-      height: 68dvh;
-      min-height: 400px;
+      aspect-ratio: 2000 / 784;
+      min-height: 200px;
+      max-height: 640px;
       overflow: hidden;
-      background-color: #141519;
-      border-radius: 0 0 24px 24px;
+      background-color: #e51d28;
+      border-radius: 0 0 20px 20px;
       isolation: isolate;
     }
     @media (min-width: 640px) {
       .hero-carousel {
-        height: 75vh;
-        height: 75dvh;
-        min-height: 440px;
-        border-radius: 0 0 36px 36px;
+        border-radius: 0 0 32px 32px;
+        min-height: 280px;
       }
     }
     @media (min-width: 1024px) {
       .hero-carousel {
-        height: 79vh;
-        height: 79dvh;
-        min-height: 450px;
-        border-radius: 0 0 44px 44px;
+        border-radius: 0 0 40px 40px;
+        min-height: 380px;
+        max-height: 620px;
       }
     }
     .hero-slide {
@@ -397,8 +349,8 @@
       height: 100%;
       opacity: 0;
       visibility: hidden;
-      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-      transform: scale(1.03);
+      transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: scale(1.02);
       z-index: 1;
       pointer-events: none;
     }
@@ -409,16 +361,23 @@
       z-index: 2;
       pointer-events: auto;
     }
+    .hero-slide-link {
+      display: block;
+      width: 100%;
+      height: 100%;
+      outline: none;
+      cursor: pointer;
+    }
+    .hero-slide-link:focus-visible {
+      outline: 3px solid #ffffff;
+      outline-offset: -3px;
+    }
     .hero-slide img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: left center;
+      object-position: center center;
       display: block;
-    }
-    /* As artes do hero já contêm textos e CTAs; não sobrepor HTML adicional. */
-    .hero-slide > .absolute.inset-0.z-10 {
-      display: none;
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
@@ -427,31 +386,6 @@
         scroll-behavior: auto !important;
         transition-duration: 0.01ms !important;
       }
-    }
-    /* Animação Contínua de Marquee para Avaliações (Dual-Row Infinite Scroll) */
-    @keyframes marqueeLeft {
-      0% { transform: translate3d(0, 0, 0); }
-      100% { transform: translate3d(-50%, 0, 0); }
-    }
-    @keyframes marqueeRight {
-      0% { transform: translate3d(-50%, 0, 0); }
-      100% { transform: translate3d(0, 0, 0); }
-    }
-    .animate-marquee-left {
-      display: flex;
-      width: max-content;
-      animation: marqueeLeft 42s linear infinite;
-      will-change: transform;
-    }
-    .animate-marquee-right {
-      display: flex;
-      width: max-content;
-      animation: marqueeRight 46s linear infinite;
-      will-change: transform;
-    }
-    .animate-marquee-left:hover,
-    .animate-marquee-right:hover {
-      animation-play-state: paused;
     }
 
     /* Mobile Menu Drawer com Backdrop */
@@ -862,10 +796,15 @@
       .category-cta-button { align-self: flex-start; min-width: 184px; min-height: 50px; }
     }
 
+
   </style>
 </head>
 <body class="bg-white m-0 p-0 text-bf-ink selection:bg-brand-red selection:text-white overflow-x-hidden">
-<header class="w-full sticky top-0 z-50 bg-white">
+
+  <!-- ==========================================================================
+       HEADER & TOP BAR
+       ========================================================================== -->
+  <header class="w-full sticky top-0 z-50 bg-white">
     
     <!-- BARRA 01: FAIXA SUPERIOR VERMELHA (+B RED) — COMPACTA -->
     <div class="bg-brand-red text-white py-1 border-b border-brand-red-hover">
@@ -875,19 +814,19 @@
         <div class="flex items-center gap-2.5 text-white">
           <a href="https://www.instagram.com/maisbfarma/" target="_blank" rel="noopener noreferrer" class="hover:text-white/80 transition-transform duration-200 hover:scale-110" aria-label="Instagram @maisbfarma">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
             </svg>
           </a>
           <a href="https://www.tiktok.com/@maisbfarma_" target="_blank" rel="noopener noreferrer" class="hover:text-white/80 transition-transform duration-200 hover:scale-110" aria-label="TikTok @maisbfarma_">
             <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.34 6.34 0 0 0 3 15.68a6.34 6.34 0 0 0 10.86 4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"></path>
+              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.34 6.34 0 0 0 3 15.68a6.34 6.34 0 0 0 10.86 4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/>
             </svg>
           </a>
           <a href="https://www.facebook.com/maisbfarmapa/" target="_blank" rel="noopener noreferrer" class="hover:text-white/80 transition-transform duration-200 hover:scale-110" aria-label="Facebook @maisbfarmapa">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
             </svg>
           </a>
         </div>
@@ -953,7 +892,7 @@
         <!-- CTA Direita Desktop: PEDIR AGORA (Abre Modal de Filiais / Canais) -->
         <div class="hidden lg:flex items-center flex-shrink-0">
           <button type="button" onclick="openOrderModal()" class="inline-flex items-center gap-2 px-5 py-2.5 bg-brand-red hover:bg-brand-red-hover active:bg-brand-red-active text-white text-xs lg:text-[13px] font-bold rounded-xl shadow-xs hover:shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer select-none">
-            <svg class="w-4 h-4 text-white flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <svg class="w-4 h-4 text-white flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
             <span>PEDIR AGORA</span>
           </button>
         </div>
@@ -961,7 +900,7 @@
         <!-- Ações Mobile (Botão Pedir + Hamburger) -->
         <div class="lg:hidden flex items-center gap-2 flex-shrink-0">
           <button type="button" onclick="openOrderModal()" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-brand-red hover:bg-brand-red-hover active:bg-brand-red-active text-white text-xs font-bold rounded-lg shadow-xs transition-all active:scale-95 cursor-pointer" aria-label="Fazer Pedido">
-            <svg class="w-3.5 h-3.5 text-white flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <svg class="w-3.5 h-3.5 text-white flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
             <span>Pedir</span>
           </button>
           <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="p-2 text-bf-ink hover:text-brand-red hover:bg-slate-100 active:bg-slate-200 rounded-lg focus:outline-none transition-colors" aria-label="Abrir Menu">
@@ -983,48 +922,48 @@
         <!-- Navegação Principal Mobile com Ícones Semânticos -->
         <nav class="flex flex-col gap-1.5 text-sm font-bold text-bf-ink pb-4 border-b border-slate-100">
           <a href="#home" onclick="toggleMobileMenu()" class="flex items-center gap-3 py-2.5 px-2 rounded-xl text-brand-red bg-brand-red/5 hover:bg-brand-red/10 transition-colors">
-            <svg class="w-4 h-4 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            <svg class="w-4 h-4 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
             <span>Início</span>
           </a>
           <a href="#ofertas" onclick="toggleMobileMenu()" class="flex items-center gap-3 py-2.5 px-2 rounded-xl text-bf-ink hover:text-brand-red hover:bg-slate-50 transition-colors">
-            <svg class="w-4 h-4 text-bf-ink flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"></path><path d="M7 7h.01"></path></svg>
+            <svg class="w-4 h-4 text-bf-ink flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>
             <span>Ofertas</span>
           </a>
           <a href="#categorias" onclick="toggleMobileMenu()" class="flex items-center gap-3 py-2.5 px-2 rounded-xl text-bf-ink hover:text-brand-red hover:bg-slate-50 transition-colors">
-            <svg class="w-4 h-4 text-bf-ink flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect></svg>
+            <svg class="w-4 h-4 text-bf-ink flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
             <span>Categorias</span>
           </a>
           <a href="#vantagens" onclick="toggleMobileMenu()" class="flex items-center gap-3 py-2.5 px-2 rounded-xl text-bf-ink hover:text-brand-red hover:bg-slate-50 transition-colors">
-            <svg class="w-4 h-4 text-bf-ink flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg class="w-4 h-4 text-bf-ink flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <span>Vantagens</span>
           </a>
           <a href="#filiais" onclick="toggleMobileMenu()" class="flex items-center gap-3 py-2.5 px-2 rounded-xl text-bf-ink hover:text-brand-red hover:bg-slate-50 transition-colors">
-            <svg class="w-4 h-4 text-bf-ink flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <svg class="w-4 h-4 text-bf-ink flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             <span>Lojas</span>
           </a>
           <a href="#sobre" onclick="toggleMobileMenu()" class="flex items-center gap-3 py-2.5 px-2 rounded-xl text-bf-ink hover:text-brand-red hover:bg-slate-50 transition-colors">
-            <svg class="w-4 h-4 text-bf-ink flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>
+            <svg class="w-4 h-4 text-bf-ink flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
             <span>Sobre Nós</span>
           </a>
           <a href="#faq" onclick="toggleMobileMenu()" class="flex items-center gap-3 py-2.5 px-2 rounded-xl text-bf-ink hover:text-brand-red hover:bg-slate-50 transition-colors">
-            <svg class="w-4 h-4 text-bf-ink flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path></svg>
+            <svg class="w-4 h-4 text-bf-ink flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
             <span>Dúvidas Frequentes</span>
           </a>
         </nav>
 
         <!-- Links Rápidos da Faixa Superior no Mobile -->
         <div class="flex flex-col gap-2 text-xs font-semibold text-bf-muted pb-4 border-b border-slate-100">
-          <span class="text-[11px] uppercase tracking-wider font-bold text-brand-red">Institucional &amp; Atendimento</span>
+          <span class="text-[11px] uppercase tracking-wider font-bold text-brand-red">Institucional & Atendimento</span>
           <a href="#depoimentos" onclick="toggleMobileMenu()" class="py-1.5 px-2 rounded-lg hover:text-brand-red hover:bg-slate-50 flex items-center gap-2.5">
-            <svg class="w-3.5 h-3.5 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            <svg class="w-3.5 h-3.5 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             <span>Depoimentos no Google</span>
           </a>
           <button type="button" onclick="toggleMobileMenu(); setTimeout(openOrderModal, 350)" class="py-1.5 px-2 rounded-lg hover:text-brand-red hover:bg-slate-50 flex items-center gap-2.5 text-left">
-            <svg class="w-3.5 h-3.5 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+            <svg class="w-3.5 h-3.5 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
             <span>iFood</span>
           </button>
           <a href="https://grupomaisbarato.portaldetalentos.senior.com.br/" target="_blank" rel="noopener noreferrer" onclick="toggleMobileMenu()" class="py-1.5 px-2 rounded-lg hover:text-brand-red hover:bg-slate-50 flex items-center gap-2.5">
-            <svg class="w-3.5 h-3.5 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            <svg class="w-3.5 h-3.5 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             <span>Trabalhe Conosco</span>
           </a>
         </div>
@@ -1032,19 +971,19 @@
         <!-- Redes Sociais no Mobile Drawer -->
         <div class="flex items-center justify-center gap-3 py-1">
           <a href="https://www.instagram.com/maisbfarma/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-brand-red text-bf-ink hover:text-white flex items-center justify-center transition-all" aria-label="Instagram @maisbfarma">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
           </a>
           <a href="https://www.tiktok.com/@maisbfarma_" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-brand-red text-bf-ink hover:text-white flex items-center justify-center transition-all" aria-label="TikTok @maisbfarma_">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.34 6.34 0 0 0 3 15.68a6.34 6.34 0 0 0 10.86 4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"></path></svg>
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.34 6.34 0 0 0 3 15.68a6.34 6.34 0 0 0 10.86 4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/></svg>
           </a>
           <a href="https://www.facebook.com/maisbfarmapa/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-brand-red text-bf-ink hover:text-white flex items-center justify-center transition-all" aria-label="Facebook @maisbfarmapa">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
           </a>
         </div>
 
         <!-- Botão CTA Mobile — abre modal com seleção de unidade -->
         <button type="button" onclick="closeOrderModal || null; toggleMobileMenu(); setTimeout(openOrderModal, 350);" class="w-full flex items-center justify-center gap-2 py-3 bg-brand-red hover:bg-brand-red-hover text-white text-sm font-bold rounded-xl shadow-xs active:scale-[0.98] transition-all cursor-pointer">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
           <span>PEDIR AGORA</span>
         </button>
 
@@ -1052,7 +991,10 @@
     </div>
 
   </header>
-<main class="w-full">
+
+
+
+  <main class="w-full">
 
     <!-- ==========================================================================
          S1 — HERO SECTION / CARROSSEL IMAGEM (79VH COM CANTOS ARREDONDADOS)
@@ -1060,112 +1002,48 @@
          ========================================================================== -->
     <section id="home" class="hero-carousel group scroll-mt-24 md:scroll-mt-28" aria-label="Carrossel Principal de Ofertas e Institucional">
       
+      <h1 class="sr-only">+B Farma — Farmácia em Belém/PA: Todos os dias cuidando de você</h1>
+      
       <!-- Contêiner de Slides -->
       <div class="relative w-full h-full">
 
-        <!-- Slide 01 — INSTITUCIONAL: Todos os dias cuidando de você -->
-        <div class="hero-slide" data-index="0">
-          <img src="assets/Pagina/S1%20TOPO%20HERO/1-banner-topo.webp" alt="+B Farma — Todos os dias cuidando de você" loading="eager" decoding="async">
-          <!-- Overlay de Conteúdo HTML -->
-          <div class="absolute inset-0 z-10 flex flex-col justify-end pb-16 sm:pb-20 md:pb-24 px-5 sm:px-8 md:px-12 lg:px-16 bg-gradient-to-t from-black/65 via-black/20 to-transparent">
-            <div class="max-w-2xl">
-              <span class="inline-flex items-center gap-1.5 bg-brand-red/90 backdrop-blur-sm text-white text-[10px] sm:text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3 shadow">
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path></svg>
-                Farmácia de confiança em Belém/PA
-              </span>
-              <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight drop-shadow mb-2 sm:mb-3">
-                Todos os dias<br>cuidando de você.
-              </h1>
-              <p class="text-sm sm:text-base text-white/85 leading-relaxed mb-4 sm:mb-5 max-w-md drop-shadow hidden sm:block">
-                Saúde, beleza e bem-estar com atendimento próximo e preços acessíveis. Unidades Plaza e Tapanã.
-              </p>
-              <div class="flex flex-wrap gap-2.5 sm:gap-3">
-                 <a href="#sobre" class="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 bg-brand-red hover:bg-brand-red-hover text-white text-xs sm:text-sm font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-95 transition-all duration-200">
-                   <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M20 14a8 8 0 1 1-2.34-5.66"></path><path d="M20 4v6h-6"></path><path d="M12 8v4l2.5 1.5"></path></svg>
-                   Conheça a +B Farma
-                 </a>
-                 <button type="button" onclick="openOrderModal()" class="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 bg-white/15 hover:bg-white/25 backdrop-blur-md text-white text-xs sm:text-sm font-bold rounded-xl border border-white/30 hover:border-white/50 transition-all duration-200">
-                   <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 0-8 0"></path></svg>
-                   Pedir agora
-                 </button>
-              </div>
-            </div>
-          </div>
+        <!-- Slide 01 — INSTITUCIONAL: Aqui tem tudo para sua saúde e bem-estar -->
+        <div class="hero-slide active" data-index="0">
+          <a href="#sobre" class="hero-slide-link" aria-label="Conheça a +B Farma: Aqui tem tudo para sua saúde e bem-estar em um só lugar">
+            <img src="assets/Pagina/S1%20TOPO%20HERO/1-banner-topo.webp" alt="+B Farma — Aqui tem tudo para sua saúde e bem-estar em um só lugar" loading="eager" fetchpriority="high" decoding="async">
+          </a>
         </div>
 
-        <!-- Slide 02 — PROXIMIDADE: arte 03 do material original -->
+        <!-- Slide 02 — PRATICIDADE: Soluções que facilitam sua rotina -->
         <div class="hero-slide" data-index="1">
-          <img src="assets/Pagina/S1%20TOPO%20HERO/2-banner-topo.webp" alt="+B Farma — Farmácia perto de você" loading="lazy" decoding="async">
-          <div class="absolute inset-0 z-10 flex flex-col justify-end pb-16 sm:pb-20 md:pb-24 px-5 sm:px-8 md:px-12 lg:px-16 bg-gradient-to-t from-black/65 via-black/20 to-transparent">
-            <div class="max-w-2xl">
-              <span class="inline-flex items-center gap-1.5 bg-brand-red/90 backdrop-blur-sm text-white text-[10px] sm:text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3 shadow">
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"></path><path d="M7 7h.01"></path></svg>
-                Farmácia perto de você
-              </span>
-              <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight drop-shadow mb-2 sm:mb-3">
-                Farmácia perto<br>de você.
-              </h2>
-              <p class="text-sm sm:text-base text-white/85 leading-relaxed mb-4 sm:mb-5 max-w-md drop-shadow hidden sm:block">
-                Um ambiente acolhedor para cuidar melhor. Encontre a unidade mais conveniente para sua rotina.
-              </p>
-              <div class="flex flex-wrap gap-2.5 sm:gap-3">
-                 <a href="#filiais" class="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 bg-brand-red hover:bg-brand-red-hover text-white text-xs sm:text-sm font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-95 transition-all duration-200">
-                   <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                   Encontre uma loja
-                 </a>
-                 <button type="button" onclick="openOrderModal()" class="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 bg-white/15 hover:bg-white/25 backdrop-blur-md text-white text-xs sm:text-sm font-bold rounded-xl border border-white/30 hover:border-white/50 transition-all duration-200">
-                   <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 0-8 0"></path></svg>
-                   Pedir agora
-                 </button>
-              </div>
-            </div>
-          </div>
+          <a href="#filiais" class="hero-slide-link" aria-label="Nossas Lojas: Praticidade para o seu dia. Soluções que facilitam sua rotina. Mais conveniência e atendimento que acolhe">
+            <img src="assets/Pagina/S1%20TOPO%20HERO/2-banner-topo.webp" alt="+B Farma — Praticidade para o seu dia. Soluções que facilitam sua rotina" loading="lazy" decoding="async">
+          </a>
         </div>
 
-        <!-- Slide 03 — CAMPANHA: arte 08 do material original -->
-        <div class="hero-slide active" data-index="2">
-          <img src="assets/Pagina/S1%20TOPO%20HERO/3-banner-topo.webp" alt="+B Farma — Toda quinta tem uma razão especial" loading="lazy" decoding="async">
-          <div class="absolute inset-0 z-10 flex flex-col justify-end pb-16 sm:pb-20 md:pb-24 px-5 sm:px-8 md:px-12 lg:px-16 bg-gradient-to-t from-black/65 via-black/20 to-transparent">
-            <div class="max-w-2xl">
-              <span class="inline-flex items-center gap-1.5 bg-brand-red/90 backdrop-blur-sm text-white text-[10px] sm:text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3 shadow">
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                Campanha +B Farma
-              </span>
-              <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight drop-shadow mb-2 sm:mb-3">
-                Toda quinta tem uma<br>razão especial.
-              </h2>
-              <p class="text-sm sm:text-base text-white/85 leading-relaxed mb-4 sm:mb-5 max-w-md drop-shadow hidden sm:block">
-                Consulte as condições da campanha vigente e encontre ofertas para cuidar da sua saúde e bem-estar.
-              </p>
-              <div class="flex flex-wrap gap-2.5 sm:gap-3">
-                 <a href="#ofertas" class="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 bg-brand-red hover:bg-brand-red-hover text-white text-xs sm:text-sm font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-95 transition-all duration-200">
-                   <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M12 2H2v10l9.29 9.29a2 2 0 0 0 2.82 0l6.58-6.58a2 2 0 0 0 0-2.82L12 2Z"></path><path d="M7 7h.01"></path></svg>
-                   Confira a campanha
-                 </a>
-                 <button type="button" onclick="openOrderModal()" class="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 bg-white/15 hover:bg-white/25 backdrop-blur-md text-white text-xs sm:text-sm font-bold rounded-xl border border-white/30 hover:border-white/50 transition-all duration-200">
-                   Pedir agora
-                 </button>
-              </div>
-            </div>
-          </div>
+        <!-- Slide 03 — CAMPANHA: Leve 3 | Pague 2 na Quinta do Genérico -->
+        <div class="hero-slide" data-index="2">
+          <button type="button" onclick="openOrderModal()" class="hero-slide-link text-left" aria-label="+B Farma: Leve 3 Pague 2 na Quinta do Genérico. Pedir pelo WhatsApp">
+            <img src="assets/Pagina/S1%20TOPO%20HERO/3-banner-topo.webp" alt="+B Farma — Leve 3 Pague 2 na Quinta do Genérico" loading="lazy" decoding="async">
+          </button>
         </div>
 
       </div>
 
-      <!-- Botões de Navegação Lateral (Prev / Next) -->
-      <button onclick="prevSlide(); resetAutoplay();" class="absolute left-2 sm:left-6 md:left-8 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-11 sm:h-11 md:w-13 md:h-13 rounded-full bg-black/35 hover:bg-brand-red text-white backdrop-blur-md border border-white/20 shadow-bf-floating flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 z-20 focus:outline-none focus:ring-2 focus:ring-brand-red" aria-label="Banner Anterior">
-        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
+      <!-- Botões de Navegação Lateral (Prev / Next) — Visíveis no tablet/desktop, swipe no mobile -->
+      <button onclick="prevSlide(); resetAutoplay();" class="hidden sm:flex absolute left-3 sm:left-5 md:left-7 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white/90 hover:bg-brand-red text-bf-ink hover:text-white backdrop-blur-md border border-bf-line/50 shadow-bf-floating items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 z-20 opacity-0 group-hover:opacity-100 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-brand-red" aria-label="Banner Anterior">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
       </button>
 
-      <button onclick="nextSlide(); resetAutoplay();" class="absolute right-2 sm:right-6 md:right-8 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-11 sm:h-11 md:w-13 md:h-13 rounded-full bg-black/35 hover:bg-brand-red text-white backdrop-blur-md border border-white/20 shadow-bf-floating flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 z-20 focus:outline-none focus:ring-2 focus:ring-brand-red" aria-label="Próximo Banner">
-        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
+      <button onclick="nextSlide(); resetAutoplay();" class="hidden sm:flex absolute right-3 sm:right-5 md:right-7 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white/90 hover:bg-brand-red text-bf-ink hover:text-white backdrop-blur-md border border-bf-line/50 shadow-bf-floating items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 z-20 opacity-0 group-hover:opacity-100 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-brand-red" aria-label="Próximo Banner">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
       </button>
 
       <!-- Indicadores de Pontos (3 Dots) -->
-      <div class="absolute bottom-6 sm:bottom-10 md:bottom-14 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-black/45 backdrop-blur-md border border-white/20 shadow-lg">
-        <button onclick="setSlide(0); resetAutoplay();" class="slide-dot w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300 flex-shrink-0" aria-label="Slide 1"></button>
-        <button onclick="setSlide(1); resetAutoplay();" class="slide-dot w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300 flex-shrink-0" aria-label="Slide 2"></button>
-        <button onclick="setSlide(2); resetAutoplay();" class="slide-dot w-6 sm:w-8 md:w-9 h-2 sm:h-2.5 rounded-full bg-brand-red transition-all duration-300 flex-shrink-0" aria-label="Slide 3"></button>
+      <div class="absolute bottom-6 sm:bottom-10 md:bottom-14 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/20 shadow-lg">
+        <button onclick="setSlide(0); resetAutoplay();" class="slide-dot w-6 sm:w-8 md:w-9 h-2 sm:h-2.5 rounded-full bg-brand-red transition-all duration-300 flex-shrink-0" aria-label="Ir para banner 1"></button>
+        <button onclick="setSlide(1); resetAutoplay();" class="slide-dot w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-white/60 hover:bg-white transition-all duration-300 flex-shrink-0" aria-label="Ir para banner 2"></button>
+        <button onclick="setSlide(2); resetAutoplay();" class="slide-dot w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-white/60 hover:bg-white transition-all duration-300 flex-shrink-0" aria-label="Ir para banner 3"></button>
       </div>
 
     </section>
@@ -1184,7 +1062,7 @@
             <!-- Item 1 (Lucide: truck) -->
             <div role="button" tabindex="0" onclick="openOrderModal()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openOrderModal();}" class="flex items-center gap-2.5 lg:gap-3 xl:gap-3.5 px-2 lg:px-3 xl:px-4 py-1.5 first:pl-1 cursor-pointer">
               <div class="w-10 h-10 xl:w-11 xl:h-11 rounded-full bg-brand-red flex-shrink-0 flex items-center justify-center text-white shadow-xs">
-                <svg class="w-5 h-5 xl:w-5.5 xl:h-5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path><path d="M15 18H9"></path><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"></path><circle cx="17" cy="18.5" r="2.5"></circle><circle cx="7" cy="18.5" r="2.5"></circle></svg>
+                <svg class="w-5 h-5 xl:w-5.5 xl:h-5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18.5" r="2.5"/><circle cx="7" cy="18.5" r="2.5"/></svg>
               </div>
               <div class="min-w-0 flex-1">
                 <h3 class="font-bold text-xs lg:text-[13px] xl:text-sm text-bf-ink leading-tight mb-0.5">WhatsApp</h3>
@@ -1195,7 +1073,7 @@
             <!-- Item 2 (Lucide: store) -->
             <div role="button" tabindex="0" onclick="openOrderModal()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openOrderModal();}" class="flex items-center gap-2.5 lg:gap-3 xl:gap-3.5 px-2 lg:px-3 xl:px-4 py-1.5 cursor-pointer">
               <div class="w-10 h-10 xl:w-11 xl:h-11 rounded-full bg-brand-red flex-shrink-0 flex items-center justify-center text-white shadow-xs">
-                <svg class="w-5 h-5 xl:w-5.5 xl:h-5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"></path><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"></path><path d="M2 7h20"></path><path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 10V7"></path></svg>
+                <svg class="w-5 h-5 xl:w-5.5 xl:h-5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 10V7"/></svg>
               </div>
               <div class="min-w-0 flex-1">
                 <h3 class="font-bold text-xs lg:text-[13px] xl:text-sm text-bf-ink leading-tight mb-0.5">iFood</h3>
@@ -1206,7 +1084,7 @@
             <!-- Item 3 (Lucide: plus/cross) -->
             <div role="link" tabindex="0" onclick="location.hash='filiais'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();location.hash='filiais';}" class="flex items-center gap-2.5 lg:gap-3 xl:gap-3.5 px-2 lg:px-3 xl:px-4 py-1.5 cursor-pointer">
               <div class="w-10 h-10 xl:w-11 xl:h-11 rounded-full bg-brand-red flex-shrink-0 flex items-center justify-center text-white shadow-xs">
-                <svg class="w-5 h-5 xl:w-5.5 xl:h-5.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg>
+                <svg class="w-5 h-5 xl:w-5.5 xl:h-5.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
               </div>
               <div class="min-w-0 flex-1">
                 <h3 class="font-bold text-xs lg:text-[13px] xl:text-sm text-bf-ink leading-tight mb-0.5">Lojas</h3>
@@ -1217,7 +1095,7 @@
             <!-- Item 4 (Lucide: badge-percent) -->
             <div role="link" tabindex="0" onclick="location.hash='faq'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();location.hash='faq';}" class="flex items-center gap-2.5 lg:gap-3 xl:gap-3.5 px-2 lg:px-3 xl:px-4 py-1.5 cursor-pointer">
               <div class="w-10 h-10 xl:w-11 xl:h-11 rounded-full bg-brand-red flex-shrink-0 flex items-center justify-center text-white shadow-xs">
-                <svg class="w-5 h-5 xl:w-5.5 xl:h-5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"></path><path d="m15 9-6 6"></path><path d="M9 9h.01"></path><path d="M15 15h.01"></path></svg>
+                <svg class="w-5 h-5 xl:w-5.5 xl:h-5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m15 9-6 6"/><path d="M9 9h.01"/><path d="M15 15h.01"/></svg>
               </div>
               <div class="min-w-0 flex-1">
                 <h3 class="font-bold text-xs lg:text-[13px] xl:text-sm text-bf-ink leading-tight mb-0.5">Clube +B</h3>
@@ -1228,7 +1106,7 @@
             <!-- Item 5 (Lucide: smartphone) -->
             <div role="button" tabindex="0" onclick="openOrderModal()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openOrderModal();}" class="flex items-center gap-2.5 lg:gap-3 xl:gap-3.5 px-2 lg:px-3 xl:px-4 py-1.5 last:pr-1 cursor-pointer">
               <div class="w-10 h-10 xl:w-11 xl:h-11 rounded-full bg-brand-red flex-shrink-0 flex items-center justify-center text-white shadow-xs">
-                <svg class="w-5 h-5 xl:w-5.5 xl:h-5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect><path d="M12 18h.01"></path></svg>
+                <svg class="w-5 h-5 xl:w-5.5 xl:h-5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
               </div>
               <div class="min-w-0 flex-1">
                 <h3 class="font-bold text-xs lg:text-[13px] xl:text-sm text-bf-ink leading-tight mb-0.5">Atendimento</h3>
@@ -1247,7 +1125,7 @@
               <!-- Card 1 Mobile (Lucide: truck) -->
               <button type="button" onclick="openOrderModal()" class="bg-slate-50/80 hover:bg-white border border-bf-line rounded-xl p-3 flex items-center gap-3 transition-colors shadow-xs text-left">
                 <div class="w-9 h-9 rounded-full bg-brand-red flex-shrink-0 flex items-center justify-center text-white shadow-xs">
-                  <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path><path d="M15 18H9"></path><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"></path><circle cx="17" cy="18.5" r="2.5"></circle><circle cx="7" cy="18.5" r="2.5"></circle></svg>
+                  <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18.5" r="2.5"/><circle cx="7" cy="18.5" r="2.5"/></svg>
                 </div>
                 <div class="min-w-0 flex-1">
                   <h4 class="font-bold text-xs text-bf-ink leading-tight mb-0.5">WhatsApp</h4>
@@ -1258,7 +1136,7 @@
               <!-- Card 2 Mobile (Lucide: store) -->
               <button type="button" onclick="openOrderModal()" class="bg-slate-50/80 hover:bg-white border border-bf-line rounded-xl p-3 flex items-center gap-3 transition-colors shadow-xs text-left">
                 <div class="w-9 h-9 rounded-full bg-brand-red flex-shrink-0 flex items-center justify-center text-white shadow-xs">
-                  <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"></path><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"></path><path d="M2 7h20"></path><path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 10V7"></path></svg>
+                  <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 10V7"/></svg>
                 </div>
                 <div class="min-w-0 flex-1">
                   <h4 class="font-bold text-xs text-bf-ink leading-tight mb-0.5">iFood</h4>
@@ -1269,7 +1147,7 @@
               <!-- Card 3 Mobile (Lucide: plus/cross) -->
               <a href="#filiais" class="bg-slate-50/80 hover:bg-white border border-bf-line rounded-xl p-3 flex items-center gap-3 transition-colors shadow-xs text-left">
                 <div class="w-9 h-9 rounded-full bg-brand-red flex-shrink-0 flex items-center justify-center text-white shadow-xs">
-                  <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg>
+                  <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
                 </div>
                 <div class="min-w-0 flex-1">
                   <h4 class="font-bold text-xs text-bf-ink leading-tight mb-0.5">Lojas</h4>
@@ -1280,7 +1158,7 @@
               <!-- Card 4 Mobile (Lucide: badge-percent) -->
               <a href="#faq" class="bg-slate-50/80 hover:bg-white border border-bf-line rounded-xl p-3 flex items-center gap-3 transition-colors shadow-xs text-left">
                 <div class="w-9 h-9 rounded-full bg-brand-red flex-shrink-0 flex items-center justify-center text-white shadow-xs">
-                  <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"></path><path d="m15 9-6 6"></path><path d="M9 9h.01"></path><path d="M15 15h.01"></path></svg>
+                  <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m15 9-6 6"/><path d="M9 9h.01"/><path d="M15 15h.01"/></svg>
                 </div>
                 <div class="min-w-0 flex-1">
                   <h4 class="font-bold text-xs text-bf-ink leading-tight mb-0.5">Clube +B</h4>
@@ -1291,7 +1169,7 @@
               <!-- Card 5 Mobile (Lucide: smartphone) -->
               <button type="button" onclick="openOrderModal()" class="bg-slate-50/80 hover:bg-white border border-bf-line rounded-xl p-3 flex items-center gap-3 transition-colors shadow-xs text-left">
                 <div class="w-9 h-9 rounded-full bg-brand-red flex-shrink-0 flex items-center justify-center text-white shadow-xs">
-                  <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect><path d="M12 18h.01"></path></svg>
+                  <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
                 </div>
                 <div class="min-w-0 flex-1">
                   <h4 class="font-bold text-xs text-bf-ink leading-tight mb-0.5">Atendimento</h4>
@@ -1311,7 +1189,7 @@
          S2.5 — COMO VOCÊ QUER COMPRAR? (4 CANAIS DE CONVERSÃO DIRETA)
          WhatsApp Plaza · WhatsApp Tapanã · iFood Entrega · Lojas Físicas
          ========================================================================== -->
-    <section id="como-comprar" hidden="" aria-hidden="true" class="py-10 sm:py-14 md:py-16 bg-white border-b border-bf-line scroll-mt-24 md:scroll-mt-28">
+    <section id="como-comprar" hidden aria-hidden="true" class="py-10 sm:py-14 md:py-16 bg-white border-b border-bf-line scroll-mt-24 md:scroll-mt-28">
       <div class="bf-container">
 
         <!-- Cabeçalho -->
@@ -1329,7 +1207,7 @@
           <!-- Card 1: WhatsApp Plaza -->
           <a href="https://wa.me/5591991844989?text=Ol%C3%A1%21%20Gostaria%20de%20fazer%20um%20pedido%20na%20unidade%20Plaza." target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center text-center gap-3 bg-white hover:bg-green-50 border border-bf-line hover:border-green-300 rounded-2xl p-4 sm:p-5 shadow-bf-subtle hover:shadow-md transition-all duration-200">
             <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-green-100 group-hover:bg-green-500 flex items-center justify-center transition-colors duration-200 flex-shrink-0">
-              <svg class="w-7 h-7 sm:w-8 sm:h-8 text-green-600 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+              <svg class="w-7 h-7 sm:w-8 sm:h-8 text-green-600 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             </div>
             <div>
               <p class="text-xs sm:text-sm font-bold text-bf-ink leading-tight">WhatsApp</p>
@@ -1341,7 +1219,7 @@
           <!-- Card 2: WhatsApp Tapanã -->
           <a href="https://wa.me/559193541844?text=Ol%C3%A1%21%20Gostaria%20de%20fazer%20um%20pedido%20na%20unidade%20Tapan%C3%A3." target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center text-center gap-3 bg-white hover:bg-green-50 border border-bf-line hover:border-green-300 rounded-2xl p-4 sm:p-5 shadow-bf-subtle hover:shadow-md transition-all duration-200">
             <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-green-100 group-hover:bg-green-500 flex items-center justify-center transition-colors duration-200 flex-shrink-0">
-              <svg class="w-7 h-7 sm:w-8 sm:h-8 text-green-600 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+              <svg class="w-7 h-7 sm:w-8 sm:h-8 text-green-600 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             </div>
             <div>
               <p class="text-xs sm:text-sm font-bold text-bf-ink leading-tight">WhatsApp</p>
@@ -1353,7 +1231,7 @@
           <!-- Card 3: iFood Entrega -->
           <button type="button" onclick="openOrderModal()" class="group flex flex-col items-center text-center gap-3 bg-white hover:bg-red-50 border border-bf-line hover:border-red-200 rounded-2xl p-4 sm:p-5 shadow-bf-subtle hover:shadow-md transition-all duration-200">
             <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-red-50 group-hover:bg-brand-red flex items-center justify-center transition-colors duration-200 flex-shrink-0">
-              <svg class="w-7 h-7 sm:w-8 sm:h-8 text-brand-red group-hover:text-white transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path><path d="M15 18H9"></path><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"></path><circle cx="17" cy="18.5" r="2.5"></circle><circle cx="7" cy="18.5" r="2.5"></circle></svg>
+              <svg class="w-7 h-7 sm:w-8 sm:h-8 text-brand-red group-hover:text-white transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18.5" r="2.5"/><circle cx="7" cy="18.5" r="2.5"/></svg>
             </div>
             <div>
               <p class="text-xs sm:text-sm font-bold text-bf-ink leading-tight">iFood</p>
@@ -1365,7 +1243,7 @@
           <!-- Card 4: Lojas Físicas -->
           <a href="#filiais" class="group flex flex-col items-center text-center gap-3 bg-white hover:bg-slate-50 border border-bf-line hover:border-bf-line-dark rounded-2xl p-4 sm:p-5 shadow-bf-subtle hover:shadow-md transition-all duration-200">
             <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-slate-100 group-hover:bg-bf-ink flex items-center justify-center transition-colors duration-200 flex-shrink-0">
-              <svg class="w-7 h-7 sm:w-8 sm:h-8 text-bf-ink group-hover:text-white transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <svg class="w-7 h-7 sm:w-8 sm:h-8 text-bf-ink group-hover:text-white transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
             <div>
               <p class="text-xs sm:text-sm font-bold text-bf-ink leading-tight">Lojas Físicas</p>
@@ -1461,7 +1339,6 @@
       </div>
     </section>
 
-
     <!-- ==========================================================================
          S3 — CARROSSEL DE BANNERS / CAMPANHAS EM DESTAQUE (NÃO PERCA — 100% LARGURA)
          ========================================================================== -->
@@ -1519,7 +1396,6 @@
 
     </section>
 
-
     <!-- ==========================================================================
          S5 — SOBRE A +B FARMA & INDICADORES
          ========================================================================== -->
@@ -1543,19 +1419,19 @@
             <div class="space-y-3.5">
               <div class="flex items-center gap-3">
                 <div class="w-5 h-5 rounded-full bg-brand-red text-white flex items-center justify-center flex-shrink-0 shadow-xs">
-                  <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg>
+                  <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
                 </div>
                 <span class="text-xs sm:text-sm font-medium text-bf-ink">Medicamentos e produtos de qualidade</span>
               </div>
               <div class="flex items-center gap-3">
                 <div class="w-5 h-5 rounded-full bg-brand-red text-white flex items-center justify-center flex-shrink-0 shadow-xs">
-                  <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg>
+                  <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
                 </div>
                 <span class="text-xs sm:text-sm font-medium text-bf-ink">Atendimento humanizado e especializado</span>
               </div>
               <div class="flex items-center gap-3">
                 <div class="w-5 h-5 rounded-full bg-brand-red text-white flex items-center justify-center flex-shrink-0 shadow-xs">
-                  <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg>
+                  <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
                 </div>
                 <span class="text-xs sm:text-sm font-medium text-bf-ink">Praticidade para facilitar sua rotina</span>
               </div>
@@ -1587,6 +1463,74 @@
 
         </div>
 
+        <!-- Card Flutuante de Indicadores da Rede (4 Colunas com Divisórias) -->
+        <div class="mt-10 sm:mt-14 bg-white rounded-2xl sm:rounded-3xl border border-bf-line/80 shadow-bf-subtle py-5 sm:py-6 px-3 sm:px-8">
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-6 lg:gap-0 lg:divide-x lg:divide-bf-line/80 items-center">
+            
+            <!-- Item 1: Unidades -->
+            <div class="flex items-center gap-2.5 sm:gap-4 p-2.5 sm:p-0 bg-[#F4FEFD]/45 sm:bg-transparent rounded-xl sm:rounded-none border border-brand-red/10 sm:border-0 lg:justify-center lg:px-4">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-brand-red/30 bg-brand-red/5 flex items-center justify-center text-brand-red flex-shrink-0">
+                <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                  <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/>
+                  <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
+                  <path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/>
+                  <path d="M2 7h20"/>
+                  <path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 10V7"/>
+                </svg>
+              </div>
+              <div class="min-w-0">
+                <span class="text-xl sm:text-2xl md:text-3xl font-extrabold text-brand-red block leading-none">Saúde</span>
+                <span class="text-[11px] sm:text-xs md:text-sm font-semibold text-bf-ink block mt-1 truncate">Cuidado próximo</span>
+              </div>
+            </div>
+
+            <!-- Item 2: Clientes atendidos -->
+            <div class="flex items-center gap-2.5 sm:gap-4 p-2.5 sm:p-0 bg-[#F4FEFD]/45 sm:bg-transparent rounded-xl sm:rounded-none border border-brand-red/10 sm:border-0 lg:justify-center lg:px-4">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-brand-red/30 bg-brand-red/5 flex items-center justify-center text-brand-red flex-shrink-0">
+                <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </div>
+              <div class="min-w-0">
+                <span class="text-xl sm:text-2xl md:text-3xl font-extrabold text-brand-red block leading-none">Saúde</span>
+                <span class="text-[11px] sm:text-xs md:text-sm font-semibold text-bf-ink block mt-1 truncate">Clientes</span>
+              </div>
+            </div>
+
+            <!-- Item 3: Cuidando de você -->
+            <div class="flex items-center gap-2.5 sm:gap-4 p-2.5 sm:p-0 bg-[#F4FEFD]/45 sm:bg-transparent rounded-xl sm:rounded-none border border-brand-red/10 sm:border-0 lg:justify-center lg:px-4">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-brand-red/30 bg-brand-red/5 flex items-center justify-center text-brand-red flex-shrink-0">
+                <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                  <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/>
+                  <polygon points="12 8 13.09 10.26 15.5 10.61 13.75 12.31 14.16 14.7 12 13.56 9.84 14.7 10.25 12.31 8.5 10.61 10.91 10.26 12 8"/>
+                </svg>
+              </div>
+              <div class="min-w-0">
+                <span class="text-xl sm:text-2xl md:text-3xl font-extrabold text-brand-red block leading-none">Beleza</span>
+                <span class="text-[11px] sm:text-xs md:text-sm font-semibold text-bf-ink block mt-1 truncate">Bem-estar</span>
+              </div>
+            </div>
+
+            <!-- Item 4: Atendidos em Belém. -->
+            <div class="flex items-center gap-2.5 sm:gap-4 p-2.5 sm:p-0 bg-[#F4FEFD]/45 sm:bg-transparent rounded-xl sm:rounded-none border border-brand-red/10 sm:border-0 lg:justify-center lg:px-4">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-brand-red/30 bg-brand-red/5 flex items-center justify-center text-brand-red flex-shrink-0">
+                <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                  <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div class="min-w-0">
+                <span class="text-xl sm:text-2xl md:text-3xl font-extrabold text-brand-red block leading-none">Conveniência</span>
+                <span class="text-[11px] sm:text-xs md:text-sm font-semibold text-bf-ink block mt-1 truncate">Em Belém</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -1597,35 +1541,14 @@
     <section id="clube" class="py-8 sm:py-12 md:py-16 border-b border-bf-line scroll-mt-24 md:scroll-mt-28">
       <div class="bf-container">
         
-        <div id="horizontalBannerCarousel" class="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-bf-subtle border border-bf-line bg-white select-none group/hbanner">
-          <div class="relative w-full overflow-hidden">
-            <div id="hBannersTrack" class="flex transition-transform duration-700 ease-in-out w-full" style="transform: translateX(-100%);">
-              <div class="w-full flex-shrink-0 relative overflow-hidden">
-                <a href="#faq" class="block w-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-red">
-                  <img src="assets/Pagina/S4%20BANNERS%20HORIZONTAIS/1-BANNER-HORIZONTALL.webp" alt="+B Farma — Clube +B: Mais vantagens para você economizar todos os dias" class="w-full h-auto object-cover block" loading="eager" decoding="async" draggable="false">
-                </a>
-              </div>
-
-              <div class="w-full flex-shrink-0 relative overflow-hidden">
-                <button type="button" onclick="openOrderModal()" class="block w-full cursor-pointer text-left focus:outline-none focus:ring-2 focus:ring-brand-red">
-                  <img src="assets/Pagina/S4%20BANNERS%20HORIZONTAIS/banner-ifood.png" alt="+B Farma no iFood — Escolha sua unidade e faça seu pedido" class="w-full h-auto object-cover block" loading="lazy" decoding="async" draggable="false">
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <button onclick="prevHSlide(); resetHAutoplay();" class="absolute left-2 sm:left-4 md:left-6 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white/90 hover:bg-brand-red text-bf-ink hover:text-white backdrop-blur-md border border-bf-line shadow-bf-floating flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 z-20 opacity-90 sm:opacity-0 group-hover/hbanner:opacity-100 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-brand-red" aria-label="Banner anterior">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
+        <!-- Dois cards independentes: Clube +B e iFood -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          <a href="#faq" class="block rounded-2xl sm:rounded-3xl overflow-hidden shadow-bf-subtle hover:shadow-bf-card border border-bf-line bg-white transition-shadow focus:outline-none focus:ring-2 focus:ring-brand-red">
+            <img src="assets/Pagina/S4%20BANNERS%20HORIZONTAIS/1-BANNER-HORIZONTALL.webp" alt="+B Farma — Clube +B: Mais vantagens para você economizar todos os dias" class="w-full h-auto object-cover block" loading="lazy" decoding="async" draggable="false">
+          </a>
+          <button type="button" onclick="openOrderModal()" class="block w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-bf-subtle hover:shadow-bf-card border border-bf-line bg-white transition-shadow focus:outline-none focus:ring-2 focus:ring-brand-red text-left">
+            <img src="assets/Pagina/S4%20BANNERS%20HORIZONTAIS/banner-ifood.webp" alt="+B Farma no iFood — Escolha sua unidade e faça seu pedido" class="w-full h-auto object-cover block" loading="lazy" decoding="async" draggable="false">
           </button>
-
-          <button onclick="nextHSlide(); resetHAutoplay();" class="absolute right-2 sm:right-4 md:right-6 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white/90 hover:bg-brand-red text-bf-ink hover:text-white backdrop-blur-md border border-bf-line shadow-bf-floating flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 z-20 opacity-90 sm:opacity-0 group-hover/hbanner:opacity-100 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-brand-red" aria-label="Próximo banner">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
-          </button>
-
-          <div class="absolute bottom-2.5 sm:bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 z-20 bg-black/30 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20">
-            <button onclick="setHSlide(0); resetHAutoplay();" class="h-slide-dot w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-white/60 hover:bg-white transition-all duration-300 focus:outline-none" aria-label="Ir para banner 1"></button>
-            <button onclick="setHSlide(1); resetHAutoplay();" class="h-slide-dot w-7 sm:w-8 h-2 sm:h-2.5 rounded-full bg-brand-red transition-all duration-300 focus:outline-none" aria-label="Ir para banner 2"></button>
-          </div>
         </div>
 
       </div>
@@ -1653,10 +1576,8 @@
               <svg class="faq-chevron w-4 h-4 sm:w-5 sm:h-5 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
             <div id="faqAnswer1" class="faq-content-wrapper">
-              <div class="faq-content-inner">
-                <div class="px-4 sm:px-6 pb-4 text-xs text-bf-body leading-relaxed border-t border-slate-100 pt-3">
+              <div class="faq-content-inner px-4 sm:px-6 pb-4 text-xs text-bf-body leading-relaxed border-t border-slate-100 pt-3">
                 Consulte a equipe da +B Farma para conhecer as condições e formas de cadastro do Clube +B em cada unidade.
-                </div>
               </div>
             </div>
           </div>
@@ -1668,10 +1589,8 @@
               <svg class="faq-chevron w-4 h-4 sm:w-5 sm:h-5 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
             <div id="faqAnswer2" class="faq-content-wrapper">
-              <div class="faq-content-inner">
-                <div class="px-4 sm:px-6 pb-4 text-xs text-bf-body leading-relaxed border-t border-slate-100 pt-3">
+              <div class="faq-content-inner px-4 sm:px-6 pb-4 text-xs text-bf-body leading-relaxed border-t border-slate-100 pt-3">
                 As formas de pagamento podem variar por unidade. Confirme as opções disponíveis diretamente com a equipe da Plaza ou Tapanã.
-                </div>
               </div>
             </div>
           </div>
@@ -1683,10 +1602,8 @@
               <svg class="faq-chevron w-4 h-4 sm:w-5 sm:h-5 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
             <div id="faqAnswer3" class="faq-content-wrapper">
-              <div class="faq-content-inner">
-                <div class="px-4 sm:px-6 pb-4 text-xs text-bf-body leading-relaxed border-t border-slate-100 pt-3">
+              <div class="faq-content-inner px-4 sm:px-6 pb-4 text-xs text-bf-body leading-relaxed border-t border-slate-100 pt-3">
                 Você pode enviar sua lista de produtos ou receita médica pelo nosso canal de atendimento e combinar diretamente com a filial Plaza ou Tapanã a melhor forma de receber ou retirar seu pedido.
-                </div>
               </div>
             </div>
           </div>
@@ -1698,10 +1615,8 @@
               <svg class="faq-chevron w-4 h-4 sm:w-5 sm:h-5 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
             <div id="faqAnswer4" class="faq-content-wrapper">
-              <div class="faq-content-inner">
-                <div class="px-4 sm:px-6 pb-4 text-xs text-bf-body leading-relaxed border-t border-slate-100 pt-3">
+              <div class="faq-content-inner px-4 sm:px-6 pb-4 text-xs text-bf-body leading-relaxed border-t border-slate-100 pt-3">
                 Sim. A +B Farma está no iFood. Escolha entre as unidades Plaza e Tapanã e consulte diretamente no aplicativo a disponibilidade de produtos e entrega para sua região.
-                </div>
               </div>
             </div>
           </div>
@@ -1713,10 +1628,8 @@
               <svg class="faq-chevron w-4 h-4 sm:w-5 sm:h-5 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
             <div id="faqAnswer5" class="faq-content-wrapper">
-              <div class="faq-content-inner">
-                <div class="px-4 sm:px-6 pb-4 text-xs text-bf-body leading-relaxed border-t border-slate-100 pt-3">
+              <div class="faq-content-inner px-4 sm:px-6 pb-4 text-xs text-bf-body leading-relaxed border-t border-slate-100 pt-3">
                 Abra o botão <strong>Pedir agora</strong>, escolha a unidade Plaza ou Tapanã e envie sua dúvida ou lista de produtos diretamente para a equipe.
-                </div>
               </div>
             </div>
           </div>
@@ -1728,10 +1641,8 @@
               <svg class="faq-chevron w-4 h-4 sm:w-5 sm:h-5 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
             <div id="faqAnswer6" class="faq-content-wrapper">
-              <div class="faq-content-inner">
-                <div class="px-4 sm:px-6 pb-4 text-xs text-bf-body leading-relaxed border-t border-slate-100 pt-3">
+              <div class="faq-content-inner px-4 sm:px-6 pb-4 text-xs text-bf-body leading-relaxed border-t border-slate-100 pt-3">
                 Temos unidades no Plaza, na Av. Gov. José Malcher, e no Tapanã, na Rod. do Tapanã. Consulte os cards de lojas para abrir a rota e conferir informações atualizadas.
-                </div>
               </div>
             </div>
           </div>
@@ -1741,440 +1652,12 @@
       </div>
     </section>
 
-
-    <!-- HISTORICAL_TESTIMONIALS_SLOT -->
-    <!-- ==========================================================================
-         S8 — AVALIAÇÕES / PROVA SOCIAL GOOGLE MAPS (DUAL-ROW INFINITE MARQUEE)
-         ========================================================================== -->
-    <section id="depoimentos" class="bg-[#1C1D22] text-white pt-12 sm:pt-16 pb-6 sm:pb-8 rounded-t-[28px] sm:rounded-t-[36px] relative overflow-hidden scroll-mt-24 md:scroll-mt-28 shadow-none">
-      
-      <!-- Cabeçalho da Seção -->
-      <div class="bf-container mb-8 sm:mb-10">
-        <div class="text-center max-w-2xl mx-auto px-2">
-          <span class="text-xs font-bold uppercase tracking-widest text-brand-red block mb-2">AVALIAÇÕES NO GOOGLE</span>
-          <h2 class="text-2xl sm:text-3xl md:text-[34px] font-bold text-white tracking-tight break-words">O que nossos clientes dizem no Google.</h2>
-          <div class="flex items-center justify-center gap-2 mt-3 flex-wrap">
-            <div class="flex items-center gap-1 text-amber-400">
-              <svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              <svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              <svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              <svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              <svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            </div>
-            <span class="text-xs sm:text-sm font-semibold text-slate-300">Classificação 4.9 de 5.0 estrelas</span>
-            <span class="text-slate-500">·</span>
-            <span class="text-xs sm:text-sm text-slate-400">Unidades Plaza &amp; Tapanã</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Contêiner do Marquee Duplo com Gradientes Laterais Escuros de Fade (Sem Sombras Brancas) -->
-      <div class="relative w-full overflow-hidden select-none py-2">
-
-        <!-- Máscaras Laterais Escuras de Transição Suave -->
-        <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-24 md:w-36 bg-gradient-to-r from-[#1C1D22] via-[#1C1D22]/80 to-transparent z-20"></div>
-        <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-24 md:w-36 bg-gradient-to-l from-[#1C1D22] via-[#1C1D22]/80 to-transparent z-20"></div>
-
-        <!-- LINHA 1 (Scroll Contínuo para a Esquerda) -->
-        <div class="animate-marquee-left gap-4 sm:gap-5 mb-4 sm:mb-5">
-
-          <!-- Card 1: Luciana Nascimento -->
-          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#282B35] hover:bg-[#313542] border border-slate-700/50 hover:border-slate-500/80 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25">
-            <div class="flex items-center gap-3 mb-2.5">
-              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&amp;auto=format&amp;fit=crop&amp;q=80" alt="Luciana Nascimento" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border border-white/10 flex-shrink-0">
-              <div class="min-w-0">
-                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Luciana Nascimento</h5>
-                <span class="text-[10px] sm:text-[11px] text-slate-400">1 avaliação</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-1.5 text-amber-400 mb-2">
-              <div class="flex items-center gap-0.5">
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <span class="text-[10px] sm:text-[11px] text-slate-400">há 2 semanas</span>
-            </div>
-            <p class="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal break-words line-clamp-3">
-              "Ótimo atendimento e preços muito bons"
-            </p>
-          </div>
-
-          <!-- Card 2: Karlene Suelen -->
-          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#282B35] hover:bg-[#313542] border border-slate-700/50 hover:border-slate-500/80 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25">
-            <div class="flex items-center gap-3 mb-2.5">
-              <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#246D65] text-white font-bold flex items-center justify-center text-sm flex-shrink-0 shadow-xs">K</div>
-              <div class="min-w-0">
-                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Karlene Suelen</h5>
-                <span class="text-[10px] sm:text-[11px] text-slate-400">2 avaliações</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-1.5 text-amber-400 mb-2">
-              <div class="flex items-center gap-0.5">
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <span class="text-[10px] sm:text-[11px] text-slate-400">há 1 semana</span>
-            </div>
-            <p class="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal break-words line-clamp-3">
-              "Excelente atendimento e preço bom."
-            </p>
-          </div>
-
-          <!-- Card 3: Giulia Tochetto Castagneti -->
-          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#282B35] hover:bg-[#313542] border border-slate-700/50 hover:border-slate-500/80 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25">
-            <div class="flex items-center gap-3 mb-2.5">
-              <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#9333EA] text-white font-bold flex items-center justify-center text-sm flex-shrink-0 shadow-xs">G</div>
-              <div class="min-w-0">
-                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Giulia Tochetto Castagneti</h5>
-                <span class="text-[10px] sm:text-[11px] text-slate-400">1 avaliação</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-1.5 text-amber-400 mb-2">
-              <div class="flex items-center gap-0.5">
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <span class="text-[10px] sm:text-[11px] text-slate-400">há 1 semana</span>
-            </div>
-            <p class="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal break-words line-clamp-3">
-              "Atendimento maravilhoso e preços justos, recomendo!"
-            </p>
-          </div>
-
-          <!-- Card 4: Tamires Mesquita -->
-          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#282B35] hover:bg-[#313542] border border-slate-700/50 hover:border-slate-500/80 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25">
-            <div class="flex items-center gap-3 mb-2.5">
-              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&amp;auto=format&amp;fit=crop&amp;q=80" alt="Tamires Mesquita" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border border-white/10 flex-shrink-0">
-              <div class="min-w-0">
-                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Tamires Mesquita</h5>
-                <span class="text-[10px] sm:text-[11px] text-slate-400">2 avaliações</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-1.5 text-amber-400 mb-2">
-              <div class="flex items-center gap-0.5">
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <span class="text-[10px] sm:text-[11px] text-slate-400">há 3 meses</span>
-            </div>
-            <p class="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal break-words line-clamp-3">
-              "Onde você encontra medicamentos e produtos de beleza e cuidados com a pele com excelente preço."
-            </p>
-          </div>
-
-          <!-- Card 5: Camila Ferreira -->
-          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#282B35] hover:bg-[#313542] border border-slate-700/50 hover:border-slate-500/80 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25">
-            <div class="flex items-center gap-3 mb-2.5">
-              <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#555866] text-white font-bold flex items-center justify-center text-sm flex-shrink-0 shadow-xs">E</div>
-              <div class="min-w-0">
-                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Camila Ferreira</h5>
-                <span class="text-[10px] sm:text-[11px] text-slate-400">3 avaliações</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-1.5 text-amber-400 mb-2">
-              <div class="flex items-center gap-0.5">
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <span class="text-[10px] sm:text-[11px] text-slate-400">há 11 meses</span>
-            </div>
-            <p class="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal break-words line-clamp-3">
-              "Encontrei os medicamentos que precisava e fui muito bem atendida pela equipe."
-            </p>
-          </div>
-
-          <!-- DUPLICAÇÃO DA LINHA 1 (SEAMLESS INFINITE LOOP) -->
-          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#282B35] hover:bg-[#313542] border border-slate-700/50 hover:border-slate-500/80 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25" aria-hidden="true">
-            <div class="flex items-center gap-3 mb-2.5">
-              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&amp;auto=format&amp;fit=crop&amp;q=80" alt="Luciana Nascimento" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border border-white/10 flex-shrink-0">
-              <div class="min-w-0">
-                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Luciana Nascimento</h5>
-                <span class="text-[10px] sm:text-[11px] text-slate-400">1 avaliação</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-1.5 text-amber-400 mb-2">
-              <div class="flex items-center gap-0.5">
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <span class="text-[10px] sm:text-[11px] text-slate-400">há 2 semanas</span>
-            </div>
-            <p class="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal break-words line-clamp-3">
-              "Ótimo atendimento e preços muito bons"
-            </p>
-          </div>
-
-          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#282B35] hover:bg-[#313542] border border-slate-700/50 hover:border-slate-500/80 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25" aria-hidden="true">
-            <div class="flex items-center gap-3 mb-2.5">
-              <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#246D65] text-white font-bold flex items-center justify-center text-sm flex-shrink-0 shadow-xs">K</div>
-              <div class="min-w-0">
-                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Karlene Suelen</h5>
-                <span class="text-[10px] sm:text-[11px] text-slate-400">2 avaliações</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-1.5 text-amber-400 mb-2">
-              <div class="flex items-center gap-0.5">
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <span class="text-[10px] sm:text-[11px] text-slate-400">há 1 semana</span>
-            </div>
-            <p class="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal break-words line-clamp-3">
-              "Excelente atendimento e preço bom."
-            </p>
-          </div>
-
-          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#282B35] hover:bg-[#313542] border border-slate-700/50 hover:border-slate-500/80 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25" aria-hidden="true">
-            <div class="flex items-center gap-3 mb-2.5">
-              <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#9333EA] text-white font-bold flex items-center justify-center text-sm flex-shrink-0 shadow-xs">G</div>
-              <div class="min-w-0">
-                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Giulia Tochetto Castagneti</h5>
-                <span class="text-[10px] sm:text-[11px] text-slate-400">1 avaliação</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-1.5 text-amber-400 mb-2">
-              <div class="flex items-center gap-0.5">
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <span class="text-[10px] sm:text-[11px] text-slate-400">há 1 semana</span>
-            </div>
-            <p class="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal break-words line-clamp-3">
-              "Atendimento maravilhoso e preços justos, recomendo!"
-            </p>
-          </div>
-
-        </div>
-
-        <!-- LINHA 2 (Scroll Contínuo para a Direita) -->
-        <div class="animate-marquee-right gap-4 sm:gap-5">
-
-          <!-- Card 6: Alfredo Maidana -->
-          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#282B35] hover:bg-[#313542] border border-slate-700/50 hover:border-slate-500/80 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25">
-            <div class="flex items-center gap-3 mb-2.5">
-              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&amp;auto=format&amp;fit=crop&amp;q=80" alt="Alfredo Maidana" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border border-white/10 flex-shrink-0">
-              <div class="min-w-0">
-                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Alfredo Maidana</h5>
-                <span class="text-[10px] sm:text-[11px] text-slate-400">1 avaliação</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-1.5 text-amber-400 mb-2">
-              <div class="flex items-center gap-0.5">
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <span class="text-[10px] sm:text-[11px] text-slate-400">há 1 semana</span>
-            </div>
-            <p class="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal break-words line-clamp-3">
-              "Atendimento excelente, entrega pontual e ganhei um bombom."
-            </p>
-          </div>
-
-          <!-- Card 7: Marcos Oliveira -->
-          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#282B35] hover:bg-[#313542] border border-slate-700/50 hover:border-slate-500/80 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25">
-            <div class="flex items-center gap-3 mb-2.5">
-              <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#0284C7] text-white font-bold flex items-center justify-center text-sm flex-shrink-0 shadow-xs">l</div>
-              <div class="min-w-0">
-                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Marcos Oliveira</h5>
-                <span class="text-[10px] sm:text-[11px] text-slate-400">1 avaliação</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-1.5 text-amber-400 mb-2">
-              <div class="flex items-center gap-0.5">
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <span class="text-[10px] sm:text-[11px] text-slate-400">há 2 semanas</span>
-            </div>
-            <p class="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal break-words line-clamp-3">
-              "Ótimo atendimento, bons preços e muita variedade de medicamentos."
-            </p>
-          </div>
-
-          <!-- Card 8: Mauricio Pedroso Da Silva -->
-          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#282B35] hover:bg-[#313542] border border-slate-700/50 hover:border-slate-500/80 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25">
-            <div class="flex items-center gap-3 mb-2.5">
-              <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#EA580C] text-white font-bold flex items-center justify-center text-sm flex-shrink-0 shadow-xs">M</div>
-              <div class="min-w-0">
-                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Mauricio Pedroso Da Silva</h5>
-                <span class="text-[10px] sm:text-[11px] text-slate-400">1 avaliação</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-1.5 text-amber-400 mb-2">
-              <div class="flex items-center gap-0.5">
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <span class="text-[10px] sm:text-[11px] text-slate-400">há 2 semanas</span>
-            </div>
-            <p class="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal break-words line-clamp-3">
-              "Ótimo atendimento preço excelente"
-            </p>
-          </div>
-
-          <!-- Card 9: Adriano Branco -->
-          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#282B35] hover:bg-[#313542] border border-slate-700/50 hover:border-slate-500/80 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25">
-            <div class="flex items-center gap-3 mb-2.5">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&amp;auto=format&amp;fit=crop&amp;q=80" alt="Adriano Branco" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border border-white/10 flex-shrink-0">
-              <div class="min-w-0">
-                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Adriano Branco</h5>
-                <span class="text-[10px] sm:text-[11px] text-slate-400">Guia Local · 15 avaliações</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-1.5 text-amber-400 mb-2">
-              <div class="flex items-center gap-0.5">
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <span class="text-[10px] sm:text-[11px] text-slate-400">há 2 semanas</span>
-            </div>
-            <p class="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal break-words line-clamp-3">
-              "Ambiente impecável, farmacêuticos competentes e variedade total de medicamentos."
-            </p>
-          </div>
-
-          <!-- DUPLICAÇÃO DA LINHA 2 (SEAMLESS INFINITE LOOP) -->
-          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#282B35] hover:bg-[#313542] border border-slate-700/50 hover:border-slate-500/80 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25" aria-hidden="true">
-            <div class="flex items-center gap-3 mb-2.5">
-              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&amp;auto=format&amp;fit=crop&amp;q=80" alt="Alfredo Maidana" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border border-white/10 flex-shrink-0">
-              <div class="min-w-0">
-                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Alfredo Maidana</h5>
-                <span class="text-[10px] sm:text-[11px] text-slate-400">1 avaliação</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-1.5 text-amber-400 mb-2">
-              <div class="flex items-center gap-0.5">
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <span class="text-[10px] sm:text-[11px] text-slate-400">há 1 semana</span>
-            </div>
-            <p class="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal break-words line-clamp-3">
-              "Atendimento excelente, entrega pontual e ganhei um bombom."
-            </p>
-          </div>
-
-          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#282B35] hover:bg-[#313542] border border-slate-700/50 hover:border-slate-500/80 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25" aria-hidden="true">
-            <div class="flex items-center gap-3 mb-2.5">
-              <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#0284C7] text-white font-bold flex items-center justify-center text-sm flex-shrink-0 shadow-xs">l</div>
-              <div class="min-w-0">
-                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Marcos Oliveira</h5>
-                <span class="text-[10px] sm:text-[11px] text-slate-400">1 avaliação</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-1.5 text-amber-400 mb-2">
-              <div class="flex items-center gap-0.5">
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <span class="text-[10px] sm:text-[11px] text-slate-400">há 2 semanas</span>
-            </div>
-            <p class="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal break-words line-clamp-3">
-              "Ótimo atendimento, bons preços e muita variedade de medicamentos."
-            </p>
-          </div>
-
-          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#282B35] hover:bg-[#313542] border border-slate-700/50 hover:border-slate-500/80 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25" aria-hidden="true">
-            <div class="flex items-center gap-3 mb-2.5">
-              <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#EA580C] text-white font-bold flex items-center justify-center text-sm flex-shrink-0 shadow-xs">M</div>
-              <div class="min-w-0">
-                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Mauricio Pedroso Da Silva</h5>
-                <span class="text-[10px] sm:text-[11px] text-slate-400">1 avaliação</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-1.5 text-amber-400 mb-2">
-              <div class="flex items-center gap-0.5">
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <span class="text-[10px] sm:text-[11px] text-slate-400">há 2 semanas</span>
-            </div>
-            <p class="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal break-words line-clamp-3">
-              "Ótimo atendimento preço excelente"
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-
-
-
-    </section>
-    <!-- Recriação anterior mantida oculta apenas até a conferência final desta restauração. -->
-    <section id="depoimentos-recriado" class="hidden bg-[#1C1D22] text-white py-10 sm:py-14 overflow-hidden scroll-mt-24 md:scroll-mt-28" aria-label="Depoimentos de clientes">
-      <div class="bf-container mb-7 text-center">
-        <span class="text-xs font-bold uppercase tracking-widest text-brand-red block mb-2">AVALIAÇÕES NO GOOGLE</span>
-        <h2 class="text-2xl sm:text-3xl md:text-[34px] font-bold tracking-tight">O que nossos clientes dizem.</h2>
-        <p class="mt-3 text-xs sm:text-sm text-slate-300">Experiências de quem já foi atendido nas unidades +B Farma.</p>
-      </div>
-      <div class="relative overflow-hidden space-y-4" data-testimonials-marquee="">
-        <div class="testimonials-track left">
-          <article class="w-[280px] sm:w-[320px] shrink-0 rounded-2xl bg-white p-5 text-[#32343D] shadow-lg"><div class="text-brand-red tracking-widest mb-2">★★★★★</div><p class="text-sm leading-relaxed">“Atendimento excelente, equipe muito atenciosa e loja organizada.”</p><p class="mt-4 text-xs font-bold">Luciana Nascimento</p><p class="text-[11px] text-slate-500">Avaliação no Google</p></article>
-          <article class="w-[280px] sm:w-[320px] shrink-0 rounded-2xl bg-white p-5 text-[#32343D] shadow-lg"><div class="text-brand-red tracking-widest mb-2">★★★★★</div><p class="text-sm leading-relaxed">“Sempre encontro o que preciso e sou muito bem recebido pela equipe.”</p><p class="mt-4 text-xs font-bold">Tamires Mesquita</p><p class="text-[11px] text-slate-500">Avaliação no Google</p></article>
-          <article class="w-[280px] sm:w-[320px] shrink-0 rounded-2xl bg-white p-5 text-[#32343D] shadow-lg"><div class="text-brand-red tracking-widest mb-2">★★★★★</div><p class="text-sm leading-relaxed">“Farmácia completa, atendimento rápido e muito cuidado com os clientes.”</p><p class="mt-4 text-xs font-bold">Adriano Branco</p><p class="text-[11px] text-slate-500">Avaliação no Google</p></article>
-          <article class="w-[280px] sm:w-[320px] shrink-0 rounded-2xl bg-white p-5 text-[#32343D] shadow-lg"><div class="text-brand-red tracking-widest mb-2">★★★★★</div><p class="text-sm leading-relaxed">“Ambiente agradável e profissionais preparados para ajudar.”</p><p class="mt-4 text-xs font-bold">Alfredo Maidana</p><p class="text-[11px] text-slate-500">Avaliação no Google</p></article>
-          <article aria-hidden="true" class="w-[280px] sm:w-[320px] shrink-0 rounded-2xl bg-white p-5 text-[#32343D] shadow-lg"><div class="text-brand-red tracking-widest mb-2">★★★★★</div><p class="text-sm leading-relaxed">“Atendimento excelente, equipe muito atenciosa e loja organizada.”</p><p class="mt-4 text-xs font-bold">Luciana Nascimento</p><p class="text-[11px] text-slate-500">Avaliação no Google</p></article>
-        </div>
-        <div class="testimonials-track right">
-          <article class="w-[280px] sm:w-[320px] shrink-0 rounded-2xl bg-white p-5 text-[#32343D] shadow-lg"><div class="text-brand-red tracking-widest mb-2">★★★★★</div><p class="text-sm leading-relaxed">“Preço justo, facilidade para pedir e atendimento muito humano.”</p><p class="mt-4 text-xs font-bold">Cliente da unidade Plaza</p><p class="text-[11px] text-slate-500">Avaliação no Google</p></article>
-          <article class="w-[280px] sm:w-[320px] shrink-0 rounded-2xl bg-white p-5 text-[#32343D] shadow-lg"><div class="text-brand-red tracking-widest mb-2">★★★★★</div><p class="text-sm leading-relaxed">“A equipe foi prestativa e resolveu tudo com muita rapidez.”</p><p class="mt-4 text-xs font-bold">Cliente da unidade Tapanã</p><p class="text-[11px] text-slate-500">Avaliação no Google</p></article>
-          <article class="w-[280px] sm:w-[320px] shrink-0 rounded-2xl bg-white p-5 text-[#32343D] shadow-lg"><div class="text-brand-red tracking-widest mb-2">★★★★★</div><p class="text-sm leading-relaxed">“Uma das melhores experiências que tive em farmácia.”</p><p class="mt-4 text-xs font-bold">Cliente +B Farma</p><p class="text-[11px] text-slate-500">Avaliação no Google</p></article>
-          <article aria-hidden="true" class="w-[280px] sm:w-[320px] shrink-0 rounded-2xl bg-white p-5 text-[#32343D] shadow-lg"><div class="text-brand-red tracking-widest mb-2">★★★★★</div><p class="text-sm leading-relaxed">“Preço justo, facilidade para pedir e atendimento muito humano.”</p><p class="mt-4 text-xs font-bold">Cliente da unidade Plaza</p><p class="text-[11px] text-slate-500">Avaliação no Google</p></article>
-        </div>
-      </div>
-    </section>
 
     <!-- ==========================================================================
          S8 — AVALIAÇÕES / PROVA SOCIAL GOOGLE MAPS
          ========================================================================== -->
-    <section id="depoimentos-legado" class="hidden bg-[#1C1D22] text-white pt-12 sm:pt-16 pb-6 sm:pb-8 rounded-t-[28px] sm:rounded-t-[36px] relative overflow-hidden scroll-mt-24 md:scroll-mt-28 shadow-none">
-
+    <section id="depoimentos" class="bg-[#1C1D22] text-white pt-12 sm:pt-16 pb-6 sm:pb-8 rounded-t-[28px] sm:rounded-t-[36px] relative overflow-hidden scroll-mt-24 md:scroll-mt-28 shadow-none">
+      
       <!-- Cabeçalho da Seção -->
       <div class="bf-container mb-8 sm:mb-10">
         <div class="text-center max-w-2xl mx-auto px-2">
@@ -2183,7 +1666,7 @@
           <div class="flex items-center justify-center gap-2 mt-3 flex-wrap">
             <span class="text-xs sm:text-sm font-semibold text-slate-300">Avaliações públicas das unidades Plaza e Tapanã</span>
             <span class="text-slate-500">·</span>
-            <span class="text-xs sm:text-sm text-slate-400">Unidades Plaza &amp; Tapanã</span>
+            <span class="text-xs sm:text-sm text-slate-400">Unidades Plaza & Tapanã</span>
           </div>
           <div class="flex flex-wrap justify-center gap-2 mt-4">
             <a href="https://maps.app.goo.gl/zaZgizNzeF6Jwy59A" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg border border-white/20 px-4 py-2 text-xs font-bold text-white hover:bg-white/10 transition-colors">Ver avaliações Plaza</a>
@@ -2254,7 +1737,7 @@
                       <!-- Botão Fechar estilo Google Maps (✕ no canto superior direito) -->
                       <button type="button" class="absolute top-2 right-2 rounded-full bg-white/90 hover:bg-white text-[#3c4043] hover:text-[#202124] shadow flex items-center justify-center transition-all z-20 focus:outline-none" style="width: 22px; height: 22px; min-width: 22px;" aria-label="Fechar">
                         <svg class="fill-current" style="width: 11px; height: 11px; min-width: 11px;" viewBox="0 0 24 24">
-                          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path>
+                          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/>
                         </svg>
                       </button>
 
@@ -2277,8 +1760,8 @@
                         <span>Farmácia</span>
                         <span>·</span>
                         <svg viewBox="0 0 24 24" fill="#1a73e8" style="width: 12px; height: 12px; min-width: 12px;" aria-label="Acessível para cadeirantes">
-                          <circle cx="12" cy="4" r="2"></circle>
-                          <path d="M19 13v-2c-1.54.02-3.09-.75-4.07-1.83l-1.29-1.43c-.17-.19-.38-.34-.61-.45-.48-.23-1.04-.26-1.55-.07-.51.19-.92.58-1.12 1.09L8.4 13.29C8.13 13.97 8.35 14.74 8.92 15.17l3.6 2.7V22h2v-5l-2.4-1.8 1.4-3.5c.78.89 1.94 1.5 3.19 1.5l2.29-.2zM12 16.5c-2.48 0-4.5-2.02-4.5-4.5s2.02-4.5 4.5-4.5c.55 0 1 .45 1 1s-.45 1-1 1c-1.38 0-2.5 1.12-2.5 2.5s1.12 2.5 2.5 2.5c.55 0 1 .45 1 1s-.45 1-1 1z"></path>
+                          <circle cx="12" cy="4" r="2"/>
+                          <path d="M19 13v-2c-1.54.02-3.09-.75-4.07-1.83l-1.29-1.43c-.17-.19-.38-.34-.61-.45-.48-.23-1.04-.26-1.55-.07-.51.19-.92.58-1.12 1.09L8.4 13.29C8.13 13.97 8.35 14.74 8.92 15.17l3.6 2.7V22h2v-5l-2.4-1.8 1.4-3.5c.78.89 1.94 1.5 3.19 1.5l2.29-.2zM12 16.5c-2.48 0-4.5-2.02-4.5-4.5s2.02-4.5 4.5-4.5c.55 0 1 .45 1 1s-.45 1-1 1c-1.38 0-2.5 1.12-2.5 2.5s1.12 2.5 2.5 2.5c.55 0 1 .45 1 1s-.45 1-1 1z"/>
                         </svg>
                       </div>
 
@@ -2304,7 +1787,7 @@
                       <a href="https://maps.app.goo.gl/zaZgizNzeF6Jwy59A" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center gap-1 focus:outline-none" title="Ver Rotas no Google Maps">
                         <div class="gmaps-btn-circle bg-[#007b83] text-white group-hover:opacity-90 transition-all shadow-xs">
                           <svg class="gmaps-btn-icon fill-white" viewBox="0 0 24 24">
-                            <path d="M21.71 11.29l-9-9a1 1 0 0 0-1.42 0l-9 9a1 1 0 0 0 0 1.42l9 9a1 1 0 0 0 1.42 0l9-9a1 1 0 0 0 0-1.42zM14 14.5V12h-4v3H8v-4a1 1 0 0 1 1-1h5V7.5l3.5 3.5-3.5 3.5z"></path>
+                            <path d="M21.71 11.29l-9-9a1 1 0 0 0-1.42 0l-9 9a1 1 0 0 0 0 1.42l9 9a1 1 0 0 0 1.42 0l9-9a1 1 0 0 0 0-1.42zM14 14.5V12h-4v3H8v-4a1 1 0 0 1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/>
                           </svg>
                         </div>
                         <span class="text-[9px] font-medium text-[#007b83] leading-tight">Rotas</span>
@@ -2314,7 +1797,7 @@
                       <a href="https://maps.app.goo.gl/zaZgizNzeF6Jwy59A" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center gap-1 focus:outline-none" title="Salvar no Google Maps">
                         <div class="gmaps-btn-circle bg-[#e0f2f1] text-[#007b83] group-hover:bg-[#d0ebea] transition-all">
                           <svg class="gmaps-btn-icon fill-current" viewBox="0 0 24 24">
-                            <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2zm0 15l-5-2.18L7 18V5h10v13z"></path>
+                            <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2zm0 15l-5-2.18L7 18V5h10v13z"/>
                           </svg>
                         </div>
                         <span class="text-[9px] font-medium text-[#007b83] leading-tight">Salvar</span>
@@ -2324,7 +1807,7 @@
                       <a href="https://maps.app.goo.gl/zaZgizNzeF6Jwy59A" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center gap-1 focus:outline-none" title="Compartilhar">
                         <div class="gmaps-btn-circle bg-[#e0f2f1] text-[#007b83] group-hover:bg-[#d0ebea] transition-all">
                           <svg class="gmaps-btn-icon fill-current" viewBox="0 0 24 24">
-                            <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"></path>
+                            <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/>
                           </svg>
                         </div>
                         <span class="text-[9px] font-medium text-[#007b83] leading-tight">Compartilhar</span>
@@ -2336,17 +1819,17 @@
                     <a href="https://maps.app.goo.gl/zaZgizNzeF6Jwy59A" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between py-1.5 px-2.5 hover:bg-slate-50 transition-colors border-b border-[#dadce0]">
                       <div class="flex items-center gap-1 text-[10.5px] text-[#3c4043]">
                         <svg style="width: 12px; height: 12px; min-width: 12px;" class="text-[#137333] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                          <polyline points="20 6 9 17 4 12"></polyline>
+                          <polyline points="20 6 9 17 4 12"/>
                         </svg>
                         <span>Compras na loja</span>
                         <span class="text-[#70757a] px-0.5">·</span>
                         <svg style="width: 12px; height: 12px; min-width: 12px;" class="text-[#137333] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                          <polyline points="20 6 9 17 4 12"></polyline>
+                          <polyline points="20 6 9 17 4 12"/>
                         </svg>
                         <span>Entrega</span>
                       </div>
                       <svg style="width: 12px; height: 12px; min-width: 12px;" class="text-[#70757a] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <polyline points="9 18 15 12 9 6"></polyline>
+                        <polyline points="9 18 15 12 9 6"/>
                       </svg>
                     </a>
 
@@ -2356,8 +1839,8 @@
                       <!-- Endereço e Localizado em -->
                       <div class="flex items-start gap-2">
                         <svg class="gmaps-icon text-[#007b83] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                          <circle cx="12" cy="10" r="3"></circle>
+                          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                          <circle cx="12" cy="10" r="3"/>
                         </svg>
                         <div class="leading-snug">
                           <a href="https://maps.app.goo.gl/zaZgizNzeF6Jwy59A" target="_blank" rel="noopener noreferrer" class="hover:underline text-[#3c4043]">
@@ -2372,8 +1855,8 @@
                       <!-- Horário -->
                       <div class="flex items-center gap-2">
                         <svg class="gmaps-icon text-[#007b83] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                          <circle cx="12" cy="12" r="10"></circle>
-                          <polyline points="12 6 12 12 16 14"></polyline>
+                          <circle cx="12" cy="12" r="10"/>
+                          <polyline points="12 6 12 12 16 14"/>
                         </svg>
                         <div class="flex items-center gap-1 leading-none">
                           <a href="https://maps.app.goo.gl/zaZgizNzeF6Jwy59A" target="_blank" rel="noopener noreferrer" class="text-[#007b83] font-medium hover:underline">Ver horário atual no Google ↗</a>
@@ -2383,11 +1866,16 @@
                       <!-- Telefone -->
                       <div class="flex items-center gap-2">
                         <svg class="gmaps-icon text-[#007b83] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                         </svg>
                         <a href="tel:5591991844989" class="text-[#1a73e8] hover:underline">
                           (91) 99184-4989
                         </a>
+                      </div>
+
+                      <div class="grid grid-cols-2 gap-2 pt-2 border-t border-[#dadce0]">
+                        <a href="https://wa.me/5591991844989" target="_blank" rel="noopener noreferrer" class="text-center rounded-lg bg-green-50 text-green-700 py-2 text-[11px] font-bold hover:bg-green-100">WhatsApp</a>
+                        <a href="https://www.ifood.com.br/delivery/belem-pa/mais-b-farma-plaza-nazare/7fd7f566-2d5c-4812-9565-671c84ced9b5" target="_blank" rel="noopener noreferrer" class="text-center rounded-lg bg-red-50 text-brand-red py-2 text-[11px] font-bold hover:bg-red-100">Pedir no iFood</a>
                       </div>
 
                     </div>
@@ -2405,7 +1893,7 @@
                       <!-- Botão Fechar estilo Google Maps (✕ no canto superior direito) -->
                       <button type="button" class="absolute top-2 right-2 rounded-full bg-white/90 hover:bg-white text-[#3c4043] hover:text-[#202124] shadow flex items-center justify-center transition-all z-20 focus:outline-none" style="width: 22px; height: 22px; min-width: 22px;" aria-label="Fechar">
                         <svg class="fill-current" style="width: 11px; height: 11px; min-width: 11px;" viewBox="0 0 24 24">
-                          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path>
+                          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/>
                         </svg>
                       </button>
 
@@ -2428,8 +1916,8 @@
                         <span>Farmácia</span>
                         <span>·</span>
                         <svg viewBox="0 0 24 24" fill="#1a73e8" style="width: 12px; height: 12px; min-width: 12px;" aria-label="Acessível para cadeirantes">
-                          <circle cx="12" cy="4" r="2"></circle>
-                          <path d="M19 13v-2c-1.54.02-3.09-.75-4.07-1.83l-1.29-1.43c-.17-.19-.38-.34-.61-.45-.48-.23-1.04-.26-1.55-.07-.51.19-.92.58-1.12 1.09L8.4 13.29C8.13 13.97 8.35 14.74 8.92 15.17l3.6 2.7V22h2v-5l-2.4-1.8 1.4-3.5c.78.89 1.94 1.5 3.19 1.5l2.29-.2zM12 16.5c-2.48 0-4.5-2.02-4.5-4.5s2.02-4.5 4.5-4.5c.55 0 1 .45 1 1s-.45 1-1 1c-1.38 0-2.5 1.12-2.5 2.5s1.12 2.5 2.5 2.5c.55 0 1 .45 1 1s-.45 1-1 1z"></path>
+                          <circle cx="12" cy="4" r="2"/>
+                          <path d="M19 13v-2c-1.54.02-3.09-.75-4.07-1.83l-1.29-1.43c-.17-.19-.38-.34-.61-.45-.48-.23-1.04-.26-1.55-.07-.51.19-.92.58-1.12 1.09L8.4 13.29C8.13 13.97 8.35 14.74 8.92 15.17l3.6 2.7V22h2v-5l-2.4-1.8 1.4-3.5c.78.89 1.94 1.5 3.19 1.5l2.29-.2zM12 16.5c-2.48 0-4.5-2.02-4.5-4.5s2.02-4.5 4.5-4.5c.55 0 1 .45 1 1s-.45 1-1 1c-1.38 0-2.5 1.12-2.5 2.5s1.12 2.5 2.5 2.5c.55 0 1 .45 1 1s-.45 1-1 1z"/>
                         </svg>
                       </div>
 
@@ -2455,7 +1943,7 @@
                       <a href="https://maps.app.goo.gl/kUGs3rsC7uo7bVvcA" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center gap-1 focus:outline-none" title="Ver Rotas no Google Maps">
                         <div class="gmaps-btn-circle bg-[#007b83] text-white group-hover:opacity-90 transition-all shadow-xs">
                           <svg class="gmaps-btn-icon fill-white" viewBox="0 0 24 24">
-                            <path d="M21.71 11.29l-9-9a1 1 0 0 0-1.42 0l-9 9a1 1 0 0 0 0 1.42l9 9a1 1 0 0 0 1.42 0l9-9a1 1 0 0 0 0-1.42zM14 14.5V12h-4v3H8v-4a1 1 0 0 1 1-1h5V7.5l3.5 3.5-3.5 3.5z"></path>
+                            <path d="M21.71 11.29l-9-9a1 1 0 0 0-1.42 0l-9 9a1 1 0 0 0 0 1.42l9 9a1 1 0 0 0 1.42 0l9-9a1 1 0 0 0 0-1.42zM14 14.5V12h-4v3H8v-4a1 1 0 0 1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/>
                           </svg>
                         </div>
                         <span class="text-[9px] font-medium text-[#007b83] leading-tight">Rotas</span>
@@ -2465,7 +1953,7 @@
                       <a href="https://maps.app.goo.gl/kUGs3rsC7uo7bVvcA" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center gap-1 focus:outline-none" title="Salvar no Google Maps">
                         <div class="gmaps-btn-circle bg-[#e0f2f1] text-[#007b83] group-hover:bg-[#d0ebea] transition-all">
                           <svg class="gmaps-btn-icon fill-current" viewBox="0 0 24 24">
-                            <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2zm0 15l-5-2.18L7 18V5h10v13z"></path>
+                            <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2zm0 15l-5-2.18L7 18V5h10v13z"/>
                           </svg>
                         </div>
                         <span class="text-[9px] font-medium text-[#007b83] leading-tight">Salvar</span>
@@ -2475,7 +1963,7 @@
                       <a href="https://maps.app.goo.gl/kUGs3rsC7uo7bVvcA" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center gap-1 focus:outline-none" title="Compartilhar">
                         <div class="gmaps-btn-circle bg-[#e0f2f1] text-[#007b83] group-hover:bg-[#d0ebea] transition-all">
                           <svg class="gmaps-btn-icon fill-current" viewBox="0 0 24 24">
-                            <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"></path>
+                            <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/>
                           </svg>
                         </div>
                         <span class="text-[9px] font-medium text-[#007b83] leading-tight">Compartilhar</span>
@@ -2487,17 +1975,17 @@
                     <a href="https://maps.app.goo.gl/kUGs3rsC7uo7bVvcA" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between py-1.5 px-2.5 hover:bg-slate-50 transition-colors border-b border-[#dadce0]">
                       <div class="flex items-center gap-1 text-[10.5px] text-[#3c4043]">
                         <svg style="width: 12px; height: 12px; min-width: 12px;" class="text-[#137333] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                          <polyline points="20 6 9 17 4 12"></polyline>
+                          <polyline points="20 6 9 17 4 12"/>
                         </svg>
                         <span>Compras na loja</span>
                         <span class="text-[#70757a] px-0.5">·</span>
                         <svg style="width: 12px; height: 12px; min-width: 12px;" class="text-[#137333] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                          <polyline points="20 6 9 17 4 12"></polyline>
+                          <polyline points="20 6 9 17 4 12"/>
                         </svg>
                         <span>Entrega</span>
                       </div>
                       <svg style="width: 12px; height: 12px; min-width: 12px;" class="text-[#70757a] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <polyline points="9 18 15 12 9 6"></polyline>
+                        <polyline points="9 18 15 12 9 6"/>
                       </svg>
                     </a>
 
@@ -2507,8 +1995,8 @@
                       <!-- Endereço e Localizado em -->
                       <div class="flex items-start gap-2">
                         <svg class="gmaps-icon text-[#007b83] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                          <circle cx="12" cy="10" r="3"></circle>
+                          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                          <circle cx="12" cy="10" r="3"/>
                         </svg>
                         <div class="leading-snug">
                           <a href="https://maps.app.goo.gl/kUGs3rsC7uo7bVvcA" target="_blank" rel="noopener noreferrer" class="hover:underline text-[#3c4043]">
@@ -2523,8 +2011,8 @@
                       <!-- Horário -->
                       <div class="flex items-center gap-2">
                         <svg class="gmaps-icon text-[#007b83] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                          <circle cx="12" cy="12" r="10"></circle>
-                          <polyline points="12 6 12 12 16 14"></polyline>
+                          <circle cx="12" cy="12" r="10"/>
+                          <polyline points="12 6 12 12 16 14"/>
                         </svg>
                         <div class="flex items-center gap-1 leading-none">
                           <a href="https://maps.app.goo.gl/kUGs3rsC7uo7bVvcA" target="_blank" rel="noopener noreferrer" class="text-[#007b83] font-medium hover:underline">Ver horário atual no Google ↗</a>
@@ -2534,11 +2022,16 @@
                       <!-- Telefone -->
                       <div class="flex items-center gap-2">
                         <svg class="gmaps-icon text-[#007b83] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                         </svg>
                         <a href="tel:559193541844" class="text-[#1a73e8] hover:underline">
                           (91) 9354-1844
                         </a>
+                      </div>
+
+                      <div class="grid grid-cols-2 gap-2 pt-2 border-t border-[#dadce0]">
+                        <a href="https://wa.me/559193541844" target="_blank" rel="noopener noreferrer" class="text-center rounded-lg bg-green-50 text-green-700 py-2 text-[11px] font-bold hover:bg-green-100">WhatsApp</a>
+                        <a href="https://www.ifood.com.br/delivery/belem-pa/mais-b-farma-tapana-tapana-icoaraci/7c9cc6a5-0a71-4254-ae22-65cb7547d908" target="_blank" rel="noopener noreferrer" class="text-center rounded-lg bg-red-50 text-brand-red py-2 text-[11px] font-bold hover:bg-red-100">Pedir no iFood</a>
                       </div>
 
                     </div>
@@ -2554,11 +2047,24 @@
           </div>
         </div>
 
+        <div class="mt-8 sm:mt-10 rounded-2xl bg-white/10 border border-white/15 px-5 py-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+          <div>
+            <h3 class="text-lg sm:text-xl font-bold text-white">Prefere falar com a gente?</h3>
+            <p class="text-sm text-white/70 mt-1">Escolha sua unidade e fale direto com nossa equipe.</p>
+          </div>
+          <button type="button" onclick="openOrderModal()" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white text-brand-red px-5 py-3 text-xs font-bold uppercase tracking-wide hover:bg-red-50 transition-colors whitespace-nowrap">Falar pelo WhatsApp</button>
+        </div>
+
       </div>
     </section>
 
   </main>
-<footer class="bg-[#1C1D22] text-white pt-6 sm:pt-10">
+
+
+  <!-- ==========================================================================
+       FOOTER INSTITUCIONAL (FUNDO ESCURO #1C1D22 + FAIXA #E92125)
+       ========================================================================== -->
+  <footer class="bg-[#1C1D22] text-white pt-6 sm:pt-10">
     <div class="bf-container">
       
       <div class="flex flex-col items-center text-center max-w-lg mx-auto mb-10 sm:mb-12">
@@ -2572,16 +2078,45 @@
           Farmácia do grupo +B, feita para cuidar da sua saúde com confiança no atendimento.
         </p>
 
+        <nav aria-label="Navegação do rodapé" class="w-full grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-6 text-left mb-8">
+          <div>
+            <h3 class="text-[11px] font-bold uppercase tracking-wider text-white mb-3">+B Farma</h3>
+            <div class="flex flex-col gap-2 text-xs text-slate-400">
+              <a href="#sobre" class="hover:text-white transition-colors">Sobre</a>
+              <a href="#ofertas" class="hover:text-white transition-colors">Ofertas</a>
+              <a href="#categorias" class="hover:text-white transition-colors">Categorias</a>
+              <a href="#vantagens" class="hover:text-white transition-colors">Vantagens</a>
+              <a href="#filiais" class="hover:text-white transition-colors">Lojas</a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-[11px] font-bold uppercase tracking-wider text-white mb-3">Atendimento</h3>
+            <div class="flex flex-col gap-2 text-xs text-slate-400">
+              <button type="button" onclick="openOrderModal()" class="text-left hover:text-white transition-colors">WhatsApp</button>
+              <button type="button" onclick="openOrderModal()" class="text-left hover:text-white transition-colors">iFood</button>
+              <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-[11px] font-bold uppercase tracking-wider text-white mb-3">Institucional</h3>
+            <div class="flex flex-col gap-2 text-xs text-slate-400">
+              <a href="https://grupomaisbarato.portaldetalentos.senior.com.br/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Trabalhe Conosco</a>
+              <button type="button" onclick="openPrivacyModal()" class="text-left hover:text-white transition-colors">Política de privacidade</button>
+              <button type="button" onclick="openPrivacyModal()" class="text-left hover:text-white transition-colors">Termos</button>
+            </div>
+          </div>
+        </nav>
+
         <!-- Redes Sociais oficiais -->
         <div class="flex items-center gap-3">
           <a href="https://www.instagram.com/maisbfarma/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-slate-800/90 hover:bg-brand-red border border-slate-700/60 flex items-center justify-center text-white transition-all shadow-sm" aria-label="Instagram @maisbfarma">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
           </a>
           <a href="https://www.tiktok.com/@maisbfarma_" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-slate-800/90 hover:bg-brand-red border border-slate-700/60 flex items-center justify-center text-white transition-all shadow-sm" aria-label="TikTok @maisbfarma_">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.34 6.34 0 0 0 3 15.68a6.34 6.34 0 0 0 10.86 4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"></path></svg>
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.34 6.34 0 0 0 3 15.68a6.34 6.34 0 0 0 10.86 4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/></svg>
           </a>
           <a href="https://www.facebook.com/maisbfarmapa/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-slate-800/90 hover:bg-brand-red border border-slate-700/60 flex items-center justify-center text-white transition-all shadow-sm" aria-label="Facebook @maisbfarmapa">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
           </a>
         </div>
 
@@ -2596,7 +2131,7 @@
           Copyright © 2026 Grupo Mais Barato – All rights reserved
         </div>
         <div class="flex items-center gap-3">
-          <button type="button" onclick="openPrivacyModal()" class="hover:underline text-white/95 bg-transparent border-0 p-0 cursor-pointer text-[11px] font-normal">Termos &amp; Privacidade</button>
+          <button type="button" onclick="openPrivacyModal()" class="hover:underline text-white/95 bg-transparent border-0 p-0 cursor-pointer text-[11px] font-normal">Termos & Privacidade</button>
         </div>
         <div>
           Desenvolvido por: <span class="font-bold text-white">idedigital</span>
@@ -2604,10 +2139,19 @@
       </div>
     </div>
   </footer>
-<button id="backToTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Voltar ao Topo" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 w-10 h-10 rounded-full bg-white text-bf-ink hover:text-brand-red border border-bf-line shadow-bf-floating flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none select-none opacity-0 pointer-events-none">
-    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m18 15-6-6-6 6"></path></svg>
+
+
+  <!-- ==========================================================================
+       BOTÃO VOLTAR AO TOPO (SURGE COM SCROLL > 350PX)
+       ========================================================================== -->
+  <button id="backToTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Voltar ao Topo" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 w-10 h-10 rounded-full bg-white text-bf-ink hover:text-brand-red border border-bf-line shadow-bf-floating flex items-center justify-center transition-all duration-300 opacity-0 pointer-events-none hover:scale-110 active:scale-95 focus:outline-none select-none">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m18 15-6-6-6 6"/></svg>
   </button>
-<script>
+
+  <!-- ==========================================================================
+       SCRIPTS INTERATIVOS (CARROSSEL, ACCORDION, MOBILE MENU & TOUCH OPTIMIZATIONS)
+       ========================================================================== -->
+  <script>
     // FAQ Accordion com Acessibilidade (a11y)
     function toggleFaq(button) {
       const item = button.closest('.faq-item');
@@ -2739,7 +2283,6 @@
     });
 
     // Iniciar autoplay Hero
-    updateCarousel();
     startAutoplay();
 
     // ==========================================================================
@@ -2757,100 +2300,17 @@
       }
     }
 
-    // ========================================================================
-    // CARROSSEL DE CATEGORIAS CIRCULARES
-    // ========================================================================
     function scrollCategoryRail(direction) {
       const rail = document.getElementById('categoryRail');
       if (!rail) return;
       const firstItem = rail.querySelector('[data-category-item]');
-      const gap = parseFloat(window.getComputedStyle(rail).columnGap || window.getComputedStyle(rail).gap) || 18;
+      const railStyle = window.getComputedStyle(rail);
+      const gap = parseFloat(railStyle.columnGap || railStyle.gap) || 18;
       const itemWidth = firstItem ? firstItem.getBoundingClientRect().width + gap : 150;
       rail.scrollBy({ left: direction === 'prev' ? -itemWidth * 2 : itemWidth * 2, behavior: 'smooth' });
     }
 
     window.scrollCategoryRail = scrollCategoryRail;
-
-    // ========================================================================
-    // CARROSSEL DE BANNERS HORIZONTAIS (CLUBE +B & IFOOD / ENTREGA)
-    // ========================================================================
-    let currentHSlide = 0;
-    const hTrack = document.getElementById('hBannersTrack');
-    const hDots = document.querySelectorAll('.h-slide-dot');
-    const hCarouselSection = document.getElementById('horizontalBannerCarousel');
-    const totalHSlides = hTrack ? hTrack.children.length : 0;
-    let hAutoplayTimer = null;
-
-    function updateHCarousel() {
-      if (!hTrack) return;
-      hTrack.style.transform = `translateX(-${currentHSlide * 100}%)`;
-      hDots.forEach((dot, idx) => {
-        if (idx === currentHSlide) {
-          dot.className = 'h-slide-dot w-7 sm:w-8 h-2 sm:h-2.5 rounded-full bg-brand-red transition-all duration-300 focus:outline-none';
-        } else {
-          dot.className = 'h-slide-dot w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-white/60 hover:bg-white transition-all duration-300 focus:outline-none';
-        }
-      });
-    }
-
-    function nextHSlide() {
-      if (totalHSlides <= 1) return;
-      currentHSlide = (currentHSlide + 1) % totalHSlides;
-      updateHCarousel();
-    }
-
-    function prevHSlide() {
-      if (totalHSlides <= 1) return;
-      currentHSlide = (currentHSlide - 1 + totalHSlides) % totalHSlides;
-      updateHCarousel();
-    }
-
-    function setHSlide(idx) {
-      currentHSlide = idx;
-      updateHCarousel();
-    }
-
-    function startHAutoplay() {
-      if (hAutoplayTimer) clearInterval(hAutoplayTimer);
-      if (prefersReducedMotion || totalHSlides <= 1) return;
-      hAutoplayTimer = setInterval(nextHSlide, 5500);
-    }
-
-    function resetHAutoplay() {
-      if (hAutoplayTimer) clearInterval(hAutoplayTimer);
-      startHAutoplay();
-    }
-
-    if (hCarouselSection) {
-      let hTouchStartX = 0;
-      let hTouchEndX = 0;
-
-      hCarouselSection.addEventListener('touchstart', (e) => {
-        hTouchStartX = e.changedTouches[0].screenX;
-      }, { passive: true });
-
-      hCarouselSection.addEventListener('touchend', (e) => {
-        hTouchEndX = e.changedTouches[0].screenX;
-        const threshold = 40;
-        if (hTouchEndX < hTouchStartX - threshold) {
-          nextHSlide();
-          resetHAutoplay();
-        } else if (hTouchEndX > hTouchStartX + threshold) {
-          prevHSlide();
-          resetHAutoplay();
-        }
-      }, { passive: true });
-
-      hCarouselSection.addEventListener('mouseenter', () => {
-        if (hAutoplayTimer) clearInterval(hAutoplayTimer);
-      });
-      hCarouselSection.addEventListener('mouseleave', () => {
-        startHAutoplay();
-      });
-    }
-
-    updateHCarousel();
-    startHAutoplay();
 
     // Suporte a Touch Swipe & Arrastar com Mouse no Carrossel de Ofertas
     const bannersTrack = document.getElementById('bannersTrack');
@@ -2899,7 +2359,11 @@
       }
     }, { passive: true });
   </script>
-<div id="videoModal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 md:p-8 bg-black/85 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300" role="dialog" aria-modal="true" aria-label="Vídeo Institucional +B Farma">
+
+  <!-- ==========================================================================
+       MODAL DE VÍDEO INSTITUCIONAL (+B FARMA)
+       ========================================================================== -->
+  <div id="videoModal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 md:p-8 bg-black/85 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300" role="dialog" aria-modal="true" aria-label="Vídeo Institucional +B Farma">
     <!-- Overlay de fundo escuro para clique fora -->
     <div class="absolute inset-0" onclick="closeVideoModal()"></div>
 
@@ -2916,7 +2380,7 @@
 
       <!-- Player de Vídeo HTML5 Vertical 9:16 -->
       <div class="relative w-full h-full bg-black flex items-center justify-center overflow-hidden">
-        <video id="institutionalVideo" src="assets/Pagina/S3%20SOBRE/farmab-video.mp4" class="w-full h-full object-cover rounded-2xl sm:rounded-3xl" controls="" preload="auto" playsinline="">
+        <video id="institutionalVideo" src="assets/Pagina/S3%20SOBRE/farmab-video.mp4" class="w-full h-full object-cover rounded-2xl sm:rounded-3xl" controls preload="auto" playsinline>
           <source src="assets/Pagina/S3%20SOBRE/farmab-video.mp4" type="video/mp4">
           Seu navegador não suporta a reprodução deste vídeo.
         </video>
@@ -2924,7 +2388,8 @@
 
     </div>
   </div>
-<script>
+
+  <script>
     // ==========================================================================
     // CONTROLE DO MODAL DE VÍDEO INSTITUCIONAL (SEÇÃO SOBRE)
     // ==========================================================================
@@ -3023,7 +2488,11 @@
       }
     });
   </script>
-<div id="privacyModal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 md:p-8 bg-black/75 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300" role="dialog" aria-modal="true" aria-labelledby="privacyModalTitle">
+
+  <!-- ==========================================================================
+       MODAL DE TERMOS DE USO & POLÍTICA DE PRIVACIDADE (LGPD)
+       ========================================================================== -->
+  <div id="privacyModal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 md:p-8 bg-black/75 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300" role="dialog" aria-modal="true" aria-labelledby="privacyModalTitle">
     <!-- Backdrop Overlay -->
     <div class="absolute inset-0" onclick="closePrivacyModal()"></div>
 
@@ -3032,16 +2501,16 @@
       
       <!-- Botão Fechar -->
       <button onclick="closePrivacyModal()" aria-label="Fechar termos e privacidade" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-100 hover:bg-brand-red text-bf-ink hover:text-white flex items-center justify-center transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand-red cursor-pointer">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
 
       <!-- Cabeçalho -->
       <div class="flex items-center gap-3 mb-5 border-b border-bf-line pb-4">
         <div class="w-10 h-10 rounded-xl bg-brand-red-light text-brand-red flex items-center justify-center flex-shrink-0">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
         <div>
-          <h3 id="privacyModalTitle" class="text-lg sm:text-xl font-bold text-bf-ink">Termos &amp; Política de Privacidade</h3>
+          <h3 id="privacyModalTitle" class="text-lg sm:text-xl font-bold text-bf-ink">Termos & Política de Privacidade</h3>
           <p class="text-xs text-bf-muted">Compromisso do Grupo Mais Barato e +B Farma com a LGPD</p>
         </div>
       </div>
@@ -3078,7 +2547,12 @@
 
     </div>
   </div>
-<div id="orderModal" class="fixed inset-0 z-[60] flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/70 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle">
+
+  <!-- ==========================================================================
+       MODAL "COMO VOCÊ DESEJA PEDIR?" — #orderModal
+       Seletor de canal direto: WhatsApp Plaza, WhatsApp Tapanã, iFood
+       ========================================================================== -->
+  <div id="orderModal" class="fixed inset-0 z-[60] flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/70 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle">
     <!-- Backdrop para fechar ao clicar fora -->
     <div class="absolute inset-0" onclick="closeOrderModal()"></div>
 
@@ -3097,7 +2571,7 @@
           <p class="text-xs text-bf-muted mt-0.5">Escolha sua unidade e canal de atendimento.</p>
         </div>
         <button onclick="closeOrderModal()" aria-label="Fechar" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-brand-red text-bf-ink hover:text-white flex items-center justify-center transition-all duration-200 focus:outline-none cursor-pointer flex-shrink-0">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
         </button>
       </div>
 
@@ -3108,7 +2582,7 @@
         <div class="rounded-2xl border border-bf-line bg-slate-50 hover:bg-white hover:border-green-300 hover:shadow-md transition-all duration-200 overflow-hidden">
           <div class="flex items-center gap-3 p-3.5">
             <div class="w-11 h-11 rounded-xl bg-green-500 flex items-center justify-center flex-shrink-0 shadow-sm">
-              <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+              <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             </div>
             <div class="flex-1 min-w-0">
               <p class="text-[10px] font-bold uppercase tracking-widest text-bf-muted mb-0.5">WhatsApp — Unidade Plaza</p>
@@ -3117,7 +2591,7 @@
             </div>
           </div>
           <a href="https://wa.me/5591991844989?text=Ol%C3%A1%21%20Gostaria%20de%20fazer%20um%20pedido%20na%20unidade%20Plaza." target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-3 bg-green-500 hover:bg-green-600 text-white text-sm font-bold transition-colors">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             Pedir via WhatsApp — Plaza
           </a>
         </div>
@@ -3126,7 +2600,7 @@
         <div class="rounded-2xl border border-bf-line bg-slate-50 hover:bg-white hover:border-green-300 hover:shadow-md transition-all duration-200 overflow-hidden">
           <div class="flex items-center gap-3 p-3.5">
             <div class="w-11 h-11 rounded-xl bg-green-500 flex items-center justify-center flex-shrink-0 shadow-sm">
-              <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+              <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             </div>
             <div class="flex-1 min-w-0">
               <p class="text-[10px] font-bold uppercase tracking-widest text-bf-muted mb-0.5">WhatsApp — Unidade Tapanã</p>
@@ -3135,7 +2609,7 @@
             </div>
           </div>
           <a href="https://wa.me/559193541844?text=Ol%C3%A1%21%20Gostaria%20de%20fazer%20um%20pedido%20na%20unidade%20Tapan%C3%A3." target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-3 bg-green-500 hover:bg-green-600 text-white text-sm font-bold transition-colors">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             Pedir via WhatsApp — Tapanã
           </a>
         </div>
@@ -3144,7 +2618,7 @@
         <div class="rounded-2xl border border-bf-line bg-slate-50 hover:bg-white hover:border-red-200 hover:shadow-md transition-all duration-200 overflow-hidden">
           <div class="flex items-center gap-3 p-3.5">
             <div class="w-11 h-11 rounded-xl bg-brand-red flex items-center justify-center flex-shrink-0 shadow-sm">
-              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path><path d="M15 18H9"></path><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"></path><circle cx="17" cy="18.5" r="2.5"></circle><circle cx="7" cy="18.5" r="2.5"></circle></svg>
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18.5" r="2.5"/><circle cx="7" cy="18.5" r="2.5"/></svg>
             </div>
             <div class="flex-1 min-w-0">
               <p class="text-[10px] font-bold uppercase tracking-widest text-bf-muted mb-0.5">Entrega Rápida pelo App</p>
@@ -3153,10 +2627,10 @@
             </div>
           </div>
           <a href="https://www.ifood.com.br/delivery/belem-pa/mais-b-farma-plaza-nazare/7fd7f566-2d5c-4812-9565-671c84ced9b5" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-3 bg-brand-red hover:bg-brand-red-hover text-white text-sm font-bold transition-colors">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path><path d="M15 18H9"></path><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"></path><circle cx="17" cy="18.5" r="2.5"></circle><circle cx="7" cy="18.5" r="2.5"></circle></svg>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18.5" r="2.5"/><circle cx="7" cy="18.5" r="2.5"/></svg>
             iFood Plaza
-          
-          </a><a href="https://www.ifood.com.br/delivery/belem-pa/mais-b-farma-tapana-tapana-icoaraci/7c9cc6a5-0a71-4254-ae22-65cb7547d908" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-3 bg-brand-red hover:bg-brand-red-hover text-white text-sm font-bold transition-colors">iFood Tapanã</a>
+          </button>
+          <a href="https://www.ifood.com.br/delivery/belem-pa/mais-b-farma-tapana-tapana-icoaraci/7c9cc6a5-0a71-4254-ae22-65cb7547d908" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-3 bg-brand-red hover:bg-brand-red-hover text-white text-sm font-bold transition-colors">iFood Tapanã</a>
         </div>
 
       </div>
@@ -3168,7 +2642,12 @@
 
     </div>
   </div>
-<style>
+
+  <!-- ==========================================================================
+       FAB — BOTÃO FLUTUANTE WhatsApp (Fixed Bottom-Right)
+       Pulsa suavemente para chamar atenção. Abre o #orderModal.
+       ========================================================================== -->
+  <style>
     @keyframes fabPulse {
       0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
       50%       { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
@@ -3177,10 +2656,12 @@
       animation: fabPulse 2.5s ease-in-out infinite;
     }
   </style>
-<button id="whatsappFab" type="button" onclick="openOrderModal()" aria-label="Pedir pelo WhatsApp" class="fixed bottom-5 right-4 sm:bottom-6 sm:right-6 z-50 w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-green-500 hover:bg-green-600 text-white shadow-xl flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-green-400 cursor-pointer">
-    <svg class="w-7 h-7 sm:w-8 sm:h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+  <button id="whatsappFab" type="button" onclick="openOrderModal()" aria-label="Pedir pelo WhatsApp" class="fixed bottom-5 right-4 sm:bottom-6 sm:right-6 z-50 w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-green-500 hover:bg-green-600 text-white shadow-xl flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-green-400 cursor-pointer">
+    <svg class="w-7 h-7 sm:w-8 sm:h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </button>
-<script>
+
+  <!-- Script de Controle do Modal de Pedido -->
+  <script>
     // ==========================================================================
     // MODAL DE PEDIDO — openOrderModal / closeOrderModal
     // ==========================================================================
@@ -3224,19 +2705,14 @@
       }
     });
   </script>
-<script>
-    const testimonialSection = document.getElementById('depoimentos');
-    if (testimonialSection) {
-      const testimonialTracks = testimonialSection.querySelectorAll('.animate-marquee-left, .animate-marquee-right');
-      testimonialSection.addEventListener('touchstart', () => testimonialTracks.forEach(track => track.style.animationPlayState = 'paused'), { passive: true });
-      testimonialSection.addEventListener('touchend', () => setTimeout(() => testimonialTracks.forEach(track => track.style.animationPlayState = 'running'), 2200), { passive: true });
-    }
-  </script>
-<script src="https://unpkg.com/lucide@latest"></script>
-<script>
+
+  <!-- Script Oficial Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
     if (typeof lucide !== 'undefined') {
       lucide.createIcons();
     }
   </script>
+
 </body>
-</html>
+</html>`r`n
