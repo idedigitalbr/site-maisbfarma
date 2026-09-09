@@ -88,9 +88,9 @@
   --color-muted-soft: #A0A3B1;
 
   /* Superfícies e Fundos */
-  --color-canvas: #F8F9FA;        /* Fundo geral da página */
-  --color-surface-card: #F8F9FA;  /* Cards em superfície clara */
-  --color-surface-soft: #F8F9FA;  /* Seções alternadas suaves */
+  --color-canvas: #edf5fd;        /* Fundo geral da página */
+  --color-surface-card: #edf5fd;  /* Cards em superfície clara */
+  --color-surface-soft: #edf5fd;  /* Seções alternadas suaves */
   --color-surface-strong: #F0F2F5;/* Fundos de placeholders / botões de ícone */
   --color-surface-dark: #1C1D22;  /* Fundo escuro do rodapé e depoimentos */
   --color-surface-dark-card: #25272E; /* Cards em superfícies escuras */
@@ -370,7 +370,7 @@ h3.ds-h3 {
 }
 
 .ds-btn-secondary {
-  background-color: #F8F9FA;
+  background-color: #edf5fd;
   color: var(--color-ink);
   border-color: var(--color-border-strong);
 }
@@ -408,7 +408,7 @@ h3.ds-h3 {
 
 /* CARDS PADRONIZADOS */
 .ds-card {
-  background-color: #F8F9FA;
+  background-color: #edf5fd;
   border: 1px solid var(--color-hairline);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-subtle);
@@ -469,7 +469,7 @@ h3.ds-h3 {
   font-family: var(--font-sans);
   font-size: 15px;
   color: var(--color-ink);
-  background-color: #F8F9FA;
+  background-color: #edf5fd;
   outline: none;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
@@ -482,4 +482,13 @@ h3.ds-h3 {
 .ds-input.error {
   border-color: var(--color-primary-error);
   background-color: var(--color-primary-light);
+}
+
+/* ----------------------------------------------------------------------------
+   5. DIRETRIZES DE LAYOUT — TRANSIÇÕES CONTÍNUAS ENTRE SEÇÕES
+   ---------------------------------------------------------------------------- */
+section,
+.ds-section {
+  border-top: none !important;
+  border-bottom: none !important;
 }

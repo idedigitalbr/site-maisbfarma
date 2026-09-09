@@ -19,9 +19,9 @@ colors:
   muted-light: "#A0A3B1"
   
   # Superfícies e Linhas
-  canvas: "#F8F9FA"
-  surface-soft: "#F8F9FA"
-  surface-card: "#F8F9FA"
+  canvas: "#edf5fd"
+  surface-soft: "#edf5fd"
+  surface-card: "#edf5fd"
   surface-strong: "#F0F2F5"
   surface-dark: "#1C1D22"
   surface-dark-card: "#25272E"
@@ -283,7 +283,7 @@ O site da **+B FARMA** combina a credibilidade da área farmacêutica e médica 
 - **Cinza Texto (Body):** `#555866` — Parágrafos, descrições e legendas explicativas.
 - **Cinza Muted (Apoio):** `#7B7E8C` — Metadados, horários, categorias e ícones secundários.
 - **Cinza Claro Neutro (Hairline):** `#E7E7E7` — Bordas de cards, divisores, inputs e contornos.
-- **Cinza Soft Surface:** `#F8F9FA` — Alternância de seções e fundos de cards leves.
+- **Cinza Soft Surface:** `#edf5fd` — Alternância de seções e fundo geral suave da página.
 
 ### Fundo Escuro (Footer & Prova Social)
 - **Grafite Noturno (Dark Surface):** `#1C1D22` — Fundo do rodapé e bloco de prova social.
@@ -415,8 +415,8 @@ font-family: 'Lufga', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Hel
 - **Tertiary:** Fundo transparente, texto `#32343D`, hover `#E92125`.
 
 ### 6.2 Header & Navegação
-- **Faixa Superior:** Altura `36px`, fundo `#E92125`, texto `#FFFFFF`, redes sociais à esquerda e links institucionais / Clube +B à direita.
-- **Barra de Navegação Principal:** Altura `76px`, fundo `#FFFFFF`, borda inferior `1px solid #E7E7E7`, logo oficial horizontal centralizada/à esquerda, links com hover suave em `#E92125` e botão de ação "Minha Conta / Atendimento".
+- **Faixa Superior:** Altura `36px`, fundo `#E92125`, texto `#FFFFFF`, sem borda inferior, redes sociais à esquerda e links institucionais / Clube +B à direita.
+- **Barra de Navegação Principal:** Altura `76px`, fundo `#FFFFFF` / `#F8F9FA`, sem borda inferior divisória (elevação sutil por sombra ativada apenas sob scroll), logo oficial horizontal centralizada/à esquerda, links com hover suave em `#E92125` e botão de ação "Minha Conta / Atendimento".
 
 ### 6.3 Hero Section
 - Fundo em degradê suave (`#F8F9FA` a `#F0F2F5`), raio inferior de `32px`, headline assertiva em Lufga Bold, badges com ponto vermelho `#E92125` e carrossel de fotos reais das unidades.
@@ -431,7 +431,10 @@ font-family: 'Lufga', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Hel
 - Acordeões interativos com fundo `#FFFFFF`, borda `1px solid #E7E7E7`, abertura suave e suporte a teclado/acessibilidade.
 
 ### 6.7 Footer
-- Fundo escuro `#1C1D22`, tipografia clara, logo branca em contraste e sub-faixa inferior fina em `#E92125` com direitos autorais e links legais.
+- Fundo escuro `#1C1D22`, tipografia clara, logo branca em contraste e sub-faixa inferior fina em `#E92125` sem bordas com direitos autorais e links legais.
+
+### 6.8 Transições entre Seções (Sem Bordas)
+- Ausência total de bordas ou linhas divisórias horizontais (`hairlines`) entre seções (`border-top: none` e `border-bottom: none`). O ritmo e o respiro visual são estabelecidos exclusivamente por espaçamento vertical (`padding` / `gap`) e contraste suave de superfícies contínuas.
 
 ---
 
