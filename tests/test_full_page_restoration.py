@@ -93,6 +93,9 @@ class FullPageRestorationTests(unittest.TestCase):
         cards = track.locator("[data-banner-card]")
         self.assertEqual(cards.count(), 5)
 
+        cards.last.scroll_into_view_if_needed()
+        self.page.wait_for_timeout(250)
+
         images = cards.locator("img")
         self.assertEqual(images.count(), 5)
         self.assertTrue(

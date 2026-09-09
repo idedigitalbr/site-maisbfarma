@@ -419,7 +419,7 @@
       margin: 0;
       padding: 0;
       width: 100%;
-      overflow-x: hidden;
+      overflow-x: clip;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -610,14 +610,17 @@
        HEADER DINÂMICO INTELIGENTE (SCROLL AUTO HIDE / SHOW COM TRANSIÇÃO SUAVE)
        ========================================================================== */
     .site-header {
+      background-color: #FFFFFF;
       transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
       will-change: transform;
+      box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.08), 0 2px 6px 0 rgba(0, 0, 0, 0.04);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     }
     .site-header.header-hidden {
       transform: translateY(-100%);
     }
     .site-header.header-scrolled {
-      box-shadow: 0 4px 20px -2px rgba(28, 29, 34, 0.08);
+      box-shadow: 0 10px 30px -4px rgba(0, 0, 0, 0.14), 0 4px 10px -2px rgba(0, 0, 0, 0.06);
     }
     @media (prefers-reduced-motion: reduce) {
       .site-header {
@@ -629,7 +632,7 @@
        HEADER E MENU PRINCIPAL COM LOGO CENTRALIZADA E ÍCONES (+B FARMA)
        ========================================================================== */
     .site-header-navbar {
-      background: #edf5fd;
+      background: #FFFFFF;
       border-bottom: none;
       box-shadow: none;
       min-height: 56px;
@@ -1360,12 +1363,13 @@
       min-height: 52px;
       align-items: center;
       justify-content: center;
-      gap: 12px;
+      gap: 10px;
       border-radius: 9999px;
+      border: none;
       color: #FFFFFF;
       background: var(--primary);
       font-size: 15px;
-      font-weight: 600;
+      font-weight: 700;
       box-shadow: 0 4px 14px rgba(233, 33, 37, .28);
       transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease;
       cursor: pointer;
@@ -1377,8 +1381,9 @@
       box-shadow: 0 6px 20px rgba(233, 33, 37, .38);
     }
     .category-cta-button svg {
-      width: 19px;
-      height: 19px;
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
     }
     @media (max-width: 1100px) {
       .category-header {
@@ -1473,8 +1478,8 @@
 
   </style>
 </head>
-<body class="bg-[#edf5fd] m-0 p-0 text-bf-ink selection:bg-brand-red selection:text-white overflow-x-hidden">
-<header id="siteHeader" class="site-header w-full sticky top-0 z-50 bg-[#edf5fd]">
+<body class="bg-[#edf5fd] m-0 p-0 text-bf-ink selection:bg-brand-red selection:text-white overflow-x-clip">
+<header id="siteHeader" class="site-header w-full sticky top-0 z-50 bg-white">
     
     <!-- BARRA 01: FAIXA SUPERIOR VERMELHA (+B RED) — COMPACTA -->
     <div class="bg-brand-red text-white py-1">
@@ -1915,7 +1920,10 @@
                 <p class="category-cta-title">Aproveite nossas ofertas e cuide de quem você ama.</p>
               </div>
             </div>
-            <button type="button" class="category-cta-button" onclick="openOrderModal()">Ver ofertas <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" aria-hidden="true" class="lucide lucide-arrow-right"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
+            <button type="button" class="category-cta-button" onclick="openOrderModal()" aria-label="Pedir agora">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" data-lucide="shopping-bag" aria-hidden="true" class="lucide lucide-shopping-bag flex-shrink-0"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+              <span>Pedir agora</span>
+            </button>
           </div>
         </div>
 
