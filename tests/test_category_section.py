@@ -68,7 +68,7 @@ class CategorySectionTests(unittest.TestCase):
             "Saúde e Bem-Estar",
             "Nutrição Saudável",
             "Pet Shop",
-            "Cupons",
+            "e muito mais....",
         ]
         items = self.page.locator("#categorias [data-category-item]")
         self.assertEqual(items.count(), 10)
@@ -109,50 +109,52 @@ class CategorySectionTests(unittest.TestCase):
         )
         self.assertTrue(labels_fit)
 
-    def test_next_arrow_moves_the_horizontal_category_rail(self):
-        rail = self.page.locator("#categoryRail")
-        next_button = self.page.get_by_role("button", name="Ver próximas categorias")
-        self.assertEqual(rail.count(), 1)
-        self.assertEqual(next_button.count(), 1)
+    def test_no_navigation_arrows_and_badges_are_white_with_red_icons(self):
+        nav_buttons = self.page.locator(".category-nav")
+        self.assertEqual(nav_buttons.count(), 0)
 
-        before = rail.evaluate("element => element.scrollLeft")
-        next_button.click()
-        self.page.wait_for_timeout(500)
-        after = rail.evaluate("element => element.scrollLeft")
-        self.assertGreater(after, before)
+        badges_style = self.page.locator("#categorias .category-icon-badge").evaluate_all(
+            """badges => badges.map(badge => {
+                const style = getComputedStyle(badge);
+                return {
+                    bg: style.backgroundColor,
+                    color: style.color,
+                };
+            })"""
+        )
+        self.assertEqual(len(badges_style), 10)
+        for badge in badges_style:
+            self.assertEqual(badge["bg"], "rgb(248, 249, 250)")
+            self.assertEqual(badge["color"], "rgb(233, 33, 37)")
 
-    def test_mobile_keeps_page_width_and_uses_a_scrollable_category_rail(self):
+    def test_mobile_keeps_all_ten_categories_visible_without_horizontal_scroll(self):
         self.page.set_viewport_size({"width": 390, "height": 844})
         self.page.reload(wait_until="domcontentloaded")
 
         dimensions = self.page.evaluate(
             """() => {
                 const rail = document.querySelector('#categoryRail');
-                const next = document.querySelector('.category-nav--next');
                 return {
                     pageWidth: document.documentElement.scrollWidth,
                     viewportWidth: window.innerWidth,
                     railScrollWidth: rail.scrollWidth,
                     railClientWidth: rail.clientWidth,
-                    nextDisplay: getComputedStyle(next).display,
                 };
             }"""
         )
         self.assertLessEqual(dimensions["pageWidth"], dimensions["viewportWidth"])
-        self.assertGreater(dimensions["railScrollWidth"], dimensions["railClientWidth"])
-        self.assertEqual(dimensions["nextDisplay"], "none")
+        self.assertLessEqual(dimensions["railScrollWidth"], dimensions["railClientWidth"] + 2)
 
-        benefits_do_not_overlap = self.page.locator(
-            "#categorias .category-benefit"
-        ).evaluate_all(
-            """items => items.every((item, index) => {
-                if (index === 0) return true;
-                const previous = items[index - 1].getBoundingClientRect();
-                const current = item.getBoundingClientRect();
-                return current.left >= previous.right - 0.5;
+        items_visible = self.page.locator("#categorias [data-category-item]").evaluate_all(
+            """items => items.every(item => {
+                const rect = item.getBoundingClientRect();
+                return rect.left >= 0 && rect.right <= window.innerWidth;
             })"""
         )
-        self.assertTrue(benefits_do_not_overlap)
+        self.assertTrue(items_visible)
+
+        benefit_count = self.page.locator("#categorias .category-benefit").count()
+        self.assertEqual(benefit_count, 0)
 
 
 if __name__ == "__main__":

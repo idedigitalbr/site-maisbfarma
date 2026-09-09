@@ -15,6 +15,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
+<!-- Design System CSS Canônico & Centralizado -->
+<link rel="stylesheet" href="assets/css/design-system.css">
+
 <style>
   /* ==========================================================================
      1. DEFINIÇÃO DA TIPOGRAFIA LUFGA (ARQUIVOS LOCAIS EM assets/fonts/)
@@ -80,9 +83,9 @@
     --hairline-soft: #F0F2F5;
     --border-strong: #D4D5DC;
     
-    --canvas: #F4FEFD;
+    --canvas: #F8F9FA;
     --surface-soft: #F8F9FA;
-    --surface-card: #FFFFFF;
+    --surface-card: #F8F9FA;
     --surface-strong: #F0F2F5;
     --surface-dark: #1C1D22;
     --surface-dark-card: #25272E;
@@ -143,9 +146,15 @@
   /* MAIN SECTIONS */
   .content { max-width: 1360px; margin: 0 auto; padding: 0 80px; }
   .section { padding: 64px 0; border-bottom: 1px solid var(--hairline); }
-  .section-tag { font-size: 12px; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 6px; }
-  .section-title { font-family: var(--display); font-size: 28px; font-weight: 700; line-height: 1.25; margin-bottom: 12px; color: var(--ink); }
-  .section-lead { font-size: 16px; color: var(--body); max-width: 780px; line-height: 1.6; margin-bottom: 36px; }
+  .section-tag, .ds-eyebrow { font-family: var(--text); font-size: 12px; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.1em; line-height: 16px; display: block; margin-bottom: 8px; }
+  .section-title, .ds-headline { font-family: var(--display); font-size: clamp(24px, 4vw, 38px); font-weight: 700; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 12px; color: var(--ink); }
+  @media (min-width: 768px) {
+    .section-title, .ds-headline { font-size: 38px; line-height: 36px; }
+  }
+  .section-lead, .ds-subtitle { font-size: 16px; color: var(--body); max-width: 780px; line-height: 1.6; margin-bottom: 36px; }
+  @media (min-width: 768px) {
+    .section-lead, .ds-subtitle { font-size: 17px; }
+  }
 
   /* COLOR SWATCHES */
   .color-group-title { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 32px 0 16px; }
@@ -287,7 +296,7 @@
     .hero-desc { font-size: 15px; }
     .content { padding: 0 16px; }
     .section { padding: 40px 0; }
-    .section-title { font-size: 24px; }
+    .section-title, .ds-headline { font-size: 26px; line-height: 1.2; }
     
     /* Search Bar Mobile */
     .search-pill-bar {
@@ -443,10 +452,10 @@
       <div class="color-group-title">Surfaces & Canvas</div>
       <div class="color-grid">
         <div class="swatch">
-          <div class="swatch-color" style="background: #F4FEFD; border-bottom: 1px solid #E7E7E7;"></div>
+          <div class="swatch-color" style="background: #F8F9FA; border-bottom: 1px solid #E7E7E7;"></div>
           <div class="swatch-meta">
             <div class="swatch-name">canvas</div>
-            <div class="swatch-hex">#F4FEFD</div>
+            <div class="swatch-hex">#F8F9FA</div>
             <div class="swatch-role">Superfície base do site e cards padrão</div>
           </div>
         </div>
@@ -579,6 +588,18 @@
         </div>
       </div>
 
+      <!-- Vitrine Oficial do Padrão de Títulos e Eyebrows (Referência Canônica do Site) -->
+      <div style="background: #FFFFFF; border: 1px solid var(--hairline); border-radius: 20px; padding: 36px 24px; margin: 28px 0; text-align: center; box-shadow: var(--shadow-elevated);">
+        <span class="ds-eyebrow" style="margin-bottom: 8px;">NÃO PERCA</span>
+        <h2 class="ds-headline" style="margin-bottom: 0;">
+          Ofertas que <span class="highlight" style="color: var(--primary);">rendem mais</span> pra você.
+        </h2>
+        <div style="margin-top: 20px; display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 12px; font-family: var(--mono); font-size: 11.5px;">
+          <span style="background: var(--surface-soft); color: var(--primary); padding: 6px 12px; border-radius: 8px; border: 1px solid var(--hairline); font-weight: 700;">Eyebrow Oficial: 12px · Bold 700 · LH 16px · #E92125 · UPPERCASE · 0.1em</span>
+          <span style="background: var(--surface-soft); color: var(--ink); padding: 6px 12px; border-radius: 8px; border: 1px solid var(--hairline); font-weight: 700;">Headline Oficial (H2): 38px · Bold 700 · LH 36px · #32343D · -0.02em</span>
+        </div>
+      </div>
+
       <!-- Tabela Completa de Tipografia (com container responsivo) -->
       <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; width: 100%; border: 1px solid var(--hairline); border-radius: 14px; margin-top: 16px; background: #FFFFFF;">
         <table class="type-table" style="margin-top: 0; min-width: 680px;">
@@ -592,64 +613,70 @@
           </thead>
           <tbody>
             <tr>
-              <td><span class="type-token">rating-display</span></td>
-              <td><span class="type-spec">64px · 700 · 1.1</span></td>
-              <td><span class="type-preview" style="font-size: 40px; font-weight: 700; line-height: 1;">4.91</span></td>
-              <td>Nota de avaliação Google</td>
+              <td><span class="type-token">eyebrow-standard</span></td>
+              <td><span class="type-spec">12px · 700 · 16px</span></td>
+              <td><span class="ds-eyebrow" style="margin-bottom: 0;">NÃO PERCA</span></td>
+              <td>Eyebrows e overlines de todas as seções</td>
             </tr>
             <tr>
-              <td><span class="type-token">display-xl</span></td>
-              <td><span class="type-spec">40px · 700 · 1.2</span></td>
-              <td><span class="type-preview" style="font-size: 26px; font-weight: 700;">Aqui tem tudo para sua saúde</span></td>
+              <td><span class="type-token">headline-h2</span></td>
+              <td><span class="type-spec">38px · 700 · 36px</span></td>
+              <td><span class="ds-headline" style="font-size: 26px; line-height: 28px; margin-bottom: 0;">Ofertas que <span style="color: var(--primary);">rendem mais</span></span></td>
+              <td>Headlines oficiais e títulos de seção (H2)</td>
+            </tr>
+            <tr>
+              <td><span class="type-token">display-h1</span></td>
+              <td><span class="type-spec">48px · 700 · 1.15</span></td>
+              <td><span style="font-family: var(--display); font-size: 26px; font-weight: 700; line-height: 1.15;">Todos os dias cuidando de você.</span></td>
               <td>Hero H1 na Home</td>
             </tr>
             <tr>
-              <td><span class="type-token">display-lg</span></td>
-              <td><span class="type-spec">32px · 700 · 1.25</span></td>
-              <td><span class="type-preview" style="font-size: 22px; font-weight: 700;">A Farmácia Mais Bem Avaliada</span></td>
-              <td>Headings de grandes seções</td>
+              <td><span class="type-token">title-h3</span></td>
+              <td><span class="type-spec">20px · 600 · 1.3</span></td>
+              <td><span style="font-family: var(--display); font-size: 18px; font-weight: 600;">Unidade Plaza — Atendimento</span></td>
+              <td>Títulos de filiais, cards e modais</td>
             </tr>
             <tr>
-              <td><span class="type-token">title-xl</span></td>
-              <td><span class="type-spec">24px · 600 · 1.35</span></td>
-              <td><span class="type-preview" style="font-size: 20px; font-weight: 600;">Unidade Plaza — Atendimento</span></td>
-              <td>Títulos de filiais e banners</td>
+              <td><span class="type-token">subtitle-lead</span></td>
+              <td><span class="type-spec">17px · 400 · 1.6</span></td>
+              <td><span style="font-size: 15px; font-weight: 400; color: var(--body);">Cuidado que está presente no seu dia a dia.</span></td>
+              <td>Subtítulos e parágrafos introdutórios</td>
             </tr>
             <tr>
-              <td><span class="type-token">title-md</span></td>
-              <td><span class="type-spec">18px · 600 · 1.4</span></td>
-              <td><span class="type-preview" style="font-size: 16px; font-weight: 600;">Compre e Retire Ágil</span></td>
-              <td>Títulos de cards e benefícios</td>
-            </tr>
-            <tr>
-              <td><span class="type-token">body-lg</span></td>
-              <td><span class="type-spec">18px · 400 · 1.6</span></td>
-              <td><span class="type-preview" style="font-size: 16px; font-weight: 400; color: var(--body);">Atendimento próximo com preço baixo garantido.</span></td>
-              <td>Subtítulos institucionais</td>
-            </tr>
-            <tr>
-              <td><span class="type-token">body-md</span></td>
-              <td><span class="type-spec">16px · 400 · 1.5</span></td>
-              <td><span class="type-preview" style="font-size: 15px; font-weight: 400; color: var(--body);">Somos a rede de farmácias do Grupo Mais Barato.</span></td>
+              <td><span class="type-token">body-regular</span></td>
+              <td><span class="type-spec">15px · 400 · 1.5</span></td>
+              <td><span style="font-size: 15px; font-weight: 400; color: var(--body);">Somos a rede de farmácias do Grupo Mais Barato.</span></td>
               <td>Texto corrido padrão</td>
             </tr>
             <tr>
               <td><span class="type-token">body-sm</span></td>
-              <td><span class="type-spec">14px · 400 · 1.43</span></td>
-              <td><span class="type-preview" style="font-size: 14px; font-weight: 400; color: var(--body);">Av. Nazaré, 1234 — Aberto até 22h</span></td>
+              <td><span class="type-spec">14px · 400 · 1.5</span></td>
+              <td><span style="font-size: 14px; font-weight: 400; color: var(--body);">Av. Gov. José Malcher, 2388 — Aberto até 22h</span></td>
               <td>Endereços e legendas</td>
+            </tr>
+            <tr>
+              <td><span class="type-token">caption</span></td>
+              <td><span class="type-spec">13px · 400 · 1.4</span></td>
+              <td><span style="font-size: 13px; font-weight: 400; color: var(--muted);">Mais de 500 avaliações 5 estrelas verificadas</span></td>
+              <td>Metadados, legendas e notas</td>
             </tr>
             <tr>
               <td><span class="type-token">quote-italic</span></td>
               <td><span class="type-spec">14px · 500i · 1.5</span></td>
-              <td><span class="type-preview" style="font-size: 14px; font-weight: 500; font-style: italic; color: var(--body);">"Melhor atendimento da cidade!"</span></td>
+              <td><span style="font-size: 14px; font-weight: 500; font-style: italic; color: var(--body);">"Melhor atendimento da cidade!"</span></td>
               <td>Depoimentos e citações</td>
             </tr>
             <tr>
-              <td><span class="type-token">button-lg</span></td>
-              <td><span class="type-spec">16px · 600 · 1.25</span></td>
-              <td><span class="type-preview" style="font-size: 14px; font-weight: 600; color: var(--primary);">Conhecer Ofertas →</span></td>
+              <td><span class="type-token">button-action</span></td>
+              <td><span class="type-spec">15px · 600 · 1.25</span></td>
+              <td><span style="font-size: 14px; font-weight: 600; color: var(--primary);">Conhecer Ofertas →</span></td>
               <td>Botões de conversão e CTAs</td>
+            </tr>
+            <tr>
+              <td><span class="type-token">rating-display</span></td>
+              <td><span class="type-spec">64px · 700 · 1.0</span></td>
+              <td><span style="font-size: 32px; font-weight: 700; line-height: 1; color: var(--ink);">4.91</span></td>
+              <td>Nota de avaliação Google</td>
             </tr>
           </tbody>
         </table>
@@ -792,6 +819,9 @@
           <div class="text-input-wrap">
             <label class="text-input-lbl">Estado com Erro</label>
             <input type="text" class="text-input-field error" value="Telefone sem DDD">
+          </div>
+        </div>
+
         <!-- Painel de Iconografia Oficial (Lucide Icons) -->
         <div class="comp-panel" style="grid-column: 1 / -1;">
           <div class="comp-panel-title">
@@ -956,7 +986,7 @@ colors:
   body: "#555866"
   muted: "#7B7E8C"
   muted-soft: "#A0A3B1"
-  canvas: "#F4FEFD"
+  canvas: "#F8F9FA"
   surface-soft: "#F8F9FA"
   surface-strong: "#F0F2F5"
   surface-dark: "#1C1D22"
@@ -967,13 +997,47 @@ colors:
   success: "#10B981"
 
 typography:
-  fontFamily: "'Lufga', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+  fontFamily: "'Lufga', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif"
   weights:
     regular: 400
     medium: 500
     medium-italic: 500
     semibold: 600
     bold: 700
+    extrabold: 800
+  standards:
+    eyebrow:
+      fontSize: "12px"
+      fontWeight: 700
+      lineHeight: "16px"
+      color: "#E92125"
+      textTransform: "uppercase"
+      letterSpacing: "0.1em"
+    headline:
+      fontSize: "38px"
+      fontWeight: 700
+      lineHeight: "36px"
+      color: "#32343D"
+      letterSpacing: "-0.02em"
+      highlightColor: "#E92125"
+    hero-h1:
+      fontSize: "48px"
+      fontWeight: 700
+      lineHeight: "1.15"
+    title-h3:
+      fontSize: "20px"
+      fontWeight: 600
+      lineHeight: "1.3"
+    subtitle:
+      fontSize: "17px"
+      fontWeight: 400
+      lineHeight: "1.6"
+      color: "#555866"
+    body:
+      fontSize: "15px"
+      fontWeight: 400
+      lineHeight: "1.5"
+      color: "#555866"
 
 rounded:
   sm: "8px"

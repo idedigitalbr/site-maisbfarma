@@ -1,4 +1,4 @@
-﻿# OS files
+# OS files
 Thumbs.db
 ehthumbs.db
 Desktop.ini
@@ -23,3 +23,7 @@ build/
 .idea/
 *.swp
 *.swo
+
+# Python
+__pycache__/
+*.pyc

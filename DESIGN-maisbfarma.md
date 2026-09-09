@@ -19,9 +19,9 @@ colors:
   muted-light: "#A0A3B1"
   
   # Superfícies e Linhas
-  canvas: "#F4FEFD"
+  canvas: "#F8F9FA"
   surface-soft: "#F8F9FA"
-  surface-card: "#FFFFFF"
+  surface-card: "#F8F9FA"
   surface-strong: "#F0F2F5"
   surface-dark: "#1C1D22"
   surface-dark-card: "#25272E"
@@ -55,6 +55,11 @@ typography:
       fontSize: "48px"
       fontWeight: 700
       lineHeight: "1.15"
+      letterSpacing: "-0.02em"
+    headline:
+      fontSize: "38px"
+      fontWeight: 700
+      lineHeight: "36px"
       letterSpacing: "-0.02em"
     display-xl:
       fontSize: "40px"
@@ -111,6 +116,12 @@ typography:
       fontWeight: 500
       lineHeight: "1.4"
       letterSpacing: "0.01em"
+    eyebrow:
+      fontSize: "12px"
+      fontWeight: 700
+      lineHeight: "16px"
+      letterSpacing: "0.1em"
+      textTransform: "uppercase"
     micro:
       fontSize: "11px"
       fontWeight: 600

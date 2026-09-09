@@ -53,17 +53,18 @@ class FullPageRestorationTests(unittest.TestCase):
             1,
         )
 
-    def test_horizontal_banner_controls_move_the_approved_carousel(self):
-        track = self.page.locator("#hBannersTrack")
-        next_button = self.page.get_by_role("button", name="Próximo banner")
-        self.assertEqual(track.count(), 1)
-        self.assertEqual(next_button.count(), 1)
-
-        before = track.evaluate("element => getComputedStyle(element).transform")
-        next_button.click()
-        self.page.wait_for_timeout(400)
-        after = track.evaluate("element => getComputedStyle(element).transform")
-        self.assertNotEqual(after, before)
+    def test_horizontal_banner_displays_the_approved_ifood_banner(self):
+        banner = self.page.locator("#clube img")
+        self.assertEqual(banner.count(), 1)
+        self.assertEqual(
+            banner.get_attribute("src"),
+            "assets/Pagina/S4%20BANNERS%20HORIZONTAIS/banner-ifood-com-botao.webp",
+        )
+        self.assertTrue(
+            banner.evaluate(
+                "element => element.complete && element.naturalWidth > 0"
+            )
+        )
 
     def test_uses_the_three_existing_hero_images(self):
         expected_sources = [
@@ -81,5 +82,32 @@ class FullPageRestorationTests(unittest.TestCase):
         )
 
 
+
+    def test_ofertas_carousel_has_arrows_and_five_cards(self):
+        container = self.page.locator("#ofertas .bf-container")
+        self.assertGreaterEqual(container.count(), 1)
+
+        track = self.page.locator("#bannersTrack")
+        self.assertEqual(track.count(), 1)
+
+        cards = track.locator("[data-banner-card]")
+        self.assertEqual(cards.count(), 5)
+
+        images = cards.locator("img")
+        self.assertEqual(images.count(), 5)
+        self.assertTrue(
+            images.evaluate_all("imgs => imgs.every(img => img.complete && img.naturalWidth > 0)")
+        )
+
+        # Verifica a existência dos botões arrow com o mesmo estilo do hero
+        arrows = self.page.locator("#ofertas button[onclick*='scrollBanners']")
+        self.assertEqual(arrows.count(), 2)
+
+        # Verifica a existência dos 5 dots indicadores
+        dots = self.page.locator("#bannersDots .banner-dot")
+        self.assertEqual(dots.count(), 5)
+
+
 if __name__ == "__main__":
     unittest.main()
+
