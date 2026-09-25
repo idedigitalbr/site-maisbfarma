@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-09-25 — Atualização do Rodapé: Logo idedigital, Centralização de Termos e Logo Estática
+
+- **Logotipo Oficial idedigital:**
+  - Importada a logo oficial em vetor/PNG com transparência (`assets/Logos/logo-idedigital.png`).
+  - Substituído o texto estático "idedigital" pela imagem da marca com link para `https://digital.ideinstituto.com.br/` e abertura em nova aba (`target="_blank"`, `rel="noopener noreferrer"`).
+- **Alinhamento e Centralização no Rodapé Inferior:**
+  - Ajustado o container da barra inferior para grade de 3 colunas de larguras iguais (`grid grid-cols-1 md:grid-cols-3 items-center`).
+  - O botão **"Termos & Privacidade"** agora fica matematicamente centralizado (50%) na tela no desktop, enquanto o copyright fica à esquerda e a marca idedigital à direita.
+- **Logo Institucional do Footer:**
+  - Removido o link da logo branca `logo-farmacia-branca.webp`, tornando-a uma imagem estática sem redirecionamento para o topo.
+
 ## 2026-09-25 — Atualização dos Banners Mobile (S1 Topo Hero & S4 Banners Horizontais)
 
 - **Banners Mobile Atualizados (1536x1024):**

@@ -2277,9 +2277,9 @@
       <div class="flex flex-col items-center text-center max-w-lg mx-auto mb-10 sm:mb-12">
         
         <!-- Logo Branca -->
-        <a href="#home" class="mb-6 inline-block focus:outline-none" aria-label="+B Farma">
+        <div class="mb-6 inline-block">
           <img src="assets/Logos/logo-farmacia-branca.webp" alt="+B Farma" class="h-10 sm:h-12 w-auto object-contain">
-        </a>
+        </div>
 
         <!-- Redes Sociais oficiais -->
         <div class="flex items-center gap-3">
@@ -2306,15 +2306,18 @@
 
     <!-- Faixa Inferior Vermelha (+B Red) -->
     <div class="bg-brand-red text-white/95 text-xs py-3.5">
-      <div class="bf-container flex flex-col md:flex-row items-center justify-between gap-2.5 text-[11px] text-center md:text-left">
-        <div>
+      <div class="bf-container grid grid-cols-1 md:grid-cols-3 items-center gap-2.5 text-[11px] text-center">
+        <div class="text-center md:text-left">
           Copyright © 2026 Grupo Mais Barato – All rights reserved
         </div>
-        <div class="flex items-center gap-3">
+        <div class="flex items-center justify-center">
           <button type="button" onclick="openPrivacyModal()" class="hover:underline text-white/95 bg-transparent border-0 p-0 cursor-pointer text-[11px] font-normal">Termos &amp; Privacidade</button>
         </div>
-        <div>
-          Desenvolvido por: <span class="font-bold text-white">idedigital</span>
+        <div class="flex items-center justify-center md:justify-end gap-1.5">
+          <span>Desenvolvido por:</span>
+          <a href="https://digital.ideinstituto.com.br/" target="_blank" rel="noopener noreferrer" aria-label="idedigital" class="inline-flex items-center group/dev">
+            <img src="assets/Logos/logo-idedigital.png" alt="idedigital" class="h-3.5 sm:h-4 w-auto object-contain opacity-90 group-hover/dev:opacity-100 group-hover/dev:scale-105 transition-all duration-200" loading="lazy">
+          </a>
         </div>
       </div>
     </div>
