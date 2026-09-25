@@ -1,5 +1,31 @@
 # Changelog
 
+## 2026-09-25 — Revisão Geral de Feedback do Cliente, Limpeza de Seções e Atualização de Banners
+
+- **Hero Topo:**
+  - Removido o 3º slide de campanha ("Quinta do Genérico / Leve 3 Pague 2").
+  - Atualizados os slides 01 e 02 para os novos assets oficiais `1bannertopo.webp` e `2bannertopo.webp`.
+  - Atualizados indicadores para 2 pontos de navegação responsiva.
+- **Seção Ofertas:**
+  - Removida a seção completa de ofertas (`#ofertas`), cards de campanhas e banner CTA inferior.
+- **Seção FAQ & Depoimentos:**
+  - Removida a seção de Perguntas Frequentes (`#faq`) e todos os seus acordeões.
+  - Removida a seção de Depoimentos / Avaliações Google (`#depoimentos`).
+  - Removidos links quebrados de navegação no header desktop e menu drawer mobile.
+  - Limpos os scripts relacionados (`toggleFaq`, scrollSpy, touch listeners).
+- **Seção Sobre a +B Farma:**
+  - Atualizado o subtítulo institucional para: *"A +B Farma foi feita para cuidar da sua saúde com qualidade, confiança e atendimento próximo."*.
+  - Atualizada a thumbnail do vídeo institucional para o novo asset `thumb-video.webp` com a logomarca corrigida nos uniformes.
+- **Seção Nossas Unidades:**
+  - Removido o parágrafo textual redundante, mantendo apenas a headline limpa e os cards oficiais do Google Maps.
+  - Ajustado o arredondamento superior para transição suave com o fundo escuro.
+- **Banner Horizontal iFood:**
+  - Atualizado para o novo asset `banner-ifood.webp` com entregador uniformizado.
+- **Rodapé:**
+  - Removida a frase abaixo do logo, mantendo a marca em destaque e ícones sociais.
+- **Header:**
+  - Removido o botão "Categorias" da navegação desktop, mantendo foco direto no botão de conversão "Pedir agora".
+
 ## 2026-09-09 — Restauração integral após regressão local
 
 - Restaurado o `index.html` completo a partir da versão preservada na aba do navegador, mantendo Categorias antes de Ofertas.
