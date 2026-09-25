@@ -21,7 +21,7 @@ atualizado: 2026-09-08
   - [x] **Acordeão interativo de FAQ:** Respostas rápidas para dúvidas frequentes com chevrons animados no tom vermelho institucional (`#E92125`).
   - [x] **Prova Social Google Maps:** Depoimentos restaurados em dois trilhos contínuos, com cards visíveis, pausa ao toque e links de consulta às fichas oficiais.
   - [x] Cards das filiais Plaza e Tapanã com localização, telefone e acesso ao Google, sem botões extras de WhatsApp e iFood.
-  - [x] Rodapé simples em fundo escuro com logo branca, descrição, redes sociais e sub-faixa de direitos autorais, sem colunas extras de navegação.
+  - [x] Rodapé institucional em fundo escuro com logo branca estática (sem link), redes sociais, sub-faixa vermelha simétrica de 3 colunas com direitos autorais, botão Termos & Privacidade perfeitamente centralizado e logotipo oficial da idedigital com link externo.
 - [x] **Otimização de Mídias:** 33 fotos Full HD e 4 logos convertidos para WebP (economia de 96.9% de peso).
 - [x] **Otimização Global de Mobile (World-Class UX):** Suporte nativo completo para telas compactas (320px a 430px), drawer mobile com overlay escuro e scroll interno, alternância dinâmica de ícones, acordeão FAQ via CSS Grid a 60fps, pausa por toque nos depoimentos Google, floating hub (WhatsApp FAB com pulso e botão voltar ao topo) e touch/swipe physics em todos os carrosséis.
 - [x] **Responsividade:** Layout preparado para resoluções mobile (320px a 430px), tablet e desktop; revisão visual concluída em 360px, 390px e 430px.
