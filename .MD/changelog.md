@@ -1,7 +1,23 @@
 # Changelog
 
-## 2026-09-25 — Revisão Geral de Feedback do Cliente, Limpeza de Seções e Atualização de Banners
+## 2026-09-25 — Ajustes Mobile: Categorias em Linha Única com Scroll e Banner Hero Limpo
 
+- **Categorias Circulares no Mobile (< 768px):**
+  - Substituída a grade de 2 linhas (5 colunas) por uma linha única horizontal contínua e rolável (`overflow-x: auto` e `scroll-snap-type: x mandatory`).
+  - O usuário agora desliza/arrasta confortavelmente para o lado para ver todas as 10 categorias, com indicação visual natural do próximo item cortando na borda direita.
+  - Círculos de imagem ampliados de 58px para 66px no mobile para maior nitidez e destaque dos ícones.
+  - Adicionado suporte a arrasto por mouse (drag-to-scroll) sem disparar clique acidental no modal.
+- **Carrossel Hero no Mobile (< 768px):**
+  - Ocultadas as setas de navegação lateral (`.hero-nav-btn`) no mobile via `hidden md:flex`, eliminando qualquer sobreposição ou obstrução das letras do banner ("Aqui tem tudo para a sua saúde e bem-estar em um só lugar").
+  - Mantidas as setas visíveis e ativas no desktop e tablets (>= 768px).
+  - Aprimorado o listener de touch/swipe para diferenciar gestos horizontais de rolagens verticais da página.
+
+## 2026-09-25 — Banners Mobile Dedicados (S1 & S4) e Revisão Geral
+
+- **Banners Mobile Responsivos (S1 Hero & S4 iFood):**
+  - Implementado elemento `<picture>` com `<source media="(max-width: 767px)">` nos slides do Carrossel Hero (S1) integrando `1bannertopo-mobile.webp` e `2bannertopo-mobile.webp`.
+  - Implementado `<picture>` no Banner Horizontal iFood (S4) integrando `banner-ifood-mobile.webp`.
+  - Calibrado o CSS de `.hero-carousel` com `aspect-ratio: 2 / 1` no mobile (< 768px), correspondendo perfeitamente à resolução 1774x887 dos banners mobile sem cortes, e `aspect-ratio: 2.56 / 1` no desktop (>= 768px).
 - **Hero Topo:**
   - Removido o 3º slide de campanha ("Quinta do Genérico / Leve 3 Pague 2").
   - Atualizados os slides 01 e 02 para os novos assets oficiais `1bannertopo.webp` e `2bannertopo.webp`.
@@ -19,6 +35,9 @@
 - **Seção Nossas Unidades:**
   - Removido o parágrafo textual redundante, mantendo apenas a headline limpa e os cards oficiais do Google Maps.
   - Ajustado o arredondamento superior para transição suave com o fundo escuro.
+  - Atualizadas as imagens dos cards das unidades para as fotos oficiais selecionadas:
+    - Unidade Plaza: `IAG_8452.webp` (`assets/Fotografias/Und. Plaza/IAG_8452.webp`).
+    - Unidade Tapanã: `IAG_2278.webp` (`assets/Fotografias/Und. Tapanã/IAG_2278.webp`).
 - **Banner Horizontal iFood:**
   - Atualizado para o novo asset `banner-ifood.webp` com entregador uniformizado.
 - **Rodapé:**

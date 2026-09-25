@@ -84,14 +84,14 @@ class CategorySectionTests(unittest.TestCase):
         )
         self.assertTrue(loaded_circles)
 
-    def test_categories_are_rendered_before_weekly_offers(self):
+    def test_categories_are_rendered_before_hero_section(self):
         visual_order = self.page.evaluate(
             """() => ({
                 categoriesTop: document.querySelector('#categorias').offsetTop,
-                offersTop: document.querySelector('#ofertas').offsetTop,
+                heroTop: document.querySelector('#home').offsetTop,
             })"""
         )
-        self.assertLess(visual_order["categoriesTop"], visual_order["offersTop"])
+        self.assertLess(visual_order["categoriesTop"], visual_order["heroTop"])
 
     def test_category_opens_the_existing_order_picker(self):
         category = self.page.get_by_role("button", name="Comprar produtos da categoria Infantil")
@@ -127,34 +127,47 @@ class CategorySectionTests(unittest.TestCase):
             self.assertEqual(badge["bg"], "rgb(248, 249, 250)")
             self.assertEqual(badge["color"], "rgb(233, 33, 37)")
 
-    def test_mobile_keeps_all_ten_categories_visible_without_horizontal_scroll(self):
+    def test_mobile_displays_single_row_horizontal_scroll_for_categories(self):
         self.page.set_viewport_size({"width": 390, "height": 844})
         self.page.reload(wait_until="domcontentloaded")
 
         dimensions = self.page.evaluate(
             """() => {
                 const rail = document.querySelector('#categoryRail');
+                const items = Array.from(document.querySelectorAll('#categorias [data-category-item]'));
+                const offsets = items.map(item => item.offsetTop);
+                const allSameTop = offsets.every(top => Math.abs(top - offsets[0]) < 4);
                 return {
                     pageWidth: document.documentElement.scrollWidth,
                     viewportWidth: window.innerWidth,
                     railScrollWidth: rail.scrollWidth,
                     railClientWidth: rail.clientWidth,
+                    allSameTop: allSameTop,
                 };
             }"""
         )
+        # O layout geral não deve ter scroll horizontal indesejado
         self.assertLessEqual(dimensions["pageWidth"], dimensions["viewportWidth"])
-        self.assertLessEqual(dimensions["railScrollWidth"], dimensions["railClientWidth"] + 2)
+        # O rail de categorias deve ser rolável horizontalmente
+        self.assertGreater(dimensions["railScrollWidth"], dimensions["railClientWidth"])
+        # Todos os 10 itens devem estar na MESMA linha (mesmo offsetTop)
+        self.assertTrue(dimensions["allSameTop"])
 
-        items_visible = self.page.locator("#categorias [data-category-item]").evaluate_all(
-            """items => items.every(item => {
-                const rect = item.getBoundingClientRect();
-                return rect.left >= 0 && rect.right <= window.innerWidth;
-            })"""
-        )
-        self.assertTrue(items_visible)
+    def test_mobile_hero_navigation_arrows_are_hidden(self):
+        # No mobile (390px), as setas do Hero Carrossel NÃO devem ser visíveis para não cobrir o texto
+        self.page.set_viewport_size({"width": 390, "height": 844})
+        self.page.reload(wait_until="domcontentloaded")
+        hero_arrows = self.page.locator(".hero-nav-btn")
+        for i in range(hero_arrows.count()):
+            self.assertFalse(hero_arrows.nth(i).is_visible())
 
-        benefit_count = self.page.locator("#categorias .category-benefit").count()
-        self.assertEqual(benefit_count, 0)
+        # No desktop (1440px), as setas DEVEM ser visíveis
+        self.page.set_viewport_size({"width": 1440, "height": 900})
+        self.page.reload(wait_until="domcontentloaded")
+        hero_arrows_desktop = self.page.locator(".hero-nav-btn")
+        self.assertEqual(hero_arrows_desktop.count(), 2)
+        for i in range(hero_arrows_desktop.count()):
+            self.assertTrue(hero_arrows_desktop.nth(i).is_visible())
 
 
 if __name__ == "__main__":

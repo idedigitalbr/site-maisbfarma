@@ -25,6 +25,7 @@ atualizado: 2026-09-08
 - [x] **Otimização de Mídias:** 33 fotos Full HD e 4 logos convertidos para WebP (economia de 96.9% de peso).
 - [x] **Otimização Global de Mobile (World-Class UX):** Suporte nativo completo para telas compactas (320px a 430px), drawer mobile com overlay escuro e scroll interno, alternância dinâmica de ícones, acordeão FAQ via CSS Grid a 60fps, pausa por toque nos depoimentos Google, floating hub (WhatsApp FAB com pulso e botão voltar ao topo) e touch/swipe physics em todos os carrosséis.
 - [x] **Responsividade:** Layout preparado para resoluções mobile (320px a 430px), tablet e desktop; revisão visual concluída em 360px, 390px e 430px.
+- [x] **Banners Mobile Dedicados (Art Direction):** Uso da tag `<picture>` para servir automaticamente os banners mobile das pastas `MOBILE` (S1 TOPO HERO) e `mobile` (S4 BANNERS HORIZONTAIS) com proporção exata 2:1 (1774x887) em telas até 767px.
 
 ---
 

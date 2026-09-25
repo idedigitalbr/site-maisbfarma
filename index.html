@@ -521,18 +521,31 @@
     .hero-carousel {
       position: relative;
       width: 100%;
-      aspect-ratio: 2.56 / 1;
-      min-height: 165px;
+      aspect-ratio: 2 / 1;
+      min-height: 160px;
       overflow: hidden;
       background-color: #141519;
       border-radius: 18px;
       isolation: isolate;
       box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.12), 0 2px 6px -1px rgba(0, 0, 0, 0.06);
     }
+    .hero-nav-btn {
+      display: none !important;
+    }
+    @media (min-width: 768px) {
+      .hero-nav-btn {
+        display: flex !important;
+      }
+    }
     @media (min-width: 640px) {
       .hero-carousel {
-        min-height: 280px;
         border-radius: 26px;
+      }
+    }
+    @media (min-width: 768px) {
+      .hero-carousel {
+        aspect-ratio: 2.56 / 1;
+        min-height: 280px;
       }
     }
     @media (min-width: 1024px) {
@@ -561,12 +574,24 @@
       z-index: 2;
       pointer-events: auto;
     }
+    .hero-slide picture {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    .hero-slide picture img,
     .hero-slide img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: left center;
+      object-position: center;
       display: block;
+    }
+    @media (min-width: 768px) {
+      .hero-slide picture img,
+      .hero-slide img {
+        object-position: left center;
+      }
     }
     /* As artes do hero já contêm textos e CTAs; não sobrepor HTML adicional. */
     .hero-slide > .absolute.inset-0.z-10 {
@@ -1406,7 +1431,7 @@
         max-width: 110px;
       }
     }
-    @media (max-width: 720px) {
+    @media (max-width: 768px) {
       .category-section { padding: 18px 0 16px; }
       .category-section::before {
         width: 230px;
@@ -1444,18 +1469,73 @@
       }
       .category-benefit svg { width: 27px; height: 27px; }
       .category-all-link { margin: 0; justify-content: flex-start; }
-      .category-carousel { margin-top: 36px; padding: 0; }
-      .category-rail {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-        gap: 16px 8px;
-        margin-right: 0;
-        padding-right: 0;
+      .category-carousel {
+        margin-top: 0;
+        padding: 0;
+        width: 100%;
+        overflow: visible;
       }
-      .category-item { width: 100%; min-width: 0; flex-basis: auto; }
-      .category-photo-wrap { width: 100%; max-width: 58px; margin-bottom: 8px; }
-      .category-label { font-size: 11px; min-height: 28px; line-height: 1.15; }
-      .category-icon-badge { width: 24px; height: 24px; right: -2px; bottom: -3px; }
-      .category-icon-badge svg { width: 12px; height: 12px; stroke-width: 2; }
+      .category-rail {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 14px;
+        width: auto;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        margin-left: -18px;
+        margin-right: -18px;
+        padding: 4px 18px 10px 18px;
+        overscroll-behavior-x: contain;
+      }
+      .category-rail::-webkit-scrollbar {
+        display: none;
+      }
+      .category-item {
+        flex: 0 0 74px;
+        min-width: 74px;
+        width: 74px;
+        scroll-snap-align: start;
+        scroll-snap-stop: normal;
+        cursor: pointer;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+      .category-photo-wrap {
+        width: 66px;
+        height: 66px;
+        max-width: 66px;
+        margin-bottom: 7px;
+      }
+      .category-image {
+        width: 100%;
+        height: 100%;
+      }
+      .category-label {
+        font-size: 11px;
+        min-height: 28px;
+        line-height: 1.15;
+        white-space: normal;
+        word-break: normal;
+        text-align: center;
+      }
+      .category-icon-badge {
+        width: 25px;
+        height: 25px;
+        right: -2px;
+        bottom: -2px;
+      }
+      .category-icon-badge svg {
+        width: 13px;
+        height: 13px;
+        stroke-width: 2;
+      }
       .category-cta {
         display: flex;
         min-height: 0;
@@ -1707,25 +1787,31 @@
             <!-- Slide 01 — INSTITUCIONAL: Aqui tem tudo para sua saúde e bem-estar -->
             <div class="hero-slide active" data-index="0">
               <a href="#sobre" class="block w-full h-full focus:outline-none" aria-label="Conheça a +B Farma: Aqui tem tudo para sua saúde e bem-estar em um só lugar">
-                <img src="assets/Pagina/S1%20TOPO%20HERO/1bannertopo.webp" alt="+B Farma — Aqui tem tudo para sua saúde e bem-estar em um só lugar" loading="eager" fetchpriority="high" decoding="async">
+                <picture class="block w-full h-full">
+                  <source media="(max-width: 767px)" srcset="assets/Pagina/S1%20TOPO%20HERO/MOBILE/1bannertopo-mobile.webp" width="1774" height="887">
+                  <img src="assets/Pagina/S1%20TOPO%20HERO/1bannertopo.webp" alt="+B Farma — Aqui tem tudo para sua saúde e bem-estar em um só lugar" width="1920" height="750" class="w-full h-full object-cover block" loading="eager" fetchpriority="high" decoding="async">
+                </picture>
               </a>
             </div>
 
             <!-- Slide 02 — PRATICIDADE: Soluções que facilitam sua rotina -->
             <div class="hero-slide" data-index="1">
               <a href="#filiais" class="block w-full h-full focus:outline-none" aria-label="Nossas Lojas: Praticidade para o seu dia. Soluções que facilitam sua rotina">
-                <img src="assets/Pagina/S1%20TOPO%20HERO/2bannertopo.webp" alt="+B Farma — Praticidade para o seu dia. Soluções que facilitam sua rotina" loading="lazy" decoding="async">
+                <picture class="block w-full h-full">
+                  <source media="(max-width: 767px)" srcset="assets/Pagina/S1%20TOPO%20HERO/MOBILE/2bannertopo-mobile.webp" width="1774" height="887">
+                  <img src="assets/Pagina/S1%20TOPO%20HERO/2bannertopo.webp" alt="+B Farma — Praticidade para o seu dia. Soluções que facilitam sua rotina" width="1920" height="750" class="w-full h-full object-cover block" loading="lazy" decoding="async">
+                </picture>
               </a>
             </div>
 
           </div>
 
           <!-- Botões de Navegação Lateral (Prev / Next) -->
-          <button onclick="prevSlide(); resetAutoplay();" class="absolute left-2.5 sm:left-4 md:left-6 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-black/40 hover:bg-brand-red text-white backdrop-blur-md border border-white/20 shadow-bf-floating flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 z-20 focus:outline-none focus:ring-2 focus:ring-brand-red" aria-label="Slide anterior">
+          <button onclick="prevSlide(); resetAutoplay();" class="hero-nav-btn hidden md:flex absolute left-2.5 sm:left-4 md:left-6 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-black/40 hover:bg-brand-red text-white backdrop-blur-md border border-white/20 shadow-bf-floating items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 z-20 focus:outline-none focus:ring-2 focus:ring-brand-red" aria-label="Slide anterior">
             <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
           </button>
 
-          <button onclick="nextSlide(); resetAutoplay();" class="absolute right-2.5 sm:right-4 md:right-6 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-black/40 hover:bg-brand-red text-white backdrop-blur-md border border-white/20 shadow-bf-floating flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 z-20 focus:outline-none focus:ring-2 focus:ring-brand-red" aria-label="Próximo slide">
+          <button onclick="nextSlide(); resetAutoplay();" class="hero-nav-btn hidden md:flex absolute right-2.5 sm:right-4 md:right-6 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-black/40 hover:bg-brand-red text-white backdrop-blur-md border border-white/20 shadow-bf-floating items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 z-20 focus:outline-none focus:ring-2 focus:ring-brand-red" aria-label="Próximo slide">
             <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
           </button>
 
@@ -1819,7 +1905,10 @@
         
         <div class="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-bf-subtle hover:shadow-bf-card transition-all duration-300 bg-white select-none group/hbanner">
           <button type="button" onclick="openOrderModal()" class="block w-full cursor-pointer text-left focus:outline-none focus:ring-2 focus:ring-brand-red transition-opacity duration-300 hover:opacity-95" aria-label="Pedir no iFood — Escolha sua unidade e faça seu pedido">
-            <img src="assets/Pagina/S4%20BANNERS%20HORIZONTAIS/banner-ifood.webp" alt="+B Farma no iFood — Escolha sua unidade e faça seu pedido online com entrega rápida" width="1920" height="658" class="w-full h-auto object-cover block" loading="eager" decoding="async" draggable="false">
+            <picture class="block w-full">
+              <source media="(max-width: 767px)" srcset="assets/Pagina/S4%20BANNERS%20HORIZONTAIS/mobile/banner-ifood-mobile.webp" width="1774" height="887">
+              <img src="assets/Pagina/S4%20BANNERS%20HORIZONTAIS/banner-ifood.webp" alt="+B Farma no iFood — Escolha sua unidade e faça seu pedido online com entrega rápida" width="1920" height="658" class="w-full h-auto object-cover block" loading="lazy" decoding="async" draggable="false">
+            </picture>
           </button>
         </div>
 
@@ -1831,15 +1920,15 @@
          S8 — FILIAIS & UNIDADES PLAZA / TAPANÃ
          ========================================================================== -->
     <section id="filiais" class="bg-[#1C1D22] text-white pt-12 sm:pt-16 lg:pt-20 pb-12 sm:pb-16 lg:pb-20 rounded-t-[28px] sm:rounded-t-[36px] relative z-30 scroll-mt-24 md:scroll-mt-28 w-full">
-      <div class="bf-container relative">
+      <div class="bf-container relative px-3 sm:px-4 md:px-6">
         
         <!-- Bloco Branco Contido na Largura Padrão (bf-container: 1280px) -->
-        <div class="w-full bg-[#edf5fd] rounded-2xl sm:rounded-3xl lg:rounded-[36px] xl:rounded-[44px] py-6 sm:py-8 lg:py-10 px-4 sm:px-8 lg:px-12 xl:px-14 border border-slate-100/10 shadow-[0_25px_60px_rgba(0,0,0,0.35)] relative z-10 overflow-visible">
+        <div class="w-full bg-[#edf5fd] rounded-2xl sm:rounded-3xl lg:rounded-[36px] xl:rounded-[44px] py-6 sm:py-8 lg:py-10 px-2 sm:px-6 lg:px-12 xl:px-14 border border-slate-100/10 shadow-[0_25px_60px_rgba(0,0,0,0.35)] relative z-10 overflow-visible">
           
           <div class="w-full flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8 xl:gap-12 relative">
             
             <!-- COLUNA ESQUERDA: ÍCONE OFICIAL + ÁREA INSTITUCIONAL COM TEXTO FLUIDO -->
-            <div class="flex flex-col sm:flex-row items-center sm:items-start lg:items-center gap-4 sm:gap-6 lg:gap-8 flex-1 min-w-0 relative text-center sm:text-left">
+            <div class="flex flex-col sm:flex-row items-center sm:items-start lg:items-center gap-4 sm:gap-6 lg:gap-8 flex-1 min-w-0 relative text-center sm:text-left px-2 sm:px-0">
               
               <!-- Ícone Oficial +B Farma em Proporção Harmoniosa (assets/Logos/icone-b-farma.png) -->
               <div class="flex-shrink-0 w-20 sm:w-24 md:w-28 lg:w-28 xl:w-32 select-none">
@@ -1859,17 +1948,17 @@
             </div>
 
 
-            <!-- COLUNA DIREITA: BLOCO VERMELHO ATRÁS DOS CARDS COM LARGURA FIXA NÃO ESTICÁVEL -->
+            <!-- COLUNA DIREITA: BLOCO VERMELHO ATRÁS DOS CARDS -->
             <div class="flex-shrink-0 relative z-20 flex justify-center w-full lg:w-auto">
               
               <!-- Bloco Vermelho de Fundo (#E92125 com cantos arredondados e elevação) -->
-              <div class="bg-brand-red rounded-[24px] sm:rounded-[36px] p-3 sm:p-4 shadow-[0_20px_50px_rgba(233,33,37,0.35)] relative lg:-my-12 xl:-my-14 z-20 overflow-visible w-full max-w-[310px] sm:max-w-none sm:w-fit mx-auto">
+              <div class="bg-brand-red rounded-[20px] sm:rounded-[36px] p-2.5 sm:p-4 shadow-[0_20px_50px_rgba(233,33,37,0.35)] relative lg:-my-12 xl:-my-14 z-20 overflow-visible w-full sm:w-fit mx-auto">
                 
-                <!-- Flex dos 2 Cards com Largura Fixa Exata -->
-                <div class="flex flex-col sm:flex-row gap-3.5 sm:gap-4 items-center sm:items-start relative z-30">
+                <!-- Flex dos 2 Cards -->
+                <div class="flex flex-col sm:flex-row gap-3.5 sm:gap-4 items-center sm:items-start relative z-30 w-full">
                   
                   <!-- ==================== CARD 1: +B FARMA (PLAZA) ==================== -->
-                  <div class="google-maps-card bg-[#edf5fd] rounded-[13px] border border-[#dadce0] shadow-[0_4px_16px_rgba(0,0,0,0.18)] overflow-hidden flex flex-col text-[#202124] w-full max-w-[285px] sm:w-[285px] flex-shrink-0 lg:-translate-y-7 relative z-40 transition-transform duration-300 hover:scale-[1.01]">
+                  <div class="google-maps-card bg-[#edf5fd] rounded-[13px] border border-[#dadce0] shadow-[0_4px_16px_rgba(0,0,0,0.18)] overflow-hidden flex flex-col text-[#202124] w-full sm:w-[285px] sm:max-w-[285px] flex-shrink-0 lg:-translate-y-7 relative z-40 transition-transform duration-300 hover:scale-[1.01]">
                     
                     <!-- Foto Topo Real da Loja (+B Farma Plaza) -->
                     <div class="relative w-full aspect-[16/9] overflow-hidden bg-slate-100">
@@ -1882,7 +1971,7 @@
                         </svg>
                       </button>
 
-                      <img src="assets/images/farma-plaza.webp" alt="+B Farma (Plaza)" class="w-full h-full object-cover block" loading="lazy">
+                      <img src="assets/Fotografias/Und. Plaza/IAG_8452.webp" alt="+B Farma (Plaza)" class="w-full h-full object-cover block" loading="lazy">
                     </div>
 
                     <!-- Header Info (Título, Avaliação, Categoria) -->
@@ -2020,7 +2109,7 @@
 
 
                   <!-- ==================== CARD 2: +B FARMA (TAPANÃ) ==================== -->
-                  <div class="google-maps-card bg-[#edf5fd] rounded-[13px] border border-[#dadce0] shadow-[0_4px_16px_rgba(0,0,0,0.18)] overflow-hidden flex flex-col text-[#202124] w-full max-w-[285px] sm:w-[285px] flex-shrink-0 lg:translate-y-1 relative z-40 transition-transform duration-300 hover:scale-[1.01]">
+                  <div class="google-maps-card bg-[#edf5fd] rounded-[13px] border border-[#dadce0] shadow-[0_4px_16px_rgba(0,0,0,0.18)] overflow-hidden flex flex-col text-[#202124] w-full sm:w-[285px] sm:max-w-[285px] flex-shrink-0 lg:translate-y-1 relative z-40 transition-transform duration-300 hover:scale-[1.01]">
                     
                     <!-- Foto Topo Real da Loja (+B Farma Tapanã) -->
                     <div class="relative w-full aspect-[16/9] overflow-hidden bg-slate-100">
@@ -2033,7 +2122,7 @@
                         </svg>
                       </button>
 
-                      <img src="assets/images/farma-tapana.webp" alt="+B Farma (Tapanã)" class="w-full h-full object-cover block" loading="lazy">
+                      <img src="assets/Fotografias/Und. Tapanã/IAG_2278.webp" alt="+B Farma (Tapanã)" class="w-full h-full object-cover block" loading="lazy">
                     </div>
 
                     <!-- Header Info (Título, Avaliação, Categoria) -->
@@ -2424,20 +2513,25 @@
     // Suporte a Touch / Swipe Gestures no Hero Mobile
     if (heroSection) {
       let touchStartX = 0;
-      let touchEndX = 0;
+      let touchStartY = 0;
 
       heroSection.addEventListener('touchstart', (e) => {
         touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
       }, { passive: true });
 
       heroSection.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        const threshold = 40;
-        if (touchEndX < touchStartX - threshold) {
-          nextSlide();
-          resetAutoplay();
-        } else if (touchEndX > touchStartX + threshold) {
-          prevSlide();
+        const touchEndX = e.changedTouches[0].screenX;
+        const touchEndY = e.changedTouches[0].screenY;
+        const diffX = touchEndX - touchStartX;
+        const diffY = touchEndY - touchStartY;
+        const threshold = 35;
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > threshold) {
+          if (diffX < 0) {
+            nextSlide();
+          } else {
+            prevSlide();
+          }
           resetAutoplay();
         }
       }, { passive: true });
@@ -2877,14 +2971,53 @@
     });
   </script>
   <script>
-    document.querySelectorAll('.category-item').forEach(function(item) {
-      item.addEventListener('click', function() {
-        document.querySelectorAll('.category-item').forEach(function(el) {
-          el.classList.remove('is-active');
+    (function() {
+      const rail = document.getElementById('categoryRail');
+      if (rail) {
+        let isDown = false;
+        let startX = 0;
+        let scrollLeft = 0;
+        let hasDragged = false;
+
+        rail.addEventListener('mousedown', function(e) {
+          isDown = true;
+          hasDragged = false;
+          startX = e.pageX - rail.offsetLeft;
+          scrollLeft = rail.scrollLeft;
         });
-        this.classList.add('is-active');
+
+        window.addEventListener('mouseup', function() {
+          isDown = false;
+        });
+
+        rail.addEventListener('mousemove', function(e) {
+          if (!isDown) return;
+          const x = e.pageX - rail.offsetLeft;
+          const walk = (x - startX) * 1.5;
+          if (Math.abs(walk) > 5) {
+            hasDragged = true;
+            rail.scrollLeft = scrollLeft - walk;
+          }
+        });
+
+        rail.addEventListener('click', function(e) {
+          if (hasDragged) {
+            e.preventDefault();
+            e.stopPropagation();
+            hasDragged = false;
+          }
+        }, true);
+      }
+
+      document.querySelectorAll('.category-item').forEach(function(item) {
+        item.addEventListener('click', function() {
+          document.querySelectorAll('.category-item').forEach(function(el) {
+            el.classList.remove('is-active');
+          });
+          this.classList.add('is-active');
+        });
       });
-    });
+    })();
   </script>
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>
