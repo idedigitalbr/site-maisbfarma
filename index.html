@@ -1506,7 +1506,6 @@
 
         <!-- Links Institucionais (Direita — 11px, Peso 400 Regular / Suave) -->
         <div class="hidden md:flex items-center gap-5 lg:gap-7 font-normal text-white/85 text-[11px] tracking-normal">
-          <a href="#depoimentos" class="hover:text-white hover:underline transition-colors">Depoimentos</a>
           <button type="button" onclick="openOrderModal()" class="hover:text-white hover:underline transition-colors">iFood</button>
           <a href="https://grupomaisbarato.portaldetalentos.senior.com.br/" target="_blank" rel="noopener noreferrer" class="hover:text-white hover:underline transition-colors">Trabalhe Conosco</a>
         </div>
@@ -1552,12 +1551,8 @@
           <img src="assets/Logos/logo-maisb-farma.webp" alt="+B Farma | Cuidado, Saúde e Economia" class="h-8 sm:h-9 md:h-10 w-auto object-contain">
         </a>
 
-        <!-- Navegação Desktop Direita (Ofertas, CTA Pedir) -->
+        <!-- Navegação Desktop Direita (CTA Pedir) -->
         <nav class="nav-right" id="nav-right" aria-label="Navegação Direita">
-          <a href="#ofertas" class="nav-link">
-            <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"></path><path d="M7 7h.01"></path></svg>
-            <span>Ofertas</span>
-          </a>
           <button type="button" onclick="openOrderModal()" class="nav-btn-order" aria-label="Fazer Pedido">
             <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
             <span>Pedir agora</span>
@@ -1604,18 +1599,9 @@
             <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
             <span>Nossas Lojas</span>
           </a>
-          <a href="#ofertas" onclick="toggleMobileMenu()" class="drawer-link">
-            <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"></path><path d="M7 7h.01"></path></svg>
-            <span>Ofertas da Semana</span>
-            <span class="drawer-tag-red">Ofertas</span>
-          </a>
           <a href="#categorias" onclick="toggleMobileMenu()" class="drawer-link">
             <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="7" height="7" x="3" y="3" rx="1"></rect><rect width="7" height="7" x="14" y="3" rx="1"></rect><rect width="7" height="7" x="14" y="14" rx="1"></rect><rect width="7" height="7" x="3" y="14" rx="1"></rect></svg>
             <span>Categorias</span>
-          </a>
-          <a href="#faq" onclick="toggleMobileMenu()" class="drawer-link">
-            <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path></svg>
-            <span>Dúvidas Frequentes</span>
           </a>
         </nav>
       </div>
@@ -1623,10 +1609,6 @@
       <div class="drawer-section">
         <span class="drawer-section-title">Institucional &amp; Atendimento</span>
         <nav class="drawer-nav">
-          <a href="#depoimentos" onclick="toggleMobileMenu()" class="drawer-link">
-            <svg class="w-4 h-4 flex-shrink-0 text-brand-red" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-            <span>Depoimentos no Google</span>
-          </a>
           <button type="button" onclick="toggleMobileMenu(); setTimeout(openOrderModal, 350)" class="drawer-link text-left w-full">
             <svg class="w-4 h-4 flex-shrink-0 text-brand-red" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
             <span>Pedir no iFood</span>
@@ -1722,91 +1704,18 @@
           <!-- Contêiner de Slides -->
           <div class="relative w-full h-full">
 
-            <!-- Slide 01 — INSTITUCIONAL: Todos os dias cuidando de você -->
-            <div class="hero-slide" data-index="0">
-              <img src="assets/Pagina/S1%20TOPO%20HERO/1-banner-topo.webp" alt="+B Farma — Todos os dias cuidando de você" loading="eager" decoding="async">
-              <!-- Overlay de Conteúdo HTML -->
-              <div class="absolute inset-0 z-10 flex flex-col justify-end pb-16 sm:pb-20 md:pb-24 px-5 sm:px-8 md:px-12 lg:px-16 bg-gradient-to-t from-black/65 via-black/20 to-transparent">
-                <div class="max-w-2xl">
-                  <span class="inline-flex items-center gap-1.5 bg-brand-red/90 backdrop-blur-sm text-white text-[10px] sm:text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3 shadow">
-                    <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path></svg>
-                    Farmácia de confiança em Belém/PA
-                  </span>
-                  <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight drop-shadow mb-2 sm:mb-3">
-                    Todos os dias<br>cuidando de você.
-                  </h1>
-                  <p class="text-sm sm:text-base text-white/85 leading-relaxed mb-4 sm:mb-5 max-w-md drop-shadow hidden sm:block">
-                    Saúde, beleza e bem-estar com atendimento próximo e preços acessíveis. Unidades Plaza e Tapanã.
-                  </p>
-                  <div class="flex flex-wrap gap-2.5 sm:gap-3">
-                     <a href="#sobre" class="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 bg-brand-red hover:bg-brand-red-hover text-white text-xs sm:text-sm font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-95 transition-all duration-200">
-                       <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M20 14a8 8 0 1 1-2.34-5.66"></path><path d="M20 4v6h-6"></path><path d="M12 8v4l2.5 1.5"></path></svg>
-                       Conheça a +B Farma
-                     </a>
-                     <button type="button" onclick="openOrderModal()" class="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 bg-white/15 hover:bg-white/25 backdrop-blur-md text-white text-xs sm:text-sm font-bold rounded-xl border border-white/30 hover:border-white/50 transition-all duration-200">
-                       <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 0-8 0"></path></svg>
-                       Pedir agora
-                     </button>
-                  </div>
-                </div>
-              </div>
+            <!-- Slide 01 — INSTITUCIONAL: Aqui tem tudo para sua saúde e bem-estar -->
+            <div class="hero-slide active" data-index="0">
+              <a href="#sobre" class="block w-full h-full focus:outline-none" aria-label="Conheça a +B Farma: Aqui tem tudo para sua saúde e bem-estar em um só lugar">
+                <img src="assets/Pagina/S1%20TOPO%20HERO/1bannertopo.webp" alt="+B Farma — Aqui tem tudo para sua saúde e bem-estar em um só lugar" loading="eager" fetchpriority="high" decoding="async">
+              </a>
             </div>
 
-            <!-- Slide 02 — PROXIMIDADE: arte 03 do material original -->
+            <!-- Slide 02 — PRATICIDADE: Soluções que facilitam sua rotina -->
             <div class="hero-slide" data-index="1">
-              <img src="assets/Pagina/S1%20TOPO%20HERO/2-banner-topo.webp" alt="+B Farma — Farmácia perto de você" loading="lazy" decoding="async">
-              <div class="absolute inset-0 z-10 flex flex-col justify-end pb-16 sm:pb-20 md:pb-24 px-5 sm:px-8 md:px-12 lg:px-16 bg-gradient-to-t from-black/65 via-black/20 to-transparent">
-                <div class="max-w-2xl">
-                  <span class="inline-flex items-center gap-1.5 bg-brand-red/90 backdrop-blur-sm text-white text-[10px] sm:text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3 shadow">
-                    <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"></path><path d="M7 7h.01"></path></svg>
-                    Farmácia perto de você
-                  </span>
-                  <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight drop-shadow mb-2 sm:mb-3">
-                    Farmácia perto<br>de você.
-                  </h2>
-                  <p class="text-sm sm:text-base text-white/85 leading-relaxed mb-4 sm:mb-5 max-w-md drop-shadow hidden sm:block">
-                    Um ambiente acolhedor para cuidar melhor. Encontre a unidade mais conveniente para sua rotina.
-                  </p>
-                  <div class="flex flex-wrap gap-2.5 sm:gap-3">
-                     <a href="#filiais" class="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 bg-brand-red hover:bg-brand-red-hover text-white text-xs sm:text-sm font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-95 transition-all duration-200">
-                       <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                       Encontre uma loja
-                     </a>
-                     <button type="button" onclick="openOrderModal()" class="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 bg-white/15 hover:bg-white/25 backdrop-blur-md text-white text-xs sm:text-sm font-bold rounded-xl border border-white/30 hover:border-white/50 transition-all duration-200">
-                       <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 0-8 0"></path></svg>
-                       Pedir agora
-                     </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 03 — CAMPANHA: arte 08 do material original -->
-            <div class="hero-slide active" data-index="2">
-              <img src="assets/Pagina/S1%20TOPO%20HERO/3-banner-topo.webp" alt="+B Farma — Toda quinta tem uma razão especial" loading="lazy" decoding="async">
-              <div class="absolute inset-0 z-10 flex flex-col justify-end pb-16 sm:pb-20 md:pb-24 px-5 sm:px-8 md:px-12 lg:px-16 bg-gradient-to-t from-black/65 via-black/20 to-transparent">
-                <div class="max-w-2xl">
-                  <span class="inline-flex items-center gap-1.5 bg-brand-red/90 backdrop-blur-sm text-white text-[10px] sm:text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3 shadow">
-                    <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                    Campanha +B Farma
-                  </span>
-                  <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight drop-shadow mb-2 sm:mb-3">
-                    Toda quinta tem uma<br>razão especial.
-                  </h2>
-                  <p class="text-sm sm:text-base text-white/85 leading-relaxed mb-4 sm:mb-5 max-w-md drop-shadow hidden sm:block">
-                    Consulte as condições da campanha vigente e encontre ofertas para cuidar da sua saúde e bem-estar.
-                  </p>
-                  <div class="flex flex-wrap gap-2.5 sm:gap-3">
-                     <a href="#ofertas" class="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 bg-brand-red hover:bg-brand-red-hover text-white text-xs sm:text-sm font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-95 transition-all duration-200">
-                       <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M12 2H2v10l9.29 9.29a2 2 0 0 0 2.82 0l6.58-6.58a2 2 0 0 0 0-2.82L12 2Z"></path><path d="M7 7h.01"></path></svg>
-                       Confira a campanha
-                     </a>
-                     <button type="button" onclick="openOrderModal()" class="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 bg-white/15 hover:bg-white/25 backdrop-blur-md text-white text-xs sm:text-sm font-bold rounded-xl border border-white/30 hover:border-white/50 transition-all duration-200">
-                       Pedir agora
-                     </button>
-                  </div>
-                </div>
-              </div>
+              <a href="#filiais" class="block w-full h-full focus:outline-none" aria-label="Nossas Lojas: Praticidade para o seu dia. Soluções que facilitam sua rotina">
+                <img src="assets/Pagina/S1%20TOPO%20HERO/2bannertopo.webp" alt="+B Farma — Praticidade para o seu dia. Soluções que facilitam sua rotina" loading="lazy" decoding="async">
+              </a>
             </div>
 
           </div>
@@ -1820,115 +1729,14 @@
             <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
           </button>
 
-          <!-- Indicadores de Pontos (3 Dots) -->
+          <!-- Indicadores de Pontos (2 Dots) -->
           <div class="absolute bottom-3 sm:bottom-4 md:bottom-5 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/20 shadow-lg">
-            <button onclick="setSlide(0); resetAutoplay();" class="slide-dot w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300 flex-shrink-0" aria-label="Slide 1"></button>
+            <button onclick="setSlide(0); resetAutoplay();" class="slide-dot w-6 sm:w-8 md:w-9 h-2 sm:h-2.5 rounded-full bg-brand-red transition-all duration-300 flex-shrink-0" aria-label="Slide 1"></button>
             <button onclick="setSlide(1); resetAutoplay();" class="slide-dot w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300 flex-shrink-0" aria-label="Slide 2"></button>
-            <button onclick="setSlide(2); resetAutoplay();" class="slide-dot w-6 sm:w-8 md:w-9 h-2 sm:h-2.5 rounded-full bg-brand-red transition-all duration-300 flex-shrink-0" aria-label="Slide 3"></button>
           </div>
 
         </div>
       </div>
-    </section>
-
-
-    <!-- ==========================================================================
-         S3 — CARDS DE OFERTAS / CAMPANHAS EM DESTAQUE (CONTIDO NO CONTAINER 1280px)
-         ========================================================================== -->
-    <section id="ofertas" class="py-12 sm:py-16 md:py-20 bg-[#edf5fd] overflow-hidden w-full scroll-mt-24 md:scroll-mt-28">
-      
-      <div class="bf-container">
-        <!-- Cabeçalho da Seção -->
-        <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12 px-2">
-          <span class="ds-eyebrow text-xs font-bold uppercase tracking-widest text-brand-red block mb-2">NÃO PERCA</span>
-          <h2 class="ds-headline text-2xl sm:text-3xl md:text-[38px] font-bold text-bf-ink tracking-tight leading-tight break-words">
-            Ofertas que <span class="text-brand-red">rendem mais</span> pra você.
-          </h2>
-        </div>
-
-        <!-- Carrossel de Ofertas com Botões Arrow Idênticos ao Hero Banner -->
-        <div class="relative group/banners">
-          
-          <!-- Botão Navegação Anterior (Esquerda) — Mesmo estilo do Hero Banner -->
-          <button type="button" onclick="scrollBanners('left')" class="absolute left-2 sm:left-3 md:left-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-black/40 hover:bg-brand-red text-white backdrop-blur-md border border-white/20 shadow-bf-floating flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 z-20 focus:outline-none focus:ring-2 focus:ring-brand-red cursor-pointer" aria-label="Ofertas anteriores">
-            <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
-          </button>
-
-          <!-- Botão Navegação Próximo (Direita) — Mesmo estilo do Hero Banner -->
-          <button type="button" onclick="scrollBanners('right')" class="absolute right-2 sm:right-3 md:right-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-black/40 hover:bg-brand-red text-white backdrop-blur-md border border-white/20 shadow-bf-floating flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 z-20 focus:outline-none focus:ring-2 focus:ring-brand-red cursor-pointer" aria-label="Próximas ofertas">
-            <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
-          </button>
-
-          <!-- Trilho Horizontal de Cards (Contido no container, 3 cards no desktop, snap suave) -->
-          <div id="bannersTrack" class="w-full flex gap-4 sm:gap-5 md:gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar py-2 cursor-grab select-none" style="-webkit-overflow-scrolling: touch;">
-            
-            <!-- Card de Oferta 01 -->
-            <div data-banner-card="0" class="snap-start flex-shrink-0 w-[84vw] sm:w-[calc(50%-10px)] md:w-[calc((100%-48px)/3)] rounded-2xl md:rounded-3xl overflow-hidden shadow-bf-subtle hover:shadow-bf-card transition-all duration-300 hover:scale-[1.02] bg-brand-red select-none">
-              <a href="#categorias" class="block group" aria-label="Ver oferta de dermocosméticos e categorias">
-                <img src="assets/Pagina/S3%20BANNERZINHOS/baninhos%20(1).webp" alt="Oferta +B Farma — Cuidado com a Pele até 30% OFF" class="w-full h-auto object-cover block transition-transform duration-300 group-hover:scale-[1.02]" loading="lazy" decoding="async" draggable="false">
-              </a>
-            </div>
-
-            <!-- Card de Oferta 02 -->
-            <div data-banner-card="1" class="snap-start flex-shrink-0 w-[84vw] sm:w-[calc(50%-10px)] md:w-[calc((100%-48px)/3)] rounded-2xl md:rounded-3xl overflow-hidden shadow-bf-subtle hover:shadow-bf-card transition-all duration-300 hover:scale-[1.02] bg-brand-red select-none">
-              <a href="javascript:void(0)" onclick="openOrderModal()" class="block group" aria-label="Pedir produtos da oferta Leve 3 Pague 2 pelo WhatsApp">
-                <img src="assets/Pagina/S3%20BANNERZINHOS/baninhos%20(2).webp" alt="Oferta +B Farma — Higiene do Dia a Dia Leve 3 Pague 2" class="w-full h-auto object-cover block transition-transform duration-300 group-hover:scale-[1.02]" loading="lazy" decoding="async" draggable="false">
-              </a>
-            </div>
-
-            <!-- Card de Oferta 03 -->
-            <div data-banner-card="2" class="snap-start flex-shrink-0 w-[84vw] sm:w-[calc(50%-10px)] md:w-[calc((100%-48px)/3)] rounded-2xl md:rounded-3xl overflow-hidden shadow-bf-subtle hover:shadow-bf-card transition-all duration-300 hover:scale-[1.02] bg-brand-red select-none">
-              <a href="javascript:void(0)" onclick="openOrderModal()" class="block group" aria-label="Pedir produtos com economia de até 20% OFF pelo WhatsApp">
-                <img src="assets/Pagina/S3%20BANNERZINHOS/baninhos%20(3).webp" alt="Oferta +B Farma — Mais Economia pra Você até 20% OFF" class="w-full h-auto object-cover block transition-transform duration-300 group-hover:scale-[1.02]" loading="lazy" decoding="async" draggable="false">
-              </a>
-            </div>
-
-            <!-- Card de Oferta 04 -->
-            <div data-banner-card="3" class="snap-start flex-shrink-0 w-[84vw] sm:w-[calc(50%-10px)] md:w-[calc((100%-48px)/3)] rounded-2xl md:rounded-3xl overflow-hidden shadow-bf-subtle hover:shadow-bf-card transition-all duration-300 hover:scale-[1.02] bg-brand-red select-none">
-              <a href="javascript:void(0)" onclick="openOrderModal()" class="block group" aria-label="Pedir produtos de beleza e autocuidado pelo WhatsApp">
-                <img src="assets/Pagina/S3%20BANNERZINHOS/baninhos%20(4).webp" alt="Oferta +B Farma — Beleza e Autocuidado até 30% OFF" class="w-full h-auto object-cover block transition-transform duration-300 group-hover:scale-[1.02]" loading="lazy" decoding="async" draggable="false">
-              </a>
-            </div>
-
-            <!-- Card de Oferta 05 -->
-            <div data-banner-card="4" class="snap-start flex-shrink-0 w-[84vw] sm:w-[calc(50%-10px)] md:w-[calc((100%-48px)/3)] rounded-2xl md:rounded-3xl overflow-hidden shadow-bf-subtle hover:shadow-bf-card transition-all duration-300 hover:scale-[1.02] bg-brand-red select-none">
-              <a href="javascript:void(0)" onclick="openOrderModal()" class="block group" aria-label="Ver ofertas e campanhas da semana">
-                <img src="assets/Pagina/S3%20BANNERZINHOS/baninhos%20(5).webp" alt="Oferta +B Farma — Campanhas e Ofertas da Semana" class="w-full h-auto object-cover block transition-transform duration-300 group-hover:scale-[1.02]" loading="lazy" decoding="async" draggable="false">
-              </a>
-            </div>
-
-          </div>
-
-          <!-- Indicadores de Pontos (Dots) -->
-          <div class="flex items-center justify-center gap-1.5 sm:gap-2 mt-5 sm:mt-6" id="bannersDots">
-            <button type="button" onclick="scrollToBanner(0)" class="banner-dot w-6 sm:w-8 h-2 sm:h-2.5 rounded-full bg-brand-red transition-all duration-300 flex-shrink-0 focus:outline-none" aria-label="Ir para banner 1"></button>
-            <button type="button" onclick="scrollToBanner(1)" class="banner-dot w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-bf-ink/20 hover:bg-bf-ink/40 transition-all duration-300 flex-shrink-0 focus:outline-none" aria-label="Ir para banner 2"></button>
-            <button type="button" onclick="scrollToBanner(2)" class="banner-dot w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-bf-ink/20 hover:bg-bf-ink/40 transition-all duration-300 flex-shrink-0 focus:outline-none" aria-label="Ir para banner 3"></button>
-            <button type="button" onclick="scrollToBanner(3)" class="banner-dot w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-bf-ink/20 hover:bg-bf-ink/40 transition-all duration-300 flex-shrink-0 focus:outline-none" aria-label="Ir para banner 4"></button>
-            <button type="button" onclick="scrollToBanner(4)" class="banner-dot w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-bf-ink/20 hover:bg-bf-ink/40 transition-all duration-300 flex-shrink-0 focus:outline-none" aria-label="Ir para banner 5"></button>
-          </div>
-
-        </div>
-
-        <!-- Banner Promocional Inferior — Posicionado logo após os cards de ofertas -->
-        <div class="mt-8 sm:mt-12">
-          <div class="category-cta">
-            <div class="category-cta-copy">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="tag" aria-hidden="true" class="lucide lucide-tag"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"></path><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"></circle></svg>
-              <div>
-                <p class="category-cta-kicker">Mais saúde para o seu dia a dia</p>
-                <p class="category-cta-title">Aproveite nossas ofertas e cuide de quem você ama.</p>
-              </div>
-            </div>
-            <button type="button" class="category-cta-button" onclick="openOrderModal()" aria-label="Pedir agora">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" data-lucide="shopping-bag" aria-hidden="true" class="lucide lucide-shopping-bag flex-shrink-0"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
-              <span>Pedir agora</span>
-            </button>
-          </div>
-        </div>
-
-      </div>
-
     </section>
 
 
@@ -1948,7 +1756,7 @@
               Cuidado que está presente no <span class="text-brand-red">seu dia a dia.</span>
             </h2>
             <p class="ds-subtitle text-sm sm:text-base text-bf-body leading-relaxed mb-6 max-w-xl">
-              Somos o +B Farma, a farmácia do grupo +B, feita para cuidar da sua saúde com qualidade, confiança e atendimento próximo de verdade.
+              A +B Farma foi feita para cuidar da sua saúde com qualidade, confiança e atendimento próximo.
             </p>
 
             <!-- 3 Itens de Destaque com Círculo Vermelho e Cruz/Plus Branca -->
@@ -1978,7 +1786,7 @@
           <!-- Coluna Foto Institucional Equipe +B Farma com Botão de Play (7 colunas) -->
           <div class="lg:col-span-7 w-full min-w-0">
             <div onclick="openVideoModal()" class="relative w-full rounded-2xl sm:rounded-3xl lg:rounded-[32px] overflow-hidden shadow-bf-subtle border border-bf-line/60 group/videobtn cursor-pointer select-none" role="button" tabindex="0" aria-label="Assistir ao vídeo institucional da +B Farma" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openVideoModal(); }">
-              <img src="assets/Pagina/S3%20SOBRE/sobre-farma.webp" alt="Equipe +B Farma — Cuidado que está presente no seu dia a dia" class="w-full h-auto object-cover block transition-transform duration-700 ease-out group-hover/videobtn:scale-105" loading="lazy" decoding="async">
+              <img src="assets/Pagina/S3%20SOBRE/thumb-video.webp" alt="Equipe +B Farma — Cuidado que está presente no seu dia a dia" class="w-full h-auto object-cover block transition-transform duration-700 ease-out group-hover/videobtn:scale-105" loading="lazy" decoding="async">
               
               <!-- Overlay suave no hover -->
               <div class="absolute inset-0 bg-black/10 group-hover/videobtn:bg-black/25 transition-colors duration-300"></div>
@@ -2011,7 +1819,7 @@
         
         <div class="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-bf-subtle hover:shadow-bf-card transition-all duration-300 bg-white select-none group/hbanner">
           <button type="button" onclick="openOrderModal()" class="block w-full cursor-pointer text-left focus:outline-none focus:ring-2 focus:ring-brand-red transition-opacity duration-300 hover:opacity-95" aria-label="Pedir no iFood — Escolha sua unidade e faça seu pedido">
-            <img src="assets/Pagina/S4%20BANNERS%20HORIZONTAIS/banner-ifood-com-botao.webp" alt="+B Farma no iFood — Escolha sua unidade e faça seu pedido online com entrega rápida" width="1920" height="658" class="w-full h-auto object-cover block" loading="eager" decoding="async" draggable="false">
+            <img src="assets/Pagina/S4%20BANNERS%20HORIZONTAIS/banner-ifood.webp" alt="+B Farma no iFood — Escolha sua unidade e faça seu pedido online com entrega rápida" width="1920" height="658" class="w-full h-auto object-cover block" loading="eager" decoding="async" draggable="false">
           </button>
         </div>
 
@@ -2020,532 +1828,9 @@
 
 
     <!-- ==========================================================================
-         S7 — FAQ (DÚVIDAS FREQUENTES COM ACORDEÃO)
+         S8 — FILIAIS & UNIDADES PLAZA / TAPANÃ
          ========================================================================== -->
-    <section id="faq" class="py-12 sm:py-16 md:py-20 bg-[#edf5fd] scroll-mt-24 md:scroll-mt-28">
-      <div class="bf-container">
-        
-        <div class="text-center max-w-2xl mx-auto mb-6 sm:mb-8 px-2">
-          <span class="ds-eyebrow text-xs font-bold uppercase tracking-widest text-brand-red block mb-2 text-center">DÚVIDAS FREQUENTES</span>
-          <h2 class="ds-headline text-2xl sm:text-3xl md:text-[38px] font-bold text-bf-ink tracking-tight leading-tight break-words text-center">
-            Perguntas que <span class="text-brand-red">podem te ajudar.</span>
-          </h2>
-          <p class="ds-subtitle text-xs sm:text-sm text-bf-muted mt-2 text-center mx-auto">Tire suas principais dúvidas sobre compras, entregas, receitas e funcionamento.</p>
-        </div>
-
-        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 items-start">
-          
-          <!-- Coluna 1 -->
-          <div class="space-y-3 sm:space-y-4">
-            <!-- Accordion 1 -->
-            <div class="faq-item bg-[#edf5fd] rounded-xl border border-bf-line shadow-xs overflow-hidden transition-all duration-200">
-              <button onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faqAnswer1" class="w-full py-3.5 sm:py-4 px-4 sm:px-6 text-left flex items-center justify-between gap-3 sm:gap-4 font-semibold text-xs sm:text-sm text-bf-ink transition-colors">
-                <span>Como funciona o Clube +B e como posso me cadastrar?</span>
-                <svg class="faq-chevron w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-              </button>
-              <div id="faqAnswer1" class="faq-content-wrapper">
-                <div class="faq-content-inner">
-                  <div class="px-4 sm:px-6 pb-4 pt-3 text-xs text-bf-body leading-relaxed">
-                  Consulte a equipe da +B Farma para conhecer as condições e formas de cadastro do Clube +B em cada unidade.
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Accordion 2 -->
-            <div class="faq-item bg-[#edf5fd] rounded-xl border border-bf-line shadow-xs overflow-hidden transition-all duration-200">
-              <button onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faqAnswer2" class="w-full py-3.5 sm:py-4 px-4 sm:px-6 text-left flex items-center justify-between gap-3 sm:gap-4 font-semibold text-xs sm:text-sm text-bf-ink transition-colors">
-                <span>Quais formas de pagamento são aceitas nas filiais?</span>
-                <svg class="faq-chevron w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-              </button>
-              <div id="faqAnswer2" class="faq-content-wrapper">
-                <div class="faq-content-inner">
-                  <div class="px-4 sm:px-6 pb-4 pt-3 text-xs text-bf-body leading-relaxed">
-                  As formas de pagamento podem variar por unidade. Confirme as opções disponíveis diretamente com a equipe da Plaza ou Tapanã.
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Accordion 3 -->
-            <div class="faq-item bg-[#edf5fd] rounded-xl border border-bf-line shadow-xs overflow-hidden transition-all duration-200">
-              <button onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faqAnswer3" class="w-full py-3.5 sm:py-4 px-4 sm:px-6 text-left flex items-center justify-between gap-3 sm:gap-4 font-semibold text-xs sm:text-sm text-bf-ink transition-colors">
-                <span>Como funciona o compre e retire na loja?</span>
-                <svg class="faq-chevron w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-              </button>
-              <div id="faqAnswer3" class="faq-content-wrapper">
-                <div class="faq-content-inner">
-                  <div class="px-4 sm:px-6 pb-4 pt-3 text-xs text-bf-body leading-relaxed">
-                  Você pode enviar sua lista de produtos ou receita médica pelo nosso canal de atendimento e combinar diretamente com a filial Plaza ou Tapanã a melhor forma de receber ou retirar seu pedido.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Coluna 2 -->
-          <div class="space-y-3 sm:space-y-4">
-            <!-- Accordion 4 -->
-            <div class="faq-item bg-[#edf5fd] rounded-xl border border-bf-line shadow-xs overflow-hidden transition-all duration-200">
-              <button onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faqAnswer4" class="w-full py-3.5 sm:py-4 px-4 sm:px-6 text-left flex items-center justify-between gap-3 sm:gap-4 font-semibold text-xs sm:text-sm text-bf-ink transition-colors">
-                <span>A +B Farma realiza entrega em domicílio (Delivery)?</span>
-                <svg class="faq-chevron w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-              </button>
-              <div id="faqAnswer4" class="faq-content-wrapper">
-                <div class="faq-content-inner">
-                  <div class="px-4 sm:px-6 pb-4 pt-3 text-xs text-bf-body leading-relaxed">
-                  Sim. A +B Farma está no iFood. Escolha entre as unidades Plaza e Tapanã e consulte diretamente no aplicativo a disponibilidade de produtos e entrega para sua região.
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Accordion 5 -->
-            <div class="faq-item bg-[#edf5fd] rounded-xl border border-bf-line shadow-xs overflow-hidden transition-all duration-200">
-              <button onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faqAnswer5" class="w-full py-3.5 sm:py-4 px-4 sm:px-6 text-left flex items-center justify-between gap-3 sm:gap-4 font-semibold text-xs sm:text-sm text-bf-ink transition-colors">
-                <span>Como faço um pedido pelo WhatsApp?</span>
-                <svg class="faq-chevron w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-              </button>
-              <div id="faqAnswer5" class="faq-content-wrapper">
-                <div class="faq-content-inner">
-                  <div class="px-4 sm:px-6 pb-4 pt-3 text-xs text-bf-body leading-relaxed">
-                  Abra o botão <strong>Pedir agora</strong>, escolha a unidade Plaza ou Tapanã e envie sua dúvida ou lista de produtos diretamente para a equipe.
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Accordion 6 -->
-            <div class="faq-item bg-[#edf5fd] rounded-xl border border-bf-line shadow-xs overflow-hidden transition-all duration-200">
-              <button onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faqAnswer6" class="w-full py-3.5 sm:py-4 px-4 sm:px-6 text-left flex items-center justify-between gap-3 sm:gap-4 font-semibold text-xs sm:text-sm text-bf-ink transition-colors">
-                <span>Onde ficam as unidades da +B Farma?</span>
-                <svg class="faq-chevron w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-              </button>
-              <div id="faqAnswer6" class="faq-content-wrapper">
-                <div class="faq-content-inner">
-                  <div class="px-4 sm:px-6 pb-4 pt-3 text-xs text-bf-body leading-relaxed">
-                  Temos unidades no Plaza, na Av. Gov. José Malcher, e no Tapanã, na Rod. do Tapanã. Consulte os cards de lojas para abrir a rota e conferir informações atualizadas.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- HISTORICAL_TESTIMONIALS_SLOT -->
-    <!-- ==========================================================================
-         S8 — AVALIAÇÕES / PROVA SOCIAL GOOGLE MAPS (DUAL-ROW INFINITE MARQUEE)
-         ========================================================================== -->
-    <section id="depoimentos" class="bg-[#1C1D22] text-white pt-12 sm:pt-16 pb-6 sm:pb-8 rounded-t-[28px] sm:rounded-t-[36px] relative overflow-hidden scroll-mt-24 md:scroll-mt-28 shadow-none">
-      
-      <!-- Cabeçalho da Seção -->
-      <div class="bf-container mb-8 sm:mb-10">
-        <div class="text-center max-w-2xl mx-auto px-2">
-          <span class="ds-eyebrow text-xs font-bold uppercase tracking-widest text-brand-red block mb-2 text-center">AVALIAÇÕES NO GOOGLE</span>
-          <h2 class="text-xl sm:text-2xl md:text-[28px] font-bold text-white tracking-tight leading-snug text-center mb-2" style="color: #FFFFFF !important; font-family: var(--font-display, 'Lufga', sans-serif);">
-            O que nossos clientes dizem no Google.
-          </h2>
-          <div class="flex items-center justify-center gap-2 mt-3 flex-wrap">
-            <div class="flex items-center gap-1 text-[#F59E0B]">
-              <svg class="w-4 h-4 fill-[#F59E0B] text-[#F59E0B]" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              <svg class="w-4 h-4 fill-[#F59E0B] text-[#F59E0B]" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              <svg class="w-4 h-4 fill-[#F59E0B] text-[#F59E0B]" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              <svg class="w-4 h-4 fill-[#F59E0B] text-[#F59E0B]" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              <svg class="w-4 h-4 fill-[#F59E0B] text-[#F59E0B]" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            </div>
-            <span class="text-xs sm:text-sm font-semibold text-slate-200">Classificação 4.9 de 5.0 estrelas</span>
-            <span class="text-slate-500">·</span>
-            <span class="text-xs sm:text-sm text-bf-muted-light">Unidades Plaza &amp; Tapanã</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="relative w-full overflow-hidden select-none py-2">
-
-        <!-- Máscaras Laterais Escuras de Transição Suave -->
-        <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-24 md:w-36 bg-gradient-to-r from-[#1C1D22] via-[#1C1D22]/80 to-transparent z-20"></div>
-        <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-24 md:w-36 bg-gradient-to-l from-[#1C1D22] via-[#1C1D22]/80 to-transparent z-20"></div>
-
-        <!-- LINHA 1 (Scroll Contínuo para a Esquerda) -->
-        <div class="animate-marquee-left gap-4 sm:gap-5 mb-4 sm:mb-5">
-
-          <!-- Card 1: Luciana Nascimento -->
-          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#25272E] hover:bg-[#2e313a] border border-white/10 hover:border-white/20 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25">
-            <div class="flex items-center gap-3 mb-2.5">
-              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&amp;auto=format&amp;fit=crop&amp;q=80" alt="Luciana Nascimento" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border border-white/10 flex-shrink-0">
-              <div class="min-w-0">
-                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Luciana Nascimento</h5>
-                <span class="text-[10px] sm:text-[11px] text-bf-muted-light">1 avaliação</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-1.5 text-[#F59E0B] mb-2">
-              <div class="flex items-center gap-0.5">
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <span class="text-[10px] sm:text-[11px] text-bf-muted-light">há 2 semanas</span>
-            </div>
-            <p class="text-xs sm:text-[13px] text-[#E7E7E7] leading-relaxed font-normal break-words line-clamp-3">
-              "Ótimo atendimento e preços muito bons"
-            </p>
-          </div>
-
-          <!-- Card 2: Karlene Suelen -->
-          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#25272E] hover:bg-[#2e313a] border border-white/10 hover:border-white/20 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25">
-            <div class="flex items-center gap-3 mb-2.5">
-              <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#246D65] text-white font-bold flex items-center justify-center text-sm flex-shrink-0 shadow-xs">K</div>
-              <div class="min-w-0">
-                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Karlene Suelen</h5>
-                <span class="text-[10px] sm:text-[11px] text-bf-muted-light">2 avaliações</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-1.5 text-[#F59E0B] mb-2">
-              <div class="flex items-center gap-0.5">
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <span class="text-[10px] sm:text-[11px] text-bf-muted-light">há 1 semana</span>
-            </div>
-            <p class="text-xs sm:text-[13px] text-[#E7E7E7] leading-relaxed font-normal break-words line-clamp-3">
-              "Excelente atendimento e preço bom."
-            </p>
-          </div>
-
-          <!-- Card 3: Giulia Tochetto Castagneti -->
-          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#25272E] hover:bg-[#2e313a] border border-white/10 hover:border-white/20 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25">
-            <div class="flex items-center gap-3 mb-2.5">
-              <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#9333EA] text-white font-bold flex items-center justify-center text-sm flex-shrink-0 shadow-xs">G</div>
-              <div class="min-w-0">
-                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Giulia Tochetto Castagneti</h5>
-                <span class="text-[10px] sm:text-[11px] text-bf-muted-light">1 avaliação</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-1.5 text-[#F59E0B] mb-2">
-              <div class="flex items-center gap-0.5">
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <span class="text-[10px] sm:text-[11px] text-bf-muted-light">há 1 semana</span>
-            </div>
-            <p class="text-xs sm:text-[13px] text-[#E7E7E7] leading-relaxed font-normal break-words line-clamp-3">
-              "Atendimento maravilhoso e preços justos, recomendo!"
-            </p>
-          </div>
-
-          <!-- Card 4: Tamires Mesquita -->
-          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#25272E] hover:bg-[#2e313a] border border-white/10 hover:border-white/20 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25">
-            <div class="flex items-center gap-3 mb-2.5">
-              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&amp;auto=format&amp;fit=crop&amp;q=80" alt="Tamires Mesquita" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border border-white/10 flex-shrink-0">
-              <div class="min-w-0">
-                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Tamires Mesquita</h5>
-                <span class="text-[10px] sm:text-[11px] text-bf-muted-light">2 avaliações</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-1.5 text-[#F59E0B] mb-2">
-              <div class="flex items-center gap-0.5">
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <span class="text-[10px] sm:text-[11px] text-bf-muted-light">há 3 meses</span>
-            </div>
-            <p class="text-xs sm:text-[13px] text-[#E7E7E7] leading-relaxed font-normal break-words line-clamp-3">
-              "Onde você encontra medicamentos e produtos de beleza e cuidados com a pele com excelente preço."
-            </p>
-          </div>
-
-          <!-- Card 5: Camila Ferreira -->
-          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#25272E] hover:bg-[#2e313a] border border-white/10 hover:border-white/20 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25">
-            <div class="flex items-center gap-3 mb-2.5">
-              <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#555866] text-white font-bold flex items-center justify-center text-sm flex-shrink-0 shadow-xs">E</div>
-              <div class="min-w-0">
-                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Camila Ferreira</h5>
-                <span class="text-[10px] sm:text-[11px] text-bf-muted-light">3 avaliações</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-1.5 text-[#F59E0B] mb-2">
-              <div class="flex items-center gap-0.5">
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <span class="text-[10px] sm:text-[11px] text-bf-muted-light">há 11 meses</span>
-            </div>
-            <p class="text-xs sm:text-[13px] text-[#E7E7E7] leading-relaxed font-normal break-words line-clamp-3">
-              "Encontrei os medicamentos que precisava e fui muito bem atendida pela equipe."
-            </p>
-          </div>
-
-          <!-- DUPLICAÇÃO DA LINHA 1 (SEAMLESS INFINITE LOOP) -->
-          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#25272E] hover:bg-[#2e313a] border border-white/10 hover:border-white/20 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25" aria-hidden="true">
-            <div class="flex items-center gap-3 mb-2.5">
-              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&amp;auto=format&amp;fit=crop&amp;q=80" alt="Luciana Nascimento" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border border-white/10 flex-shrink-0">
-              <div class="min-w-0">
-                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Luciana Nascimento</h5>
-                <span class="text-[10px] sm:text-[11px] text-bf-muted-light">1 avaliação</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-1.5 text-[#F59E0B] mb-2">
-              <div class="flex items-center gap-0.5">
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <span class="text-[10px] sm:text-[11px] text-bf-muted-light">há 2 semanas</span>
-            </div>
-            <p class="text-xs sm:text-[13px] text-[#E7E7E7] leading-relaxed font-normal break-words line-clamp-3">
-              "Ótimo atendimento e preços muito bons&nbsp;"
-            </p>
-          </div>
-
-          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#25272E] hover:bg-[#2e313a] border border-white/10 hover:border-white/20 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25" aria-hidden="true">
-            <div class="flex items-center gap-3 mb-2.5">
-              <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#246D65] text-white font-bold flex items-center justify-center text-sm flex-shrink-0 shadow-xs">K</div>
-              <div class="min-w-0">
-                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Karlene Suelen</h5>
-                <span class="text-[10px] sm:text-[11px] text-bf-muted-light">2 avaliações</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-1.5 text-[#F59E0B] mb-2">
-              <div class="flex items-center gap-0.5">
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <span class="text-[10px] sm:text-[11px] text-bf-muted-light">há 1 semana</span>
-            </div>
-            <p class="text-xs sm:text-[13px] text-[#E7E7E7] leading-relaxed font-normal break-words line-clamp-3">
-              "Excelente atendimento e preço bom."
-            </p>
-          </div>
-
-          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#25272E] hover:bg-[#2e313a] border border-white/10 hover:border-white/20 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25" aria-hidden="true">
-            <div class="flex items-center gap-3 mb-2.5">
-              <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#9333EA] text-white font-bold flex items-center justify-center text-sm flex-shrink-0 shadow-xs">G</div>
-              <div class="min-w-0">
-                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Giulia Tochetto Castagneti</h5>
-                <span class="text-[10px] sm:text-[11px] text-bf-muted-light">1 avaliação</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-1.5 text-[#F59E0B] mb-2">
-              <div class="flex items-center gap-0.5">
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <span class="text-[10px] sm:text-[11px] text-bf-muted-light">há 1 semana</span>
-            </div>
-            <p class="text-xs sm:text-[13px] text-[#E7E7E7] leading-relaxed font-normal break-words line-clamp-3">
-              "Atendimento maravilhoso e preços justos, recomendo!"
-            </p>
-          </div>
-
-        </div>
-
-        <!-- LINHA 2 (Scroll Contínuo para a Direita) -->
-        <div class="animate-marquee-right gap-4 sm:gap-5">
-
-          <!-- Card 6: Alfredo Maidana -->
-          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#25272E] hover:bg-[#2e313a] border border-white/10 hover:border-white/20 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25">
-            <div class="flex items-center gap-3 mb-2.5">
-              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&amp;auto=format&amp;fit=crop&amp;q=80" alt="Alfredo Maidana" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border border-white/10 flex-shrink-0">
-              <div class="min-w-0">
-                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Alfredo Maidana</h5>
-                <span class="text-[10px] sm:text-[11px] text-bf-muted-light">1 avaliação</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-1.5 text-[#F59E0B] mb-2">
-              <div class="flex items-center gap-0.5">
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <span class="text-[10px] sm:text-[11px] text-bf-muted-light">há 1 semana</span>
-            </div>
-            <p class="text-xs sm:text-[13px] text-[#E7E7E7] leading-relaxed font-normal break-words line-clamp-3">
-              "Atendimento excelente, entrega pontual e ganhei um bombom."
-            </p>
-          </div>
-
-          <!-- Card 7: Marcos Oliveira -->
-          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#25272E] hover:bg-[#2e313a] border border-white/10 hover:border-white/20 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25">
-            <div class="flex items-center gap-3 mb-2.5">
-              <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#0284C7] text-white font-bold flex items-center justify-center text-sm flex-shrink-0 shadow-xs">l</div>
-              <div class="min-w-0">
-                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Marcos Oliveira</h5>
-                <span class="text-[10px] sm:text-[11px] text-bf-muted-light">1 avaliação</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-1.5 text-[#F59E0B] mb-2">
-              <div class="flex items-center gap-0.5">
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <span class="text-[10px] sm:text-[11px] text-bf-muted-light">há 2 semanas</span>
-            </div>
-            <p class="text-xs sm:text-[13px] text-[#E7E7E7] leading-relaxed font-normal break-words line-clamp-3">
-              "Ótimo atendimento, bons preços e muita variedade de medicamentos."
-            </p>
-          </div>
-
-          <!-- Card 8: Mauricio Pedroso Da Silva -->
-          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#25272E] hover:bg-[#2e313a] border border-white/10 hover:border-white/20 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25">
-            <div class="flex items-center gap-3 mb-2.5">
-              <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#EA580C] text-white font-bold flex items-center justify-center text-sm flex-shrink-0 shadow-xs">M</div>
-              <div class="min-w-0">
-                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Mauricio Pedroso Da Silva</h5>
-                <span class="text-[10px] sm:text-[11px] text-bf-muted-light">1 avaliação</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-1.5 text-[#F59E0B] mb-2">
-              <div class="flex items-center gap-0.5">
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <span class="text-[10px] sm:text-[11px] text-bf-muted-light">há 2 semanas</span>
-            </div>
-            <p class="text-xs sm:text-[13px] text-[#E7E7E7] leading-relaxed font-normal break-words line-clamp-3">
-              "Ótimo atendimento preço excelente"
-            </p>
-          </div>
-
-          <!-- Card 9: Adriano Branco -->
-          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#25272E] hover:bg-[#2e313a] border border-white/10 hover:border-white/20 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25">
-            <div class="flex items-center gap-3 mb-2.5">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&amp;auto=format&amp;fit=crop&amp;q=80" alt="Adriano Branco" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border border-white/10 flex-shrink-0">
-              <div class="min-w-0">
-                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Adriano Branco</h5>
-                <span class="text-[10px] sm:text-[11px] text-bf-muted-light">Guia Local · 15 avaliações</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-1.5 text-[#F59E0B] mb-2">
-              <div class="flex items-center gap-0.5">
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <span class="text-[10px] sm:text-[11px] text-bf-muted-light">há 2 semanas</span>
-            </div>
-            <p class="text-xs sm:text-[13px] text-[#E7E7E7] leading-relaxed font-normal break-words line-clamp-3">
-              "Ambiente impecável, farmacêuticos competentes e variedade total de medicamentos."
-            </p>
-          </div>
-
-          <!-- DUPLICAÇÃO DA LINHA 2 (SEAMLESS INFINITE LOOP) -->
-          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#25272E] hover:bg-[#2e313a] border border-white/10 hover:border-white/20 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25" aria-hidden="true">
-            <div class="flex items-center gap-3 mb-2.5">
-              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&amp;auto=format&amp;fit=crop&amp;q=80" alt="Alfredo Maidana" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border border-white/10 flex-shrink-0">
-              <div class="min-w-0">
-                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Alfredo Maidana</h5>
-                <span class="text-[10px] sm:text-[11px] text-bf-muted-light">1 avaliação</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-1.5 text-[#F59E0B] mb-2">
-              <div class="flex items-center gap-0.5">
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <span class="text-[10px] sm:text-[11px] text-bf-muted-light">há 1 semana</span>
-            </div>
-            <p class="text-xs sm:text-[13px] text-[#E7E7E7] leading-relaxed font-normal break-words line-clamp-3">
-              "Atendimento excelente, entrega pontual e ganhei um bombom."
-            </p>
-          </div>
-
-          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#25272E] hover:bg-[#2e313a] border border-white/10 hover:border-white/20 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25" aria-hidden="true">
-            <div class="flex items-center gap-3 mb-2.5">
-              <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#0284C7] text-white font-bold flex items-center justify-center text-sm flex-shrink-0 shadow-xs">l</div>
-              <div class="min-w-0">
-                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Marcos Oliveira</h5>
-                <span class="text-[10px] sm:text-[11px] text-bf-muted-light">1 avaliação</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-1.5 text-[#F59E0B] mb-2">
-              <div class="flex items-center gap-0.5">
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <span class="text-[10px] sm:text-[11px] text-bf-muted-light">há 2 semanas</span>
-            </div>
-            <p class="text-xs sm:text-[13px] text-[#E7E7E7] leading-relaxed font-normal break-words line-clamp-3">
-              "Ótimo atendimento, bons preços e muita variedade de medicamentos."
-            </p>
-          </div>
-
-          <div class="relative block w-[320px] sm:w-[360px] md:w-[380px] flex-shrink-0 bg-[#25272E] hover:bg-[#2e313a] border border-white/10 hover:border-white/20 rounded-2xl p-4 sm:p-5 transition-all duration-200 shadow-md shadow-black/25" aria-hidden="true">
-            <div class="flex items-center gap-3 mb-2.5">
-              <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#EA580C] text-white font-bold flex items-center justify-center text-sm flex-shrink-0 shadow-xs">M</div>
-              <div class="min-w-0">
-                <h5 class="text-xs sm:text-sm font-bold text-white truncate">Mauricio Pedroso Da Silva</h5>
-                <span class="text-[10px] sm:text-[11px] text-bf-muted-light">1 avaliação</span>
-              </div>
-            </div>
-            <div class="flex items-center gap-1.5 text-[#F59E0B] mb-2">
-              <div class="flex items-center gap-0.5">
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <svg class="w-3.5 h-3.5 fill-[#F59E0B]" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              </div>
-              <span class="text-[10px] sm:text-[11px] text-bf-muted-light">há 2 semanas</span>
-            </div>
-            <p class="text-xs sm:text-[13px] text-[#E7E7E7] leading-relaxed font-normal break-words line-clamp-3">
-              "Ótimo atendimento preço excelente"
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-
-
-
-    </section>
-    <!-- ==========================================================================
-         S9 — REPUTAÇÃO GOOGLE & FILIAIS PLAZA / TAPANÃ (CARDS GOOGLE MAPS RECRIADOS)
-         ========================================================================== -->
-    <section id="filiais" class="bg-[#1C1D22] relative z-30 pt-1 sm:pt-2 pb-12 sm:pb-16 lg:pb-20 scroll-mt-24 md:scroll-mt-28 w-full">
+    <section id="filiais" class="bg-[#1C1D22] text-white pt-12 sm:pt-16 lg:pt-20 pb-12 sm:pb-16 lg:pb-20 rounded-t-[28px] sm:rounded-t-[36px] relative z-30 scroll-mt-24 md:scroll-mt-28 w-full">
       <div class="bf-container relative">
         
         <!-- Bloco Branco Contido na Largura Padrão (bf-container: 1280px) -->
@@ -2565,20 +1850,10 @@
               <div class="flex flex-col justify-center flex-1 min-w-0">
                 <span class="ds-eyebrow text-xs font-bold uppercase tracking-widest text-brand-red block mb-2">NOSSAS UNIDADES</span>
                 <!-- Headline Principal -->
-                <h2 class="ds-headline text-2xl sm:text-3xl md:text-[38px] font-bold text-bf-ink tracking-tight leading-tight mb-2 break-words">
+                <h2 class="ds-headline text-2xl sm:text-3xl md:text-[38px] font-bold text-bf-ink tracking-tight leading-tight break-words">
                   Cuidado que está <span class="text-brand-red">presente</span><br class="hidden sm:inline">
                   no seu dia a dia.
                 </h2>
-
-                <!-- Texto Institucional -->
-                <p class="ds-subtitle text-xs sm:text-[13px] md:text-sm text-bf-body leading-relaxed my-2.5 sm:my-3 font-normal max-w-lg">
-                  Somos a +B Farma, farmácia do Grupo Mais Barato criada para tornar o cuidado mais próximo e simples. Reunimos saúde, beleza e bem-estar com atendimento próximo e facilidade para comprar.
-                </p>
-
-                <!-- Prova social atualizada apenas pela ficha oficial do Google -->
-                <div class="flex items-center justify-center sm:justify-start gap-2 mt-0.5 text-xs text-[#5f6368]">
-                  <span>Confira avaliações e detalhes atuais no Google</span>
-                </div>
               </div>
 
             </div>
@@ -2913,13 +2188,9 @@
       <div class="flex flex-col items-center text-center max-w-lg mx-auto mb-10 sm:mb-12">
         
         <!-- Logo Branca -->
-        <a href="#home" class="mb-4 inline-block focus:outline-none" aria-label="+B Farma">
+        <a href="#home" class="mb-6 inline-block focus:outline-none" aria-label="+B Farma">
           <img src="assets/Logos/logo-farmacia-branca.webp" alt="+B Farma" class="h-10 sm:h-12 w-auto object-contain">
         </a>
-
-        <p class="text-xs text-slate-400 leading-relaxed mb-6 px-2">
-          Farmácia do grupo +B, feita para cuidar da sua saúde com confiança no atendimento.
-        </p>
 
         <!-- Redes Sociais oficiais -->
         <div class="flex items-center gap-3">
@@ -2963,14 +2234,6 @@
     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="m18 15-6-6-6 6"></path></svg>
   </button>
 <script>
-    // FAQ Accordion com Acessibilidade (a11y)
-    function toggleFaq(button) {
-      const item = button.closest('.faq-item');
-      if (!item) return;
-      const isActive = item.classList.toggle('active');
-      button.setAttribute('aria-expanded', isActive ? 'true' : 'false');
-    }
-
     // Mobile Menu Drawer Off-Canvas com Backdrop, Animação do Toggle e Bloqueio de Scroll
     function toggleMobileMenu() {
       const menu = document.getElementById('mobileMenu');
@@ -3014,7 +2277,7 @@
     document.addEventListener('DOMContentLoaded', () => {
       const navLinks = document.querySelectorAll('.nav-link, .drawer-link');
       const trackedSections = Array.from(document.querySelectorAll('section[id]')).filter(sec => {
-        return ['home', 'ofertas', 'categorias', 'filiais', 'sobre', 'faq'].includes(sec.id);
+        return ['home', 'categorias', 'filiais', 'sobre'].includes(sec.id);
       });
 
       function updateActiveNav() {
@@ -3203,67 +2466,6 @@
     updateCarousel();
     startAutoplay();
 
-    // ==========================================================================
-    // CARROSSEL DE BANNERS (S3 BANNERZINHOS - OFERTAS QUE RENDEM MAIS)
-    // ==========================================================================
-    function updateBannerDots() {
-      const track = document.getElementById('bannersTrack');
-      const dots = document.querySelectorAll('.banner-dot');
-      if (!track || !dots.length) return;
-      const cards = track.querySelectorAll('[data-banner-card]');
-      if (!cards.length) return;
-      const firstCard = cards[0];
-      const cardWidth = firstCard.offsetWidth;
-      const computedGap = parseFloat(window.getComputedStyle(track).gap) || 24;
-      const step = cardWidth + computedGap;
-      const maxIndex = dots.length - 1;
-      const currentIndex = Math.min(Math.max(0, Math.round(track.scrollLeft / step)), maxIndex);
-
-      dots.forEach((dot, idx) => {
-        if (idx === currentIndex) {
-          dot.className = 'banner-dot w-6 sm:w-8 h-2 sm:h-2.5 rounded-full bg-brand-red transition-all duration-300 flex-shrink-0 focus:outline-none';
-        } else {
-          dot.className = 'banner-dot w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-bf-ink/20 hover:bg-bf-ink/40 transition-all duration-300 flex-shrink-0 focus:outline-none';
-        }
-      });
-    }
-
-    function scrollBanners(direction) {
-      const track = document.getElementById('bannersTrack');
-      if (!track) return;
-      const firstCard = track.querySelector('[data-banner-card]');
-      const computedGap = parseFloat(window.getComputedStyle(track).gap) || 24;
-      const cardWidth = firstCard ? firstCard.offsetWidth + computedGap : 360;
-      const maxScroll = track.scrollWidth - track.clientWidth;
-
-      if (direction === 'left') {
-        if (track.scrollLeft <= 20) {
-          track.scrollTo({ left: maxScroll, behavior: 'smooth' });
-        } else {
-          track.scrollBy({ left: -cardWidth, behavior: 'smooth' });
-        }
-      } else {
-        if (track.scrollLeft >= maxScroll - 20) {
-          track.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          track.scrollBy({ left: cardWidth, behavior: 'smooth' });
-        }
-      }
-      setTimeout(updateBannerDots, 350);
-    }
-
-    function scrollToBanner(index) {
-      const track = document.getElementById('bannersTrack');
-      if (!track) return;
-      const cards = track.querySelectorAll('[data-banner-card]');
-      if (cards[index]) {
-        cards[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
-        setTimeout(updateBannerDots, 350);
-      }
-    }
-
-
-
     // ========================================================================
     // CARROSSEL DE BANNERS HORIZONTAIS (CLUBE +B & IFOOD / ENTREGA)
     // ========================================================================
@@ -3345,58 +2547,6 @@
     updateHCarousel();
     startHAutoplay();
 
-    // Suporte a Touch Swipe & Arrastar com Mouse no Carrossel de Ofertas
-    const bannersTrack = document.getElementById('bannersTrack');
-    if (bannersTrack) {
-      let isDragging = false;
-      let hasMoved = false;
-      let startX = 0;
-      let scrollLeftPos = 0;
-      let scrollDebounce = null;
-
-      bannersTrack.addEventListener('scroll', () => {
-        if (scrollDebounce) clearTimeout(scrollDebounce);
-        scrollDebounce = setTimeout(updateBannerDots, 80);
-      }, { passive: true });
-
-      bannersTrack.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        hasMoved = false;
-        bannersTrack.classList.add('cursor-grabbing');
-        bannersTrack.classList.remove('cursor-grab', 'scroll-smooth');
-        startX = e.pageX - bannersTrack.offsetLeft;
-        scrollLeftPos = bannersTrack.scrollLeft;
-      });
-
-      window.addEventListener('mouseup', () => {
-        if (isDragging) {
-          isDragging = false;
-          bannersTrack.classList.remove('cursor-grabbing');
-          bannersTrack.classList.add('cursor-grab', 'scroll-smooth');
-          updateBannerDots();
-        }
-      });
-
-      bannersTrack.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        const x = e.pageX - bannersTrack.offsetLeft;
-        const walk = (x - startX) * 1.5;
-        if (Math.abs(walk) > 6) {
-          hasMoved = true;
-          e.preventDefault();
-        }
-        bannersTrack.scrollLeft = scrollLeftPos - walk;
-      });
-
-      bannersTrack.addEventListener('click', (e) => {
-        if (hasMoved) {
-          e.preventDefault();
-          e.stopPropagation();
-          hasMoved = false;
-        }
-      }, true);
-    }
-
     // ==========================================================================
     // CONTROLE DO BOTÃO VOLTAR AO TOPO COM SCROLL
     // ==========================================================================
@@ -3429,7 +2579,7 @@
 
       <!-- Player de Vídeo HTML5 Vertical 9:16 -->
       <div class="relative w-full h-full bg-black flex items-center justify-center overflow-hidden">
-        <video id="institutionalVideo" src="assets/Pagina/S3%20SOBRE/farmab-video.mp4" class="w-full h-full object-cover rounded-2xl sm:rounded-3xl" controls="" preload="auto" playsinline="">
+        <video id="institutionalVideo" src="assets/Pagina/S3%20SOBRE/farmab-video.mp4" poster="assets/Pagina/S3%20SOBRE/thumb-video.webp" class="w-full h-full object-cover rounded-2xl sm:rounded-3xl" controls="" preload="auto" playsinline="">
           <source src="assets/Pagina/S3%20SOBRE/farmab-video.mp4" type="video/mp4">
           Seu navegador não suporta a reprodução deste vídeo.
         </video>
@@ -3725,14 +2875,6 @@
         }
       }
     });
-  </script>
-<script>
-    const testimonialSection = document.getElementById('depoimentos');
-    if (testimonialSection) {
-      const testimonialTracks = testimonialSection.querySelectorAll('.animate-marquee-left, .animate-marquee-right');
-      testimonialSection.addEventListener('touchstart', () => testimonialTracks.forEach(track => track.style.animationPlayState = 'paused'), { passive: true });
-      testimonialSection.addEventListener('touchend', () => setTimeout(() => testimonialTracks.forEach(track => track.style.animationPlayState = 'running'), 2200), { passive: true });
-    }
   </script>
   <script>
     document.querySelectorAll('.category-item').forEach(function(item) {
