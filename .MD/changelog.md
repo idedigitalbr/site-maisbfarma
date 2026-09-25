@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-09-25 — Atualização dos Banners Mobile (S1 Topo Hero & S4 Banners Horizontais)
+
+- **Banners Mobile Atualizados (1536x1024):**
+  - Integrados os novos arquivos de banner mobile:
+    - `assets/Pagina/S1 TOPO HERO/MOBILE/1banner-mobilee.webp` (Slide 01 — Institucional)
+    - `assets/Pagina/S1 TOPO HERO/MOBILE/2-banner-mobilee.webp` (Slide 02 — Lojas / Praticidade)
+    - `assets/Pagina/S4 BANNERS HORIZONTAIS/mobile/banner-ifood-mobilee.webp` (Banner iFood)
+  - Criadas cópias espelhadas de compatibilidade para os nomes anteriores (`1bannertopo-mobile.webp`, `2bannertopo-mobile.webp`, `banner-ifood-mobile.webp`).
+  - Atualizado o CSS do Carrossel Hero (`.hero-carousel`) para `aspect-ratio: 3 / 2` no mobile (< 768px), casando com a proporção nativa 1536x1024 e garantindo exibição total sem corte de textos.
+  - Atualizadas as tags `<source srcset="..." width="1536" height="1024">` para renderização precisa e prevenção de layout shift.
+
 ## 2026-09-25 — Ajustes Mobile: Categorias em Linha Única com Scroll e Banner Hero Limpo
 
 - **Categorias Circulares no Mobile (< 768px):**
