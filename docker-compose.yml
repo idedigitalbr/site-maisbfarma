@@ -1,0 +1,26 @@
+name: site-maisbfarma
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: maisbfarma-web
+    restart: always
+    ports:
+      - "8086:80"  # Porta direta para preview imediato via IP sem depender de DNS
+    networks:
+      - default
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.maisbfarma-router.rule=Host(`maisbfarma.suporteide.digital`) || Host(`maisbfarma.com.br`) || Host(`www.maisbfarma.com.br`)"
+      - "traefik.http.routers.maisbfarma-router.entrypoints=websecure"
+      - "traefik.http.routers.maisbfarma-router.tls=true"
+      - "traefik.http.routers.maisbfarma-router.tls.certresolver=letsencrypt"
+      - "traefik.http.services.maisbfarma-service.loadbalancer.server.port=80"
+
+networks:
+  default:
+  proxy:
+    external: true
