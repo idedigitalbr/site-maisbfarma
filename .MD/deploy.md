@@ -22,17 +22,18 @@ atualizado: 2026-08-28
 
 ## 3. Fluxo de Publicação
 
-### Via Docker / Nginx na VPS
+### Via Docker Compose & Traefik
 
-1. Sincronizar os arquivos do projeto para o diretório de produção na VPS:
+1. **Repositório:** `https://github.com/idedigitalbr/site-maisbfarma`
+2. **Diretório do Projeto:** `/opt/site-maisbfarma/app`
+3. **Build e Execução:**
    ```bash
-   rsync -avz --exclude '.git' --exclude '.MD' ./ usuario@vps:/var/www/site-maisb-farma/
+   cd /opt/site-maisbfarma/app
+   git pull origin main
+   docker compose -p site-maisbfarma up -d --build
    ```
-2. Recarregar o serviço Nginx para aplicar eventuais regras de cache:
-   ```bash
-   docker exec nginx-proxy nginx -s reload
-   ```
-3. Limpar o cache na Cloudflare para propagação imediata da nova versão.
+4. **Porta direta:** `8086`
+5. **Roteamento Traefik:** `maisbfarma.suporteide.digital`, `maisbfarma.com.br`, `www.maisbfarma.com.br`
 
 ---
 
