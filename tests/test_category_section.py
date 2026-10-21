@@ -122,7 +122,7 @@ class CategorySectionTests(unittest.TestCase):
                 };
             })"""
         )
-        self.assertEqual(len(badges_style), 10)
+        self.assertEqual(len(badges_style), 9)
         for badge in badges_style:
             self.assertEqual(badge["bg"], "rgb(248, 249, 250)")
             self.assertEqual(badge["color"], "rgb(233, 33, 37)")
