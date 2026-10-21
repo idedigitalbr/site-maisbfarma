@@ -145,8 +145,17 @@ jobs:
           fi
 
           echo "Testando roteamento Traefik via Host Header..."
-          TRAEFIK_STATUS=$(curl -k -s -o /dev/null -w "%{http_code}" --max-time 15 -H "Host: maisbfarma.com.br" "https://${VPS_HOST}/")
-          echo "Status Traefik retornado: $TRAEFIK_STATUS"
+          TRAEFIK_STATUS="000"
+          for i in {1..6}; do
+            TRAEFIK_STATUS=$(curl -k -s -o /dev/null -w "%{http_code}" --max-time 10 -H "Host: maisbfarma.com.br" "https://${VPS_HOST}/")
+            if [ "$TRAEFIK_STATUS" = "200" ]; then
+              echo "✓ Traefik sincronizado e respondendo 200 OK (tentativa $i)."
+              break
+            fi
+            echo "Aguardando sincronização do Traefik (tentativa $i/6, status retornado: $TRAEFIK_STATUS)..."
+            sleep 2
+          done
+
           if [ "$TRAEFIK_STATUS" != "200" ]; then
             echo "AVISO: Traefik retornou status $TRAEFIK_STATUS para Host: maisbfarma.com.br"
           fi
