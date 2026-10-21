@@ -11,11 +11,10 @@
   - Verificação pós-deploy automatizada local (VPS) e externa (runner).
 - **Configuração de Secrets no GitHub:**
   - Cadastrados os segredos `VPS_HOST`, `VPS_USER`, `VPS_SSH_PORT`, `VPS_SSH_KEY` e `VPS_SSH_FINGERPRINT` no repositório `idedigitalbr/site-maisbfarma`.
-- **Provisionamento na VPS de Produção:**
-  - Clonado e configurado o repositório em `/opt/site-maisbfarma/app`.
-  - Construído e iniciado o container `maisbfarma-web` via Docker Compose com Nginx Alpine ultraleve.
-  - Integrado à rede Traefik `proxy` com roteamento para `maisbfarma.com.br`, `www.maisbfarma.com.br` e `maisbfarma.suporteide.digital`.
-  - Exposta a porta `8086` para preview direto e validação de saúde do serviço.
+- **Provisionamento na VPS de Produção (+B Farma / Hostinger `179.236.75.128`):**
+  - Chave SSH de deploy configurada em `/root/.ssh/authorized_keys` no servidor dedicado do Grupo Mais Barato (`docker.grupomaisbarato.com.br`).
+  - Atualizados secrets do GitHub para o IP `179.236.75.128` e fingerprint oficial `mq8COg7DKr2CSTiuioJCov0JMs3+YBkTzjPXZtUfh8E`.
+  - Sincronizado o container `maisbfarma-web` e validação do roteamento Traefik no domínio `maisbfarma.com.br`.
 - **Documentação Técnica Atualizada:**
   - Reescrito [.MD/deploy.md](file:///.MD/deploy.md) com o guia completo de arquitetura, segredos, comandos manuais e procedimentos de rollback.
 

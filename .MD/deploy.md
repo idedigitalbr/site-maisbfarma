@@ -8,11 +8,12 @@
 
 ## 1. Ambientes e Infraestrutura
 
-- **Servidor VPS de Produção:** Contabo (`161.97.108.92`), Ubuntu 24.04 LTS.
+- **Servidor VPS de Produção:** Hostinger (`179.236.75.128` - `srv2023103`), Ubuntu com Docker.
+- **Painel Docker / Portainer:** `docker.grupomaisbarato.com.br`
 - **Roteador / Reverse Proxy:** Traefik v2.11 conectado à rede Docker `proxy`.
 - **Servidor Web do Container:** Nginx Alpine ultraleve (`maisbfarma-web`).
 - **Diretório da Aplicação na VPS:** `/opt/site-maisbfarma/app`
-- **Porta Direta de Preview:** `8086` (`http://161.97.108.92:8086`)
+- **Porta Direta de Preview:** `8086` (`http://179.236.75.128:8086`)
 - **Roteamento HTTPS (Traefik):**
   - `maisbfarma.com.br`
   - `www.maisbfarma.com.br`
@@ -34,11 +35,11 @@ O fluxo de publicação é gerenciado pelo arquivo [deploy-vps.yml](file:///.git
 - O grupo `deploy-vps-maisbfarma` com `cancel-in-progress: false` garante que deploys simultâneos sejam enfileirados e executados em ordem estrita, evitando builds interrompidos ou inconsistência de estado.
 
 ### Segredos Configurados no Repositório (GitHub Secrets)
-- `VPS_HOST`: IP do servidor de produção (`161.97.108.92`).
+- `VPS_HOST`: IP do servidor de produção (`179.236.75.128`).
 - `VPS_USER`: Usuário de deploy com permissão Docker (`root`).
 - `VPS_SSH_PORT`: Porta SSH (`22`).
 - `VPS_SSH_KEY`: Chave privada SSH autorizada no servidor.
-- `VPS_SSH_FINGERPRINT`: Fingerprint SHA256 da chave de host (`SHA256:8t59KrIspxmOiPKsLydWUMDMVnrJ/NKRSio5dpEDovE`).
+- `VPS_SSH_FINGERPRINT`: Fingerprint SHA256 da chave de host (`SHA256:mq8COg7DKr2CSTiuioJCov0JMs3+YBkTzjPXZtUfh8E`).
 
 ---
 
@@ -70,7 +71,7 @@ Se houver necessidade de operação manual no servidor:
 
 ```bash
 # Conectar à VPS
-ssh -i ~/.ssh/id_vps root@161.97.108.92
+ssh -i ~/.ssh/id_vps root@179.236.75.128
 
 # Acessar pasta do projeto
 cd /opt/site-maisbfarma/app
