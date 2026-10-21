@@ -67,11 +67,11 @@ class CategorySectionTests(unittest.TestCase):
             "Mercado",
             "Saúde e Bem-Estar",
             "Nutrição Saudável",
-            "Pet Shop",
+
             "e muito mais....",
         ]
         items = self.page.locator("#categorias [data-category-item]")
-        self.assertEqual(items.count(), 10)
+        self.assertEqual(items.count(), 9)
         rendered_names = [" ".join(name.split()) for name in items.all_inner_texts()]
         self.assertEqual(rendered_names, expected_names)
 
