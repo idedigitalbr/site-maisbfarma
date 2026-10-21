@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-10-21 — Implementação da Infraestrutura de Deploy Automático (CI/CD) na VPS
+
+- **Pipeline GitHub Actions Criado (`.github/workflows/deploy-vps.yml`):**
+  - Implementado workflow com gatilhos de push na branch `main` e disparo manual (`workflow_dispatch`).
+  - Proteção de concorrência com fila sequencial (`concurrency`).
+  - Validação estrita de arquivos essenciais antes da conexão SSH.
+  - Verificação de identidade do servidor via fingerprint SHA256 antes da autenticação.
+  - Publicação atômica do commit específico validado com suporte a rollback automático em caso de falha.
+  - Verificação pós-deploy automatizada local (VPS) e externa (runner).
+- **Configuração de Secrets no GitHub:**
+  - Cadastrados os segredos `VPS_HOST`, `VPS_USER`, `VPS_SSH_PORT`, `VPS_SSH_KEY` e `VPS_SSH_FINGERPRINT` no repositório `idedigitalbr/site-maisbfarma`.
+- **Provisionamento na VPS de Produção:**
+  - Clonado e configurado o repositório em `/opt/site-maisbfarma/app`.
+  - Construído e iniciado o container `maisbfarma-web` via Docker Compose com Nginx Alpine ultraleve.
+  - Integrado à rede Traefik `proxy` com roteamento para `maisbfarma.com.br`, `www.maisbfarma.com.br` e `maisbfarma.suporteide.digital`.
+  - Exposta a porta `8086` para preview direto e validação de saúde do serviço.
+- **Documentação Técnica Atualizada:**
+  - Reescrito [.MD/deploy.md](file:///.MD/deploy.md) com o guia completo de arquitetura, segredos, comandos manuais e procedimentos de rollback.
+
+
 ## 2026-09-25 — Atualização do Rodapé: Logo idedigital, Centralização de Termos e Logo Estática
 
 - **Logotipo Oficial idedigital:**
